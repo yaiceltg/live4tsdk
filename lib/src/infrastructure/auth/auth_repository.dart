@@ -36,14 +36,17 @@ class AuthRepository implements IAuthRepository {
       );
 
       // check response
-      dynamic _responseData = _response.data;
+      if (_response.data is Map<String, dynamic> ) {
 
-      if (_responseData is Map<String, dynamic> &&
-          _responseData.containsKey('message')) {
-        final String _message = _responseData['message'];
+        Map<String, dynamic> _d = _response.data;
+        final Map<String, dynamic> _r = _d['response'];
 
-        if (_message.contains('USER_NOT_FOUND')) {
-          return left(AuthFailure.userNotFound());
+        if (_r.containsKey('code')) {
+          String _c = _r['code'];
+
+          if (_c.contains('USER_NOT_FOUND')) {
+            return left(AuthFailure.userNotFound());
+          }
         }
       }
 
