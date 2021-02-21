@@ -9,9 +9,11 @@ dependencies:
   dartz: ^0.9.2
   dio: ^3.0.10
   freezed_annotation: null
+  json_serializable: ^3.5.1
 
 dev_dependencies:
   build_runner: null
   freezed: null
+  json_serializable_generator: ^1.0.1
   pedantic: ^1.9.0
   test: ^1.14.4

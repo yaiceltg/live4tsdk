@@ -1,6 +1,23 @@
-// TODO: Put public facing types in this file.
+import 'package:dio/dio.dart';
+import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
 
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+class Live4tsdk {
+  Dio httpClient;
+
+  AuthRepository auth;
+
+  Live4tsdk({String baseUrl}) {
+    // create dio config
+    final _options = BaseOptions(
+      baseUrl: baseUrl,
+      connectTimeout: 5000,
+      receiveTimeout: 3000,
+    );
+    httpClient = Dio(_options);
+
+    // configure app
+    auth = AuthRepository(httpClient);
+  }
+
+  bool get ready => true;
 }

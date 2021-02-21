@@ -3,14 +3,14 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
+    Live4tsdk sdk;
 
     setUp(() {
-      awesome = Awesome();
+      sdk = Live4tsdk();
     });
 
     test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+      expect(sdk.ready, isTrue);
     });
   });
 }
