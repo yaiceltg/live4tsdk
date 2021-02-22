@@ -3,18 +3,18 @@ import 'package:live4tsdk/src/domain/core/failures.dart';
 import 'package:live4tsdk/src/domain/core/value_objects.dart';
 import 'package:live4tsdk/src/domain/core/value_validators.dart';
 
-class AuthBearerToken extends ValueObject<String> {
+class AccessToken extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory AuthBearerToken(String input) {
+  factory AccessToken(String input) {
     assert(input != null);
-    return AuthBearerToken._(
+    return AccessToken._(
       validateStringNotEmpty(input.trim()),
     );
   }
 
-  const AuthBearerToken._(this.value);
+  const AccessToken._(this.value);
 }
 
 class EmailAddress extends ValueObject<String> {

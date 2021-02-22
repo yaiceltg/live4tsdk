@@ -14,9 +14,9 @@ class _$AuthTokenTearOff {
   const _$AuthTokenTearOff();
 
 // ignore: unused_element
-  _AuthToken call({@required AuthBearerToken token}) {
+  _AuthToken call({@required AccessToken accessToken}) {
     return _AuthToken(
-      token: token,
+      accessToken: accessToken,
     );
   }
 }
@@ -27,7 +27,7 @@ const $AuthToken = _$AuthTokenTearOff();
 
 /// @nodoc
 mixin _$AuthToken {
-  AuthBearerToken get token;
+  AccessToken get accessToken;
 
   @JsonKey(ignore: true)
   $AuthTokenCopyWith<AuthToken> get copyWith;
@@ -37,7 +37,7 @@ mixin _$AuthToken {
 abstract class $AuthTokenCopyWith<$Res> {
   factory $AuthTokenCopyWith(AuthToken value, $Res Function(AuthToken) then) =
       _$AuthTokenCopyWithImpl<$Res>;
-  $Res call({AuthBearerToken token});
+  $Res call({AccessToken accessToken});
 }
 
 /// @nodoc
@@ -50,10 +50,12 @@ class _$AuthTokenCopyWithImpl<$Res> implements $AuthTokenCopyWith<$Res> {
 
   @override
   $Res call({
-    Object token = freezed,
+    Object accessToken = freezed,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed ? _value.token : token as AuthBearerToken,
+      accessToken: accessToken == freezed
+          ? _value.accessToken
+          : accessToken as AccessToken,
     ));
   }
 }
@@ -64,7 +66,7 @@ abstract class _$AuthTokenCopyWith<$Res> implements $AuthTokenCopyWith<$Res> {
           _AuthToken value, $Res Function(_AuthToken) then) =
       __$AuthTokenCopyWithImpl<$Res>;
   @override
-  $Res call({AuthBearerToken token});
+  $Res call({AccessToken accessToken});
 }
 
 /// @nodoc
@@ -78,37 +80,41 @@ class __$AuthTokenCopyWithImpl<$Res> extends _$AuthTokenCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object token = freezed,
+    Object accessToken = freezed,
   }) {
     return _then(_AuthToken(
-      token: token == freezed ? _value.token : token as AuthBearerToken,
+      accessToken: accessToken == freezed
+          ? _value.accessToken
+          : accessToken as AccessToken,
     ));
   }
 }
 
 /// @nodoc
 class _$_AuthToken implements _AuthToken {
-  const _$_AuthToken({@required this.token}) : assert(token != null);
+  const _$_AuthToken({@required this.accessToken})
+      : assert(accessToken != null);
 
   @override
-  final AuthBearerToken token;
+  final AccessToken accessToken;
 
   @override
   String toString() {
-    return 'AuthToken(token: $token)';
+    return 'AuthToken(accessToken: $accessToken)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuthToken &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+            (identical(other.accessToken, accessToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.accessToken, accessToken)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(token);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(accessToken);
 
   @JsonKey(ignore: true)
   @override
@@ -117,10 +123,10 @@ class _$_AuthToken implements _AuthToken {
 }
 
 abstract class _AuthToken implements AuthToken {
-  const factory _AuthToken({@required AuthBearerToken token}) = _$_AuthToken;
+  const factory _AuthToken({@required AccessToken accessToken}) = _$_AuthToken;
 
   @override
-  AuthBearerToken get token;
+  AccessToken get accessToken;
   @override
   @JsonKey(ignore: true)
   _$AuthTokenCopyWith<_AuthToken> get copyWith;

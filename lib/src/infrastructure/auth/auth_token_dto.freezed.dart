@@ -17,9 +17,9 @@ class _$AuthTokenDtoTearOff {
   const _$AuthTokenDtoTearOff();
 
 // ignore: unused_element
-  _AuthTokenDto call({@required String token}) {
+  _AuthTokenDto call({@required String accessToken}) {
     return _AuthTokenDto(
-      token: token,
+      accessToken: accessToken,
     );
   }
 
@@ -35,7 +35,7 @@ const $AuthTokenDto = _$AuthTokenDtoTearOff();
 
 /// @nodoc
 mixin _$AuthTokenDto {
-  String get token;
+  String get accessToken;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -47,7 +47,7 @@ abstract class $AuthTokenDtoCopyWith<$Res> {
   factory $AuthTokenDtoCopyWith(
           AuthTokenDto value, $Res Function(AuthTokenDto) then) =
       _$AuthTokenDtoCopyWithImpl<$Res>;
-  $Res call({String token});
+  $Res call({String accessToken});
 }
 
 /// @nodoc
@@ -60,10 +60,11 @@ class _$AuthTokenDtoCopyWithImpl<$Res> implements $AuthTokenDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object token = freezed,
+    Object accessToken = freezed,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed ? _value.token : token as String,
+      accessToken:
+          accessToken == freezed ? _value.accessToken : accessToken as String,
     ));
   }
 }
@@ -75,7 +76,7 @@ abstract class _$AuthTokenDtoCopyWith<$Res>
           _AuthTokenDto value, $Res Function(_AuthTokenDto) then) =
       __$AuthTokenDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String token});
+  $Res call({String accessToken});
 }
 
 /// @nodoc
@@ -90,10 +91,11 @@ class __$AuthTokenDtoCopyWithImpl<$Res> extends _$AuthTokenDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object token = freezed,
+    Object accessToken = freezed,
   }) {
     return _then(_AuthTokenDto(
-      token: token == freezed ? _value.token : token as String,
+      accessToken:
+          accessToken == freezed ? _value.accessToken : accessToken as String,
     ));
   }
 }
@@ -102,32 +104,33 @@ class __$AuthTokenDtoCopyWithImpl<$Res> extends _$AuthTokenDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_AuthTokenDto extends _AuthTokenDto {
-  const _$_AuthTokenDto({@required this.token})
-      : assert(token != null),
+  const _$_AuthTokenDto({@required this.accessToken})
+      : assert(accessToken != null),
         super._();
 
   factory _$_AuthTokenDto.fromJson(Map<String, dynamic> json) =>
       _$_$_AuthTokenDtoFromJson(json);
 
   @override
-  final String token;
+  final String accessToken;
 
   @override
   String toString() {
-    return 'AuthTokenDto(token: $token)';
+    return 'AuthTokenDto(accessToken: $accessToken)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuthTokenDto &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+            (identical(other.accessToken, accessToken) ||
+                const DeepCollectionEquality()
+                    .equals(other.accessToken, accessToken)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(token);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(accessToken);
 
   @JsonKey(ignore: true)
   @override
@@ -142,13 +145,13 @@ class _$_AuthTokenDto extends _AuthTokenDto {
 
 abstract class _AuthTokenDto extends AuthTokenDto {
   const _AuthTokenDto._() : super._();
-  const factory _AuthTokenDto({@required String token}) = _$_AuthTokenDto;
+  const factory _AuthTokenDto({@required String accessToken}) = _$_AuthTokenDto;
 
   factory _AuthTokenDto.fromJson(Map<String, dynamic> json) =
       _$_AuthTokenDto.fromJson;
 
   @override
-  String get token;
+  String get accessToken;
   @override
   @JsonKey(ignore: true)
   _$AuthTokenDtoCopyWith<_AuthTokenDto> get copyWith;

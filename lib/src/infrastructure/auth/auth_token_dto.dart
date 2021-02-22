@@ -10,18 +10,18 @@ abstract class AuthTokenDto implements _$AuthTokenDto {
   const AuthTokenDto._();
 
   const factory AuthTokenDto({
-    @required String token,
+    @required String accessToken,
   }) = _AuthTokenDto;
 
   factory AuthTokenDto.fromDomain(AuthToken authToken) {
     return AuthTokenDto(
-      token: authToken.token.getOrCrash()
+      accessToken: authToken.accessToken.getOrCrash()
     );
   }
 
   AuthToken toDomain() {
     return AuthToken(
-      token: AuthBearerToken(token)
+      accessToken: AccessToken(accessToken)
     );
   }
 

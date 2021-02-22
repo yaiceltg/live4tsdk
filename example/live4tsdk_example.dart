@@ -8,9 +8,9 @@ void main() async {
   );
 
   // call auth login service
-  final _tokenOrError = await live4tsdk.auth.forgotPassword(
-    emailAddress: EmailAddress("yaiceltg1@gmail.com"),
-    // password:  Password("a")
+  final _tokenOrError = await live4tsdk.auth.signInWithEmailAndPassword(
+    emailAddress: EmailAddress("yaiceltg@gmail.com"),
+    password:  Password("admin123")
   );
 
 _tokenOrError.fold((error) {
@@ -23,7 +23,7 @@ _tokenOrError.fold((error) {
 
   print(_eName);
 }, (token) {
-  print("Token $token");
+  print("Token ${token.accessToken.getOrCrash()}");
 });
 
 }

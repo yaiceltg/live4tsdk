@@ -8,11 +8,11 @@ part of 'auth_token_dto.dart';
 
 _$_AuthTokenDto _$_$_AuthTokenDtoFromJson(Map<String, dynamic> json) {
   return _$_AuthTokenDto(
-    token: json['token'] as String,
+    accessToken: json['accessToken'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_AuthTokenDtoToJson(_$_AuthTokenDto instance) =>
     <String, dynamic>{
-      'token': instance.token,
+      'accessToken': instance.accessToken,
     };
