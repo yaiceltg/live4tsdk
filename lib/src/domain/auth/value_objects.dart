@@ -44,3 +44,17 @@ class Password extends ValueObject<String> {
 
   const Password._(this.value);
 }
+
+class ResetPasswordCode extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory ResetPasswordCode(String input) {
+    assert(input != null);
+    return ResetPasswordCode._(
+      validatePassword(input),
+    );
+  }
+
+  const ResetPasswordCode._(this.value);
+}
