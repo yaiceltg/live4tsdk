@@ -14,5 +14,8 @@ abstract class IAuthRepository {
     @required EmailAddress emailAddress,
   });
 
-  Future<Either<AuthFailure, Unit>> resetPassword();
+  Future<Either<AuthFailure, Unit>> resetPassword({
+    @required ResetPasswordCode code,
+    @required Password password,
+  });
 }
