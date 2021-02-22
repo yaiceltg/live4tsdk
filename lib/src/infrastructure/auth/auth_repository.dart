@@ -21,8 +21,9 @@ class AuthRepository implements IAuthRepository {
   AuthRepository(this._httpClient);
 
   @override
-  Future<Either<AuthFailure, Unit>> forgotPassword(
-      {@required EmailAddress emailAddress}) async {
+  Future<Either<AuthFailure, Unit>> forgotPassword({
+    @required EmailAddress emailAddress
+  }) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -44,7 +45,7 @@ class AuthRepository implements IAuthRepository {
         if (_r.containsKey('code')) {
           String _c = _r['code'];
 
-          if (_c.contains('USER_NOT_FOUND')) {
+          if (_c.contains('NOT_FOUND')) {
             return left(AuthFailure.userNotFound());
           }
         }
@@ -75,12 +76,16 @@ class AuthRepository implements IAuthRepository {
       );
 
       // check response
-      Map<String, dynamic> _responseData = _response.data;
-      if (_responseData.containsKey('message')) {
-        final String _message = _responseData['message'];
+      if (_response.data is Map<String, dynamic>) {
+        Map<String, dynamic> _d = _response.data;
+        final Map<String, dynamic> _r = _d['response'];
 
-        if (_message.contains('USER_NOT_FOUND')) {
-          return left(AuthFailure.userNotFound());
+        if (_r.containsKey('code')) {
+          String _c = _r['code'];
+
+          if (_c.contains('USER_NOT_FOUND')) {
+            return left(AuthFailure.userNotFound());
+          }
         }
       }
 
@@ -91,9 +96,10 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword(
-      {@required EmailAddress emailAddress,
-      @required Password password}) async {
+  Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword({
+    @required EmailAddress emailAddress,
+    @required Password password
+  }) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -108,24 +114,27 @@ class AuthRepository implements IAuthRepository {
       );
 
       // check response
-      Map<String, dynamic> _d = _response.data;
-      if (_d.containsKey('response')) {
-        final Map<String, dynamic> _r = _d['response'];
+      if (_response.data is Map<String, dynamic>) {
+        Map<String, dynamic> _d = _response.data;
+        if (_d.containsKey('response')) {
+          final Map<String, dynamic> _r = _d['response'];
 
-        if (_r.containsKey('code')) {
-          String _c = _r['code'];
+          if (_r.containsKey('code')) {
+            String _c = _r['code'];
 
-          if (_c.contains('USER_NOT_FOUND')) {
-            return left(AuthFailure.userNotFound());
-          }
+            if (_c.contains('USER_NOT_FOUND')) {
+              return left(AuthFailure.userNotFound());
+            }
 
-          if (_c.contains('INVALID_CREDENTIALS')) {
-            return left(AuthFailure.invalidEmailAndPasswordCombination());
+            if (_c.contains('INVALID_CREDENTIALS')) {
+              return left(AuthFailure.invalidEmailAndPasswordCombination());
+            }
           }
         }
       }
 
-      final _token = AuthTokenDto.fromJson(_d).toDomain();
+
+      final _token = AuthTokenDto.fromJson(_response.data).toDomain();
 
       return right(_token);
     } catch (e) {
