@@ -4,13 +4,13 @@ import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 void main() async {
   // add global this client
   var live4tsdk = Live4tsdk(
-    baseUrl: "http://localhost:3000/api"
+    baseUrl: "http://164.90.157.86:3000/api"
   );
 
   // call auth login service
-  final _tokenOrError = await live4tsdk.auth.signInWithEmailAndPassword(
-    emailAddress: EmailAddress("yaiceltg@gmail.com"),
-    password:  Password("admin123")
+  final _tokenOrError = await live4tsdk.auth.resetPassword(
+    code: ResetPasswordCode("583193"),
+    password: Password("admin@123")
   );
 
 _tokenOrError.fold((error) {
@@ -23,7 +23,7 @@ _tokenOrError.fold((error) {
 
   print(_eName);
 }, (token) {
-  print("Token ${token.accessToken.getOrCrash()}");
+  print("Se ha cambiado la contraseña");
 });
 
 }
