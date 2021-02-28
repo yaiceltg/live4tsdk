@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -21,9 +20,8 @@ class AuthRepository implements IAuthRepository {
   AuthRepository(this._httpClient);
 
   @override
-  Future<Either<AuthFailure, Unit>> forgotPassword({
-    @required EmailAddress emailAddress
-  }) async {
+  Future<Either<AuthFailure, Unit>> forgotPassword(
+      {@required EmailAddress emailAddress}) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -37,8 +35,7 @@ class AuthRepository implements IAuthRepository {
       );
 
       // check response
-      if (_response.data is Map<String, dynamic> ) {
-
+      if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;
         final Map<String, dynamic> _r = _d['response'];
 
@@ -96,10 +93,9 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password
-  }) async {
+  Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword(
+      {@required EmailAddress emailAddress,
+      @required Password password}) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -132,7 +128,6 @@ class AuthRepository implements IAuthRepository {
           }
         }
       }
-
 
       final _token = AuthTokenDto.fromJson(_response.data).toDomain();
 
