@@ -49,7 +49,24 @@ abstract class AccountDto implements _$AccountDto {
   }
 
   Account toDomain() {
-    return Account();
+    return Account(
+      id: id,
+      name: name,
+      lastName: lastName,
+      typeUser: typeUser,
+      address: address,
+      picture: picture,
+      phone: phone,
+      idNumber: idNumber,
+      userName: userName,
+      email: email,
+      parent: parent,
+      parentPhone: parentPhone,
+      experience: experience,
+      emailVerifiedAt: emailVerifiedAt,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+    );
   }
 
   factory AccountDto.fromJson(Map<String, dynamic> json) =>

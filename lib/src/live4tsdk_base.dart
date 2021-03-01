@@ -23,4 +23,10 @@ class Live4tsdk {
   }
 
   bool get ready => true;
+
+  void addHeaderAuthorization(String token) {
+    httpClient.options.headers.addAll({
+      'Authorization': 'Bearer $token'
+    });
+  }
 }
