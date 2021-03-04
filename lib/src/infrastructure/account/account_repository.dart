@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/account/account_failure.dart';
@@ -11,14 +13,51 @@ class AccountRepository implements IAccountRepository {
   Dio _httpClient;
 
   final String _getAccountPath = '/v1/account';
+  final String _changeAccountPasswordPath = '/v1/account/change-password';
 
   AccountRepository(this._httpClient);
 
   @override
-  Future<Either<AccountFailure, Unit>> changePassword(
-      {Account account, Password oldPassword, Password newPassword}) {
-    // TODO: implement changePassword
-    throw UnimplementedError();
+  Future<Either<AccountFailure, Unit>> changePassword({
+    Account account,
+    Password oldPassword,
+    Password newPassword
+  }) async {
+    try {
+       // prepare form data
+      final _data = jsonEncode({
+        'userId': account.id,
+        'oldPassword': oldPassword.getOrCrash(),
+        'newPassword': newPassword.getOrCrash(),
+      });
+
+      // call api service
+      final _response = await _httpClient.post(
+        _changeAccountPasswordPath,
+        data: _data
+      );
+
+      // check response
+      if (_response.data is Map<String, dynamic>) {
+        Map<String, dynamic> _d = _response.data;
+
+        if (_d.containsKey('response')) {
+          final Map<String, dynamic> _r = _d['response'];
+
+          if (_r.containsKey('code')) {
+            String _c = _r['code'];
+
+            if (_c.contains('NOT_FOUND')) {
+              return left(AccountFailure.serverError());
+            }
+          }
+        }
+      }
+
+      return right(unit);
+    } catch (e) {
+      return left(AccountFailure.serverError());
+    }
   }
 
   @override
@@ -59,7 +98,6 @@ class AccountRepository implements IAccountRepository {
 
   @override
   Future<Either<AccountFailure, Unit>> updateAccount({Account account}) {
-    // TODO: implement updateAccount
     throw UnimplementedError();
   }
 }
