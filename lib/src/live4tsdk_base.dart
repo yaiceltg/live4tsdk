@@ -1,12 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_repository.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
+import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
 
 class Live4tsdk {
   Dio httpClient;
 
   AuthRepository auth;
   AccountRepository account;
+  ForumRepository forum;
 
   Live4tsdk({String baseUrl}) {
     // create dio config
@@ -20,6 +22,7 @@ class Live4tsdk {
     // configure app
     auth = AuthRepository(httpClient);
     account = AccountRepository(httpClient);
+    forum = ForumRepository(httpClient);
   }
 
   bool get ready => true;
