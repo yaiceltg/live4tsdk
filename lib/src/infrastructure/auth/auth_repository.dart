@@ -118,7 +118,7 @@ class AuthRepository implements IAuthRepository {
           if (_r.containsKey('code')) {
             String _c = _r['code'];
 
-            if (_c.contains('USER_NOT_FOUND')) {
+            if (_c.contains('NOT_FOUND')) {
               return left(AuthFailure.userNotFound());
             }
 
