@@ -109,8 +109,9 @@ class ForumRepository implements IForumRepository {
         }
       }
 
-      return right(
-          (response.data as List).map((e) => QuestionDto.fromJson(e)).toList());
+      final _listQuestion =
+          (response.data as List).map((e) => QuestionDto.fromJson(e)).toList();
+      return right(_listQuestion);
     } catch (e) {
       return left(ForumFailure.serverError());
     }
