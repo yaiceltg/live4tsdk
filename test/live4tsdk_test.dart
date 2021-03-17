@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Live4tsdk sdk;
+    late Live4tsdk sdk;
 
     setUp(() {
       sdk = Live4tsdk();

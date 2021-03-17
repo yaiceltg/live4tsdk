@@ -6,7 +6,7 @@ import 'package:live4tsdk/src/domain/forum/question.dart';
 
 class ForumRepository implements IForumRepository {
   // http client
-  Dio _httpClient;
+  Dio? _httpClient;
 
   // question url
 

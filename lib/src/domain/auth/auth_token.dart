@@ -6,6 +6,6 @@ part 'auth_token.freezed.dart';
 @freezed
 abstract class AuthToken with _$AuthToken {
   const factory AuthToken({
-    @required AccessToken accessToken,
+    required AccessToken accessToken,
   }) = _AuthToken;
 }

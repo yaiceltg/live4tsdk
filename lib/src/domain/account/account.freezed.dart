@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'account.dart';
 
@@ -9,28 +9,30 @@ part of 'account.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AccountTearOff {
   const _$AccountTearOff();
 
-// ignore: unused_element
   _Account call(
-      {int id,
-      String name,
-      String lastName,
-      int typeUser,
-      String address,
-      String picture,
-      String phone,
-      String idNumber,
-      String userName,
-      String email,
-      String parent,
-      String parentPhone,
-      String experience,
-      DateTime emailVerifiedAt,
-      DateTime createdAt,
-      DateTime updatedAt}) {
+      {int? id,
+      String? name,
+      String? lastName,
+      int? typeUser,
+      String? address,
+      String? picture,
+      String? phone,
+      String? idNumber,
+      String? userName,
+      String? email,
+      String? parent,
+      String? parentPhone,
+      String? experience,
+      DateTime? emailVerifiedAt,
+      DateTime? createdAt,
+      DateTime? updatedAt}) {
     return _Account(
       id: id,
       name: name,
@@ -53,30 +55,29 @@ class _$AccountTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Account = _$AccountTearOff();
 
 /// @nodoc
 mixin _$Account {
-  int get id;
-  String get name;
-  String get lastName;
-  int get typeUser;
-  String get address;
-  String get picture;
-  String get phone;
-  String get idNumber;
-  String get userName;
-  String get email;
-  String get parent;
-  String get parentPhone;
-  String get experience;
-  DateTime get emailVerifiedAt;
-  DateTime get createdAt;
-  DateTime get updatedAt;
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
+  int? get typeUser => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
+  String? get picture => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
+  String? get idNumber => throw _privateConstructorUsedError;
+  String? get userName => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get parent => throw _privateConstructorUsedError;
+  String? get parentPhone => throw _privateConstructorUsedError;
+  String? get experience => throw _privateConstructorUsedError;
+  DateTime? get emailVerifiedAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AccountCopyWith<Account> get copyWith;
+  $AccountCopyWith<Account> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -84,22 +85,22 @@ abstract class $AccountCopyWith<$Res> {
   factory $AccountCopyWith(Account value, $Res Function(Account) then) =
       _$AccountCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String name,
-      String lastName,
-      int typeUser,
-      String address,
-      String picture,
-      String phone,
-      String idNumber,
-      String userName,
-      String email,
-      String parent,
-      String parentPhone,
-      String experience,
-      DateTime emailVerifiedAt,
-      DateTime createdAt,
-      DateTime updatedAt});
+      {int? id,
+      String? name,
+      String? lastName,
+      int? typeUser,
+      String? address,
+      String? picture,
+      String? phone,
+      String? idNumber,
+      String? userName,
+      String? email,
+      String? parent,
+      String? parentPhone,
+      String? experience,
+      DateTime? emailVerifiedAt,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -112,46 +113,88 @@ class _$AccountCopyWithImpl<$Res> implements $AccountCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object lastName = freezed,
-    Object typeUser = freezed,
-    Object address = freezed,
-    Object picture = freezed,
-    Object phone = freezed,
-    Object idNumber = freezed,
-    Object userName = freezed,
-    Object email = freezed,
-    Object parent = freezed,
-    Object parentPhone = freezed,
-    Object experience = freezed,
-    Object emailVerifiedAt = freezed,
-    Object createdAt = freezed,
-    Object updatedAt = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? lastName = freezed,
+    Object? typeUser = freezed,
+    Object? address = freezed,
+    Object? picture = freezed,
+    Object? phone = freezed,
+    Object? idNumber = freezed,
+    Object? userName = freezed,
+    Object? email = freezed,
+    Object? parent = freezed,
+    Object? parentPhone = freezed,
+    Object? experience = freezed,
+    Object? emailVerifiedAt = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
-      name: name == freezed ? _value.name : name as String,
-      lastName: lastName == freezed ? _value.lastName : lastName as String,
-      typeUser: typeUser == freezed ? _value.typeUser : typeUser as int,
-      address: address == freezed ? _value.address : address as String,
-      picture: picture == freezed ? _value.picture : picture as String,
-      phone: phone == freezed ? _value.phone : phone as String,
-      idNumber: idNumber == freezed ? _value.idNumber : idNumber as String,
-      userName: userName == freezed ? _value.userName : userName as String,
-      email: email == freezed ? _value.email : email as String,
-      parent: parent == freezed ? _value.parent : parent as String,
-      parentPhone:
-          parentPhone == freezed ? _value.parentPhone : parentPhone as String,
-      experience:
-          experience == freezed ? _value.experience : experience as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      typeUser: typeUser == freezed
+          ? _value.typeUser
+          : typeUser // ignore: cast_nullable_to_non_nullable
+              as int?,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      picture: picture == freezed
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idNumber: idNumber == freezed
+          ? _value.idNumber
+          : idNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parent: parent == freezed
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentPhone: parentPhone == freezed
+          ? _value.parentPhone
+          : parentPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as String?,
       emailVerifiedAt: emailVerifiedAt == freezed
           ? _value.emailVerifiedAt
-          : emailVerifiedAt as DateTime,
-      createdAt:
-          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      updatedAt:
-          updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
+          : emailVerifiedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -162,22 +205,22 @@ abstract class _$AccountCopyWith<$Res> implements $AccountCopyWith<$Res> {
       __$AccountCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String name,
-      String lastName,
-      int typeUser,
-      String address,
-      String picture,
-      String phone,
-      String idNumber,
-      String userName,
-      String email,
-      String parent,
-      String parentPhone,
-      String experience,
-      DateTime emailVerifiedAt,
-      DateTime createdAt,
-      DateTime updatedAt});
+      {int? id,
+      String? name,
+      String? lastName,
+      int? typeUser,
+      String? address,
+      String? picture,
+      String? phone,
+      String? idNumber,
+      String? userName,
+      String? email,
+      String? parent,
+      String? parentPhone,
+      String? experience,
+      DateTime? emailVerifiedAt,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -191,46 +234,88 @@ class __$AccountCopyWithImpl<$Res> extends _$AccountCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object lastName = freezed,
-    Object typeUser = freezed,
-    Object address = freezed,
-    Object picture = freezed,
-    Object phone = freezed,
-    Object idNumber = freezed,
-    Object userName = freezed,
-    Object email = freezed,
-    Object parent = freezed,
-    Object parentPhone = freezed,
-    Object experience = freezed,
-    Object emailVerifiedAt = freezed,
-    Object createdAt = freezed,
-    Object updatedAt = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? lastName = freezed,
+    Object? typeUser = freezed,
+    Object? address = freezed,
+    Object? picture = freezed,
+    Object? phone = freezed,
+    Object? idNumber = freezed,
+    Object? userName = freezed,
+    Object? email = freezed,
+    Object? parent = freezed,
+    Object? parentPhone = freezed,
+    Object? experience = freezed,
+    Object? emailVerifiedAt = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_Account(
-      id: id == freezed ? _value.id : id as int,
-      name: name == freezed ? _value.name : name as String,
-      lastName: lastName == freezed ? _value.lastName : lastName as String,
-      typeUser: typeUser == freezed ? _value.typeUser : typeUser as int,
-      address: address == freezed ? _value.address : address as String,
-      picture: picture == freezed ? _value.picture : picture as String,
-      phone: phone == freezed ? _value.phone : phone as String,
-      idNumber: idNumber == freezed ? _value.idNumber : idNumber as String,
-      userName: userName == freezed ? _value.userName : userName as String,
-      email: email == freezed ? _value.email : email as String,
-      parent: parent == freezed ? _value.parent : parent as String,
-      parentPhone:
-          parentPhone == freezed ? _value.parentPhone : parentPhone as String,
-      experience:
-          experience == freezed ? _value.experience : experience as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      typeUser: typeUser == freezed
+          ? _value.typeUser
+          : typeUser // ignore: cast_nullable_to_non_nullable
+              as int?,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      picture: picture == freezed
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idNumber: idNumber == freezed
+          ? _value.idNumber
+          : idNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parent: parent == freezed
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentPhone: parentPhone == freezed
+          ? _value.parentPhone
+          : parentPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      experience: experience == freezed
+          ? _value.experience
+          : experience // ignore: cast_nullable_to_non_nullable
+              as String?,
       emailVerifiedAt: emailVerifiedAt == freezed
           ? _value.emailVerifiedAt
-          : emailVerifiedAt as DateTime,
-      createdAt:
-          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      updatedAt:
-          updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
+          : emailVerifiedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -256,37 +341,37 @@ class _$_Account implements _Account {
       this.updatedAt});
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String lastName;
+  final String? lastName;
   @override
-  final int typeUser;
+  final int? typeUser;
   @override
-  final String address;
+  final String? address;
   @override
-  final String picture;
+  final String? picture;
   @override
-  final String phone;
+  final String? phone;
   @override
-  final String idNumber;
+  final String? idNumber;
   @override
-  final String userName;
+  final String? userName;
   @override
-  final String email;
+  final String? email;
   @override
-  final String parent;
+  final String? parent;
   @override
-  final String parentPhone;
+  final String? parentPhone;
   @override
-  final String experience;
+  final String? experience;
   @override
-  final DateTime emailVerifiedAt;
+  final DateTime? emailVerifiedAt;
   @override
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
 
   @override
   String toString() {
@@ -370,56 +455,57 @@ class _$_Account implements _Account {
 
 abstract class _Account implements Account {
   const factory _Account(
-      {int id,
-      String name,
-      String lastName,
-      int typeUser,
-      String address,
-      String picture,
-      String phone,
-      String idNumber,
-      String userName,
-      String email,
-      String parent,
-      String parentPhone,
-      String experience,
-      DateTime emailVerifiedAt,
-      DateTime createdAt,
-      DateTime updatedAt}) = _$_Account;
+      {int? id,
+      String? name,
+      String? lastName,
+      int? typeUser,
+      String? address,
+      String? picture,
+      String? phone,
+      String? idNumber,
+      String? userName,
+      String? email,
+      String? parent,
+      String? parentPhone,
+      String? experience,
+      DateTime? emailVerifiedAt,
+      DateTime? createdAt,
+      DateTime? updatedAt}) = _$_Account;
 
   @override
-  int get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get lastName;
+  String? get lastName => throw _privateConstructorUsedError;
   @override
-  int get typeUser;
+  int? get typeUser => throw _privateConstructorUsedError;
   @override
-  String get address;
+  String? get address => throw _privateConstructorUsedError;
   @override
-  String get picture;
+  String? get picture => throw _privateConstructorUsedError;
   @override
-  String get phone;
+  String? get phone => throw _privateConstructorUsedError;
   @override
-  String get idNumber;
+  String? get idNumber => throw _privateConstructorUsedError;
   @override
-  String get userName;
+  String? get userName => throw _privateConstructorUsedError;
   @override
-  String get email;
+  String? get email => throw _privateConstructorUsedError;
   @override
-  String get parent;
+  String? get parent => throw _privateConstructorUsedError;
   @override
-  String get parentPhone;
+  String? get parentPhone => throw _privateConstructorUsedError;
   @override
-  String get experience;
+  String? get experience => throw _privateConstructorUsedError;
   @override
-  DateTime get emailVerifiedAt;
+  DateTime? get emailVerifiedAt => throw _privateConstructorUsedError;
   @override
-  DateTime get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
-  DateTime get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AccountCopyWith<_Account> get copyWith;
+  _$AccountCopyWith<_Account> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'question_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'question_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
   return _QuestionDto.fromJson(json);
 }
@@ -16,18 +20,17 @@ QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
 class _$QuestionDtoTearOff {
   const _$QuestionDtoTearOff();
 
-// ignore: unused_element
   _QuestionDto call(
-      {String id,
-      String title,
-      String body,
-      int views,
-      int votesCount,
-      int answerCount,
-      String bestAnswer,
-      String userId,
-      DateTime createdAt,
-      DateTime updatedAt}) {
+      {String? id,
+      String? title,
+      String? body,
+      int? views,
+      int? votesCount,
+      int? answerCount,
+      String? bestAnswer,
+      String? userId,
+      DateTime? createdAt,
+      DateTime? updatedAt}) {
     return _QuestionDto(
       id: id,
       title: title,
@@ -42,32 +45,31 @@ class _$QuestionDtoTearOff {
     );
   }
 
-// ignore: unused_element
   QuestionDto fromJson(Map<String, Object> json) {
     return QuestionDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $QuestionDto = _$QuestionDtoTearOff();
 
 /// @nodoc
 mixin _$QuestionDto {
-  String get id;
-  String get title;
-  String get body;
-  int get views;
-  int get votesCount;
-  int get answerCount;
-  String get bestAnswer;
-  String get userId;
-  DateTime get createdAt;
-  DateTime get updatedAt;
+  String? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+  int? get views => throw _privateConstructorUsedError;
+  int? get votesCount => throw _privateConstructorUsedError;
+  int? get answerCount => throw _privateConstructorUsedError;
+  String? get bestAnswer => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QuestionDtoCopyWith<QuestionDto> get copyWith;
+  $QuestionDtoCopyWith<QuestionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -76,16 +78,16 @@ abstract class $QuestionDtoCopyWith<$Res> {
           QuestionDto value, $Res Function(QuestionDto) then) =
       _$QuestionDtoCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String title,
-      String body,
-      int views,
-      int votesCount,
-      int answerCount,
-      String bestAnswer,
-      String userId,
-      DateTime createdAt,
-      DateTime updatedAt});
+      {String? id,
+      String? title,
+      String? body,
+      int? views,
+      int? votesCount,
+      int? answerCount,
+      String? bestAnswer,
+      String? userId,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -98,32 +100,58 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object body = freezed,
-    Object views = freezed,
-    Object votesCount = freezed,
-    Object answerCount = freezed,
-    Object bestAnswer = freezed,
-    Object userId = freezed,
-    Object createdAt = freezed,
-    Object updatedAt = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
+    Object? views = freezed,
+    Object? votesCount = freezed,
+    Object? answerCount = freezed,
+    Object? bestAnswer = freezed,
+    Object? userId = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
-      body: body == freezed ? _value.body : body as String,
-      views: views == freezed ? _value.views : views as int,
-      votesCount: votesCount == freezed ? _value.votesCount : votesCount as int,
-      answerCount:
-          answerCount == freezed ? _value.answerCount : answerCount as int,
-      bestAnswer:
-          bestAnswer == freezed ? _value.bestAnswer : bestAnswer as String,
-      userId: userId == freezed ? _value.userId : userId as String,
-      createdAt:
-          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      updatedAt:
-          updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      views: views == freezed
+          ? _value.views
+          : views // ignore: cast_nullable_to_non_nullable
+              as int?,
+      votesCount: votesCount == freezed
+          ? _value.votesCount
+          : votesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      answerCount: answerCount == freezed
+          ? _value.answerCount
+          : answerCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      bestAnswer: bestAnswer == freezed
+          ? _value.bestAnswer
+          : bestAnswer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -136,16 +164,16 @@ abstract class _$QuestionDtoCopyWith<$Res>
       __$QuestionDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String title,
-      String body,
-      int views,
-      int votesCount,
-      int answerCount,
-      String bestAnswer,
-      String userId,
-      DateTime createdAt,
-      DateTime updatedAt});
+      {String? id,
+      String? title,
+      String? body,
+      int? views,
+      int? votesCount,
+      int? answerCount,
+      String? bestAnswer,
+      String? userId,
+      DateTime? createdAt,
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -160,32 +188,58 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object title = freezed,
-    Object body = freezed,
-    Object views = freezed,
-    Object votesCount = freezed,
-    Object answerCount = freezed,
-    Object bestAnswer = freezed,
-    Object userId = freezed,
-    Object createdAt = freezed,
-    Object updatedAt = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
+    Object? views = freezed,
+    Object? votesCount = freezed,
+    Object? answerCount = freezed,
+    Object? bestAnswer = freezed,
+    Object? userId = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_QuestionDto(
-      id: id == freezed ? _value.id : id as String,
-      title: title == freezed ? _value.title : title as String,
-      body: body == freezed ? _value.body : body as String,
-      views: views == freezed ? _value.views : views as int,
-      votesCount: votesCount == freezed ? _value.votesCount : votesCount as int,
-      answerCount:
-          answerCount == freezed ? _value.answerCount : answerCount as int,
-      bestAnswer:
-          bestAnswer == freezed ? _value.bestAnswer : bestAnswer as String,
-      userId: userId == freezed ? _value.userId : userId as String,
-      createdAt:
-          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      updatedAt:
-          updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      views: views == freezed
+          ? _value.views
+          : views // ignore: cast_nullable_to_non_nullable
+              as int?,
+      votesCount: votesCount == freezed
+          ? _value.votesCount
+          : votesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      answerCount: answerCount == freezed
+          ? _value.answerCount
+          : answerCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      bestAnswer: bestAnswer == freezed
+          ? _value.bestAnswer
+          : bestAnswer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -211,25 +265,25 @@ class _$_QuestionDto extends _QuestionDto {
       _$_$_QuestionDtoFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String title;
+  final String? title;
   @override
-  final String body;
+  final String? body;
   @override
-  final int views;
+  final int? views;
   @override
-  final int votesCount;
+  final int? votesCount;
   @override
-  final int answerCount;
+  final int? answerCount;
   @override
-  final String bestAnswer;
+  final String? bestAnswer;
   @override
-  final String userId;
+  final String? userId;
   @override
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
 
   @override
   String toString() {
@@ -293,43 +347,44 @@ class _$_QuestionDto extends _QuestionDto {
 }
 
 abstract class _QuestionDto extends QuestionDto {
-  const _QuestionDto._() : super._();
   const factory _QuestionDto(
-      {String id,
-      String title,
-      String body,
-      int views,
-      int votesCount,
-      int answerCount,
-      String bestAnswer,
-      String userId,
-      DateTime createdAt,
-      DateTime updatedAt}) = _$_QuestionDto;
+      {String? id,
+      String? title,
+      String? body,
+      int? views,
+      int? votesCount,
+      int? answerCount,
+      String? bestAnswer,
+      String? userId,
+      DateTime? createdAt,
+      DateTime? updatedAt}) = _$_QuestionDto;
+  const _QuestionDto._() : super._();
 
   factory _QuestionDto.fromJson(Map<String, dynamic> json) =
       _$_QuestionDto.fromJson;
 
   @override
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
-  String get body;
+  String? get body => throw _privateConstructorUsedError;
   @override
-  int get views;
+  int? get views => throw _privateConstructorUsedError;
   @override
-  int get votesCount;
+  int? get votesCount => throw _privateConstructorUsedError;
   @override
-  int get answerCount;
+  int? get answerCount => throw _privateConstructorUsedError;
   @override
-  String get bestAnswer;
+  String? get bestAnswer => throw _privateConstructorUsedError;
   @override
-  String get userId;
+  String? get userId => throw _privateConstructorUsedError;
   @override
-  DateTime get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
-  DateTime get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$QuestionDtoCopyWith<_QuestionDto> get copyWith;
+  _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

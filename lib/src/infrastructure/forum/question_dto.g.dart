@@ -8,14 +8,14 @@ part of 'question_dto.dart';
 
 _$_QuestionDto _$_$_QuestionDtoFromJson(Map<String, dynamic> json) {
   return _$_QuestionDto(
-    id: json['id'] as String,
-    title: json['title'] as String,
-    body: json['body'] as String,
-    views: json['views'] as int,
-    votesCount: json['votesCount'] as int,
-    answerCount: json['answerCount'] as int,
-    bestAnswer: json['bestAnswer'] as String,
-    userId: json['userId'] as String,
+    id: json['id'] as String?,
+    title: json['title'] as String?,
+    body: json['body'] as String?,
+    views: json['views'] as int?,
+    votesCount: json['votesCount'] as int?,
+    answerCount: json['answerCount'] as int?,
+    bestAnswer: json['bestAnswer'] as String?,
+    userId: json['userId'] as String?,
     createdAt: json['createdAt'] == null
         ? null
         : DateTime.parse(json['createdAt'] as String),

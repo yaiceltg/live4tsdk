@@ -10,7 +10,7 @@ import 'package:live4tsdk/src/infrastructure/account/account_dto.dart';
 
 class AccountRepository implements IAccountRepository {
   // http client
-  Dio _httpClient;
+  Dio? _httpClient;
 
   final String _getAccountPath = '/v1/account';
   final String _changeAccountPasswordPath = '/v1/account/change-password';
@@ -19,9 +19,9 @@ class AccountRepository implements IAccountRepository {
 
   @override
   Future<Either<AccountFailure, Unit>> changePassword({
-    Account account,
-    Password oldPassword,
-    Password newPassword
+    required Account account,
+    required Password oldPassword,
+    required Password newPassword
   }) async {
     try {
        // prepare form data
@@ -32,7 +32,7 @@ class AccountRepository implements IAccountRepository {
       });
 
       // call api service
-      final _response = await _httpClient.post(
+      final _response = await _httpClient!.post(
         _changeAccountPasswordPath,
         data: _data
       );
@@ -61,17 +61,17 @@ class AccountRepository implements IAccountRepository {
   }
 
   @override
-  Future<Either<AccountFailure, Unit>> createAccount({Account account}) {
+  Future<Either<AccountFailure, Unit>> createAccount({Account? account}) {
     // TODO: implement createAccount
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<AccountFailure, Account>> getAccount({Options options}) async {
+  Future<Either<AccountFailure, Account>> getAccount({Options? options}) async {
     try {
       // call api service
       final _response =
-          await _httpClient.get(_getAccountPath, options: options);
+          await _httpClient!.get(_getAccountPath, options: options);
       // check response
       if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;
@@ -97,7 +97,7 @@ class AccountRepository implements IAccountRepository {
   }
 
   @override
-  Future<Either<AccountFailure, Unit>> updateAccount({Account account}) {
+  Future<Either<AccountFailure, Unit>> updateAccount({Account? account}) {
     throw UnimplementedError();
   }
 }

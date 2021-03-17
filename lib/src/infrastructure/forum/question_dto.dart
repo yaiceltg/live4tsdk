@@ -9,16 +9,16 @@ abstract class QuestionDto implements _$QuestionDto {
   const QuestionDto._();
 
   const factory QuestionDto({
-    String id,
-    String title,
-    String body,
-    int views,
-    int votesCount,
-    int answerCount,
-    String bestAnswer,
-    String userId,
-    DateTime createdAt,
-    DateTime updatedAt
+    String? id,
+    String? title,
+    String? body,
+    int? views,
+    int? votesCount,
+    int? answerCount,
+    String? bestAnswer,
+    String? userId,
+    DateTime? createdAt,
+    DateTime? updatedAt
   }) = _QuestionDto;
 
   factory QuestionDto.fromDomain(Question question) {

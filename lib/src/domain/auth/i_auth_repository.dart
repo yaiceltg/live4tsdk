@@ -6,16 +6,16 @@ import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 
 abstract class IAuthRepository {
   Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   });
 
   Future<Either<AuthFailure, Unit>> forgotPassword({
-    @required EmailAddress emailAddress,
+    required EmailAddress emailAddress,
   });
 
   Future<Either<AuthFailure, Unit>> resetPassword({
-    @required ResetPasswordCode code,
-    @required Password password,
+    required ResetPasswordCode code,
+    required Password password,
   });
 }

@@ -10,7 +10,7 @@ abstract class AuthTokenDto implements _$AuthTokenDto {
   const AuthTokenDto._();
 
   const factory AuthTokenDto({
-    @required String accessToken,
+    required String accessToken,
   }) = _AuthTokenDto;
 
   factory AuthTokenDto.fromDomain(AuthToken authToken) {

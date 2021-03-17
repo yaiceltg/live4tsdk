@@ -8,19 +8,19 @@ part of 'account_dto.dart';
 
 _$_AccountDto _$_$_AccountDtoFromJson(Map<String, dynamic> json) {
   return _$_AccountDto(
-    id: json['id'] as int,
-    name: json['name'] as String,
-    lastName: json['lastName'] as String,
-    typeUser: json['typeUser'] as int,
-    address: json['address'] as String,
-    picture: json['picture'] as String,
-    phone: json['phone'] as String,
-    idNumber: json['idNumber'] as String,
-    userName: json['userName'] as String,
-    email: json['email'] as String,
-    parent: json['parent'] as String,
-    parentPhone: json['parentPhone'] as String,
-    experience: json['experience'] as String,
+    id: json['id'] as int?,
+    name: json['name'] as String?,
+    lastName: json['lastName'] as String?,
+    typeUser: json['typeUser'] as int?,
+    address: json['address'] as String?,
+    picture: json['picture'] as String?,
+    phone: json['phone'] as String?,
+    idNumber: json['idNumber'] as String?,
+    userName: json['userName'] as String?,
+    email: json['email'] as String?,
+    parent: json['parent'] as String?,
+    parentPhone: json['parentPhone'] as String?,
+    experience: json['experience'] as String?,
     emailVerifiedAt: json['emailVerifiedAt'] == null
         ? null
         : DateTime.parse(json['emailVerifiedAt'] as String),

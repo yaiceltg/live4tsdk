@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'answer.dart';
 
@@ -9,20 +9,22 @@ part of 'answer.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AnswerTearOff {
   const _$AnswerTearOff();
 
-// ignore: unused_element
   _Answer call(
-      {String id,
-      String queId,
-      String userId,
-      String body,
-      int votesCount,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String bestAnswer}) {
+      {String? id,
+      String? queId,
+      String? userId,
+      String? body,
+      int? votesCount,
+      DateTime? createdAt,
+      DateTime? updatedAt,
+      String? bestAnswer}) {
     return _Answer(
       id: id,
       queId: queId,
@@ -37,22 +39,21 @@ class _$AnswerTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Answer = _$AnswerTearOff();
 
 /// @nodoc
 mixin _$Answer {
-  String get id;
-  String get queId;
-  String get userId;
-  String get body;
-  int get votesCount;
-  DateTime get createdAt;
-  DateTime get updatedAt;
-  String get bestAnswer;
+  String? get id => throw _privateConstructorUsedError;
+  String? get queId => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+  int? get votesCount => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  String? get bestAnswer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AnswerCopyWith<Answer> get copyWith;
+  $AnswerCopyWith<Answer> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -60,14 +61,14 @@ abstract class $AnswerCopyWith<$Res> {
   factory $AnswerCopyWith(Answer value, $Res Function(Answer) then) =
       _$AnswerCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String queId,
-      String userId,
-      String body,
-      int votesCount,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String bestAnswer});
+      {String? id,
+      String? queId,
+      String? userId,
+      String? body,
+      int? votesCount,
+      DateTime? createdAt,
+      DateTime? updatedAt,
+      String? bestAnswer});
 }
 
 /// @nodoc
@@ -80,27 +81,48 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object queId = freezed,
-    Object userId = freezed,
-    Object body = freezed,
-    Object votesCount = freezed,
-    Object createdAt = freezed,
-    Object updatedAt = freezed,
-    Object bestAnswer = freezed,
+    Object? id = freezed,
+    Object? queId = freezed,
+    Object? userId = freezed,
+    Object? body = freezed,
+    Object? votesCount = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? bestAnswer = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      queId: queId == freezed ? _value.queId : queId as String,
-      userId: userId == freezed ? _value.userId : userId as String,
-      body: body == freezed ? _value.body : body as String,
-      votesCount: votesCount == freezed ? _value.votesCount : votesCount as int,
-      createdAt:
-          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      updatedAt:
-          updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
-      bestAnswer:
-          bestAnswer == freezed ? _value.bestAnswer : bestAnswer as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      queId: queId == freezed
+          ? _value.queId
+          : queId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      votesCount: votesCount == freezed
+          ? _value.votesCount
+          : votesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      bestAnswer: bestAnswer == freezed
+          ? _value.bestAnswer
+          : bestAnswer // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -111,14 +133,14 @@ abstract class _$AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
       __$AnswerCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String queId,
-      String userId,
-      String body,
-      int votesCount,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String bestAnswer});
+      {String? id,
+      String? queId,
+      String? userId,
+      String? body,
+      int? votesCount,
+      DateTime? createdAt,
+      DateTime? updatedAt,
+      String? bestAnswer});
 }
 
 /// @nodoc
@@ -132,27 +154,48 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object queId = freezed,
-    Object userId = freezed,
-    Object body = freezed,
-    Object votesCount = freezed,
-    Object createdAt = freezed,
-    Object updatedAt = freezed,
-    Object bestAnswer = freezed,
+    Object? id = freezed,
+    Object? queId = freezed,
+    Object? userId = freezed,
+    Object? body = freezed,
+    Object? votesCount = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? bestAnswer = freezed,
   }) {
     return _then(_Answer(
-      id: id == freezed ? _value.id : id as String,
-      queId: queId == freezed ? _value.queId : queId as String,
-      userId: userId == freezed ? _value.userId : userId as String,
-      body: body == freezed ? _value.body : body as String,
-      votesCount: votesCount == freezed ? _value.votesCount : votesCount as int,
-      createdAt:
-          createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      updatedAt:
-          updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
-      bestAnswer:
-          bestAnswer == freezed ? _value.bestAnswer : bestAnswer as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      queId: queId == freezed
+          ? _value.queId
+          : queId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      votesCount: votesCount == freezed
+          ? _value.votesCount
+          : votesCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      bestAnswer: bestAnswer == freezed
+          ? _value.bestAnswer
+          : bestAnswer // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -170,21 +213,21 @@ class _$_Answer implements _Answer {
       this.bestAnswer});
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String queId;
+  final String? queId;
   @override
-  final String userId;
+  final String? userId;
   @override
-  final String body;
+  final String? body;
   @override
-  final int votesCount;
+  final int? votesCount;
   @override
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
   @override
-  final String bestAnswer;
+  final String? bestAnswer;
 
   @override
   String toString() {
@@ -237,32 +280,32 @@ class _$_Answer implements _Answer {
 
 abstract class _Answer implements Answer {
   const factory _Answer(
-      {String id,
-      String queId,
-      String userId,
-      String body,
-      int votesCount,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String bestAnswer}) = _$_Answer;
+      {String? id,
+      String? queId,
+      String? userId,
+      String? body,
+      int? votesCount,
+      DateTime? createdAt,
+      DateTime? updatedAt,
+      String? bestAnswer}) = _$_Answer;
 
   @override
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get queId;
+  String? get queId => throw _privateConstructorUsedError;
   @override
-  String get userId;
+  String? get userId => throw _privateConstructorUsedError;
   @override
-  String get body;
+  String? get body => throw _privateConstructorUsedError;
   @override
-  int get votesCount;
+  int? get votesCount => throw _privateConstructorUsedError;
   @override
-  DateTime get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
-  DateTime get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
-  String get bestAnswer;
+  String? get bestAnswer => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AnswerCopyWith<_Answer> get copyWith;
+  _$AnswerCopyWith<_Answer> get copyWith => throw _privateConstructorUsedError;
 }

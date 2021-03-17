@@ -10,7 +10,7 @@ import 'package:live4tsdk/src/infrastructure/auth/auth_token_dto.dart';
 
 class AuthRepository implements IAuthRepository {
   // http client
-  Dio _httpClient;
+  Dio? _httpClient;
 
   // url routes
   final String _authLoginPath = '/v1/auth/login';
@@ -21,7 +21,7 @@ class AuthRepository implements IAuthRepository {
 
   @override
   Future<Either<AuthFailure, Unit>> forgotPassword(
-      {@required EmailAddress emailAddress}) async {
+      {required EmailAddress emailAddress}) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -29,7 +29,7 @@ class AuthRepository implements IAuthRepository {
       });
 
       // call api service
-      final _response = await _httpClient.post(
+      final _response = await _httpClient!.post(
         _forgotPasswordPath,
         data: _data,
       );
@@ -56,8 +56,8 @@ class AuthRepository implements IAuthRepository {
 
   @override
   Future<Either<AuthFailure, Unit>> resetPassword({
-    @required ResetPasswordCode code,
-    @required Password password,
+    required ResetPasswordCode code,
+    required Password password,
   }) async {
     try {
       // prepare form data
@@ -67,7 +67,7 @@ class AuthRepository implements IAuthRepository {
       });
 
       // call api service
-      final _response = await _httpClient.post(
+      final _response = await _httpClient!.post(
         _resetPasswordPath,
         data: _data,
       );
@@ -94,8 +94,8 @@ class AuthRepository implements IAuthRepository {
 
   @override
   Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword(
-      {@required EmailAddress emailAddress,
-      @required Password password}) async {
+      {required EmailAddress emailAddress,
+      required Password password}) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -104,7 +104,7 @@ class AuthRepository implements IAuthRepository {
       });
 
       // call api service
-      final _response = await _httpClient.post(
+      final _response = await _httpClient!.post(
         _authLoginPath,
         data: _data,
       );

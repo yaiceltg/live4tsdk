@@ -4,13 +4,13 @@ import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
 import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
 
 class Live4tsdk {
-  Dio httpClient;
+  Dio? httpClient;
 
-  AuthRepository auth;
-  AccountRepository account;
-  ForumRepository forum;
+  late AuthRepository auth;
+  late AccountRepository account;
+  ForumRepository? forum;
 
-  Live4tsdk({String baseUrl}) {
+  Live4tsdk({required String baseUrl}) {
     // create dio config
     final _options = BaseOptions(
       baseUrl: baseUrl,
@@ -28,7 +28,7 @@ class Live4tsdk {
   bool get ready => true;
 
   void addHeaderAuthorization(String token) {
-    httpClient.options.headers.addAll({
+    httpClient!.options.headers.addAll({
       'Authorization': 'Bearer $token'
     });
   }

@@ -9,22 +9,22 @@ abstract class AccountDto implements _$AccountDto {
   const AccountDto._();
 
   const factory AccountDto({
-    int id,
-    String name,
-    String lastName,
-    int typeUser,
-    String address,
-    String picture,
-    String phone,
-    String idNumber,
-    String userName,
-    String email,
-    String parent,
-    String parentPhone,
-    String experience,
-    DateTime emailVerifiedAt,
-    DateTime createdAt,
-    DateTime updatedAt,
+    int? id,
+    String? name,
+    String? lastName,
+    int? typeUser,
+    String? address,
+    String? picture,
+    String? phone,
+    String? idNumber,
+    String? userName,
+    String? email,
+    String? parent,
+    String? parentPhone,
+    String? experience,
+    DateTime? emailVerifiedAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
   }) = _AccountDto;
 
   factory AccountDto.fromDomain(Account account) {

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'auth_token.dart';
 
@@ -9,12 +9,14 @@ part of 'auth_token.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AuthTokenTearOff {
   const _$AuthTokenTearOff();
 
-// ignore: unused_element
-  _AuthToken call({@required AccessToken accessToken}) {
+  _AuthToken call({required AccessToken accessToken}) {
     return _AuthToken(
       accessToken: accessToken,
     );
@@ -22,15 +24,15 @@ class _$AuthTokenTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AuthToken = _$AuthTokenTearOff();
 
 /// @nodoc
 mixin _$AuthToken {
-  AccessToken get accessToken;
+  AccessToken get accessToken => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AuthTokenCopyWith<AuthToken> get copyWith;
+  $AuthTokenCopyWith<AuthToken> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -50,12 +52,13 @@ class _$AuthTokenCopyWithImpl<$Res> implements $AuthTokenCopyWith<$Res> {
 
   @override
   $Res call({
-    Object accessToken = freezed,
+    Object? accessToken = freezed,
   }) {
     return _then(_value.copyWith(
       accessToken: accessToken == freezed
           ? _value.accessToken
-          : accessToken as AccessToken,
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as AccessToken,
     ));
   }
 }
@@ -80,20 +83,20 @@ class __$AuthTokenCopyWithImpl<$Res> extends _$AuthTokenCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object accessToken = freezed,
+    Object? accessToken = freezed,
   }) {
     return _then(_AuthToken(
       accessToken: accessToken == freezed
           ? _value.accessToken
-          : accessToken as AccessToken,
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as AccessToken,
     ));
   }
 }
 
 /// @nodoc
 class _$_AuthToken implements _AuthToken {
-  const _$_AuthToken({@required this.accessToken})
-      : assert(accessToken != null);
+  const _$_AuthToken({required this.accessToken});
 
   @override
   final AccessToken accessToken;
@@ -123,11 +126,12 @@ class _$_AuthToken implements _AuthToken {
 }
 
 abstract class _AuthToken implements AuthToken {
-  const factory _AuthToken({@required AccessToken accessToken}) = _$_AuthToken;
+  const factory _AuthToken({required AccessToken accessToken}) = _$_AuthToken;
 
   @override
-  AccessToken get accessToken;
+  AccessToken get accessToken => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AuthTokenCopyWith<_AuthToken> get copyWith;
+  _$AuthTokenCopyWith<_AuthToken> get copyWith =>
+      throw _privateConstructorUsedError;
 }
