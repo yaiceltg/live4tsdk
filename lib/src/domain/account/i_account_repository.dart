@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/account/account_failure.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';

@@ -39,6 +39,14 @@ class _$AuthFailureTearOff {
   _UserNotFound userNotFound() {
     return const _UserNotFound();
   }
+
+  _InvalidAuthToken invalidAuthToken() {
+    return const _InvalidAuthToken();
+  }
+
+  _ExpireToken expireToken() {
+    return const _ExpireToken();
+  }
 }
 
 /// @nodoc
@@ -54,6 +62,8 @@ mixin _$AuthFailure {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +74,8 @@ mixin _$AuthFailure {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,6 +88,8 @@ mixin _$AuthFailure {
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +101,8 @@ mixin _$AuthFailure {
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,6 +169,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) {
     return cancelledByUser();
   }
@@ -166,6 +184,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) {
     if (cancelledByUser != null) {
@@ -184,6 +204,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) {
     return cancelledByUser(this);
   }
@@ -198,6 +220,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) {
     if (cancelledByUser != null) {
@@ -255,6 +279,8 @@ class _$_ServerError implements _ServerError {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) {
     return serverError();
   }
@@ -268,6 +294,8 @@ class _$_ServerError implements _ServerError {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -286,6 +314,8 @@ class _$_ServerError implements _ServerError {
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) {
     return serverError(this);
   }
@@ -300,6 +330,8 @@ class _$_ServerError implements _ServerError {
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -357,6 +389,8 @@ class _$_TokenNotFound implements _TokenNotFound {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) {
     return tokenNotFound();
   }
@@ -370,6 +404,8 @@ class _$_TokenNotFound implements _TokenNotFound {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) {
     if (tokenNotFound != null) {
@@ -388,6 +424,8 @@ class _$_TokenNotFound implements _TokenNotFound {
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) {
     return tokenNotFound(this);
   }
@@ -402,6 +440,8 @@ class _$_TokenNotFound implements _TokenNotFound {
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) {
     if (tokenNotFound != null) {
@@ -460,6 +500,8 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) {
     return emailAlreadyInUse();
   }
@@ -473,6 +515,8 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) {
     if (emailAlreadyInUse != null) {
@@ -491,6 +535,8 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) {
     return emailAlreadyInUse(this);
   }
@@ -505,6 +551,8 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) {
     if (emailAlreadyInUse != null) {
@@ -568,6 +616,8 @@ class _$_InvalidEmailAndPasswordCombination
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) {
     return invalidEmailAndPasswordCombination();
   }
@@ -581,6 +631,8 @@ class _$_InvalidEmailAndPasswordCombination
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) {
     if (invalidEmailAndPasswordCombination != null) {
@@ -599,6 +651,8 @@ class _$_InvalidEmailAndPasswordCombination
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) {
     return invalidEmailAndPasswordCombination(this);
   }
@@ -613,6 +667,8 @@ class _$_InvalidEmailAndPasswordCombination
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) {
     if (invalidEmailAndPasswordCombination != null) {
@@ -671,6 +727,8 @@ class _$_UserNotFound implements _UserNotFound {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
   }) {
     return userNotFound();
   }
@@ -684,6 +742,8 @@ class _$_UserNotFound implements _UserNotFound {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
     required TResult orElse(),
   }) {
     if (userNotFound != null) {
@@ -702,6 +762,8 @@ class _$_UserNotFound implements _UserNotFound {
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
     required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
   }) {
     return userNotFound(this);
   }
@@ -716,6 +778,8 @@ class _$_UserNotFound implements _UserNotFound {
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
     required TResult orElse(),
   }) {
     if (userNotFound != null) {
@@ -727,4 +791,225 @@ class _$_UserNotFound implements _UserNotFound {
 
 abstract class _UserNotFound implements AuthFailure {
   const factory _UserNotFound() = _$_UserNotFound;
+}
+
+/// @nodoc
+abstract class _$InvalidAuthTokenCopyWith<$Res> {
+  factory _$InvalidAuthTokenCopyWith(
+          _InvalidAuthToken value, $Res Function(_InvalidAuthToken) then) =
+      __$InvalidAuthTokenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InvalidAuthTokenCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$InvalidAuthTokenCopyWith<$Res> {
+  __$InvalidAuthTokenCopyWithImpl(
+      _InvalidAuthToken _value, $Res Function(_InvalidAuthToken) _then)
+      : super(_value, (v) => _then(v as _InvalidAuthToken));
+
+  @override
+  _InvalidAuthToken get _value => super._value as _InvalidAuthToken;
+}
+
+/// @nodoc
+class _$_InvalidAuthToken implements _InvalidAuthToken {
+  const _$_InvalidAuthToken();
+
+  @override
+  String toString() {
+    return 'AuthFailure.invalidAuthToken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidAuthToken);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() tokenNotFound,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
+    required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
+  }) {
+    return invalidAuthToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? tokenNotFound,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
+    required TResult orElse(),
+  }) {
+    if (invalidAuthToken != null) {
+      return invalidAuthToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_TokenNotFound value) tokenNotFound,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+    required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
+  }) {
+    return invalidAuthToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_TokenNotFound value)? tokenNotFound,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
+    required TResult orElse(),
+  }) {
+    if (invalidAuthToken != null) {
+      return invalidAuthToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidAuthToken implements AuthFailure {
+  const factory _InvalidAuthToken() = _$_InvalidAuthToken;
+}
+
+/// @nodoc
+abstract class _$ExpireTokenCopyWith<$Res> {
+  factory _$ExpireTokenCopyWith(
+          _ExpireToken value, $Res Function(_ExpireToken) then) =
+      __$ExpireTokenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ExpireTokenCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$ExpireTokenCopyWith<$Res> {
+  __$ExpireTokenCopyWithImpl(
+      _ExpireToken _value, $Res Function(_ExpireToken) _then)
+      : super(_value, (v) => _then(v as _ExpireToken));
+
+  @override
+  _ExpireToken get _value => super._value as _ExpireToken;
+}
+
+/// @nodoc
+class _$_ExpireToken implements _ExpireToken {
+  const _$_ExpireToken();
+
+  @override
+  String toString() {
+    return 'AuthFailure.expireToken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ExpireToken);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() tokenNotFound,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
+    required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
+  }) {
+    return expireToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? tokenNotFound,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
+    required TResult orElse(),
+  }) {
+    if (expireToken != null) {
+      return expireToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_TokenNotFound value) tokenNotFound,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+    required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
+  }) {
+    return expireToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_TokenNotFound value)? tokenNotFound,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
+    required TResult orElse(),
+  }) {
+    if (expireToken != null) {
+      return expireToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExpireToken implements AuthFailure {
+  const factory _ExpireToken() = _$_ExpireToken;
 }

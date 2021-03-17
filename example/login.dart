@@ -23,7 +23,9 @@ _tokenOrError.fold((error) {
 
   print(_eName);
 }, (token) {
-  print("Token ${token.accessToken.getOrCrash()}");
+  live4tsdk.addHeaderAuthorization(
+    token.accessToken.getOrCrash()
+  );
 });
 
 }

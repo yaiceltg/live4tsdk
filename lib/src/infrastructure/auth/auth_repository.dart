@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:live4tsdk/src/domain/auth/auth_token.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/i_auth_repository.dart';
+import 'package:live4tsdk/src/domain/auth/token.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_token_dto.dart';
 
@@ -136,4 +137,18 @@ class AuthRepository implements IAuthRepository {
       return left(AuthFailure.serverError());
     }
   }
+
+  @override
+  Future<Either<AuthFailure, Token>> decodeToken({required String token}) {
+      // TODO: implement decodeToken
+      throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> validateToken({required String token}) {
+    // TODO: implement validateToken
+    throw UnimplementedError();
+  }
+
+
 }
