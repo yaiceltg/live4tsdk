@@ -8,49 +8,56 @@ part 'question_dto.g.dart';
 abstract class QuestionDto implements _$QuestionDto {
   const QuestionDto._();
 
-  const factory QuestionDto({
-    String? id,
-    String? title,
-    String? body,
-    int? views,
-    int? votesCount,
-    int? answerCount,
-    String? bestAnswer,
-    String? userId,
-    DateTime? createdAt,
-    DateTime? updatedAt
-  }) = _QuestionDto;
+  const factory QuestionDto(
+      {String? id,
+      String? title,
+      String? body,
+      int? views,
+      int? votesCount,
+      int? answerCount,
+      String? bestAnswer,
+      String? userId,
+      DateTime? createdAt,
+      DateTime? updatedAt}) = _QuestionDto;
 
   factory QuestionDto.fromDomain(Question question) {
     return QuestionDto(
-      id: question.id,
-      title: question.title,
-      body: question.body,
-      views: question.views,
-      votesCount: question.votesCount,
-      answerCount: question.answerCount,
-      bestAnswer: question.bestAnswer,
-      userId: question.userId,
-      createdAt: question.createdAt,
-      updatedAt: question.updatedAt
-    );
+        id: question.id,
+        title: question.title,
+        body: question.body,
+        views: question.views,
+        votesCount: question.votesCount,
+        answerCount: question.answerCount,
+        bestAnswer: question.bestAnswer,
+        userId: question.userId,
+        createdAt: question.createdAt,
+        updatedAt: question.updatedAt);
   }
 
   Question toDomain() {
     return Question(
-      id: id,
-      title: title,
-      body: body,
-      views: views,
-      votesCount: votesCount,
-      answerCount: answerCount,
-      bestAnswer: bestAnswer,
-      userId: userId,
-      createdAt: createdAt,
-      updatedAt: updatedAt
-    );
+        id: id,
+        title: title,
+        body: body,
+        views: views,
+        votesCount: votesCount,
+        answerCount: answerCount,
+        bestAnswer: bestAnswer,
+        userId: userId,
+        createdAt: createdAt,
+        updatedAt: updatedAt);
   }
 
-  factory QuestionDto.fromJson(Map<String, dynamic> json) =>
-      _$QuestionDtoFromJson(json);
+  factory QuestionDto.fromJson(Map<String, dynamic> json) => QuestionDto(
+        id: json['id'],
+        title: json['title'],
+        body: json['body'],
+        views: json['views'],
+        votesCount: json['votesCount'],
+        answerCount: json['answerCount'],
+        bestAnswer: json['bestAnswer'],
+        userId: json['userId'],
+        createdAt: json['createdAt'],
+        updatedAt: json['updatedAt'],
+      );
 }
