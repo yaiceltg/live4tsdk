@@ -13,19 +13,28 @@ void main() async {
     password:  Password("admin@123")
   );
 
-_tokenOrError.fold((error) {
-  final _eName = error.maybeMap(
-    serverError: (_) => "Server error ",
-    invalidEmailAndPasswordCombination: (_) => "Usuario o contraseña incorrecta",
-    userNotFound: (_) => "User not found",
-    orElse: () => "Ninguno"
-  );
+String token = '';
 
-  print(_eName);
-}, (token) {
-  live4tsdk.addHeaderAuthorization(
-    token.accessToken.getOrCrash()
-  );
-});
+_tokenOrError.fold((error) {
+    final _eName = error.maybeMap(
+      serverError: (_) => "Server error ",
+      invalidEmailAndPasswordCombination: (_) => "Usuario o contraseña incorrecta",
+      userNotFound: (_) => "User not found",
+      orElse: () => "Ninguno"
+    );
+
+    print(_eName);
+  }, (t) async {
+    token = t.accessToken.getOrCrash();
+
+    live4tsdk.addHeaderAuthorization(token);
+  });
+
+
+  final t = await live4tsdk.auth.decodeToken(token: token);
+
+  t.fold((error) => {}, (t) => {
+    print(t.isExpired())
+  });
 
 }

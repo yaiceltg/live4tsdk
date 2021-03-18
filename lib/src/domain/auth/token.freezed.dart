@@ -257,7 +257,7 @@ class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc
-class _$_Token implements _Token {
+class _$_Token extends _Token {
   const _$_Token(
       {required this.userName,
       required this.name,
@@ -269,7 +269,8 @@ class _$_Token implements _Token {
       required this.sub,
       required this.typeUser,
       required this.iat,
-      required this.exp});
+      required this.exp})
+      : super._();
 
   factory _$_Token.fromJson(Map<String, dynamic> json) =>
       _$_$_TokenFromJson(json);
@@ -361,7 +362,7 @@ class _$_Token implements _Token {
   }
 }
 
-abstract class _Token implements Token {
+abstract class _Token extends Token {
   const factory _Token(
       {required String userName,
       required String name,
@@ -374,6 +375,7 @@ abstract class _Token implements Token {
       required int typeUser,
       required DateTime iat,
       required DateTime exp}) = _$_Token;
+  const _Token._() : super._();
 
   factory _Token.fromJson(Map<String, dynamic> json) = _$_Token.fromJson;
 

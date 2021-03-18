@@ -1,13 +1,14 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:live4tsdk/src/domain/auth/auth_token.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/i_auth_repository.dart';
 import 'package:live4tsdk/src/domain/auth/token.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_token_dto.dart';
+import 'package:live4tsdk/src/infrastructure/auth/token_dto.dart';
+import 'package:live4tsdk/src/infrastructure/core/jwt.dart';
 
 class AuthRepository implements IAuthRepository {
   // http client
@@ -95,8 +96,7 @@ class AuthRepository implements IAuthRepository {
 
   @override
   Future<Either<AuthFailure, AuthToken>> signInWithEmailAndPassword(
-      {required EmailAddress emailAddress,
-      required Password password}) async {
+      {required EmailAddress emailAddress, required Password password}) async {
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -139,16 +139,16 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<AuthFailure, Token>> decodeToken({required String token}) {
-      // TODO: implement decodeToken
-      throw UnimplementedError();
+  Future<Either<AuthFailure, Token>> decodeToken({
+    required String token
+  }) async {
+    try {
+      return right(TokenDto.fromJson(Jwt.parseJwt(token)).toDomain());
+    } catch (e) {
+      if (e.toString().contains("Invalid")) {
+        return left(AuthFailure.invalidAuthToken());
+      }
+      return left(AuthFailure.invalidAuthToken());
+    }
   }
-
-  @override
-  Future<Either<AuthFailure, Unit>> validateToken({required String token}) {
-    // TODO: implement validateToken
-    throw UnimplementedError();
-  }
-
-
 }

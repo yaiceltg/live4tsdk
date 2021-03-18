@@ -5,6 +5,8 @@ part 'token.g.dart';
 
 @freezed
 abstract class Token with _$Token {
+  const Token._();
+
   const factory Token({
     required String userName,
     required String name,
@@ -18,6 +20,15 @@ abstract class Token with _$Token {
     required DateTime iat,
     required DateTime exp,
   }) = _Token;
+
+
+  bool isExpired() {
+    if (exp != null) {
+      return DateTime.now().isAfter(exp);
+    } else {
+      return false;
+    }
+  }
 
   factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
 }

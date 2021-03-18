@@ -19,10 +19,6 @@ abstract class IAuthRepository {
     required Password password,
   });
 
-  Future<Either<AuthFailure, Unit>> validateToken({
-    required String token,
-  });
-
   Future<Either<AuthFailure, Token>> decodeToken({
     required String token,
   });

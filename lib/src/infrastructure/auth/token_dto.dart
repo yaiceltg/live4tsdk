@@ -9,6 +9,8 @@ DateTime _parseTimeStamp(int time) => DateTime.fromMicrosecondsSinceEpoch(time);
 
 @freezed
 abstract class TokenDto with _$TokenDto {
+  const TokenDto._();
+
   factory TokenDto({
     required String userName,
     required String name,

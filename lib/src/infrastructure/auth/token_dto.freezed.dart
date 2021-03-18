@@ -260,7 +260,7 @@ class __$TokenDtoCopyWithImpl<$Res> extends _$TokenDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc
-class _$_TokenDto implements _TokenDto {
+class _$_TokenDto extends _TokenDto {
   _$_TokenDto(
       {required this.userName,
       required this.name,
@@ -272,7 +272,8 @@ class _$_TokenDto implements _TokenDto {
       required this.sub,
       required this.typeUser,
       @JsonKey(fromJson: _parseTimeStamp) required this.iat,
-      @JsonKey(fromJson: _parseTimeStamp) required this.exp});
+      @JsonKey(fromJson: _parseTimeStamp) required this.exp})
+      : super._();
 
   factory _$_TokenDto.fromJson(Map<String, dynamic> json) =>
       _$_$_TokenDtoFromJson(json);
@@ -366,7 +367,7 @@ class _$_TokenDto implements _TokenDto {
   }
 }
 
-abstract class _TokenDto implements TokenDto {
+abstract class _TokenDto extends TokenDto {
   factory _TokenDto(
       {required String userName,
       required String name,
@@ -379,6 +380,7 @@ abstract class _TokenDto implements TokenDto {
       required int typeUser,
       @JsonKey(fromJson: _parseTimeStamp) required DateTime iat,
       @JsonKey(fromJson: _parseTimeStamp) required DateTime exp}) = _$_TokenDto;
+  _TokenDto._() : super._();
 
   factory _TokenDto.fromJson(Map<String, dynamic> json) = _$_TokenDto.fromJson;
 
