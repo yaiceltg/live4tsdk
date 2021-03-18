@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'token.dart';
+part of 'token_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Token _$_$_TokenFromJson(Map<String, dynamic> json) {
-  return _$_Token(
+_$_TokenDto _$_$_TokenDtoFromJson(Map<String, dynamic> json) {
+  return _$_TokenDto(
     userName: json['userName'] as String,
     name: json['name'] as String,
     lastName: json['lastName'] as String,
@@ -17,12 +17,13 @@ _$_Token _$_$_TokenFromJson(Map<String, dynamic> json) {
     fullName: json['fullName'] as String,
     sub: json['sub'] as int,
     typeUser: json['typeUser'] as int,
-    iat: DateTime.parse(json['iat'] as String),
-    exp: DateTime.parse(json['exp'] as String),
+    iat: _parseTimeStamp(json['iat'] as int),
+    exp: _parseTimeStamp(json['exp'] as int),
   );
 }
 
-Map<String, dynamic> _$_$_TokenToJson(_$_Token instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_TokenDtoToJson(_$_TokenDto instance) =>
+    <String, dynamic>{
       'userName': instance.userName,
       'name': instance.name,
       'lastName': instance.lastName,

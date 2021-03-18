@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'token.dart';
+part of 'token_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,15 +12,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Token _$TokenFromJson(Map<String, dynamic> json) {
-  return _Token.fromJson(json);
+TokenDto _$TokenDtoFromJson(Map<String, dynamic> json) {
+  return _TokenDto.fromJson(json);
 }
 
 /// @nodoc
-class _$TokenTearOff {
-  const _$TokenTearOff();
+class _$TokenDtoTearOff {
+  const _$TokenDtoTearOff();
 
-  _Token call(
+  _TokenDto call(
       {required String userName,
       required String name,
       required String lastName,
@@ -30,9 +30,9 @@ class _$TokenTearOff {
       required String fullName,
       required int sub,
       required int typeUser,
-      required DateTime iat,
-      required DateTime exp}) {
-    return _Token(
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime exp}) {
+    return _TokenDto(
       userName: userName,
       name: name,
       lastName: lastName,
@@ -47,16 +47,16 @@ class _$TokenTearOff {
     );
   }
 
-  Token fromJson(Map<String, Object> json) {
-    return Token.fromJson(json);
+  TokenDto fromJson(Map<String, Object> json) {
+    return TokenDto.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Token = _$TokenTearOff();
+const $TokenDto = _$TokenDtoTearOff();
 
 /// @nodoc
-mixin _$Token {
+mixin _$TokenDto {
   String get userName => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
@@ -66,18 +66,21 @@ mixin _$Token {
   String get fullName => throw _privateConstructorUsedError;
   int get sub => throw _privateConstructorUsedError;
   int get typeUser => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseTimeStamp)
   DateTime get iat => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseTimeStamp)
   DateTime get exp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TokenCopyWith<Token> get copyWith => throw _privateConstructorUsedError;
+  $TokenDtoCopyWith<TokenDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TokenCopyWith<$Res> {
-  factory $TokenCopyWith(Token value, $Res Function(Token) then) =
-      _$TokenCopyWithImpl<$Res>;
+abstract class $TokenDtoCopyWith<$Res> {
+  factory $TokenDtoCopyWith(TokenDto value, $Res Function(TokenDto) then) =
+      _$TokenDtoCopyWithImpl<$Res>;
   $Res call(
       {String userName,
       String name,
@@ -88,17 +91,17 @@ abstract class $TokenCopyWith<$Res> {
       String fullName,
       int sub,
       int typeUser,
-      DateTime iat,
-      DateTime exp});
+      @JsonKey(fromJson: _parseTimeStamp) DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) DateTime exp});
 }
 
 /// @nodoc
-class _$TokenCopyWithImpl<$Res> implements $TokenCopyWith<$Res> {
-  _$TokenCopyWithImpl(this._value, this._then);
+class _$TokenDtoCopyWithImpl<$Res> implements $TokenDtoCopyWith<$Res> {
+  _$TokenDtoCopyWithImpl(this._value, this._then);
 
-  final Token _value;
+  final TokenDto _value;
   // ignore: unused_field
-  final $Res Function(Token) _then;
+  final $Res Function(TokenDto) _then;
 
   @override
   $Res call({
@@ -164,9 +167,9 @@ class _$TokenCopyWithImpl<$Res> implements $TokenCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TokenCopyWith<$Res> implements $TokenCopyWith<$Res> {
-  factory _$TokenCopyWith(_Token value, $Res Function(_Token) then) =
-      __$TokenCopyWithImpl<$Res>;
+abstract class _$TokenDtoCopyWith<$Res> implements $TokenDtoCopyWith<$Res> {
+  factory _$TokenDtoCopyWith(_TokenDto value, $Res Function(_TokenDto) then) =
+      __$TokenDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String userName,
@@ -178,18 +181,18 @@ abstract class _$TokenCopyWith<$Res> implements $TokenCopyWith<$Res> {
       String fullName,
       int sub,
       int typeUser,
-      DateTime iat,
-      DateTime exp});
+      @JsonKey(fromJson: _parseTimeStamp) DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) DateTime exp});
 }
 
 /// @nodoc
-class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
-    implements _$TokenCopyWith<$Res> {
-  __$TokenCopyWithImpl(_Token _value, $Res Function(_Token) _then)
-      : super(_value, (v) => _then(v as _Token));
+class __$TokenDtoCopyWithImpl<$Res> extends _$TokenDtoCopyWithImpl<$Res>
+    implements _$TokenDtoCopyWith<$Res> {
+  __$TokenDtoCopyWithImpl(_TokenDto _value, $Res Function(_TokenDto) _then)
+      : super(_value, (v) => _then(v as _TokenDto));
 
   @override
-  _Token get _value => super._value as _Token;
+  _TokenDto get _value => super._value as _TokenDto;
 
   @override
   $Res call({
@@ -205,7 +208,7 @@ class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
     Object? iat = freezed,
     Object? exp = freezed,
   }) {
-    return _then(_Token(
+    return _then(_TokenDto(
       userName: userName == freezed
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
@@ -257,8 +260,8 @@ class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc
-class _$_Token implements _Token {
-  const _$_Token(
+class _$_TokenDto implements _TokenDto {
+  _$_TokenDto(
       {required this.userName,
       required this.name,
       required this.lastName,
@@ -268,11 +271,11 @@ class _$_Token implements _Token {
       required this.fullName,
       required this.sub,
       required this.typeUser,
-      required this.iat,
-      required this.exp});
+      @JsonKey(fromJson: _parseTimeStamp) required this.iat,
+      @JsonKey(fromJson: _parseTimeStamp) required this.exp});
 
-  factory _$_Token.fromJson(Map<String, dynamic> json) =>
-      _$_$_TokenFromJson(json);
+  factory _$_TokenDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_TokenDtoFromJson(json);
 
   @override
   final String userName;
@@ -293,19 +296,21 @@ class _$_Token implements _Token {
   @override
   final int typeUser;
   @override
+  @JsonKey(fromJson: _parseTimeStamp)
   final DateTime iat;
   @override
+  @JsonKey(fromJson: _parseTimeStamp)
   final DateTime exp;
 
   @override
   String toString() {
-    return 'Token(userName: $userName, name: $name, lastName: $lastName, email: $email, phone: $phone, picture: $picture, fullName: $fullName, sub: $sub, typeUser: $typeUser, iat: $iat, exp: $exp)';
+    return 'TokenDto(userName: $userName, name: $name, lastName: $lastName, email: $email, phone: $phone, picture: $picture, fullName: $fullName, sub: $sub, typeUser: $typeUser, iat: $iat, exp: $exp)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Token &&
+        (other is _TokenDto &&
             (identical(other.userName, userName) ||
                 const DeepCollectionEquality()
                     .equals(other.userName, userName)) &&
@@ -352,17 +357,17 @@ class _$_Token implements _Token {
 
   @JsonKey(ignore: true)
   @override
-  _$TokenCopyWith<_Token> get copyWith =>
-      __$TokenCopyWithImpl<_Token>(this, _$identity);
+  _$TokenDtoCopyWith<_TokenDto> get copyWith =>
+      __$TokenDtoCopyWithImpl<_TokenDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TokenToJson(this);
+    return _$_$_TokenDtoToJson(this);
   }
 }
 
-abstract class _Token implements Token {
-  const factory _Token(
+abstract class _TokenDto implements TokenDto {
+  factory _TokenDto(
       {required String userName,
       required String name,
       required String lastName,
@@ -372,10 +377,10 @@ abstract class _Token implements Token {
       required String fullName,
       required int sub,
       required int typeUser,
-      required DateTime iat,
-      required DateTime exp}) = _$_Token;
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime exp}) = _$_TokenDto;
 
-  factory _Token.fromJson(Map<String, dynamic> json) = _$_Token.fromJson;
+  factory _TokenDto.fromJson(Map<String, dynamic> json) = _$_TokenDto.fromJson;
 
   @override
   String get userName => throw _privateConstructorUsedError;
@@ -396,10 +401,13 @@ abstract class _Token implements Token {
   @override
   int get typeUser => throw _privateConstructorUsedError;
   @override
+  @JsonKey(fromJson: _parseTimeStamp)
   DateTime get iat => throw _privateConstructorUsedError;
   @override
+  @JsonKey(fromJson: _parseTimeStamp)
   DateTime get exp => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TokenCopyWith<_Token> get copyWith => throw _privateConstructorUsedError;
+  _$TokenDtoCopyWith<_TokenDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
