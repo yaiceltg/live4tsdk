@@ -17,8 +17,8 @@ _$_Token _$_$_TokenFromJson(Map<String, dynamic> json) {
     fullName: json['fullName'] as String,
     sub: json['sub'] as int,
     typeUser: json['typeUser'] as int,
-    iat: json['iat'] as int,
-    exp: json['exp'] as int,
+    iat: _parseTimeStamp(json['iat'] as int),
+    exp: _parseTimeStamp(json['exp'] as int),
   );
 }
 
@@ -32,6 +32,6 @@ Map<String, dynamic> _$_$_TokenToJson(_$_Token instance) => <String, dynamic>{
       'fullName': instance.fullName,
       'sub': instance.sub,
       'typeUser': instance.typeUser,
-      'iat': instance.iat,
-      'exp': instance.exp,
+      'iat': instance.iat.toIso8601String(),
+      'exp': instance.exp.toIso8601String(),
     };

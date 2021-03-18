@@ -30,8 +30,8 @@ class _$TokenTearOff {
       required String fullName,
       required int sub,
       required int typeUser,
-      required int iat,
-      required int exp}) {
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime exp}) {
     return _Token(
       userName: userName,
       name: name,
@@ -66,8 +66,10 @@ mixin _$Token {
   String get fullName => throw _privateConstructorUsedError;
   int get sub => throw _privateConstructorUsedError;
   int get typeUser => throw _privateConstructorUsedError;
-  int get iat => throw _privateConstructorUsedError;
-  int get exp => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseTimeStamp)
+  DateTime get iat => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseTimeStamp)
+  DateTime get exp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -88,8 +90,8 @@ abstract class $TokenCopyWith<$Res> {
       String fullName,
       int sub,
       int typeUser,
-      int iat,
-      int exp});
+      @JsonKey(fromJson: _parseTimeStamp) DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) DateTime exp});
 }
 
 /// @nodoc
@@ -154,11 +156,11 @@ class _$TokenCopyWithImpl<$Res> implements $TokenCopyWith<$Res> {
       iat: iat == freezed
           ? _value.iat
           : iat // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
       exp: exp == freezed
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
     ));
   }
 }
@@ -178,8 +180,8 @@ abstract class _$TokenCopyWith<$Res> implements $TokenCopyWith<$Res> {
       String fullName,
       int sub,
       int typeUser,
-      int iat,
-      int exp});
+      @JsonKey(fromJson: _parseTimeStamp) DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) DateTime exp});
 }
 
 /// @nodoc
@@ -245,11 +247,11 @@ class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
       iat: iat == freezed
           ? _value.iat
           : iat // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
       exp: exp == freezed
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
     ));
   }
 }
@@ -268,8 +270,8 @@ class _$_Token implements _Token {
       required this.fullName,
       required this.sub,
       required this.typeUser,
-      required this.iat,
-      required this.exp});
+      @JsonKey(fromJson: _parseTimeStamp) required this.iat,
+      @JsonKey(fromJson: _parseTimeStamp) required this.exp});
 
   factory _$_Token.fromJson(Map<String, dynamic> json) =>
       _$_$_TokenFromJson(json);
@@ -293,9 +295,11 @@ class _$_Token implements _Token {
   @override
   final int typeUser;
   @override
-  final int iat;
+  @JsonKey(fromJson: _parseTimeStamp)
+  final DateTime iat;
   @override
-  final int exp;
+  @JsonKey(fromJson: _parseTimeStamp)
+  final DateTime exp;
 
   @override
   String toString() {
@@ -372,8 +376,8 @@ abstract class _Token implements Token {
       required String fullName,
       required int sub,
       required int typeUser,
-      required int iat,
-      required int exp}) = _$_Token;
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime iat,
+      @JsonKey(fromJson: _parseTimeStamp) required DateTime exp}) = _$_Token;
 
   factory _Token.fromJson(Map<String, dynamic> json) = _$_Token.fromJson;
 
@@ -396,9 +400,11 @@ abstract class _Token implements Token {
   @override
   int get typeUser => throw _privateConstructorUsedError;
   @override
-  int get iat => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseTimeStamp)
+  DateTime get iat => throw _privateConstructorUsedError;
   @override
-  int get exp => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseTimeStamp)
+  DateTime get exp => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TokenCopyWith<_Token> get copyWith => throw _privateConstructorUsedError;
