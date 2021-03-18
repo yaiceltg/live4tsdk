@@ -5,12 +5,7 @@ import 'package:live4tsdk/src/domain/forum/i_forum_repository.dart';
 import 'package:live4tsdk/src/domain/forum/question.dart';
 import 'dart:convert';
 import '../../domain/forum/forum_failure.dart';
-import '../../domain/forum/forum_failure.dart';
 import '../../domain/forum/question.dart';
-import '../../domain/forum/question.dart';
-import '../../domain/forum/question.dart';
-import '../../domain/forum/question.dart';
-import 'question_dto.dart';
 import 'question_dto.dart';
 
 class ForumRepository implements IForumRepository {
@@ -18,8 +13,8 @@ class ForumRepository implements IForumRepository {
   Dio? _httpClient;
 
   // question url
-  final String _createQuestion = '';
-  final String _getQuestionList = '';
+  final String _createQuestionPath = 'api/v1/forum/questions';
+  final String _fetchQuestionsPath = 'api/v1/forum/questions';
   // answer url
 
   ForumRepository(this._httpClient);
@@ -30,19 +25,12 @@ class ForumRepository implements IForumRepository {
       // prepare form data
       final _data = jsonEncode({
         'title': question.title,
-        'userId': question.userId,
         'body': question.body,
-        'views': question.views,
-        'votesCount': question.votesCount,
-        'answerCount': question.answerCount,
-        'bestAnswer': question.bestAnswer,
-        'createdAt': question.createdAt,
-        'updatedAt': question.updatedAt,
       });
 
       // call api service
       final _response = await _httpClient!.post(
-        _createQuestion,
+        _createQuestionPath,
         data: _data,
       );
 
@@ -72,24 +60,18 @@ class ForumRepository implements IForumRepository {
   }
 
   @override
-  Future<Either<ForumFailure, List<Question>>> fetchQuestions() {
-    // TODO: implement fetchQuestions
-    throw UnimplementedError();
-  }
-
-  @override
   Future<Either<ForumFailure, Unit>> updateQuestion(Question question) {
     // TODO: implement updateQuestion
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<ForumFailure, List<QuestionDto>>> getQuestionList(
+  Future<Either<ForumFailure, List<Question>>> fetchQuestions(
       {Options? options}) async {
     try {
       // call api service
       final response = await _httpClient!.get(
-        _getQuestionList,
+        _fetchQuestionsPath,
         options: options,
       );
       // check response
@@ -110,7 +92,7 @@ class ForumRepository implements IForumRepository {
       }
 
       final _listQuestion =
-          (response.data as List).map((e) => QuestionDto.fromJson(e)).toList();
+          (response.data as List).map((e) => QuestionDto.fromJson(e).toDomain()).toList();
       return right(_listQuestion);
     } catch (e) {
       return left(ForumFailure.serverError());
