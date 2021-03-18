@@ -58,12 +58,6 @@ class AccountRepository implements IAccountRepository {
   }
 
   @override
-  Future<Either<AccountFailure, Unit>> createAccount({Account? account}) {
-    // TODO: implement createAccount
-    throw UnimplementedError();
-  }
-
-  @override
   Future<Either<AccountFailure, Account>> getAccount({Options? options}) async {
     try {
       // call api service
@@ -91,11 +85,6 @@ class AccountRepository implements IAccountRepository {
     } catch (e) {
       return left(AccountFailure.serverError());
     }
-  }
-
-  @override
-  Future<Either<AccountFailure, Unit>> updateAccount({Account? account}) {
-    throw UnimplementedError();
   }
 
   @override
