@@ -13,8 +13,8 @@ class ForumRepository implements IForumRepository {
   Dio? _httpClient;
 
   // question url
-  final String _createQuestionPath = 'api/v1/forum/questions';
-  final String _fetchQuestionsPath = 'api/v1/forum/questions';
+  final String _createQuestionPath = '/v1/forum/questions';
+  final String _fetchQuestionsPath = '/v1/forum/questions';
   // answer url
 
   ForumRepository(this._httpClient);

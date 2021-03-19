@@ -86,36 +86,4 @@ class AccountRepository implements IAccountRepository {
       return left(AccountFailure.serverError());
     }
   }
-
-  @override
-  Future<Either<AccountFailure, Account>> getAccountById({int? id}) async {
-    try {
-      // call api service
-      final _response = await _httpClient!.get(
-        _getAccountPath,
-        queryParameters: {},
-      );
-      // check response
-      if (_response.data is Map<String, dynamic>) {
-        Map<String, dynamic> _d = _response.data;
-
-        if (_d.containsKey('response')) {
-          final Map<String, dynamic> _r = _d['response'];
-
-          if (_r.containsKey('code')) {
-            String _c = _r['code'];
-
-            if (_c.contains('NOT_FOUND')) {
-              return left(AccountFailure.serverError());
-            }
-          }
-        }
-      }
-
-      final _account = AccountDto.fromJson(_response.data).toDomain();
-      return right(_account);
-    } catch (e) {
-      return left(AccountFailure.serverError());
-    }
-  }
 }
