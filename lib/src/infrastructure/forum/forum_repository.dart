@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:live4tsdk/src/domain/core/paged_list.dart';
 import 'package:live4tsdk/src/domain/forum/forum_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:live4tsdk/src/domain/forum/i_forum_repository.dart';
@@ -66,7 +67,7 @@ class ForumRepository implements IForumRepository {
   }
 
   @override
-  Future<Either<ForumFailure, List<Question>>> fetchQuestions(
+  Future<Either<ForumFailure, PagedList<Question>>> fetchQuestions(
       {Options? options}) async {
     try {
       // call api service
@@ -85,15 +86,19 @@ class ForumRepository implements IForumRepository {
             String _c = _r['code'];
 
             if (_c.contains('NOT_FOUND')) {
-              return left(ForumFailure.serverError());
+
             }
           }
         }
       }
 
-      final _listQuestion =
-          (response.data as List).map((e) => QuestionDto.fromJson(e).toDomain()).toList();
-      return right(_listQuestion);
+      int _count = response.data['count'];
+
+      final _items = (response.data['items'] as List)
+          .map((e) => QuestionDto.fromJson(e).toDomain())
+          .toList();
+
+      return right(PagedList(count: _count, items: _items));
     } catch (e) {
       return left(ForumFailure.serverError());
     }

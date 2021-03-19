@@ -12,7 +12,7 @@ abstract class Question with _$Question {
     int? votesCount,
     int? answerCount,
     String? bestAnswer,
-    String? userId,
+    int? userId,
     DateTime? createdAt,
     DateTime? updatedAt
   }) = _Question;

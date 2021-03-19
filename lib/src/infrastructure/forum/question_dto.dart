@@ -16,7 +16,7 @@ abstract class QuestionDto implements _$QuestionDto {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt}) = _QuestionDto;
 
@@ -48,16 +48,6 @@ abstract class QuestionDto implements _$QuestionDto {
         updatedAt: updatedAt);
   }
 
-  factory QuestionDto.fromJson(Map<String, dynamic> json) => QuestionDto(
-        id: json['id'],
-        title: json['title'],
-        body: json['body'],
-        views: json['views'],
-        votesCount: json['votesCount'],
-        answerCount: json['answerCount'],
-        bestAnswer: json['bestAnswer'],
-        userId: json['userId'],
-        createdAt: json['createdAt'],
-        updatedAt: json['updatedAt'],
-      );
+   factory QuestionDto.fromJson(Map<String, dynamic> json) =>
+      _$QuestionDtoFromJson(json);
 }

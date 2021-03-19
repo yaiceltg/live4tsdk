@@ -28,7 +28,7 @@ class _$QuestionDtoTearOff {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt}) {
     return _QuestionDto(
@@ -62,7 +62,7 @@ mixin _$QuestionDto {
   int? get votesCount => throw _privateConstructorUsedError;
   int? get answerCount => throw _privateConstructorUsedError;
   String? get bestAnswer => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -85,7 +85,7 @@ abstract class $QuestionDtoCopyWith<$Res> {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -143,7 +143,7 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -171,7 +171,7 @@ abstract class _$QuestionDtoCopyWith<$Res>
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -231,7 +231,7 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -279,7 +279,7 @@ class _$_QuestionDto extends _QuestionDto {
   @override
   final String? bestAnswer;
   @override
-  final String? userId;
+  final int? userId;
   @override
   final DateTime? createdAt;
   @override
@@ -355,7 +355,7 @@ abstract class _QuestionDto extends QuestionDto {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt}) = _$_QuestionDto;
   const _QuestionDto._() : super._();
@@ -378,7 +378,7 @@ abstract class _QuestionDto extends QuestionDto {
   @override
   String? get bestAnswer => throw _privateConstructorUsedError;
   @override
-  String? get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   @override
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @override

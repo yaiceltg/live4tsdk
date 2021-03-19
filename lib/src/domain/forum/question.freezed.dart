@@ -24,7 +24,7 @@ class _$QuestionTearOff {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt}) {
     return _Question(
@@ -54,7 +54,7 @@ mixin _$Question {
   int? get votesCount => throw _privateConstructorUsedError;
   int? get answerCount => throw _privateConstructorUsedError;
   String? get bestAnswer => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -75,7 +75,7 @@ abstract class $QuestionCopyWith<$Res> {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -133,7 +133,7 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -159,7 +159,7 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -218,7 +218,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -260,7 +260,7 @@ class _$_Question implements _Question {
   @override
   final String? bestAnswer;
   @override
-  final String? userId;
+  final int? userId;
   @override
   final DateTime? createdAt;
   @override
@@ -331,7 +331,7 @@ abstract class _Question implements Question {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      String? userId,
+      int? userId,
       DateTime? createdAt,
       DateTime? updatedAt}) = _$_Question;
 
@@ -350,7 +350,7 @@ abstract class _Question implements Question {
   @override
   String? get bestAnswer => throw _privateConstructorUsedError;
   @override
-  String? get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   @override
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @override

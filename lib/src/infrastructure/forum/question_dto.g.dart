@@ -15,7 +15,7 @@ _$_QuestionDto _$_$_QuestionDtoFromJson(Map<String, dynamic> json) {
     votesCount: json['votesCount'] as int?,
     answerCount: json['answerCount'] as int?,
     bestAnswer: json['bestAnswer'] as String?,
-    userId: json['userId'] as String?,
+    userId: json['userId'] as int?,
     createdAt: json['createdAt'] == null
         ? null
         : DateTime.parse(json['createdAt'] as String),

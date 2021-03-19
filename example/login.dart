@@ -26,7 +26,7 @@ _tokenOrError.fold((error) {
     print(_eName);
   }, (t) async {
     token = t.accessToken.getOrCrash();
-
+    print(token);
     live4tsdk.addHeaderAuthorization(token);
   });
 
