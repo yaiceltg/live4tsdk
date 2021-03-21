@@ -5,5 +5,5 @@ part 'forum_failure.freezed.dart';
 @freezed
 abstract class ForumFailure with _$ForumFailure {
   const factory ForumFailure.serverError() = _ServerError;
-
+  const factory ForumFailure.questionNotFound() = _QuestionNotFound;
 }

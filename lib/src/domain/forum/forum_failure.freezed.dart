@@ -19,6 +19,10 @@ class _$ForumFailureTearOff {
   _ServerError serverError() {
     return const _ServerError();
   }
+
+  _QuestionNotFound questionNotFound() {
+    return const _QuestionNotFound();
+  }
 }
 
 /// @nodoc
@@ -29,22 +33,26 @@ mixin _$ForumFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function() questionNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function()? questionNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ServerError value) serverError,
+    required TResult Function(_QuestionNotFound value) questionNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ServerError value)? serverError,
+    TResult Function(_QuestionNotFound value)? questionNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +113,7 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function() questionNotFound,
   }) {
     return serverError();
   }
@@ -113,6 +122,7 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function()? questionNotFound,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -125,6 +135,7 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ServerError value) serverError,
+    required TResult Function(_QuestionNotFound value) questionNotFound,
   }) {
     return serverError(this);
   }
@@ -133,6 +144,7 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ServerError value)? serverError,
+    TResult Function(_QuestionNotFound value)? questionNotFound,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -144,4 +156,89 @@ class _$_ServerError implements _ServerError {
 
 abstract class _ServerError implements ForumFailure {
   const factory _ServerError() = _$_ServerError;
+}
+
+/// @nodoc
+abstract class _$QuestionNotFoundCopyWith<$Res> {
+  factory _$QuestionNotFoundCopyWith(
+          _QuestionNotFound value, $Res Function(_QuestionNotFound) then) =
+      __$QuestionNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$QuestionNotFoundCopyWithImpl<$Res>
+    extends _$ForumFailureCopyWithImpl<$Res>
+    implements _$QuestionNotFoundCopyWith<$Res> {
+  __$QuestionNotFoundCopyWithImpl(
+      _QuestionNotFound _value, $Res Function(_QuestionNotFound) _then)
+      : super(_value, (v) => _then(v as _QuestionNotFound));
+
+  @override
+  _QuestionNotFound get _value => super._value as _QuestionNotFound;
+}
+
+/// @nodoc
+class _$_QuestionNotFound implements _QuestionNotFound {
+  const _$_QuestionNotFound();
+
+  @override
+  String toString() {
+    return 'ForumFailure.questionNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _QuestionNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function() questionNotFound,
+  }) {
+    return questionNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? questionNotFound,
+    required TResult orElse(),
+  }) {
+    if (questionNotFound != null) {
+      return questionNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_QuestionNotFound value) questionNotFound,
+  }) {
+    return questionNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_QuestionNotFound value)? questionNotFound,
+    required TResult orElse(),
+  }) {
+    if (questionNotFound != null) {
+      return questionNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _QuestionNotFound implements ForumFailure {
+  const factory _QuestionNotFound() = _$_QuestionNotFound;
 }
