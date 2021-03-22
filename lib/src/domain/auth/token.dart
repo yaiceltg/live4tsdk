@@ -29,6 +29,4 @@ abstract class Token with _$Token {
       return false;
     }
   }
-
-  factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
 }
