@@ -12,10 +12,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Token _$TokenFromJson(Map<String, dynamic> json) {
-  return _Token.fromJson(json);
-}
-
 /// @nodoc
 class _$TokenTearOff {
   const _$TokenTearOff();
@@ -46,10 +42,6 @@ class _$TokenTearOff {
       exp: exp,
     );
   }
-
-  Token fromJson(Map<String, Object> json) {
-    return Token.fromJson(json);
-  }
 }
 
 /// @nodoc
@@ -69,7 +61,6 @@ mixin _$Token {
   DateTime get iat => throw _privateConstructorUsedError;
   DateTime get exp => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TokenCopyWith<Token> get copyWith => throw _privateConstructorUsedError;
 }
@@ -254,8 +245,6 @@ class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
 class _$_Token extends _Token {
   const _$_Token(
@@ -271,9 +260,6 @@ class _$_Token extends _Token {
       required this.iat,
       required this.exp})
       : super._();
-
-  factory _$_Token.fromJson(Map<String, dynamic> json) =>
-      _$_$_TokenFromJson(json);
 
   @override
   final String userName;
@@ -355,11 +341,6 @@ class _$_Token extends _Token {
   @override
   _$TokenCopyWith<_Token> get copyWith =>
       __$TokenCopyWithImpl<_Token>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_TokenToJson(this);
-  }
 }
 
 abstract class _Token extends Token {
@@ -376,8 +357,6 @@ abstract class _Token extends Token {
       required DateTime iat,
       required DateTime exp}) = _$_Token;
   const _Token._() : super._();
-
-  factory _Token.fromJson(Map<String, dynamic> json) = _$_Token.fromJson;
 
   @override
   String get userName => throw _privateConstructorUsedError;
