@@ -1,14 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_repository.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
+import 'package:live4tsdk/src/infrastructure/calendar/calendar_repository.dart';
 import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
+import 'package:live4tsdk/src/infrastructure/message/message_repository.dart';
 
 class Live4tsdk {
   Dio? httpClient;
 
-  late AuthRepository auth;
+
   late AccountRepository account;
+  late AuthRepository auth;
+  late CalendarRepository calendar;
+  // late ChatRepository chat;
   late ForumRepository forum;
+  late MessageRepository message;
+  // late SchedulerRepository scheduler;
 
   Live4tsdk({required String baseUrl}) {
     // create dio config
@@ -20,9 +27,11 @@ class Live4tsdk {
     httpClient = Dio(_options);
 
     // configure app
-    auth = AuthRepository(httpClient);
     account = AccountRepository(httpClient);
+    auth = AuthRepository(httpClient);
+    calendar = CalendarRepository(httpClient);
     forum = ForumRepository(httpClient);
+    message = MessageRepository(httpClient);
   }
 
   bool get ready => true;
