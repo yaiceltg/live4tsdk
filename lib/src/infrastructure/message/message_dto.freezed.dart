@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'message.dart';
+part of 'message_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,11 +12,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-class _$MessageTearOff {
-  const _$MessageTearOff();
+MessageDto _$MessageDtoFromJson(Map<String, dynamic> json) {
+  return _MessageDto.fromJson(json);
+}
 
-  _Message call(
+/// @nodoc
+class _$MessageDtoTearOff {
+  const _$MessageDtoTearOff();
+
+  _MessageDto call(
       {required int id,
       String? body,
       DateTime? delivered,
@@ -26,7 +30,7 @@ class _$MessageTearOff {
       String? subject,
       required DateTime createdAt,
       required DateTime updatedAt}) {
-    return _Message(
+    return _MessageDto(
       id: id,
       body: body,
       delivered: delivered,
@@ -38,13 +42,17 @@ class _$MessageTearOff {
       updatedAt: updatedAt,
     );
   }
+
+  MessageDto fromJson(Map<String, Object> json) {
+    return MessageDto.fromJson(json);
+  }
 }
 
 /// @nodoc
-const $Message = _$MessageTearOff();
+const $MessageDto = _$MessageDtoTearOff();
 
 /// @nodoc
-mixin _$Message {
+mixin _$MessageDto {
   int get id => throw _privateConstructorUsedError;
   String? get body => throw _privateConstructorUsedError;
   DateTime? get delivered => throw _privateConstructorUsedError;
@@ -55,14 +63,17 @@ mixin _$Message {
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MessageCopyWith<Message> get copyWith => throw _privateConstructorUsedError;
+  $MessageDtoCopyWith<MessageDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MessageCopyWith<$Res> {
-  factory $MessageCopyWith(Message value, $Res Function(Message) then) =
-      _$MessageCopyWithImpl<$Res>;
+abstract class $MessageDtoCopyWith<$Res> {
+  factory $MessageDtoCopyWith(
+          MessageDto value, $Res Function(MessageDto) then) =
+      _$MessageDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String? body,
@@ -76,12 +87,12 @@ abstract class $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
-  _$MessageCopyWithImpl(this._value, this._then);
+class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
+  _$MessageDtoCopyWithImpl(this._value, this._then);
 
-  final Message _value;
+  final MessageDto _value;
   // ignore: unused_field
-  final $Res Function(Message) _then;
+  final $Res Function(MessageDto) _then;
 
   @override
   $Res call({
@@ -137,9 +148,10 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
-      __$MessageCopyWithImpl<$Res>;
+abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
+  factory _$MessageDtoCopyWith(
+          _MessageDto value, $Res Function(_MessageDto) then) =
+      __$MessageDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -154,13 +166,14 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
-    implements _$MessageCopyWith<$Res> {
-  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
-      : super(_value, (v) => _then(v as _Message));
+class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
+    implements _$MessageDtoCopyWith<$Res> {
+  __$MessageDtoCopyWithImpl(
+      _MessageDto _value, $Res Function(_MessageDto) _then)
+      : super(_value, (v) => _then(v as _MessageDto));
 
   @override
-  _Message get _value => super._value as _Message;
+  _MessageDto get _value => super._value as _MessageDto;
 
   @override
   $Res call({
@@ -174,7 +187,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_Message(
+    return _then(_MessageDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -215,9 +228,11 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
-class _$_Message extends _Message {
-  const _$_Message(
+class _$_MessageDto extends _MessageDto {
+  const _$_MessageDto(
       {required this.id,
       this.body,
       this.delivered,
@@ -228,6 +243,9 @@ class _$_Message extends _Message {
       required this.createdAt,
       required this.updatedAt})
       : super._();
+
+  factory _$_MessageDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_MessageDtoFromJson(json);
 
   @override
   final int id;
@@ -250,13 +268,13 @@ class _$_Message extends _Message {
 
   @override
   String toString() {
-    return 'Message(id: $id, body: $body, delivered: $delivered, read: $read, from: $from, to: $to, subject: $subject, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'MessageDto(id: $id, body: $body, delivered: $delivered, read: $read, from: $from, to: $to, subject: $subject, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Message &&
+        (other is _MessageDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.body, body) ||
@@ -296,12 +314,17 @@ class _$_Message extends _Message {
 
   @JsonKey(ignore: true)
   @override
-  _$MessageCopyWith<_Message> get copyWith =>
-      __$MessageCopyWithImpl<_Message>(this, _$identity);
+  _$MessageDtoCopyWith<_MessageDto> get copyWith =>
+      __$MessageDtoCopyWithImpl<_MessageDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MessageDtoToJson(this);
+  }
 }
 
-abstract class _Message extends Message {
-  const factory _Message(
+abstract class _MessageDto extends MessageDto {
+  const factory _MessageDto(
       {required int id,
       String? body,
       DateTime? delivered,
@@ -310,8 +333,11 @@ abstract class _Message extends Message {
       required int to,
       String? subject,
       required DateTime createdAt,
-      required DateTime updatedAt}) = _$_Message;
-  const _Message._() : super._();
+      required DateTime updatedAt}) = _$_MessageDto;
+  const _MessageDto._() : super._();
+
+  factory _MessageDto.fromJson(Map<String, dynamic> json) =
+      _$_MessageDto.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -333,6 +359,6 @@ abstract class _Message extends Message {
   DateTime get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MessageCopyWith<_Message> get copyWith =>
+  _$MessageDtoCopyWith<_MessageDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
