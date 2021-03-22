@@ -16,8 +16,7 @@ class ForumRepository implements IForumRepository {
   Dio? _httpClient;
 
   // question url
-  final String _createQuestionPath = '/v1/forum/questions';
-  final String _fetchQuestionsPath = '/v1/forum/questions';
+  final String _questionPath = '/v1/forum/questions';
   final String _addAnswerToQuestionsPath = '/v1/forum/questions/:questionId';
   // answer url
 
@@ -34,7 +33,7 @@ class ForumRepository implements IForumRepository {
 
       // call api service
       final _response = await _httpClient!.post(
-        _createQuestionPath,
+        _questionPath,
         data: _data,
       );
 
@@ -58,24 +57,12 @@ class ForumRepository implements IForumRepository {
   }
 
   @override
-  Future<Either<ForumFailure, Question>> fetchQuestionById(String questionId) {
-    // TODO: implement fetchQuestionById
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<ForumFailure, Unit>> updateQuestion(Question question) {
-    // TODO: implement updateQuestion
-    throw UnimplementedError();
-  }
-
-  @override
   Future<Either<ForumFailure, PagedList<Question>>> fetchQuestions(
       {Options? options}) async {
     try {
       // call api service
       final response = await _httpClient!.get(
-        _fetchQuestionsPath,
+        _questionPath,
         options: options,
       );
       // check response
