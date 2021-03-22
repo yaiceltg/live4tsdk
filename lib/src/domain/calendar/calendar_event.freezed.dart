@@ -64,8 +64,8 @@ class __$CalendarEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_CalendarEvent implements _CalendarEvent {
-  const _$_CalendarEvent();
+class _$_CalendarEvent extends _CalendarEvent {
+  const _$_CalendarEvent() : super._();
 
   @override
   String toString() {
@@ -81,6 +81,7 @@ class _$_CalendarEvent implements _CalendarEvent {
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _CalendarEvent implements CalendarEvent {
+abstract class _CalendarEvent extends CalendarEvent {
   const factory _CalendarEvent() = _$_CalendarEvent;
+  const _CalendarEvent._() : super._();
 }
