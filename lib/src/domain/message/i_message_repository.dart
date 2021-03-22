@@ -16,5 +16,5 @@ abstract class IMessageRepository {
   ///
   /// fetch user messages
   ///
-  Future<Either<PagedList<Message>,Unit>> fetchMessages();
+  Future<Either<MessageFailure, PagedList<Message>>> fetchMessages();
 }
