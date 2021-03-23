@@ -10,7 +10,7 @@ class Live4tsdk {
   late AuthRepository auth;
   late AccountRepository account;
   late ForumRepository forum;
-  late MessageRepository  msg
+  late MessageRepository  msg;
 
   Live4tsdk({required String baseUrl}) {
     // create dio config
