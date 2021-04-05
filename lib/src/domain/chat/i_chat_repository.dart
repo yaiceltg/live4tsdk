@@ -8,22 +8,22 @@ abstract class IChatRepository {
   ///
   /// fetch user chats
   ///
-  Future<Either<ChatFailure, PagedList<ChatGroup>>> fetchGroups({
+  Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups({
     required String groupId,
   });
 
   ///
-  /// fetch group message
+  /// fetch room message history
   ///
-  Future<Either<ChatFailure, PagedList<ChatMessage>>> fetchMessage({
-    required String groupId,
+  Future<Either<ChatFailure, List<ChatMessage>>> fetchRoomMessages({
+    required String roomId,
   });
 
   ///
   /// send chat message
   ///
   Future<Either<ChatFailure, Unit>> sendMessage({
-    required String to,
+    required String roomId,
     required String message
   });
 }
