@@ -4,7 +4,7 @@ import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 void main() async {
   // add global this client
   var live4tsdk = Live4tsdk(
-    baseUrl: "http://164.90.157.86:3000/api"
+    baseUrl: "http://localhost:3000/api"
   );
 
   // call auth login service
