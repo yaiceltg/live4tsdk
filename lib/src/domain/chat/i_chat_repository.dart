@@ -5,7 +5,7 @@ import 'package:live4tsdk/src/domain/chat/chat_message.dart';
 
 abstract class IChatRepository {
   ///
-  /// fetch user chats
+  /// fetch user rooms
   ///
   Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups({
     required String groupId,
