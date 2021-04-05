@@ -11,10 +11,8 @@ void main() async {
 
   // get to account service
   final failureOrQuestions = await live4tsdk.forum.createQuestion(
-    Question(
-      title: "Hola",
-      body: "asdad"
-    )
+    title: "Hola",
+    body: "asdad",
   );
 
   failureOrQuestions.fold((error) {
