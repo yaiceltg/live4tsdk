@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:live4tsdk/src/domain/account/account.dart';
 
 part 'message.freezed.dart';
 
@@ -7,14 +8,13 @@ class Message with _$Message {
   const Message._();
 
   const factory Message({
-    required int id,
-    String? body,
+    required String id,
+    required Account from,
+    required String subject,
+    required String body,
     DateTime? delivered,
     DateTime? read,
-    required int from,
-    required int to,
-    String? subject,
-    required DateTime createdAt,
-    required DateTime updatedAt
+    DateTime? createdAt,
+    DateTime? updatedAt
   }) = _Message;
 }
