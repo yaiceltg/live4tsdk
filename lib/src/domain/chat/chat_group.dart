@@ -6,6 +6,7 @@ part 'chat_group.freezed.dart';
 class ChatGroup with _$ChatGroup {
   const ChatGroup._();
 
-  const factory ChatGroup(
-  ) = _Message;
+  const factory ChatGroup({
+    required String name
+  }) = _Message;
 }
