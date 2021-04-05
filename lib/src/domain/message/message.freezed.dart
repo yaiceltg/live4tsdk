@@ -17,23 +17,21 @@ class _$MessageTearOff {
   const _$MessageTearOff();
 
   _Message call(
-      {required int id,
-      String? body,
+      {required String id,
+      required Account from,
+      required String subject,
+      required String body,
       DateTime? delivered,
       DateTime? read,
-      required int from,
-      required int to,
-      String? subject,
-      required DateTime createdAt,
-      required DateTime updatedAt}) {
+      DateTime? createdAt,
+      DateTime? updatedAt}) {
     return _Message(
       id: id,
+      from: from,
+      subject: subject,
       body: body,
       delivered: delivered,
       read: read,
-      from: from,
-      to: to,
-      subject: subject,
       createdAt: createdAt,
       updatedAt: updatedAt,
     );
@@ -45,15 +43,14 @@ const $Message = _$MessageTearOff();
 
 /// @nodoc
 mixin _$Message {
-  int get id => throw _privateConstructorUsedError;
-  String? get body => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  Account get from => throw _privateConstructorUsedError;
+  String get subject => throw _privateConstructorUsedError;
+  String get body => throw _privateConstructorUsedError;
   DateTime? get delivered => throw _privateConstructorUsedError;
   DateTime? get read => throw _privateConstructorUsedError;
-  int get from => throw _privateConstructorUsedError;
-  int get to => throw _privateConstructorUsedError;
-  String? get subject => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MessageCopyWith<Message> get copyWith => throw _privateConstructorUsedError;
@@ -64,15 +61,16 @@ abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
       _$MessageCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String? body,
+      {String id,
+      Account from,
+      String subject,
+      String body,
       DateTime? delivered,
       DateTime? read,
-      int from,
-      int to,
-      String? subject,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime? createdAt,
+      DateTime? updatedAt});
+
+  $AccountCopyWith<$Res> get from;
 }
 
 /// @nodoc
@@ -86,12 +84,11 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? from = freezed,
+    Object? subject = freezed,
     Object? body = freezed,
     Object? delivered = freezed,
     Object? read = freezed,
-    Object? from = freezed,
-    Object? to = freezed,
-    Object? subject = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -99,11 +96,19 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
+      from: from == freezed
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as Account,
+      subject: subject == freezed
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       delivered: delivered == freezed
           ? _value.delivered
           : delivered // ignore: cast_nullable_to_non_nullable
@@ -112,27 +117,22 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int,
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int,
-      subject: subject == freezed
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
+  }
+
+  @override
+  $AccountCopyWith<$Res> get from {
+    return $AccountCopyWith<$Res>(_value.from, (value) {
+      return _then(_value.copyWith(from: value));
+    });
   }
 }
 
@@ -142,15 +142,17 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       __$MessageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String? body,
+      {String id,
+      Account from,
+      String subject,
+      String body,
       DateTime? delivered,
       DateTime? read,
-      int from,
-      int to,
-      String? subject,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime? createdAt,
+      DateTime? updatedAt});
+
+  @override
+  $AccountCopyWith<$Res> get from;
 }
 
 /// @nodoc
@@ -165,12 +167,11 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? from = freezed,
+    Object? subject = freezed,
     Object? body = freezed,
     Object? delivered = freezed,
     Object? read = freezed,
-    Object? from = freezed,
-    Object? to = freezed,
-    Object? subject = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -178,11 +179,19 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
+      from: from == freezed
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as Account,
+      subject: subject == freezed
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       delivered: delivered == freezed
           ? _value.delivered
           : delivered // ignore: cast_nullable_to_non_nullable
@@ -191,26 +200,14 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int,
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int,
-      subject: subject == freezed
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -219,38 +216,35 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
 class _$_Message extends _Message {
   const _$_Message(
       {required this.id,
-      this.body,
+      required this.from,
+      required this.subject,
+      required this.body,
       this.delivered,
       this.read,
-      required this.from,
-      required this.to,
-      this.subject,
-      required this.createdAt,
-      required this.updatedAt})
+      this.createdAt,
+      this.updatedAt})
       : super._();
 
   @override
-  final int id;
+  final String id;
   @override
-  final String? body;
+  final Account from;
+  @override
+  final String subject;
+  @override
+  final String body;
   @override
   final DateTime? delivered;
   @override
   final DateTime? read;
   @override
-  final int from;
+  final DateTime? createdAt;
   @override
-  final int to;
-  @override
-  final String? subject;
-  @override
-  final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
 
   @override
   String toString() {
-    return 'Message(id: $id, body: $body, delivered: $delivered, read: $read, from: $from, to: $to, subject: $subject, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Message(id: $id, from: $from, subject: $subject, body: $body, delivered: $delivered, read: $read, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -259,6 +253,11 @@ class _$_Message extends _Message {
         (other is _Message &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.from, from) ||
+                const DeepCollectionEquality().equals(other.from, from)) &&
+            (identical(other.subject, subject) ||
+                const DeepCollectionEquality()
+                    .equals(other.subject, subject)) &&
             (identical(other.body, body) ||
                 const DeepCollectionEquality().equals(other.body, body)) &&
             (identical(other.delivered, delivered) ||
@@ -266,13 +265,6 @@ class _$_Message extends _Message {
                     .equals(other.delivered, delivered)) &&
             (identical(other.read, read) ||
                 const DeepCollectionEquality().equals(other.read, read)) &&
-            (identical(other.from, from) ||
-                const DeepCollectionEquality().equals(other.from, from)) &&
-            (identical(other.to, to) ||
-                const DeepCollectionEquality().equals(other.to, to)) &&
-            (identical(other.subject, subject) ||
-                const DeepCollectionEquality()
-                    .equals(other.subject, subject)) &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)) &&
@@ -285,12 +277,11 @@ class _$_Message extends _Message {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(from) ^
+      const DeepCollectionEquality().hash(subject) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(delivered) ^
       const DeepCollectionEquality().hash(read) ^
-      const DeepCollectionEquality().hash(from) ^
-      const DeepCollectionEquality().hash(to) ^
-      const DeepCollectionEquality().hash(subject) ^
       const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(updatedAt);
 
@@ -302,35 +293,32 @@ class _$_Message extends _Message {
 
 abstract class _Message extends Message {
   const factory _Message(
-      {required int id,
-      String? body,
+      {required String id,
+      required Account from,
+      required String subject,
+      required String body,
       DateTime? delivered,
       DateTime? read,
-      required int from,
-      required int to,
-      String? subject,
-      required DateTime createdAt,
-      required DateTime updatedAt}) = _$_Message;
+      DateTime? createdAt,
+      DateTime? updatedAt}) = _$_Message;
   const _Message._() : super._();
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String? get body => throw _privateConstructorUsedError;
+  Account get from => throw _privateConstructorUsedError;
+  @override
+  String get subject => throw _privateConstructorUsedError;
+  @override
+  String get body => throw _privateConstructorUsedError;
   @override
   DateTime? get delivered => throw _privateConstructorUsedError;
   @override
   DateTime? get read => throw _privateConstructorUsedError;
   @override
-  int get from => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
-  int get to => throw _privateConstructorUsedError;
-  @override
-  String? get subject => throw _privateConstructorUsedError;
-  @override
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  @override
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MessageCopyWith<_Message> get copyWith =>
