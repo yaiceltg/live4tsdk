@@ -11,7 +11,7 @@ import 'package:live4tsdk/src/infrastructure/message/message_dto.dart';
 class MessageRepository implements IMessageRepository {
   // http client
   final Dio? _httpClient;
-  final String _messagePath = "/v1/messenger";
+  final String _messagePath = '/v1/messenger';
 
   MessageRepository(this._httpClient);
 
@@ -20,7 +20,7 @@ class MessageRepository implements IMessageRepository {
     try {
       // call api service
       final _response = await _httpClient!.get(
-        _messagePath,
+        '$_messagePath/list',
       );
 
       // check response
@@ -60,7 +60,7 @@ class MessageRepository implements IMessageRepository {
 
       // call api service
       final _response = await _httpClient!.post(
-        _messagePath,
+        '$_messagePath/send',
         data: _data,
       );
 
