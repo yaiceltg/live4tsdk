@@ -21,23 +21,21 @@ class _$MessageDtoTearOff {
   const _$MessageDtoTearOff();
 
   _MessageDto call(
-      {required int id,
-      String? body,
+      {required String id,
+      required AccountDto from,
+      required String subject,
+      required String body,
       DateTime? delivered,
       DateTime? read,
-      required int from,
-      required int to,
-      String? subject,
-      required DateTime createdAt,
-      required DateTime updatedAt}) {
+      DateTime? createdAt,
+      DateTime? updatedAt}) {
     return _MessageDto(
       id: id,
+      from: from,
+      subject: subject,
       body: body,
       delivered: delivered,
       read: read,
-      from: from,
-      to: to,
-      subject: subject,
       createdAt: createdAt,
       updatedAt: updatedAt,
     );
@@ -53,15 +51,15 @@ const $MessageDto = _$MessageDtoTearOff();
 
 /// @nodoc
 mixin _$MessageDto {
-  int get id => throw _privateConstructorUsedError;
-  String? get body => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  AccountDto get from =>
+      throw _privateConstructorUsedError; // @JsonKey(fromJson: _from)
+  String get subject => throw _privateConstructorUsedError;
+  String get body => throw _privateConstructorUsedError;
   DateTime? get delivered => throw _privateConstructorUsedError;
   DateTime? get read => throw _privateConstructorUsedError;
-  int get from => throw _privateConstructorUsedError;
-  int get to => throw _privateConstructorUsedError;
-  String? get subject => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -75,15 +73,16 @@ abstract class $MessageDtoCopyWith<$Res> {
           MessageDto value, $Res Function(MessageDto) then) =
       _$MessageDtoCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String? body,
+      {String id,
+      AccountDto from,
+      String subject,
+      String body,
       DateTime? delivered,
       DateTime? read,
-      int from,
-      int to,
-      String? subject,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime? createdAt,
+      DateTime? updatedAt});
+
+  $AccountDtoCopyWith<$Res> get from;
 }
 
 /// @nodoc
@@ -97,12 +96,11 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? from = freezed,
+    Object? subject = freezed,
     Object? body = freezed,
     Object? delivered = freezed,
     Object? read = freezed,
-    Object? from = freezed,
-    Object? to = freezed,
-    Object? subject = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -110,11 +108,19 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
+      from: from == freezed
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as AccountDto,
+      subject: subject == freezed
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       delivered: delivered == freezed
           ? _value.delivered
           : delivered // ignore: cast_nullable_to_non_nullable
@@ -123,27 +129,22 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int,
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int,
-      subject: subject == freezed
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
+  }
+
+  @override
+  $AccountDtoCopyWith<$Res> get from {
+    return $AccountDtoCopyWith<$Res>(_value.from, (value) {
+      return _then(_value.copyWith(from: value));
+    });
   }
 }
 
@@ -154,15 +155,17 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
       __$MessageDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String? body,
+      {String id,
+      AccountDto from,
+      String subject,
+      String body,
       DateTime? delivered,
       DateTime? read,
-      int from,
-      int to,
-      String? subject,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime? createdAt,
+      DateTime? updatedAt});
+
+  @override
+  $AccountDtoCopyWith<$Res> get from;
 }
 
 /// @nodoc
@@ -178,12 +181,11 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? from = freezed,
+    Object? subject = freezed,
     Object? body = freezed,
     Object? delivered = freezed,
     Object? read = freezed,
-    Object? from = freezed,
-    Object? to = freezed,
-    Object? subject = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -191,11 +193,19 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
+      from: from == freezed
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as AccountDto,
+      subject: subject == freezed
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       delivered: delivered == freezed
           ? _value.delivered
           : delivered // ignore: cast_nullable_to_non_nullable
@@ -204,26 +214,14 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int,
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int,
-      subject: subject == freezed
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -234,41 +232,38 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
 class _$_MessageDto extends _MessageDto {
   const _$_MessageDto(
       {required this.id,
-      this.body,
+      required this.from,
+      required this.subject,
+      required this.body,
       this.delivered,
       this.read,
-      required this.from,
-      required this.to,
-      this.subject,
-      required this.createdAt,
-      required this.updatedAt})
+      this.createdAt,
+      this.updatedAt})
       : super._();
 
   factory _$_MessageDto.fromJson(Map<String, dynamic> json) =>
       _$_$_MessageDtoFromJson(json);
 
   @override
-  final int id;
+  final String id;
   @override
-  final String? body;
+  final AccountDto from;
+  @override // @JsonKey(fromJson: _from)
+  final String subject;
+  @override
+  final String body;
   @override
   final DateTime? delivered;
   @override
   final DateTime? read;
   @override
-  final int from;
+  final DateTime? createdAt;
   @override
-  final int to;
-  @override
-  final String? subject;
-  @override
-  final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
 
   @override
   String toString() {
-    return 'MessageDto(id: $id, body: $body, delivered: $delivered, read: $read, from: $from, to: $to, subject: $subject, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'MessageDto(id: $id, from: $from, subject: $subject, body: $body, delivered: $delivered, read: $read, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -277,6 +272,11 @@ class _$_MessageDto extends _MessageDto {
         (other is _MessageDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.from, from) ||
+                const DeepCollectionEquality().equals(other.from, from)) &&
+            (identical(other.subject, subject) ||
+                const DeepCollectionEquality()
+                    .equals(other.subject, subject)) &&
             (identical(other.body, body) ||
                 const DeepCollectionEquality().equals(other.body, body)) &&
             (identical(other.delivered, delivered) ||
@@ -284,13 +284,6 @@ class _$_MessageDto extends _MessageDto {
                     .equals(other.delivered, delivered)) &&
             (identical(other.read, read) ||
                 const DeepCollectionEquality().equals(other.read, read)) &&
-            (identical(other.from, from) ||
-                const DeepCollectionEquality().equals(other.from, from)) &&
-            (identical(other.to, to) ||
-                const DeepCollectionEquality().equals(other.to, to)) &&
-            (identical(other.subject, subject) ||
-                const DeepCollectionEquality()
-                    .equals(other.subject, subject)) &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)) &&
@@ -303,12 +296,11 @@ class _$_MessageDto extends _MessageDto {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(from) ^
+      const DeepCollectionEquality().hash(subject) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(delivered) ^
       const DeepCollectionEquality().hash(read) ^
-      const DeepCollectionEquality().hash(from) ^
-      const DeepCollectionEquality().hash(to) ^
-      const DeepCollectionEquality().hash(subject) ^
       const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(updatedAt);
 
@@ -325,38 +317,35 @@ class _$_MessageDto extends _MessageDto {
 
 abstract class _MessageDto extends MessageDto {
   const factory _MessageDto(
-      {required int id,
-      String? body,
+      {required String id,
+      required AccountDto from,
+      required String subject,
+      required String body,
       DateTime? delivered,
       DateTime? read,
-      required int from,
-      required int to,
-      String? subject,
-      required DateTime createdAt,
-      required DateTime updatedAt}) = _$_MessageDto;
+      DateTime? createdAt,
+      DateTime? updatedAt}) = _$_MessageDto;
   const _MessageDto._() : super._();
 
   factory _MessageDto.fromJson(Map<String, dynamic> json) =
       _$_MessageDto.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String? get body => throw _privateConstructorUsedError;
+  AccountDto get from => throw _privateConstructorUsedError;
+  @override // @JsonKey(fromJson: _from)
+  String get subject => throw _privateConstructorUsedError;
+  @override
+  String get body => throw _privateConstructorUsedError;
   @override
   DateTime? get delivered => throw _privateConstructorUsedError;
   @override
   DateTime? get read => throw _privateConstructorUsedError;
   @override
-  int get from => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
-  int get to => throw _privateConstructorUsedError;
-  @override
-  String? get subject => throw _privateConstructorUsedError;
-  @override
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  @override
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MessageDtoCopyWith<_MessageDto> get copyWith =>
