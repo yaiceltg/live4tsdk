@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:live4tsdk/src/domain/chat/chat_failure.dart';
 import 'package:live4tsdk/src/domain/chat/chat_group.dart';
 import 'package:live4tsdk/src/domain/chat/chat_message.dart';
-import 'package:live4tsdk/src/domain/core/paged_list.dart';
 
 abstract class IChatRepository {
   ///
