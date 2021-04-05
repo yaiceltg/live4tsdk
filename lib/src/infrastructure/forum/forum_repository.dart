@@ -23,12 +23,15 @@ class ForumRepository implements IForumRepository {
   ForumRepository(this._httpClient);
 
   @override
-  Future<Either<ForumFailure, Unit>> createQuestion(Question question) async {
+  Future<Either<ForumFailure, Unit>> createQuestion({
+    required String title,
+    String? body,
+  }) async {
     try {
       // prepare form data
       final _data = jsonEncode({
-        'title': question.title,
-        'body': question.body,
+        'title': title,
+        'body': body,
       });
 
       // call api service
