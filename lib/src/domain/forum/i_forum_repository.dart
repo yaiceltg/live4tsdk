@@ -7,7 +7,13 @@ import 'package:live4tsdk/src/domain/forum/question.dart';
 abstract class IForumRepository {
   Future<Either<ForumFailure, PagedList<Question>>> fetchQuestions();
 
-  Future<Either<ForumFailure,Unit>> createQuestion(Question question);
+  ///
+  /// Service to create forum question
+  ///
+  Future<Either<ForumFailure,Unit>> createQuestion({
+    required String title,
+    String? body,
+  });
 
   ///
   /// Serviceto add answer to question
