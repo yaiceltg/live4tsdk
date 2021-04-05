@@ -17,16 +17,18 @@ class _$QuestionTearOff {
   const _$QuestionTearOff();
 
   _Question call(
-      {String? id,
-      String? title,
+      {required String id,
+      required String title,
       String? body,
       int? views,
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
       int? userId,
-      DateTime? createdAt,
-      DateTime? updatedAt}) {
+      required DateTime createdAt,
+      DateTime? updatedAt,
+      required Account from,
+      required Account to}) {
     return _Question(
       id: id,
       title: title,
@@ -38,6 +40,8 @@ class _$QuestionTearOff {
       userId: userId,
       createdAt: createdAt,
       updatedAt: updatedAt,
+      from: from,
+      to: to,
     );
   }
 }
@@ -47,16 +51,18 @@ const $Question = _$QuestionTearOff();
 
 /// @nodoc
 mixin _$Question {
-  String? get id => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   String? get body => throw _privateConstructorUsedError;
   int? get views => throw _privateConstructorUsedError;
   int? get votesCount => throw _privateConstructorUsedError;
   int? get answerCount => throw _privateConstructorUsedError;
   String? get bestAnswer => throw _privateConstructorUsedError;
   int? get userId => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  Account get from => throw _privateConstructorUsedError;
+  Account get to => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestionCopyWith<Question> get copyWith =>
@@ -68,16 +74,21 @@ abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
       _$QuestionCopyWithImpl<$Res>;
   $Res call(
-      {String? id,
-      String? title,
+      {String id,
+      String title,
       String? body,
       int? views,
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
       int? userId,
-      DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime createdAt,
+      DateTime? updatedAt,
+      Account from,
+      Account to});
+
+  $AccountCopyWith<$Res> get from;
+  $AccountCopyWith<$Res> get to;
 }
 
 /// @nodoc
@@ -100,16 +111,18 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
     Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? from = freezed,
+    Object? to = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
@@ -137,12 +150,34 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      from: from == freezed
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as Account,
+      to: to == freezed
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as Account,
     ));
+  }
+
+  @override
+  $AccountCopyWith<$Res> get from {
+    return $AccountCopyWith<$Res>(_value.from, (value) {
+      return _then(_value.copyWith(from: value));
+    });
+  }
+
+  @override
+  $AccountCopyWith<$Res> get to {
+    return $AccountCopyWith<$Res>(_value.to, (value) {
+      return _then(_value.copyWith(to: value));
+    });
   }
 }
 
@@ -152,16 +187,23 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       __$QuestionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
-      String? title,
+      {String id,
+      String title,
       String? body,
       int? views,
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
       int? userId,
-      DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime createdAt,
+      DateTime? updatedAt,
+      Account from,
+      Account to});
+
+  @override
+  $AccountCopyWith<$Res> get from;
+  @override
+  $AccountCopyWith<$Res> get to;
 }
 
 /// @nodoc
@@ -185,16 +227,18 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? from = freezed,
+    Object? to = freezed,
   }) {
     return _then(_Question(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
@@ -222,11 +266,19 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       updatedAt: updatedAt == freezed
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      from: from == freezed
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as Account,
+      to: to == freezed
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as Account,
     ));
   }
 }
@@ -234,21 +286,23 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 /// @nodoc
 class _$_Question implements _Question {
   const _$_Question(
-      {this.id,
-      this.title,
+      {required this.id,
+      required this.title,
       this.body,
       this.views,
       this.votesCount,
       this.answerCount,
       this.bestAnswer,
       this.userId,
-      this.createdAt,
-      this.updatedAt});
+      required this.createdAt,
+      this.updatedAt,
+      required this.from,
+      required this.to});
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? title;
+  final String title;
   @override
   final String? body;
   @override
@@ -262,13 +316,17 @@ class _$_Question implements _Question {
   @override
   final int? userId;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
   final DateTime? updatedAt;
+  @override
+  final Account from;
+  @override
+  final Account to;
 
   @override
   String toString() {
-    return 'Question(id: $id, title: $title, body: $body, views: $views, votesCount: $votesCount, answerCount: $answerCount, bestAnswer: $bestAnswer, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Question(id: $id, title: $title, body: $body, views: $views, votesCount: $votesCount, answerCount: $answerCount, bestAnswer: $bestAnswer, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt, from: $from, to: $to)';
   }
 
   @override
@@ -299,7 +357,11 @@ class _$_Question implements _Question {
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.updatedAt, updatedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)));
+                    .equals(other.updatedAt, updatedAt)) &&
+            (identical(other.from, from) ||
+                const DeepCollectionEquality().equals(other.from, from)) &&
+            (identical(other.to, to) ||
+                const DeepCollectionEquality().equals(other.to, to)));
   }
 
   @override
@@ -314,7 +376,9 @@ class _$_Question implements _Question {
       const DeepCollectionEquality().hash(bestAnswer) ^
       const DeepCollectionEquality().hash(userId) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(updatedAt);
+      const DeepCollectionEquality().hash(updatedAt) ^
+      const DeepCollectionEquality().hash(from) ^
+      const DeepCollectionEquality().hash(to);
 
   @JsonKey(ignore: true)
   @override
@@ -324,21 +388,23 @@ class _$_Question implements _Question {
 
 abstract class _Question implements Question {
   const factory _Question(
-      {String? id,
-      String? title,
+      {required String id,
+      required String title,
       String? body,
       int? views,
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
       int? userId,
-      DateTime? createdAt,
-      DateTime? updatedAt}) = _$_Question;
+      required DateTime createdAt,
+      DateTime? updatedAt,
+      required Account from,
+      required Account to}) = _$_Question;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String? get title => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   @override
   String? get body => throw _privateConstructorUsedError;
   @override
@@ -352,9 +418,13 @@ abstract class _Question implements Question {
   @override
   int? get userId => throw _privateConstructorUsedError;
   @override
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @override
+  Account get from => throw _privateConstructorUsedError;
+  @override
+  Account get to => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$QuestionCopyWith<_Question> get copyWith =>
