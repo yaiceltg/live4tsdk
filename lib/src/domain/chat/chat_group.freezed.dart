@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ChatGroupTearOff {
   const _$ChatGroupTearOff();
 
-  _Message call() {
-    return const _Message();
+  _Message call({required String name}) {
+    return _Message(
+      name: name,
+    );
   }
 }
 
@@ -25,12 +27,19 @@ class _$ChatGroupTearOff {
 const $ChatGroup = _$ChatGroupTearOff();
 
 /// @nodoc
-mixin _$ChatGroup {}
+mixin _$ChatGroup {
+  String get name => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ChatGroupCopyWith<ChatGroup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $ChatGroupCopyWith<$Res> {
   factory $ChatGroupCopyWith(ChatGroup value, $Res Function(ChatGroup) then) =
       _$ChatGroupCopyWithImpl<$Res>;
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -40,12 +49,26 @@ class _$ChatGroupCopyWithImpl<$Res> implements $ChatGroupCopyWith<$Res> {
   final ChatGroup _value;
   // ignore: unused_field
   final $Res Function(ChatGroup) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$MessageCopyWith<$Res> {
+abstract class _$MessageCopyWith<$Res> implements $ChatGroupCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
       __$MessageCopyWithImpl<$Res>;
+  @override
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -56,27 +79,58 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatGroupCopyWithImpl<$Res>
 
   @override
   _Message get _value => super._value as _Message;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_Message(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_Message extends _Message {
-  const _$_Message() : super._();
+  const _$_Message({required this.name}) : super._();
+
+  @override
+  final String name;
 
   @override
   String toString() {
-    return 'ChatGroup()';
+    return 'ChatGroup(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Message);
+    return identical(this, other) ||
+        (other is _Message &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MessageCopyWith<_Message> get copyWith =>
+      __$MessageCopyWithImpl<_Message>(this, _$identity);
 }
 
 abstract class _Message extends ChatGroup {
-  const factory _Message() = _$_Message;
+  const factory _Message({required String name}) = _$_Message;
   const _Message._() : super._();
+
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$MessageCopyWith<_Message> get copyWith =>
+      throw _privateConstructorUsedError;
 }
