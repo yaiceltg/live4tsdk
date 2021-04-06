@@ -75,16 +75,25 @@ class MessageRepository implements IMessageRepository {
       // check response
       if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;
-        final Map<String, dynamic> _r = _d['response'];
+        if (_d.containsKey('response')) {
+          final Map<String, dynamic> _r = _d['response'];
 
-        if (_r.containsKey('code')) {
-          String _c = _r['code'];
+          if (_r.containsKey('code')) {
+            String _c = _r['code'];
+          }
         }
       }
 
       return right(unit);
     } catch (e) {
-      return left(MessageFailure.serverError());
+      if(e.toString().contains('401')) {
+        return left(MessageFailure.http(
+          error: HttpFailure.unauthorized()
+        ));
+      }
+      return left(
+        MessageFailure.serverError()
+      );
     }
   }
 }
