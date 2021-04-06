@@ -21,8 +21,7 @@ abstract class QuestionDto implements _$QuestionDto {
     int? userId,
     required DateTime createdAt,
     DateTime? updatedAt,
-    required AccountDto from,
-    required AccountDto to,
+    // required AccountDto user,
   }) = _QuestionDto;
 
   factory QuestionDto.fromDomain(Question question) {
@@ -37,8 +36,7 @@ abstract class QuestionDto implements _$QuestionDto {
       userId: question.userId,
       createdAt: question.createdAt,
       updatedAt: question.updatedAt,
-      from: AccountDto.fromDomain(question.from),
-      to: AccountDto.fromDomain(question.to)
+      // user: AccountDto.fromDomain(question.user)
     );
   }
 
@@ -54,8 +52,7 @@ abstract class QuestionDto implements _$QuestionDto {
       userId: userId,
       createdAt: createdAt,
       updatedAt: updatedAt,
-      from: from.toDomain(),
-      to: to.toDomain()
+      // user: user.toDomain(),
     );
   }
 
