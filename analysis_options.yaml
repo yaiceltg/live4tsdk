@@ -12,6 +12,6 @@ include: package:pedantic/analysis_options.yaml
 analyzer:
 #   exclude:
 #     - path/to/excluded/files/**
-  exclude:
-      - "**/*.g.dart"
-      - "**/*.freezed.dart"
+  # exclude:
+  #     - "**/*.g.dart"
+  #     - "**/*.freezed.dart"

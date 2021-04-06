@@ -6,6 +6,8 @@ void main() async {
   // start session
   await login();
 
+  final live4tsdk = Live4tsdk.instance;
+
   // create new question
   final failureOrQuestions = await live4tsdk.forum.createQuestion(
     title: "Creando nueva pregunta",
