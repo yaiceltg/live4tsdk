@@ -62,13 +62,11 @@ class ForumRepository implements IForumRepository {
   }
 
   @override
-  Future<Either<ForumFailure, PagedList<Question>>> fetchQuestions(
-      {Options? options}) async {
+  Future<Either<ForumFailure, PagedList<Question>>> fetchQuestions() async {
     try {
       // call api service
       final response = await _httpClient!.get(
         _questionPath,
-        options: options,
       );
       // check response
       if (response.data is Map<String, dynamic>) {
