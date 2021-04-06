@@ -16,6 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AuthFailureTearOff {
   const _$AuthFailureTearOff();
 
+  _HttpError http({required HttpFailure error}) {
+    return _HttpError(
+      error: error,
+    );
+  }
+
   _CancelledByUser cancelledByUser() {
     return const _CancelledByUser();
   }
@@ -56,6 +62,7 @@ const $AuthFailure = _$AuthFailureTearOff();
 mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -68,6 +75,7 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -81,6 +89,7 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -94,6 +103,7 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -122,6 +132,158 @@ class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
   final AuthFailure _value;
   // ignore: unused_field
   final $Res Function(AuthFailure) _then;
+}
+
+/// @nodoc
+abstract class _$HttpErrorCopyWith<$Res> {
+  factory _$HttpErrorCopyWith(
+          _HttpError value, $Res Function(_HttpError) then) =
+      __$HttpErrorCopyWithImpl<$Res>;
+  $Res call({HttpFailure error});
+
+  $HttpFailureCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class __$HttpErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$HttpErrorCopyWith<$Res> {
+  __$HttpErrorCopyWithImpl(_HttpError _value, $Res Function(_HttpError) _then)
+      : super(_value, (v) => _then(v as _HttpError));
+
+  @override
+  _HttpError get _value => super._value as _HttpError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_HttpError(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as HttpFailure,
+    ));
+  }
+
+  @override
+  $HttpFailureCopyWith<$Res> get error {
+    return $HttpFailureCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_HttpError implements _HttpError {
+  const _$_HttpError({required this.error});
+
+  @override
+  final HttpFailure error;
+
+  @override
+  String toString() {
+    return 'AuthFailure.http(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _HttpError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      __$HttpErrorCopyWithImpl<_HttpError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() tokenNotFound,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
+    required TResult Function() userNotFound,
+    required TResult Function() invalidAuthToken,
+    required TResult Function() expireToken,
+  }) {
+    return http(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? tokenNotFound,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? userNotFound,
+    TResult Function()? invalidAuthToken,
+    TResult Function()? expireToken,
+    required TResult orElse(),
+  }) {
+    if (http != null) {
+      return http(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_TokenNotFound value) tokenNotFound,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+    required TResult Function(_UserNotFound value) userNotFound,
+    required TResult Function(_InvalidAuthToken value) invalidAuthToken,
+    required TResult Function(_ExpireToken value) expireToken,
+  }) {
+    return http(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_TokenNotFound value)? tokenNotFound,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(_UserNotFound value)? userNotFound,
+    TResult Function(_InvalidAuthToken value)? invalidAuthToken,
+    TResult Function(_ExpireToken value)? expireToken,
+    required TResult orElse(),
+  }) {
+    if (http != null) {
+      return http(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HttpError implements AuthFailure {
+  const factory _HttpError({required HttpFailure error}) = _$_HttpError;
+
+  HttpFailure get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -163,6 +325,7 @@ class _$_CancelledByUser implements _CancelledByUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -178,6 +341,7 @@ class _$_CancelledByUser implements _CancelledByUser {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -197,6 +361,7 @@ class _$_CancelledByUser implements _CancelledByUser {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -213,6 +378,7 @@ class _$_CancelledByUser implements _CancelledByUser {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -273,6 +439,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -288,6 +455,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -307,6 +475,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -323,6 +492,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -383,6 +553,7 @@ class _$_TokenNotFound implements _TokenNotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -398,6 +569,7 @@ class _$_TokenNotFound implements _TokenNotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -417,6 +589,7 @@ class _$_TokenNotFound implements _TokenNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -433,6 +606,7 @@ class _$_TokenNotFound implements _TokenNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -494,6 +668,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -509,6 +684,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -528,6 +704,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -544,6 +721,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -610,6 +788,7 @@ class _$_InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -625,6 +804,7 @@ class _$_InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -644,6 +824,7 @@ class _$_InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -660,6 +841,7 @@ class _$_InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -721,6 +903,7 @@ class _$_UserNotFound implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -736,6 +919,7 @@ class _$_UserNotFound implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -755,6 +939,7 @@ class _$_UserNotFound implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -771,6 +956,7 @@ class _$_UserNotFound implements _UserNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -832,6 +1018,7 @@ class _$_InvalidAuthToken implements _InvalidAuthToken {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -847,6 +1034,7 @@ class _$_InvalidAuthToken implements _InvalidAuthToken {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -866,6 +1054,7 @@ class _$_InvalidAuthToken implements _InvalidAuthToken {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -882,6 +1071,7 @@ class _$_InvalidAuthToken implements _InvalidAuthToken {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,
@@ -942,6 +1132,7 @@ class _$_ExpireToken implements _ExpireToken {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() tokenNotFound,
@@ -957,6 +1148,7 @@ class _$_ExpireToken implements _ExpireToken {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? tokenNotFound,
@@ -976,6 +1168,7 @@ class _$_ExpireToken implements _ExpireToken {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_TokenNotFound value) tokenNotFound,
@@ -992,6 +1185,7 @@ class _$_ExpireToken implements _ExpireToken {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_TokenNotFound value)? tokenNotFound,

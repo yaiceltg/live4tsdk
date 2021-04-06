@@ -16,6 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ForumFailureTearOff {
   const _$ForumFailureTearOff();
 
+  _HttpError http({required HttpFailure error}) {
+    return _HttpError(
+      error: error,
+    );
+  }
+
   _ServerError serverError() {
     return const _ServerError();
   }
@@ -32,12 +38,14 @@ const $ForumFailure = _$ForumFailureTearOff();
 mixin _$ForumFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() serverError,
     required TResult Function() questionNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? serverError,
     TResult Function()? questionNotFound,
     required TResult orElse(),
@@ -45,12 +53,14 @@ mixin _$ForumFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_QuestionNotFound value) questionNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_QuestionNotFound value)? questionNotFound,
     required TResult orElse(),
@@ -72,6 +82,132 @@ class _$ForumFailureCopyWithImpl<$Res> implements $ForumFailureCopyWith<$Res> {
   final ForumFailure _value;
   // ignore: unused_field
   final $Res Function(ForumFailure) _then;
+}
+
+/// @nodoc
+abstract class _$HttpErrorCopyWith<$Res> {
+  factory _$HttpErrorCopyWith(
+          _HttpError value, $Res Function(_HttpError) then) =
+      __$HttpErrorCopyWithImpl<$Res>;
+  $Res call({HttpFailure error});
+
+  $HttpFailureCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class __$HttpErrorCopyWithImpl<$Res> extends _$ForumFailureCopyWithImpl<$Res>
+    implements _$HttpErrorCopyWith<$Res> {
+  __$HttpErrorCopyWithImpl(_HttpError _value, $Res Function(_HttpError) _then)
+      : super(_value, (v) => _then(v as _HttpError));
+
+  @override
+  _HttpError get _value => super._value as _HttpError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_HttpError(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as HttpFailure,
+    ));
+  }
+
+  @override
+  $HttpFailureCopyWith<$Res> get error {
+    return $HttpFailureCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_HttpError implements _HttpError {
+  const _$_HttpError({required this.error});
+
+  @override
+  final HttpFailure error;
+
+  @override
+  String toString() {
+    return 'ForumFailure.http(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _HttpError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      __$HttpErrorCopyWithImpl<_HttpError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
+    required TResult Function() serverError,
+    required TResult Function() questionNotFound,
+  }) {
+    return http(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
+    TResult Function()? serverError,
+    TResult Function()? questionNotFound,
+    required TResult orElse(),
+  }) {
+    if (http != null) {
+      return http(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_QuestionNotFound value) questionNotFound,
+  }) {
+    return http(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_QuestionNotFound value)? questionNotFound,
+    required TResult orElse(),
+  }) {
+    if (http != null) {
+      return http(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HttpError implements ForumFailure {
+  const factory _HttpError({required HttpFailure error}) = _$_HttpError;
+
+  HttpFailure get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -112,6 +248,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() serverError,
     required TResult Function() questionNotFound,
   }) {
@@ -121,6 +258,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? serverError,
     TResult Function()? questionNotFound,
     required TResult orElse(),
@@ -134,6 +272,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_QuestionNotFound value) questionNotFound,
   }) {
@@ -143,6 +282,7 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_QuestionNotFound value)? questionNotFound,
     required TResult orElse(),
@@ -197,6 +337,7 @@ class _$_QuestionNotFound implements _QuestionNotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
     required TResult Function() serverError,
     required TResult Function() questionNotFound,
   }) {
@@ -206,6 +347,7 @@ class _$_QuestionNotFound implements _QuestionNotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
     TResult Function()? serverError,
     TResult Function()? questionNotFound,
     required TResult orElse(),
@@ -219,6 +361,7 @@ class _$_QuestionNotFound implements _QuestionNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_QuestionNotFound value) questionNotFound,
   }) {
@@ -228,6 +371,7 @@ class _$_QuestionNotFound implements _QuestionNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_QuestionNotFound value)? questionNotFound,
     required TResult orElse(),
