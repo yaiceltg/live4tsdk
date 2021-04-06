@@ -16,7 +16,6 @@ abstract class Question with _$Question {
     int? userId,
     required DateTime createdAt,
     DateTime? updatedAt,
-    required Account from,
-    required Account to,
+    // required Account user,
   }) = _Question;
 }
