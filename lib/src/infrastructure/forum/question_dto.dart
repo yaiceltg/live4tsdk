@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/forum/question.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_dto.dart';
 
@@ -7,7 +6,7 @@ part 'question_dto.freezed.dart';
 part 'question_dto.g.dart';
 
 @freezed
-abstract class QuestionDto implements _$QuestionDto {
+class QuestionDto with _$QuestionDto {
   const QuestionDto._();
 
   const factory QuestionDto({
@@ -18,10 +17,9 @@ abstract class QuestionDto implements _$QuestionDto {
     int? votesCount,
     int? answerCount,
     String? bestAnswer,
-    int? userId,
+    required AccountDto user,
     required DateTime createdAt,
     DateTime? updatedAt,
-    // required AccountDto user,
   }) = _QuestionDto;
 
   factory QuestionDto.fromDomain(Question question) {
@@ -33,10 +31,9 @@ abstract class QuestionDto implements _$QuestionDto {
       votesCount: question.votesCount,
       answerCount: question.answerCount,
       bestAnswer: question.bestAnswer,
-      userId: question.userId,
+      user:  AccountDto.fromDomain(question.user),
       createdAt: question.createdAt,
       updatedAt: question.updatedAt,
-      // user: AccountDto.fromDomain(question.user)
     );
   }
 
@@ -49,10 +46,9 @@ abstract class QuestionDto implements _$QuestionDto {
       votesCount: votesCount,
       answerCount: answerCount,
       bestAnswer: bestAnswer,
-      userId: userId,
+      user: user.toDomain(),
       createdAt: createdAt,
       updatedAt: updatedAt,
-      // user: user.toDomain(),
     );
   }
 
