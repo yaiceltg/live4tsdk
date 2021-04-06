@@ -21,7 +21,7 @@ class _$MessageDtoTearOff {
   const _$MessageDtoTearOff();
 
   _MessageDto call(
-      {required String id,
+      {required int id,
       required AccountDto from,
       required String subject,
       required String body,
@@ -51,7 +51,7 @@ const $MessageDto = _$MessageDtoTearOff();
 
 /// @nodoc
 mixin _$MessageDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   AccountDto get from =>
       throw _privateConstructorUsedError; // @JsonKey(fromJson: _from)
   String get subject => throw _privateConstructorUsedError;
@@ -73,7 +73,7 @@ abstract class $MessageDtoCopyWith<$Res> {
           MessageDto value, $Res Function(MessageDto) then) =
       _$MessageDtoCopyWithImpl<$Res>;
   $Res call(
-      {String id,
+      {int id,
       AccountDto from,
       String subject,
       String body,
@@ -108,7 +108,7 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       from: from == freezed
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -155,7 +155,7 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
       __$MessageDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
+      {int id,
       AccountDto from,
       String subject,
       String body,
@@ -193,7 +193,7 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       from: from == freezed
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -245,7 +245,7 @@ class _$_MessageDto extends _MessageDto {
       _$_$_MessageDtoFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final AccountDto from;
   @override // @JsonKey(fromJson: _from)
@@ -317,7 +317,7 @@ class _$_MessageDto extends _MessageDto {
 
 abstract class _MessageDto extends MessageDto {
   const factory _MessageDto(
-      {required String id,
+      {required int id,
       required AccountDto from,
       required String subject,
       required String body,
@@ -331,7 +331,7 @@ abstract class _MessageDto extends MessageDto {
       _$_MessageDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   AccountDto get from => throw _privateConstructorUsedError;
   @override // @JsonKey(fromJson: _from)

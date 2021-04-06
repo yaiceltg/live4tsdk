@@ -8,7 +8,7 @@ part of 'message_dto.dart';
 
 _$_MessageDto _$_$_MessageDtoFromJson(Map<String, dynamic> json) {
   return _$_MessageDto(
-    id: json['id'] as String,
+    id: json['id'] as int,
     from: AccountDto.fromJson(json['from'] as Map<String, dynamic>),
     subject: json['subject'] as String,
     body: json['body'] as String,

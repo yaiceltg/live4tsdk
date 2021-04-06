@@ -17,7 +17,7 @@ class _$MessageTearOff {
   const _$MessageTearOff();
 
   _Message call(
-      {required String id,
+      {required int id,
       required Account from,
       required String subject,
       required String body,
@@ -43,7 +43,7 @@ const $Message = _$MessageTearOff();
 
 /// @nodoc
 mixin _$Message {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   Account get from => throw _privateConstructorUsedError;
   String get subject => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
       _$MessageCopyWithImpl<$Res>;
   $Res call(
-      {String id,
+      {int id,
       Account from,
       String subject,
       String body,
@@ -96,7 +96,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       from: from == freezed
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -142,7 +142,7 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       __$MessageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
+      {int id,
       Account from,
       String subject,
       String body,
@@ -179,7 +179,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       from: from == freezed
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -226,7 +226,7 @@ class _$_Message extends _Message {
       : super._();
 
   @override
-  final String id;
+  final int id;
   @override
   final Account from;
   @override
@@ -293,7 +293,7 @@ class _$_Message extends _Message {
 
 abstract class _Message extends Message {
   const factory _Message(
-      {required String id,
+      {required int id,
       required Account from,
       required String subject,
       required String body,
@@ -304,7 +304,7 @@ abstract class _Message extends Message {
   const _Message._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   Account get from => throw _privateConstructorUsedError;
   @override

@@ -8,7 +8,7 @@ class Message with _$Message {
   const Message._();
 
   const factory Message({
-    required String id,
+    required int id,
     required Account from,
     required String subject,
     required String body,

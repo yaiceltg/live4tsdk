@@ -5,6 +5,6 @@ part 'message_failure.freezed.dart';
 
 @freezed
 class MessageFailure with _$MessageFailure {
-  const factory MessageFailure.httpError(HttpFailure failure) = _HttpError;
+  const factory MessageFailure.http({ required HttpFailure error }) = _HttpError;
   const factory MessageFailure.serverError() = _ServerError;
 }

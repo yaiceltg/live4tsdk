@@ -15,7 +15,7 @@ abstract class MessageDto implements _$MessageDto {
   const MessageDto._();
 
   const factory MessageDto({
-    required String id,
+    required int id,
     required AccountDto from, // @JsonKey(fromJson: _from)
     required String subject,
     required String body,
