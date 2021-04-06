@@ -91,6 +91,7 @@ class ChatRepository implements IChatRepository {
       final _data = jsonEncode({
         'roomId': roomId,
         'message': message,
+        'type': type,
       });
 
       // call api service
