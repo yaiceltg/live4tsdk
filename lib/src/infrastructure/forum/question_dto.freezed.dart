@@ -30,9 +30,7 @@ class _$QuestionDtoTearOff {
       String? bestAnswer,
       int? userId,
       required DateTime createdAt,
-      DateTime? updatedAt,
-      required AccountDto from,
-      required AccountDto to}) {
+      DateTime? updatedAt}) {
     return _QuestionDto(
       id: id,
       title: title,
@@ -44,8 +42,6 @@ class _$QuestionDtoTearOff {
       userId: userId,
       createdAt: createdAt,
       updatedAt: updatedAt,
-      from: from,
-      to: to,
     );
   }
 
@@ -69,8 +65,6 @@ mixin _$QuestionDto {
   int? get userId => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  AccountDto get from => throw _privateConstructorUsedError;
-  AccountDto get to => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -93,12 +87,7 @@ abstract class $QuestionDtoCopyWith<$Res> {
       String? bestAnswer,
       int? userId,
       DateTime createdAt,
-      DateTime? updatedAt,
-      AccountDto from,
-      AccountDto to});
-
-  $AccountDtoCopyWith<$Res> get from;
-  $AccountDtoCopyWith<$Res> get to;
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -121,8 +110,6 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
     Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
-    Object? from = freezed,
-    Object? to = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -165,29 +152,7 @@ class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as AccountDto,
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as AccountDto,
     ));
-  }
-
-  @override
-  $AccountDtoCopyWith<$Res> get from {
-    return $AccountDtoCopyWith<$Res>(_value.from, (value) {
-      return _then(_value.copyWith(from: value));
-    });
-  }
-
-  @override
-  $AccountDtoCopyWith<$Res> get to {
-    return $AccountDtoCopyWith<$Res>(_value.to, (value) {
-      return _then(_value.copyWith(to: value));
-    });
   }
 }
 
@@ -208,14 +173,7 @@ abstract class _$QuestionDtoCopyWith<$Res>
       String? bestAnswer,
       int? userId,
       DateTime createdAt,
-      DateTime? updatedAt,
-      AccountDto from,
-      AccountDto to});
-
-  @override
-  $AccountDtoCopyWith<$Res> get from;
-  @override
-  $AccountDtoCopyWith<$Res> get to;
+      DateTime? updatedAt});
 }
 
 /// @nodoc
@@ -240,8 +198,6 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
-    Object? from = freezed,
-    Object? to = freezed,
   }) {
     return _then(_QuestionDto(
       id: id == freezed
@@ -284,14 +240,6 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as AccountDto,
-      to: to == freezed
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as AccountDto,
     ));
   }
 }
@@ -310,9 +258,7 @@ class _$_QuestionDto extends _QuestionDto {
       this.bestAnswer,
       this.userId,
       required this.createdAt,
-      this.updatedAt,
-      required this.from,
-      required this.to})
+      this.updatedAt})
       : super._();
 
   factory _$_QuestionDto.fromJson(Map<String, dynamic> json) =>
@@ -338,14 +284,10 @@ class _$_QuestionDto extends _QuestionDto {
   final DateTime createdAt;
   @override
   final DateTime? updatedAt;
-  @override
-  final AccountDto from;
-  @override
-  final AccountDto to;
 
   @override
   String toString() {
-    return 'QuestionDto(id: $id, title: $title, body: $body, views: $views, votesCount: $votesCount, answerCount: $answerCount, bestAnswer: $bestAnswer, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt, from: $from, to: $to)';
+    return 'QuestionDto(id: $id, title: $title, body: $body, views: $views, votesCount: $votesCount, answerCount: $answerCount, bestAnswer: $bestAnswer, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -376,11 +318,7 @@ class _$_QuestionDto extends _QuestionDto {
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.updatedAt, updatedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)) &&
-            (identical(other.from, from) ||
-                const DeepCollectionEquality().equals(other.from, from)) &&
-            (identical(other.to, to) ||
-                const DeepCollectionEquality().equals(other.to, to)));
+                    .equals(other.updatedAt, updatedAt)));
   }
 
   @override
@@ -395,9 +333,7 @@ class _$_QuestionDto extends _QuestionDto {
       const DeepCollectionEquality().hash(bestAnswer) ^
       const DeepCollectionEquality().hash(userId) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(updatedAt) ^
-      const DeepCollectionEquality().hash(from) ^
-      const DeepCollectionEquality().hash(to);
+      const DeepCollectionEquality().hash(updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -421,9 +357,7 @@ abstract class _QuestionDto extends QuestionDto {
       String? bestAnswer,
       int? userId,
       required DateTime createdAt,
-      DateTime? updatedAt,
-      required AccountDto from,
-      required AccountDto to}) = _$_QuestionDto;
+      DateTime? updatedAt}) = _$_QuestionDto;
   const _QuestionDto._() : super._();
 
   factory _QuestionDto.fromJson(Map<String, dynamic> json) =
@@ -449,10 +383,6 @@ abstract class _QuestionDto extends QuestionDto {
   DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  @override
-  AccountDto get from => throw _privateConstructorUsedError;
-  @override
-  AccountDto get to => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>
