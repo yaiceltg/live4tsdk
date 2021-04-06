@@ -31,10 +31,12 @@ class ChatRepository implements IChatRepository {
       // check response
       if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;
-        final Map<String, dynamic> _r = _d['response'];
+        if (_d.containsKey('response')) {
+          final Map<String, dynamic> _r = _d['response'];
 
-        if (_r.containsKey('code')) {
-          String _c = _r['code'];
+          if (_r.containsKey('code')) {
+            String _c = _r['code'];
+          }
         }
       }
 
@@ -61,10 +63,12 @@ class ChatRepository implements IChatRepository {
       // check response
       if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;
-        final Map<String, dynamic> _r = _d['response'];
+        if (_d.containsKey('response')) {
+          final Map<String, dynamic> _r = _d['response'];
 
-        if (_r.containsKey('code')) {
-          String _c = _r['code'];
+          if (_r.containsKey('code')) {
+            String _c = _r['code'];
+          }
         }
       }
 
@@ -99,10 +103,12 @@ class ChatRepository implements IChatRepository {
       // check response
       if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;
-        final Map<String, dynamic> _r = _d['response'];
+        if (_d.containsKey('response')) {
+          final Map<String, dynamic> _r = _d['response'];
 
-        if (_r.containsKey('code')) {
-          String _c = _r['code'];
+          if (_r.containsKey('code')) {
+            String _c = _r['code'];
+          }
         }
       }
 
