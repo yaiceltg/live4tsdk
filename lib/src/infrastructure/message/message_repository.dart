@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:live4tsdk/src/domain/core/http_failure.dart';
 import 'package:live4tsdk/src/domain/core/paged_list.dart';
 import 'package:live4tsdk/src/domain/message/i_message_repository.dart';
 import 'package:live4tsdk/src/domain/message/message.dart';
@@ -40,6 +41,11 @@ class MessageRepository implements IMessageRepository {
 
       return right(PagedList(count: _count, items: _items));
     } catch (e) {
+      if(e.toString().contains('401')) {
+        return left(MessageFailure.httpError(
+          HttpFailure.unauthorized()
+        ));
+      }
       return left(MessageFailure.serverError());
     }
   }
