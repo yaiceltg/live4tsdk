@@ -4,7 +4,7 @@ import 'package:live4tsdk/src/domain/account/account.dart';
 part 'question.freezed.dart';
 
 @freezed
-abstract class Question with _$Question {
+class Question with _$Question {
   const factory Question({
     required String id,
     required String title,
@@ -13,7 +13,7 @@ abstract class Question with _$Question {
     int? votesCount,
     int? answerCount,
     String? bestAnswer,
-    int? userId,
+    required Account user,
     required DateTime createdAt,
     DateTime? updatedAt,
     // required Account user,
