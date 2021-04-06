@@ -15,7 +15,7 @@ _$_QuestionDto _$_$_QuestionDtoFromJson(Map<String, dynamic> json) {
     votesCount: json['votesCount'] as int?,
     answerCount: json['answerCount'] as int?,
     bestAnswer: json['bestAnswer'] as String?,
-    userId: json['userId'] as int?,
+    user: AccountDto.fromJson(json['user'] as Map<String, dynamic>),
     createdAt: DateTime.parse(json['createdAt'] as String),
     updatedAt: json['updatedAt'] == null
         ? null
@@ -32,7 +32,7 @@ Map<String, dynamic> _$_$_QuestionDtoToJson(_$_QuestionDto instance) =>
       'votesCount': instance.votesCount,
       'answerCount': instance.answerCount,
       'bestAnswer': instance.bestAnswer,
-      'userId': instance.userId,
+      'user': instance.user,
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
     };
