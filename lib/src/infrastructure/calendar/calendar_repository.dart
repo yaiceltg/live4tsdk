@@ -5,7 +5,6 @@ import 'package:live4tsdk/src/domain/calendar/calendar_failure.dart';
 import 'package:live4tsdk/src/domain/calendar/calendar_event.dart';
 import 'package:dartz/dartz.dart';
 import 'package:live4tsdk/src/domain/calendar/i_calendar_repository.dart';
-import 'package:live4tsdk/src/domain/core/paged_list.dart';
 
 class CalendarRepository implements ICalendarRepository {
   // http client
@@ -15,19 +14,11 @@ class CalendarRepository implements ICalendarRepository {
   CalendarRepository(this._httpClient);
 
   @override
-  Future<Either<CalendarFailure, Unit>> createEvent({
-    required String title
-  }) async {
+  Future<Either<CalendarFailure, List<CalendarEvent>>> fetchEvents() async {
     try {
-      // prepare form data
-      final _data = jsonEncode({
-        'title': title,
-      });
-
       // call api service
-      final _response = await _httpClient!.post(
-        _calendarPath,
-        data: _data,
+      final _response = await _httpClient!.get(
+        '$_calendarPath/events',
       );
 
       // check response
@@ -40,29 +31,9 @@ class CalendarRepository implements ICalendarRepository {
         }
       }
 
-      return right(unit);
+      return right([]);
     } catch (e) {
       return left(CalendarFailure.serverError());
     }
-  }
-
-  @override
-  Future<Either<CalendarFailure, Unit>> deleteEvent(
-      {required CalendarEvent event}) {
-    // TODO: implement deleteEvent
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<CalendarFailure, PagedList<CalendarEvent>>> fetchEvents() {
-    // TODO: implement fetchEvents
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<CalendarFailure, Unit>> updateEvent(
-      {required CalendarEvent event}) {
-    // TODO: implement updateEvent
-    throw UnimplementedError();
   }
 }
