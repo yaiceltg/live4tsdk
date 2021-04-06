@@ -16,8 +16,14 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MessageFailureTearOff {
   const _$MessageFailureTearOff();
 
-  _EerverError serverError() {
-    return const _EerverError();
+  _HttpError httpError(HttpFailure failure) {
+    return _HttpError(
+      failure,
+    );
+  }
+
+  _ServerError serverError() {
+    return const _ServerError();
   }
 }
 
@@ -28,23 +34,27 @@ const $MessageFailure = _$MessageFailureTearOff();
 mixin _$MessageFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure failure) httpError,
     required TResult Function() serverError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure failure)? httpError,
     TResult Function()? serverError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EerverError value) serverError,
+    required TResult Function(_HttpError value) httpError,
+    required TResult Function(_ServerError value) serverError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EerverError value)? serverError,
+    TResult Function(_HttpError value)? httpError,
+    TResult Function(_ServerError value)? serverError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,27 +78,149 @@ class _$MessageFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$EerverErrorCopyWith<$Res> {
-  factory _$EerverErrorCopyWith(
-          _EerverError value, $Res Function(_EerverError) then) =
-      __$EerverErrorCopyWithImpl<$Res>;
+abstract class _$HttpErrorCopyWith<$Res> {
+  factory _$HttpErrorCopyWith(
+          _HttpError value, $Res Function(_HttpError) then) =
+      __$HttpErrorCopyWithImpl<$Res>;
+  $Res call({HttpFailure failure});
+
+  $HttpFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$EerverErrorCopyWithImpl<$Res>
-    extends _$MessageFailureCopyWithImpl<$Res>
-    implements _$EerverErrorCopyWith<$Res> {
-  __$EerverErrorCopyWithImpl(
-      _EerverError _value, $Res Function(_EerverError) _then)
-      : super(_value, (v) => _then(v as _EerverError));
+class __$HttpErrorCopyWithImpl<$Res> extends _$MessageFailureCopyWithImpl<$Res>
+    implements _$HttpErrorCopyWith<$Res> {
+  __$HttpErrorCopyWithImpl(_HttpError _value, $Res Function(_HttpError) _then)
+      : super(_value, (v) => _then(v as _HttpError));
 
   @override
-  _EerverError get _value => super._value as _EerverError;
+  _HttpError get _value => super._value as _HttpError;
+
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_HttpError(
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as HttpFailure,
+    ));
+  }
+
+  @override
+  $HttpFailureCopyWith<$Res> get failure {
+    return $HttpFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
 }
 
 /// @nodoc
-class _$_EerverError implements _EerverError {
-  const _$_EerverError();
+class _$_HttpError implements _HttpError {
+  const _$_HttpError(this.failure);
+
+  @override
+  final HttpFailure failure;
+
+  @override
+  String toString() {
+    return 'MessageFailure.httpError(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _HttpError &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+
+  @JsonKey(ignore: true)
+  @override
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      __$HttpErrorCopyWithImpl<_HttpError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure failure) httpError,
+    required TResult Function() serverError,
+  }) {
+    return httpError(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure failure)? httpError,
+    TResult Function()? serverError,
+    required TResult orElse(),
+  }) {
+    if (httpError != null) {
+      return httpError(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) httpError,
+    required TResult Function(_ServerError value) serverError,
+  }) {
+    return httpError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? httpError,
+    TResult Function(_ServerError value)? serverError,
+    required TResult orElse(),
+  }) {
+    if (httpError != null) {
+      return httpError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HttpError implements MessageFailure {
+  const factory _HttpError(HttpFailure failure) = _$_HttpError;
+
+  HttpFailure get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ServerErrorCopyWith<$Res> {
+  factory _$ServerErrorCopyWith(
+          _ServerError value, $Res Function(_ServerError) then) =
+      __$ServerErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ServerErrorCopyWithImpl<$Res>
+    extends _$MessageFailureCopyWithImpl<$Res>
+    implements _$ServerErrorCopyWith<$Res> {
+  __$ServerErrorCopyWithImpl(
+      _ServerError _value, $Res Function(_ServerError) _then)
+      : super(_value, (v) => _then(v as _ServerError));
+
+  @override
+  _ServerError get _value => super._value as _ServerError;
+}
+
+/// @nodoc
+class _$_ServerError implements _ServerError {
+  const _$_ServerError();
 
   @override
   String toString() {
@@ -97,7 +229,7 @@ class _$_EerverError implements _EerverError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EerverError);
+    return identical(this, other) || (other is _ServerError);
   }
 
   @override
@@ -106,6 +238,7 @@ class _$_EerverError implements _EerverError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure failure) httpError,
     required TResult Function() serverError,
   }) {
     return serverError();
@@ -114,6 +247,7 @@ class _$_EerverError implements _EerverError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure failure)? httpError,
     TResult Function()? serverError,
     required TResult orElse(),
   }) {
@@ -126,7 +260,8 @@ class _$_EerverError implements _EerverError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EerverError value) serverError,
+    required TResult Function(_HttpError value) httpError,
+    required TResult Function(_ServerError value) serverError,
   }) {
     return serverError(this);
   }
@@ -134,7 +269,8 @@ class _$_EerverError implements _EerverError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EerverError value)? serverError,
+    TResult Function(_HttpError value)? httpError,
+    TResult Function(_ServerError value)? serverError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -144,6 +280,6 @@ class _$_EerverError implements _EerverError {
   }
 }
 
-abstract class _EerverError implements MessageFailure {
-  const factory _EerverError() = _$_EerverError;
+abstract class _ServerError implements MessageFailure {
+  const factory _ServerError() = _$_ServerError;
 }
