@@ -7,9 +7,7 @@ abstract class IChatRepository {
   ///
   /// fetch user rooms
   ///
-  Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups({
-    required String groupId,
-  });
+  Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups();
 
   ///
   /// fetch room message history
