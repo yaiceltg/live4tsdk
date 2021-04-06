@@ -24,7 +24,7 @@ class _$QuestionTearOff {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      int? userId,
+      required Account user,
       required DateTime createdAt,
       DateTime? updatedAt}) {
     return _Question(
@@ -35,7 +35,7 @@ class _$QuestionTearOff {
       votesCount: votesCount,
       answerCount: answerCount,
       bestAnswer: bestAnswer,
-      userId: userId,
+      user: user,
       createdAt: createdAt,
       updatedAt: updatedAt,
     );
@@ -54,7 +54,7 @@ mixin _$Question {
   int? get votesCount => throw _privateConstructorUsedError;
   int? get answerCount => throw _privateConstructorUsedError;
   String? get bestAnswer => throw _privateConstructorUsedError;
-  int? get userId => throw _privateConstructorUsedError;
+  Account get user => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -75,9 +75,11 @@ abstract class $QuestionCopyWith<$Res> {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      int? userId,
+      Account user,
       DateTime createdAt,
       DateTime? updatedAt});
+
+  $AccountCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -97,7 +99,7 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
     Object? votesCount = freezed,
     Object? answerCount = freezed,
     Object? bestAnswer = freezed,
-    Object? userId = freezed,
+    Object? user = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -130,10 +132,10 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
           ? _value.bestAnswer
           : bestAnswer // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as Account,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -143,6 +145,13 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
+  }
+
+  @override
+  $AccountCopyWith<$Res> get user {
+    return $AccountCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -159,9 +168,12 @@ abstract class _$QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      int? userId,
+      Account user,
       DateTime createdAt,
       DateTime? updatedAt});
+
+  @override
+  $AccountCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -182,7 +194,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
     Object? votesCount = freezed,
     Object? answerCount = freezed,
     Object? bestAnswer = freezed,
-    Object? userId = freezed,
+    Object? user = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -215,10 +227,10 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
           ? _value.bestAnswer
           : bestAnswer // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as Account,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -241,7 +253,7 @@ class _$_Question implements _Question {
       this.votesCount,
       this.answerCount,
       this.bestAnswer,
-      this.userId,
+      required this.user,
       required this.createdAt,
       this.updatedAt});
 
@@ -260,7 +272,7 @@ class _$_Question implements _Question {
   @override
   final String? bestAnswer;
   @override
-  final int? userId;
+  final Account user;
   @override
   final DateTime createdAt;
   @override
@@ -268,7 +280,7 @@ class _$_Question implements _Question {
 
   @override
   String toString() {
-    return 'Question(id: $id, title: $title, body: $body, views: $views, votesCount: $votesCount, answerCount: $answerCount, bestAnswer: $bestAnswer, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Question(id: $id, title: $title, body: $body, views: $views, votesCount: $votesCount, answerCount: $answerCount, bestAnswer: $bestAnswer, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -292,8 +304,8 @@ class _$_Question implements _Question {
             (identical(other.bestAnswer, bestAnswer) ||
                 const DeepCollectionEquality()
                     .equals(other.bestAnswer, bestAnswer)) &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)) &&
@@ -312,7 +324,7 @@ class _$_Question implements _Question {
       const DeepCollectionEquality().hash(votesCount) ^
       const DeepCollectionEquality().hash(answerCount) ^
       const DeepCollectionEquality().hash(bestAnswer) ^
-      const DeepCollectionEquality().hash(userId) ^
+      const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(updatedAt);
 
@@ -331,7 +343,7 @@ abstract class _Question implements Question {
       int? votesCount,
       int? answerCount,
       String? bestAnswer,
-      int? userId,
+      required Account user,
       required DateTime createdAt,
       DateTime? updatedAt}) = _$_Question;
 
@@ -350,7 +362,7 @@ abstract class _Question implements Question {
   @override
   String? get bestAnswer => throw _privateConstructorUsedError;
   @override
-  int? get userId => throw _privateConstructorUsedError;
+  Account get user => throw _privateConstructorUsedError;
   @override
   DateTime get createdAt => throw _privateConstructorUsedError;
   @override
