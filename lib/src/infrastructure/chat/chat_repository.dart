@@ -83,7 +83,8 @@ class ChatRepository implements IChatRepository {
   @override
   Future<Either<ChatFailure, Unit>> sendMessage({
     required String roomId,
-    required String message
+    required String message,
+    required int type,
   }) async {
     try {
       // prepare form data
