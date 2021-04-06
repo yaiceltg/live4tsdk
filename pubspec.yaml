@@ -16,4 +16,3 @@ dev_dependencies:
   freezed: ^0.14.1
   pedantic: ^1.9.0
   json_serializable: ^4.0.1
-  # test: ^1.16.6
