@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_repository.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
 import 'package:live4tsdk/src/infrastructure/calendar/calendar_repository.dart';
 import 'package:live4tsdk/src/infrastructure/chat/chat_repository.dart';
+import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
 import 'package:live4tsdk/src/infrastructure/message/message_repository.dart';
 
@@ -19,8 +19,8 @@ class Live4tsdk {
   ///
   /// Dio http client config
   ///
-  final String baseUrl = 'http://164.90.157.86:3000/api';
-  Dio? httpClient;
+  // final String baseUrl = 'http://164.90.157.86:3000/api';
+  // Dio? httpClient;
 
   ///
   /// Sdk modules
@@ -41,26 +41,26 @@ class Live4tsdk {
 
   Live4tsdk._internal() {
     // create dio config
-    final _options = BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
-    );
-    httpClient = Dio(_options);
+    // final _options = BaseOptions(
+    //   baseUrl: baseUrl,
+    //   connectTimeout: 5000,
+    //   receiveTimeout: 3000,
+    // );
+    // httpClient = Dio(_options);
 
     // configure app
-    account = AccountRepository(httpClient);
-    auth = AuthRepository(httpClient);
-    calendar = CalendarRepository(httpClient);
-    forum = ForumRepository(httpClient);
-    message = MessageRepository(httpClient);
-    chat = ChatRepository(httpClient);
+    account = AccountRepository.instance;
+    auth = AuthRepository.instance;
+    calendar = CalendarRepository.instance;
+    forum = ForumRepository.instance;
+    message = MessageRepository.instance;
+    chat = ChatRepository.instance;
   }
 
   bool get ready => true;
 
   void addHeaderAuthorization(String token) {
-    httpClient!.options.headers.addAll({
+    HttpClient.instance.client.options.headers.addAll({
       'Authorization': 'Bearer $token'
     });
   }

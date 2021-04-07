@@ -5,6 +5,7 @@ import 'package:live4tsdk/src/domain/forum/forum_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:live4tsdk/src/domain/forum/i_forum_repository.dart';
 import 'package:live4tsdk/src/domain/forum/question.dart';
+import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 import 'package:live4tsdk/src/infrastructure/forum/answer_dto.dart';
 import 'dart:convert';
 import '../../domain/forum/forum_failure.dart';
@@ -13,14 +14,16 @@ import 'question_dto.dart';
 
 class ForumRepository implements IForumRepository {
   // http client
-  Dio? _httpClient;
+  final Dio _httpClient = HttpClient.instance.client;
 
   // question url
   final String _questionPath = '/v1/forum/questions';
   final String _addAnswerToQuestionsPath = '/v1/forum/questions/:questionId';
   // answer url
 
-  ForumRepository(this._httpClient);
+  static final ForumRepository instance = ForumRepository._internal();
+
+  ForumRepository._internal() {}
 
   @override
   Future<Either<ForumFailure, Unit>> createQuestion({
@@ -35,7 +38,7 @@ class ForumRepository implements IForumRepository {
       });
 
       // call api service
-      final _response = await _httpClient!.post(
+      final _response = await _httpClient.post(
         _questionPath,
         data: _data,
       );
@@ -65,7 +68,7 @@ class ForumRepository implements IForumRepository {
   Future<Either<ForumFailure, PagedList<Question>>> fetchQuestions() async {
     try {
       // call api service
-      final response = await _httpClient!.get(
+      final response = await _httpClient.get(
         _questionPath,
       );
       // check response
@@ -107,7 +110,7 @@ class ForumRepository implements IForumRepository {
       });
 
       // call api service
-      final response = await _httpClient!.post(
+      final response = await _httpClient.post(
         _addAnswerToQuestionsPath.replaceAll(":questionId'", questionId),
         data: _data
       );
@@ -138,7 +141,7 @@ class ForumRepository implements IForumRepository {
   Future<Either<ForumFailure, PagedList<Answer>>> fetchAnswers({required String questionId}) async {
     try {
       // call api service
-      final response = await _httpClient!.get(
+      final response = await _httpClient.get(
         _addAnswerToQuestionsPath.replaceAll(":questionId'", questionId),
       );
       // check response

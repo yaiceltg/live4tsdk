@@ -7,20 +7,24 @@ import 'package:live4tsdk/src/domain/core/paged_list.dart';
 import 'package:live4tsdk/src/domain/message/i_message_repository.dart';
 import 'package:live4tsdk/src/domain/message/message.dart';
 import 'package:live4tsdk/src/domain/message/message_failure.dart';
+import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 import 'package:live4tsdk/src/infrastructure/message/message_dto.dart';
 
 class MessageRepository implements IMessageRepository {
   // http client
-  final Dio? _httpClient;
+  final Dio _httpClient = HttpClient.instance.client;
+
   final String _messagePath = '/v1/messenger';
 
-  MessageRepository(this._httpClient);
+  static final MessageRepository instance = MessageRepository._internal();
+
+  MessageRepository._internal() {}
 
   @override
   Future<Either<MessageFailure, PagedList<Message>>> fetchMessages() async {
     try {
       // call api service
-      final _response = await _httpClient!.get(
+      final _response = await _httpClient.get(
         '$_messagePath/list',
       );
 
@@ -67,7 +71,7 @@ class MessageRepository implements IMessageRepository {
       });
 
       // call api service
-      final _response = await _httpClient!.post(
+      final _response = await _httpClient.post(
         '$_messagePath/send',
         data: _data,
       );

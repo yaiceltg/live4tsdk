@@ -8,18 +8,24 @@ import 'package:live4tsdk/src/domain/auth/token.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_token_dto.dart';
 import 'package:live4tsdk/src/infrastructure/auth/token_dto.dart';
+import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 import 'package:live4tsdk/src/infrastructure/core/jwt.dart';
 
 class AuthRepository implements IAuthRepository {
-  // http client
-  Dio? _httpClient;
+  ///
+  /// get http client
+  ///
+  final Dio _httpClient = HttpClient.instance.client;
 
   // url routes
   final String _authLoginPath = '/v1/auth/login';
   final String _forgotPasswordPath = '/v1/auth/forgot-password';
   final String _resetPasswordPath = '/v1/auth/reset-password';
 
-  AuthRepository(this._httpClient);
+  static final AuthRepository instance = AuthRepository._internal();
+
+  AuthRepository._internal() {
+  }
 
   @override
   Future<Either<AuthFailure, Unit>> forgotPassword(
@@ -31,7 +37,7 @@ class AuthRepository implements IAuthRepository {
       });
 
       // call api service
-      final _response = await _httpClient!.post(
+      final _response = await _httpClient.post(
         _forgotPasswordPath,
         data: _data,
       );
@@ -69,7 +75,7 @@ class AuthRepository implements IAuthRepository {
       });
 
       // call api service
-      final _response = await _httpClient!.post(
+      final _response = await _httpClient.post(
         _resetPasswordPath,
         data: _data,
       );
@@ -105,7 +111,7 @@ class AuthRepository implements IAuthRepository {
       });
 
       // call api service
-      final _response = await _httpClient!.post(
+      final _response = await _httpClient.post(
         _authLoginPath,
         data: _data,
       );

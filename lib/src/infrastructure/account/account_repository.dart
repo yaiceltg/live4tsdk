@@ -7,15 +7,21 @@ import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/account/i_account_repository.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_dto.dart';
+import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
 class AccountRepository implements IAccountRepository {
-  // http client
-  Dio? _httpClient;
+  ///
+  /// get http client
+  ///
+  final Dio _httpClient = HttpClient.instance.client;
 
   final String _getAccountPath = '/v1/account';
   final String _changeAccountPasswordPath = '/v1/account/change-password';
 
-  AccountRepository(this._httpClient);
+  static final AccountRepository instance = AccountRepository._internal();
+
+  AccountRepository._internal() {
+  }
 
   @override
   Future<Either<AccountFailure, Unit>> changePassword(
@@ -32,7 +38,7 @@ class AccountRepository implements IAccountRepository {
 
       // call api service
       final _response =
-          await _httpClient!.post(_changeAccountPasswordPath, data: _data);
+          await _httpClient.post(_changeAccountPasswordPath, data: _data);
 
       // check response
       if (_response.data is Map<String, dynamic>) {
@@ -62,7 +68,7 @@ class AccountRepository implements IAccountRepository {
     try {
       // call api service
       final _response =
-          await _httpClient!.get(_getAccountPath, options: options);
+          await _httpClient.get(_getAccountPath, options: options);
       // check response
       if (_response.data is Map<String, dynamic>) {
         Map<String, dynamic> _d = _response.data;

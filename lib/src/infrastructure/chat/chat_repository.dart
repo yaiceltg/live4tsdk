@@ -8,21 +8,24 @@ import 'package:dartz/dartz.dart';
 import 'package:live4tsdk/src/domain/chat/i_chat_repository.dart';
 import 'package:live4tsdk/src/infrastructure/chat/chat_group_dto.dart';
 import 'package:live4tsdk/src/infrastructure/chat/chat_message_dto.dart';
+import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
 class ChatRepository implements IChatRepository {
-  Dio? _httpClient;
+  final Dio _httpClient = HttpClient.instance.client;
+
   final String _chatPath = '/v1/chat';
 
-  ChatRepository(
-    this._httpClient
-  );
+  static final ChatRepository instance = ChatRepository._internal();
+
+  ChatRepository._internal() {
+  }
 
   @override
   Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups() async {
     try {
 
       // call api service
-      final _response = await _httpClient!.get(
+      final _response = await _httpClient.get(
         '$_chatPath/rooms',
       );
 
@@ -54,7 +57,7 @@ class ChatRepository implements IChatRepository {
   }) async {
     try {
       // call api service
-      final _response = await _httpClient!.get(
+      final _response = await _httpClient.get(
         '$_chatPath/rooms/$roomId/messages'
       );
 
@@ -95,7 +98,7 @@ class ChatRepository implements IChatRepository {
       });
 
       // call api service
-      final _response = await _httpClient!.post(
+      final _response = await _httpClient.post(
         '$_chatPath/rooms/$roomId/send',
         data: _data,
       );
