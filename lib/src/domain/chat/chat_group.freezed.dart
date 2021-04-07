@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ChatGroupTearOff {
   const _$ChatGroupTearOff();
 
-  _Message call({required String name}) {
+  _Message call({required int id, required String name}) {
     return _Message(
+      id: id,
       name: name,
     );
   }
@@ -28,6 +29,7 @@ const $ChatGroup = _$ChatGroupTearOff();
 
 /// @nodoc
 mixin _$ChatGroup {
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -39,7 +41,7 @@ mixin _$ChatGroup {
 abstract class $ChatGroupCopyWith<$Res> {
   factory $ChatGroupCopyWith(ChatGroup value, $Res Function(ChatGroup) then) =
       _$ChatGroupCopyWithImpl<$Res>;
-  $Res call({String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -52,9 +54,14 @@ class _$ChatGroupCopyWithImpl<$Res> implements $ChatGroupCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -68,7 +75,7 @@ abstract class _$MessageCopyWith<$Res> implements $ChatGroupCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
       __$MessageCopyWithImpl<$Res>;
   @override
-  $Res call({String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -82,9 +89,14 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatGroupCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
   }) {
     return _then(_Message(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -95,27 +107,33 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatGroupCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Message extends _Message {
-  const _$_Message({required this.name}) : super._();
+  const _$_Message({required this.id, required this.name}) : super._();
 
+  @override
+  final int id;
   @override
   final String name;
 
   @override
   String toString() {
-    return 'ChatGroup(name: $name)';
+    return 'ChatGroup(id: $id, name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Message &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
@@ -124,9 +142,11 @@ class _$_Message extends _Message {
 }
 
 abstract class _Message extends ChatGroup {
-  const factory _Message({required String name}) = _$_Message;
+  const factory _Message({required int id, required String name}) = _$_Message;
   const _Message._() : super._();
 
+  @override
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

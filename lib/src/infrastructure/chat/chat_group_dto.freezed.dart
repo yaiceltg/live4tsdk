@@ -20,8 +20,9 @@ ChatGroupDto _$ChatGroupDtoFromJson(Map<String, dynamic> json) {
 class _$ChatGroupDtoTearOff {
   const _$ChatGroupDtoTearOff();
 
-  _ChatGroupDto call({required String name}) {
+  _ChatGroupDto call({required int id, required String name}) {
     return _ChatGroupDto(
+      id: id,
       name: name,
     );
   }
@@ -36,6 +37,7 @@ const $ChatGroupDto = _$ChatGroupDtoTearOff();
 
 /// @nodoc
 mixin _$ChatGroupDto {
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +51,7 @@ abstract class $ChatGroupDtoCopyWith<$Res> {
   factory $ChatGroupDtoCopyWith(
           ChatGroupDto value, $Res Function(ChatGroupDto) then) =
       _$ChatGroupDtoCopyWithImpl<$Res>;
-  $Res call({String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -62,9 +64,14 @@ class _$ChatGroupDtoCopyWithImpl<$Res> implements $ChatGroupDtoCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -80,7 +87,7 @@ abstract class _$ChatGroupDtoCopyWith<$Res>
           _ChatGroupDto value, $Res Function(_ChatGroupDto) then) =
       __$ChatGroupDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -95,9 +102,14 @@ class __$ChatGroupDtoCopyWithImpl<$Res> extends _$ChatGroupDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
   }) {
     return _then(_ChatGroupDto(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -110,30 +122,36 @@ class __$ChatGroupDtoCopyWithImpl<$Res> extends _$ChatGroupDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_ChatGroupDto extends _ChatGroupDto {
-  const _$_ChatGroupDto({required this.name}) : super._();
+  const _$_ChatGroupDto({required this.id, required this.name}) : super._();
 
   factory _$_ChatGroupDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ChatGroupDtoFromJson(json);
 
   @override
+  final int id;
+  @override
   final String name;
 
   @override
   String toString() {
-    return 'ChatGroupDto(name: $name)';
+    return 'ChatGroupDto(id: $id, name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ChatGroupDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name);
 
   @JsonKey(ignore: true)
   @override
@@ -147,12 +165,15 @@ class _$_ChatGroupDto extends _ChatGroupDto {
 }
 
 abstract class _ChatGroupDto extends ChatGroupDto {
-  const factory _ChatGroupDto({required String name}) = _$_ChatGroupDto;
+  const factory _ChatGroupDto({required int id, required String name}) =
+      _$_ChatGroupDto;
   const _ChatGroupDto._() : super._();
 
   factory _ChatGroupDto.fromJson(Map<String, dynamic> json) =
       _$_ChatGroupDto.fromJson;
 
+  @override
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

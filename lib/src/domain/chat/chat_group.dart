@@ -7,6 +7,7 @@ class ChatGroup with _$ChatGroup {
   const ChatGroup._();
 
   const factory ChatGroup({
-    required String name
+    required int id,
+    required String name,
   }) = _Message;
 }

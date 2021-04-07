@@ -9,18 +9,21 @@ class ChatGroupDto with _$ChatGroupDto {
   const ChatGroupDto._();
 
   const factory ChatGroupDto({
-    required String name
+    required int id,
+    required String name,
   }) = _ChatGroupDto;
 
   factory ChatGroupDto.fromDomain(ChatGroup group) {
     return ChatGroupDto(
-      name: group.name
+      id: group.id,
+      name: group.name,
     );
   }
 
   ChatGroup toDomain() {
     return ChatGroup(
-      name: name
+      id: id,
+      name: name,
     );
   }
 
