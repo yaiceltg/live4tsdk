@@ -26,7 +26,10 @@ void main() async {
         gatewayTimeout: (value) => 'Gateway Timeout',
       ),
       serverError: (_) => 'Server error' // deprecated
-    ), (r) => 'Success'
+    ), (r) {
+      print(r);
+      return 'Success';
+    }
   );
 
   // httpError.error.map(

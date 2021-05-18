@@ -30,17 +30,5 @@ void main() async {
       return 'Success';
     }
   );
-
-  // httpError.error.map(
-  //       badRequest: () => 'Bad Request',
-  //       unauthorized: () => 'Unauthorized',
-  //       forbidden: () => 'Forbidden',
-  //       notFound: () => 'Not Found',
-  //       internal: () => 'Internal',
-  //       badGateway: () => 'BadGateway',
-  //       serviceUnavailable: () => 'Service Unavailable',
-  //       gatewayTimeout: () => 'Gateway Timeout',
-  //     )
-
   print(msg);
 }
