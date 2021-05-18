@@ -22,6 +22,7 @@ class ChatRepository implements IChatRepository {
 
   @override
   Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups() async {
+    print('<< chat:fetchGroupd >>');
     try {
 
       // call api service

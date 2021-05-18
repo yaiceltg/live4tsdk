@@ -213,6 +213,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Message extends _Message {
   const _$_Message(
       {required this.id,

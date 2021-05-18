@@ -20,7 +20,6 @@ class _$ChatMessageTearOff {
       {required int id,
       required String message,
       required Account user,
-      required ChatGroup group,
       required int type,
       required DateTime createdAt,
       DateTime? updatedAt}) {
@@ -28,7 +27,6 @@ class _$ChatMessageTearOff {
       id: id,
       message: message,
       user: user,
-      group: group,
       type: type,
       createdAt: createdAt,
       updatedAt: updatedAt,
@@ -44,7 +42,6 @@ mixin _$ChatMessage {
   int get id => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
   Account get user => throw _privateConstructorUsedError;
-  ChatGroup get group => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
@@ -63,13 +60,11 @@ abstract class $ChatMessageCopyWith<$Res> {
       {int id,
       String message,
       Account user,
-      ChatGroup group,
       int type,
       DateTime createdAt,
       DateTime? updatedAt});
 
   $AccountCopyWith<$Res> get user;
-  $ChatGroupCopyWith<$Res> get group;
 }
 
 /// @nodoc
@@ -85,7 +80,6 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
     Object? id = freezed,
     Object? message = freezed,
     Object? user = freezed,
-    Object? group = freezed,
     Object? type = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
@@ -103,10 +97,6 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as Account,
-      group: group == freezed
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as ChatGroup,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -128,13 +118,6 @@ class _$ChatMessageCopyWithImpl<$Res> implements $ChatMessageCopyWith<$Res> {
       return _then(_value.copyWith(user: value));
     });
   }
-
-  @override
-  $ChatGroupCopyWith<$Res> get group {
-    return $ChatGroupCopyWith<$Res>(_value.group, (value) {
-      return _then(_value.copyWith(group: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -146,15 +129,12 @@ abstract class _$MessageCopyWith<$Res> implements $ChatMessageCopyWith<$Res> {
       {int id,
       String message,
       Account user,
-      ChatGroup group,
       int type,
       DateTime createdAt,
       DateTime? updatedAt});
 
   @override
   $AccountCopyWith<$Res> get user;
-  @override
-  $ChatGroupCopyWith<$Res> get group;
 }
 
 /// @nodoc
@@ -171,7 +151,6 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatMessageCopyWithImpl<$Res>
     Object? id = freezed,
     Object? message = freezed,
     Object? user = freezed,
-    Object? group = freezed,
     Object? type = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
@@ -189,10 +168,6 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatMessageCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as Account,
-      group: group == freezed
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as ChatGroup,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -210,12 +185,12 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatMessageCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Message extends _Message {
   const _$_Message(
       {required this.id,
       required this.message,
       required this.user,
-      required this.group,
       required this.type,
       required this.createdAt,
       this.updatedAt})
@@ -228,8 +203,6 @@ class _$_Message extends _Message {
   @override
   final Account user;
   @override
-  final ChatGroup group;
-  @override
   final int type;
   @override
   final DateTime createdAt;
@@ -238,7 +211,7 @@ class _$_Message extends _Message {
 
   @override
   String toString() {
-    return 'ChatMessage(id: $id, message: $message, user: $user, group: $group, type: $type, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'ChatMessage(id: $id, message: $message, user: $user, type: $type, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -252,8 +225,6 @@ class _$_Message extends _Message {
                     .equals(other.message, message)) &&
             (identical(other.user, user) ||
                 const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.group, group) ||
-                const DeepCollectionEquality().equals(other.group, group)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.createdAt, createdAt) ||
@@ -270,7 +241,6 @@ class _$_Message extends _Message {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(group) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(updatedAt);
@@ -286,7 +256,6 @@ abstract class _Message extends ChatMessage {
       {required int id,
       required String message,
       required Account user,
-      required ChatGroup group,
       required int type,
       required DateTime createdAt,
       DateTime? updatedAt}) = _$_Message;
@@ -298,8 +267,6 @@ abstract class _Message extends ChatMessage {
   String get message => throw _privateConstructorUsedError;
   @override
   Account get user => throw _privateConstructorUsedError;
-  @override
-  ChatGroup get group => throw _privateConstructorUsedError;
   @override
   int get type => throw _privateConstructorUsedError;
   @override

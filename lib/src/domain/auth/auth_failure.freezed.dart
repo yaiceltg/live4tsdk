@@ -174,6 +174,7 @@ class __$HttpErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_HttpError implements _HttpError {
   const _$_HttpError({required this.error});
 
@@ -306,6 +307,7 @@ class __$CancelledByUserCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CancelledByUser implements _CancelledByUser {
   const _$_CancelledByUser();
 
@@ -420,6 +422,7 @@ class __$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ServerError implements _ServerError {
   const _$_ServerError();
 
@@ -534,6 +537,7 @@ class __$TokenNotFoundCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_TokenNotFound implements _TokenNotFound {
   const _$_TokenNotFound();
 
@@ -649,6 +653,7 @@ class __$EmailAlreadyInUseCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
   const _$_EmailAlreadyInUse();
 
@@ -767,6 +772,7 @@ class __$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InvalidEmailAndPasswordCombination
     implements _InvalidEmailAndPasswordCombination {
   const _$_InvalidEmailAndPasswordCombination();
@@ -884,6 +890,7 @@ class __$UserNotFoundCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UserNotFound implements _UserNotFound {
   const _$_UserNotFound();
 
@@ -999,6 +1006,7 @@ class __$InvalidAuthTokenCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InvalidAuthToken implements _InvalidAuthToken {
   const _$_InvalidAuthToken();
 
@@ -1113,6 +1121,7 @@ class __$ExpireTokenCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ExpireToken implements _ExpireToken {
   const _$_ExpireToken();
 

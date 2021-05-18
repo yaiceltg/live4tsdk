@@ -110,6 +110,7 @@ class __$PagedListCopyWithImpl<T, $Res> extends _$PagedListCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$_PagedList<T> extends _PagedList<T> {
   const _$_PagedList({required this.count, required this.items}) : super._();
 

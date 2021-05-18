@@ -16,10 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ChatGroupTearOff {
   const _$ChatGroupTearOff();
 
-  _Message call({required int id, required String name}) {
-    return _Message(
+  _ChatGroup call(
+      {required int id, required String name, ChatMessage? latestMessage}) {
+    return _ChatGroup(
       id: id,
       name: name,
+      latestMessage: latestMessage,
     );
   }
 }
@@ -31,6 +33,7 @@ const $ChatGroup = _$ChatGroupTearOff();
 mixin _$ChatGroup {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  ChatMessage? get latestMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatGroupCopyWith<ChatGroup> get copyWith =>
@@ -41,7 +44,9 @@ mixin _$ChatGroup {
 abstract class $ChatGroupCopyWith<$Res> {
   factory $ChatGroupCopyWith(ChatGroup value, $Res Function(ChatGroup) then) =
       _$ChatGroupCopyWithImpl<$Res>;
-  $Res call({int id, String name});
+  $Res call({int id, String name, ChatMessage? latestMessage});
+
+  $ChatMessageCopyWith<$Res>? get latestMessage;
 }
 
 /// @nodoc
@@ -56,6 +61,7 @@ class _$ChatGroupCopyWithImpl<$Res> implements $ChatGroupCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? latestMessage = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -66,33 +72,53 @@ class _$ChatGroupCopyWithImpl<$Res> implements $ChatGroupCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      latestMessage: latestMessage == freezed
+          ? _value.latestMessage
+          : latestMessage // ignore: cast_nullable_to_non_nullable
+              as ChatMessage?,
     ));
+  }
+
+  @override
+  $ChatMessageCopyWith<$Res>? get latestMessage {
+    if (_value.latestMessage == null) {
+      return null;
+    }
+
+    return $ChatMessageCopyWith<$Res>(_value.latestMessage!, (value) {
+      return _then(_value.copyWith(latestMessage: value));
+    });
   }
 }
 
 /// @nodoc
-abstract class _$MessageCopyWith<$Res> implements $ChatGroupCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
-      __$MessageCopyWithImpl<$Res>;
+abstract class _$ChatGroupCopyWith<$Res> implements $ChatGroupCopyWith<$Res> {
+  factory _$ChatGroupCopyWith(
+          _ChatGroup value, $Res Function(_ChatGroup) then) =
+      __$ChatGroupCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name});
+  $Res call({int id, String name, ChatMessage? latestMessage});
+
+  @override
+  $ChatMessageCopyWith<$Res>? get latestMessage;
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$ChatGroupCopyWithImpl<$Res>
-    implements _$MessageCopyWith<$Res> {
-  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
-      : super(_value, (v) => _then(v as _Message));
+class __$ChatGroupCopyWithImpl<$Res> extends _$ChatGroupCopyWithImpl<$Res>
+    implements _$ChatGroupCopyWith<$Res> {
+  __$ChatGroupCopyWithImpl(_ChatGroup _value, $Res Function(_ChatGroup) _then)
+      : super(_value, (v) => _then(v as _ChatGroup));
 
   @override
-  _Message get _value => super._value as _Message;
+  _ChatGroup get _value => super._value as _ChatGroup;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? latestMessage = freezed,
   }) {
-    return _then(_Message(
+    return _then(_ChatGroup(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -101,56 +127,73 @@ class __$MessageCopyWithImpl<$Res> extends _$ChatGroupCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      latestMessage: latestMessage == freezed
+          ? _value.latestMessage
+          : latestMessage // ignore: cast_nullable_to_non_nullable
+              as ChatMessage?,
     ));
   }
 }
 
 /// @nodoc
-class _$_Message extends _Message {
-  const _$_Message({required this.id, required this.name}) : super._();
+
+class _$_ChatGroup extends _ChatGroup {
+  const _$_ChatGroup({required this.id, required this.name, this.latestMessage})
+      : super._();
 
   @override
   final int id;
   @override
   final String name;
+  @override
+  final ChatMessage? latestMessage;
 
   @override
   String toString() {
-    return 'ChatGroup(id: $id, name: $name)';
+    return 'ChatGroup(id: $id, name: $name, latestMessage: $latestMessage)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Message &&
+        (other is _ChatGroup &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.latestMessage, latestMessage) ||
+                const DeepCollectionEquality()
+                    .equals(other.latestMessage, latestMessage)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name);
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(latestMessage);
 
   @JsonKey(ignore: true)
   @override
-  _$MessageCopyWith<_Message> get copyWith =>
-      __$MessageCopyWithImpl<_Message>(this, _$identity);
+  _$ChatGroupCopyWith<_ChatGroup> get copyWith =>
+      __$ChatGroupCopyWithImpl<_ChatGroup>(this, _$identity);
 }
 
-abstract class _Message extends ChatGroup {
-  const factory _Message({required int id, required String name}) = _$_Message;
-  const _Message._() : super._();
+abstract class _ChatGroup extends ChatGroup {
+  const factory _ChatGroup(
+      {required int id,
+      required String name,
+      ChatMessage? latestMessage}) = _$_ChatGroup;
+  const _ChatGroup._() : super._();
 
   @override
   int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
+  ChatMessage? get latestMessage => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
-  _$MessageCopyWith<_Message> get copyWith =>
+  _$ChatGroupCopyWith<_ChatGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }

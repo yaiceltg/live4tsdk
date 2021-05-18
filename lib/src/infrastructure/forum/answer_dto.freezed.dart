@@ -211,9 +211,8 @@ class __$AnswerDtoCopyWithImpl<$Res> extends _$AnswerDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AnswerDto extends _AnswerDto {
   const _$_AnswerDto(
       {this.id,

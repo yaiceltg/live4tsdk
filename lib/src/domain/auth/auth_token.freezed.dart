@@ -95,6 +95,7 @@ class __$AuthTokenCopyWithImpl<$Res> extends _$AuthTokenCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AuthToken implements _AuthToken {
   const _$_AuthToken({required this.accessToken});
 

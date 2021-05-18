@@ -64,6 +64,7 @@ class __$CalendarEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CalendarEvent extends _CalendarEvent {
   const _$_CalendarEvent() : super._();
 

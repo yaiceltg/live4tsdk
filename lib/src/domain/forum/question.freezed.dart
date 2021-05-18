@@ -244,6 +244,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Question implements _Question {
   const _$_Question(
       {required this.id,

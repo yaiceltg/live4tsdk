@@ -333,9 +333,8 @@ class __$AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AccountDto extends _AccountDto {
   const _$_AccountDto(
       {this.id,

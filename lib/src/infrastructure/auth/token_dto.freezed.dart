@@ -257,9 +257,8 @@ class __$TokenDtoCopyWithImpl<$Res> extends _$TokenDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_TokenDto extends _TokenDto {
   _$_TokenDto(
       {required this.userName,

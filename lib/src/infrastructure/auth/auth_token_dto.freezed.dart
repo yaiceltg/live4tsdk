@@ -106,9 +106,8 @@ class __$AuthTokenDtoCopyWithImpl<$Res> extends _$AuthTokenDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AuthTokenDto extends _AuthTokenDto {
   const _$_AuthTokenDto({required this.accessToken}) : super._();
 

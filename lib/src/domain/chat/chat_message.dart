@@ -12,7 +12,6 @@ class ChatMessage with _$ChatMessage {
     required int id,
     required String message,
     required Account user,
-    required ChatGroup group,
     required int type,
     required DateTime createdAt,
     DateTime? updatedAt,

@@ -22,6 +22,7 @@ class MessageRepository implements IMessageRepository {
 
   @override
   Future<Either<MessageFailure, PagedList<Message>>> fetchMessages() async {
+    print('<< message:fetchMessages >>');
     try {
       // call api service
       final _response = await _httpClient.get(
@@ -62,6 +63,7 @@ class MessageRepository implements IMessageRepository {
     required String subject,
     required String body
   }) async {
+    print('<< message:sendMessage >>');
     try {
       // prepare form data
       final _data = jsonEncode({

@@ -201,6 +201,7 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Answer implements _Answer {
   const _$_Answer(
       {this.id,

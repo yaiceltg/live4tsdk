@@ -117,6 +117,7 @@ class __$HttpErrorCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_HttpError implements _HttpError {
   const _$_HttpError({required this.error});
 
@@ -219,6 +220,7 @@ class __$ServerErrorCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ServerError implements _ServerError {
   const _$_ServerError();
 

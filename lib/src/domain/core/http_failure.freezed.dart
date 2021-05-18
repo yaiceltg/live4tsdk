@@ -141,6 +141,7 @@ class __$BadRequestCopyWithImpl<$Res> extends _$HttpFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BadRequest implements _BadRequest {
   const _$_BadRequest();
 
@@ -249,6 +250,7 @@ class __$UnauthorizedCopyWithImpl<$Res> extends _$HttpFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Unauthorized implements _Unauthorized {
   const _$_Unauthorized();
 
@@ -356,6 +358,7 @@ class __$ForbiddenCopyWithImpl<$Res> extends _$HttpFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Forbidden implements _Forbidden {
   const _$_Forbidden();
 
@@ -462,6 +465,7 @@ class __$NotFoundCopyWithImpl<$Res> extends _$HttpFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_NotFound implements _NotFound {
   const _$_NotFound();
 
@@ -568,6 +572,7 @@ class __$InternalCopyWithImpl<$Res> extends _$HttpFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Internal implements _Internal {
   const _$_Internal();
 
@@ -676,6 +681,7 @@ class __$BadGatewayCopyWithImpl<$Res> extends _$HttpFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BadGateway implements _BadGateway {
   const _$_BadGateway();
 
@@ -785,6 +791,7 @@ class __$ServiceUnavailableCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ServiceUnavailable implements _ServiceUnavailable {
   const _$_ServiceUnavailable();
 
@@ -894,6 +901,7 @@ class __$GatewayTimeoutCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_GatewayTimeout implements _GatewayTimeout {
   const _$_GatewayTimeout();
 

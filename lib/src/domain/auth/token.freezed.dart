@@ -246,6 +246,7 @@ class __$TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Token extends _Token {
   const _$_Token(
       {required this.userName,

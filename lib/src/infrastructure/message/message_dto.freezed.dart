@@ -226,9 +226,8 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_MessageDto extends _MessageDto {
   const _$_MessageDto(
       {required this.id,
