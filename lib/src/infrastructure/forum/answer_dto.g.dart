@@ -9,8 +9,8 @@ part of 'answer_dto.dart';
 _$_AnswerDto _$_$_AnswerDtoFromJson(Map<String, dynamic> json) {
   return _$_AnswerDto(
     id: json['id'] as String?,
-    queId: json['queId'] as String?,
-    userId: json['userId'] as String?,
+    queId: json['queId'] as int?,
+    userId: json['userId'] as int?,
     body: json['body'] as String?,
     votesCount: json['votesCount'] as int?,
     createdAt: json['createdAt'] == null

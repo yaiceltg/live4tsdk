@@ -18,7 +18,7 @@ class ForumRepository implements IForumRepository {
 
   // question url
   final String _questionPath = '/v1/forum/questions';
-  final String _addAnswerToQuestionsPath = '/v1/forum/questions/:questionId';
+  final String _answersPath = '/v1/forum/questions/:questionId/answers';
   // answer url
 
   static final ForumRepository instance = ForumRepository._internal();
@@ -30,6 +30,7 @@ class ForumRepository implements IForumRepository {
     required String title,
     String? body,
   }) async {
+    print('<< forum:createQuestion >>');
     try {
       // prepare form data
       final _data = jsonEncode({
@@ -105,13 +106,13 @@ class ForumRepository implements IForumRepository {
     try {
       // prepare form data
       final _data = jsonEncode({
-        'questionId': questionId,
+        // 'questionId': questionId,
         'body': body,
       });
 
       // call api service
       final response = await _httpClient.post(
-        _addAnswerToQuestionsPath.replaceAll(":questionId'", questionId),
+        _answersPath.replaceAll(":questionId", questionId),
         data: _data
       );
       // check response
@@ -139,10 +140,11 @@ class ForumRepository implements IForumRepository {
 
   @override
   Future<Either<ForumFailure, PagedList<Answer>>> fetchAnswers({required String questionId}) async {
+    print('<< forum:fetchANswers >>');
     try {
       // call api service
       final response = await _httpClient.get(
-        _addAnswerToQuestionsPath.replaceAll(":questionId'", questionId),
+        _answersPath.replaceAll(":questionId", questionId),
       );
       // check response
       if (response.data is Map<String, dynamic>) {

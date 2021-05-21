@@ -18,8 +18,8 @@ class _$AnswerTearOff {
 
   _Answer call(
       {String? id,
-      String? queId,
-      String? userId,
+      int? queId,
+      int? userId,
       String? body,
       int? votesCount,
       DateTime? createdAt,
@@ -44,8 +44,8 @@ const $Answer = _$AnswerTearOff();
 /// @nodoc
 mixin _$Answer {
   String? get id => throw _privateConstructorUsedError;
-  String? get queId => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
+  int? get queId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   String? get body => throw _privateConstructorUsedError;
   int? get votesCount => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -62,8 +62,8 @@ abstract class $AnswerCopyWith<$Res> {
       _$AnswerCopyWithImpl<$Res>;
   $Res call(
       {String? id,
-      String? queId,
-      String? userId,
+      int? queId,
+      int? userId,
       String? body,
       int? votesCount,
       DateTime? createdAt,
@@ -98,11 +98,11 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
       queId: queId == freezed
           ? _value.queId
           : queId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
@@ -134,8 +134,8 @@ abstract class _$AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
   @override
   $Res call(
       {String? id,
-      String? queId,
-      String? userId,
+      int? queId,
+      int? userId,
       String? body,
       int? votesCount,
       DateTime? createdAt,
@@ -171,11 +171,11 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
       queId: queId == freezed
           ? _value.queId
           : queId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
@@ -216,9 +216,9 @@ class _$_Answer implements _Answer {
   @override
   final String? id;
   @override
-  final String? queId;
+  final int? queId;
   @override
-  final String? userId;
+  final int? userId;
   @override
   final String? body;
   @override
@@ -282,8 +282,8 @@ class _$_Answer implements _Answer {
 abstract class _Answer implements Answer {
   const factory _Answer(
       {String? id,
-      String? queId,
-      String? userId,
+      int? queId,
+      int? userId,
       String? body,
       int? votesCount,
       DateTime? createdAt,
@@ -293,9 +293,9 @@ abstract class _Answer implements Answer {
   @override
   String? get id => throw _privateConstructorUsedError;
   @override
-  String? get queId => throw _privateConstructorUsedError;
+  int? get queId => throw _privateConstructorUsedError;
   @override
-  String? get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
   @override
   String? get body => throw _privateConstructorUsedError;
   @override

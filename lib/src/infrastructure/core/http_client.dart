@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class HttpClient {
   /// dio config
-  final String baseUrl = 'http://164.90.157.86:3000/api';
+  final String baseUrl = 'http://localhost:3000/api';
   late Dio httpClient;
 
   static final HttpClient instance = HttpClient._internal();
@@ -11,7 +11,7 @@ class HttpClient {
     // create dio config
 
     final _options = BaseOptions(
-      baseUrl: 'http://164.90.157.86:3000/api',
+      baseUrl: baseUrl,
       connectTimeout: 5000,
       receiveTimeout: 3000,
     );

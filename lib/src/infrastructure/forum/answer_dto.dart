@@ -10,8 +10,8 @@ abstract class AnswerDto implements _$AnswerDto {
 
   const factory AnswerDto({
     String? id,
-    String? queId,
-    String? userId,
+    int? queId,
+    int? userId,
     String? body,
     int? votesCount,
     DateTime? createdAt,

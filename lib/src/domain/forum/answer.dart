@@ -6,8 +6,8 @@ part 'answer.freezed.dart';
 abstract class Answer with _$Answer {
   const factory Answer({
     String? id,
-    String? queId,
-    String? userId,
+    int? queId,
+    int? userId,
     String? body,
     int? votesCount,
     DateTime? createdAt,
