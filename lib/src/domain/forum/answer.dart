@@ -1,13 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:live4tsdk/src/domain/account/account.dart';
 
 part 'answer.freezed.dart';
 
 @freezed
-abstract class Answer with _$Answer {
+class Answer with _$Answer {
   const factory Answer({
-    String? id,
+    required String id,
     int? queId,
-    int? userId,
+    required Account user,
     String? body,
     int? votesCount,
     DateTime? createdAt,

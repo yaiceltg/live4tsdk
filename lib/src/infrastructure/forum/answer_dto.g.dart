@@ -8,9 +8,9 @@ part of 'answer_dto.dart';
 
 _$_AnswerDto _$_$_AnswerDtoFromJson(Map<String, dynamic> json) {
   return _$_AnswerDto(
-    id: json['id'] as String?,
+    id: json['id'] as String,
     queId: json['queId'] as int?,
-    userId: json['userId'] as int?,
+    user: AccountDto.fromJson(json['user'] as Map<String, dynamic>),
     body: json['body'] as String?,
     votesCount: json['votesCount'] as int?,
     createdAt: json['createdAt'] == null
@@ -27,7 +27,7 @@ Map<String, dynamic> _$_$_AnswerDtoToJson(_$_AnswerDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'queId': instance.queId,
-      'userId': instance.userId,
+      'user': instance.user,
       'body': instance.body,
       'votesCount': instance.votesCount,
       'createdAt': instance.createdAt?.toIso8601String(),

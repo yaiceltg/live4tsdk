@@ -17,9 +17,9 @@ class _$AnswerTearOff {
   const _$AnswerTearOff();
 
   _Answer call(
-      {String? id,
+      {required String id,
       int? queId,
-      int? userId,
+      required Account user,
       String? body,
       int? votesCount,
       DateTime? createdAt,
@@ -28,7 +28,7 @@ class _$AnswerTearOff {
     return _Answer(
       id: id,
       queId: queId,
-      userId: userId,
+      user: user,
       body: body,
       votesCount: votesCount,
       createdAt: createdAt,
@@ -43,9 +43,9 @@ const $Answer = _$AnswerTearOff();
 
 /// @nodoc
 mixin _$Answer {
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   int? get queId => throw _privateConstructorUsedError;
-  int? get userId => throw _privateConstructorUsedError;
+  Account get user => throw _privateConstructorUsedError;
   String? get body => throw _privateConstructorUsedError;
   int? get votesCount => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -61,14 +61,16 @@ abstract class $AnswerCopyWith<$Res> {
   factory $AnswerCopyWith(Answer value, $Res Function(Answer) then) =
       _$AnswerCopyWithImpl<$Res>;
   $Res call(
-      {String? id,
+      {String id,
       int? queId,
-      int? userId,
+      Account user,
       String? body,
       int? votesCount,
       DateTime? createdAt,
       DateTime? updatedAt,
       String? bestAnswer});
+
+  $AccountCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -83,7 +85,7 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? queId = freezed,
-    Object? userId = freezed,
+    Object? user = freezed,
     Object? body = freezed,
     Object? votesCount = freezed,
     Object? createdAt = freezed,
@@ -94,15 +96,15 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       queId: queId == freezed
           ? _value.queId
           : queId // ignore: cast_nullable_to_non_nullable
               as int?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as Account,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
@@ -125,6 +127,13 @@ class _$AnswerCopyWithImpl<$Res> implements $AnswerCopyWith<$Res> {
               as String?,
     ));
   }
+
+  @override
+  $AccountCopyWith<$Res> get user {
+    return $AccountCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -133,14 +142,17 @@ abstract class _$AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
       __$AnswerCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
+      {String id,
       int? queId,
-      int? userId,
+      Account user,
       String? body,
       int? votesCount,
       DateTime? createdAt,
       DateTime? updatedAt,
       String? bestAnswer});
+
+  @override
+  $AccountCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -156,7 +168,7 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? queId = freezed,
-    Object? userId = freezed,
+    Object? user = freezed,
     Object? body = freezed,
     Object? votesCount = freezed,
     Object? createdAt = freezed,
@@ -167,15 +179,15 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       queId: queId == freezed
           ? _value.queId
           : queId // ignore: cast_nullable_to_non_nullable
               as int?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as Account,
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
@@ -204,9 +216,9 @@ class __$AnswerCopyWithImpl<$Res> extends _$AnswerCopyWithImpl<$Res>
 
 class _$_Answer implements _Answer {
   const _$_Answer(
-      {this.id,
+      {required this.id,
       this.queId,
-      this.userId,
+      required this.user,
       this.body,
       this.votesCount,
       this.createdAt,
@@ -214,11 +226,11 @@ class _$_Answer implements _Answer {
       this.bestAnswer});
 
   @override
-  final String? id;
+  final String id;
   @override
   final int? queId;
   @override
-  final int? userId;
+  final Account user;
   @override
   final String? body;
   @override
@@ -232,7 +244,7 @@ class _$_Answer implements _Answer {
 
   @override
   String toString() {
-    return 'Answer(id: $id, queId: $queId, userId: $userId, body: $body, votesCount: $votesCount, createdAt: $createdAt, updatedAt: $updatedAt, bestAnswer: $bestAnswer)';
+    return 'Answer(id: $id, queId: $queId, user: $user, body: $body, votesCount: $votesCount, createdAt: $createdAt, updatedAt: $updatedAt, bestAnswer: $bestAnswer)';
   }
 
   @override
@@ -243,8 +255,8 @@ class _$_Answer implements _Answer {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.queId, queId) ||
                 const DeepCollectionEquality().equals(other.queId, queId)) &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.body, body) ||
                 const DeepCollectionEquality().equals(other.body, body)) &&
             (identical(other.votesCount, votesCount) ||
@@ -266,7 +278,7 @@ class _$_Answer implements _Answer {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(queId) ^
-      const DeepCollectionEquality().hash(userId) ^
+      const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(votesCount) ^
       const DeepCollectionEquality().hash(createdAt) ^
@@ -281,9 +293,9 @@ class _$_Answer implements _Answer {
 
 abstract class _Answer implements Answer {
   const factory _Answer(
-      {String? id,
+      {required String id,
       int? queId,
-      int? userId,
+      required Account user,
       String? body,
       int? votesCount,
       DateTime? createdAt,
@@ -291,11 +303,11 @@ abstract class _Answer implements Answer {
       String? bestAnswer}) = _$_Answer;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @override
   int? get queId => throw _privateConstructorUsedError;
   @override
-  int? get userId => throw _privateConstructorUsedError;
+  Account get user => throw _privateConstructorUsedError;
   @override
   String? get body => throw _privateConstructorUsedError;
   @override

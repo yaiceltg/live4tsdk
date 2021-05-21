@@ -1,0 +1,215 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+
+part of 'schedule_failure.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$ScheduleFailureTearOff {
+  const _$ScheduleFailureTearOff();
+
+  _HttpError http({required HttpFailure error}) {
+    return _HttpError(
+      error: error,
+    );
+  }
+}
+
+/// @nodoc
+const $ScheduleFailure = _$ScheduleFailureTearOff();
+
+/// @nodoc
+mixin _$ScheduleFailure {
+  HttpFailure get error => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ScheduleFailureCopyWith<ScheduleFailure> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ScheduleFailureCopyWith<$Res> {
+  factory $ScheduleFailureCopyWith(
+          ScheduleFailure value, $Res Function(ScheduleFailure) then) =
+      _$ScheduleFailureCopyWithImpl<$Res>;
+  $Res call({HttpFailure error});
+
+  $HttpFailureCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class _$ScheduleFailureCopyWithImpl<$Res>
+    implements $ScheduleFailureCopyWith<$Res> {
+  _$ScheduleFailureCopyWithImpl(this._value, this._then);
+
+  final ScheduleFailure _value;
+  // ignore: unused_field
+  final $Res Function(ScheduleFailure) _then;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_value.copyWith(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as HttpFailure,
+    ));
+  }
+
+  @override
+  $HttpFailureCopyWith<$Res> get error {
+    return $HttpFailureCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$HttpErrorCopyWith<$Res>
+    implements $ScheduleFailureCopyWith<$Res> {
+  factory _$HttpErrorCopyWith(
+          _HttpError value, $Res Function(_HttpError) then) =
+      __$HttpErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({HttpFailure error});
+
+  @override
+  $HttpFailureCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class __$HttpErrorCopyWithImpl<$Res> extends _$ScheduleFailureCopyWithImpl<$Res>
+    implements _$HttpErrorCopyWith<$Res> {
+  __$HttpErrorCopyWithImpl(_HttpError _value, $Res Function(_HttpError) _then)
+      : super(_value, (v) => _then(v as _HttpError));
+
+  @override
+  _HttpError get _value => super._value as _HttpError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_HttpError(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as HttpFailure,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_HttpError implements _HttpError {
+  const _$_HttpError({required this.error});
+
+  @override
+  final HttpFailure error;
+
+  @override
+  String toString() {
+    return 'ScheduleFailure.http(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _HttpError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      __$HttpErrorCopyWithImpl<_HttpError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
+  }) {
+    return http(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
+    required TResult orElse(),
+  }) {
+    if (http != null) {
+      return http(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
+  }) {
+    return http(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
+    required TResult orElse(),
+  }) {
+    if (http != null) {
+      return http(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HttpError implements ScheduleFailure {
+  const factory _HttpError({required HttpFailure error}) = _$_HttpError;
+
+  @override
+  HttpFailure get error => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$HttpErrorCopyWith<_HttpError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

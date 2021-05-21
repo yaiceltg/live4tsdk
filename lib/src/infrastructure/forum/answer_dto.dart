@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:live4tsdk/src/domain/forum/answer.dart';
+import 'package:live4tsdk/src/infrastructure/account/account_dto.dart';
 
 part 'answer_dto.freezed.dart';
 part 'answer_dto.g.dart';
@@ -9,9 +10,9 @@ abstract class AnswerDto implements _$AnswerDto {
   const AnswerDto._();
 
   const factory AnswerDto({
-    String? id,
+    required String id,
     int? queId,
-    int? userId,
+    required AccountDto user,
     String? body,
     int? votesCount,
     DateTime? createdAt,
@@ -23,7 +24,7 @@ abstract class AnswerDto implements _$AnswerDto {
     return AnswerDto(
       id: answer.id,
       queId: answer.queId,
-      userId: answer.userId,
+      user: AccountDto.fromDomain(answer.user),
       body: answer.body,
       votesCount: answer.votesCount,
       createdAt: answer.createdAt,
@@ -36,7 +37,7 @@ abstract class AnswerDto implements _$AnswerDto {
     return Answer(
       id: id,
       queId: queId,
-      userId: userId,
+      user: user.toDomain(),
       body: body,
       votesCount: votesCount,
       createdAt: createdAt,
