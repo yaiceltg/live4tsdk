@@ -42,9 +42,7 @@ class ScheduleRepository implements IScheduleRepository{
           }
         }
       }
-      int _count = _response.data['count'];
-
-      final _items = (_response.data['items'] as List)
+      final _items = (_response.data as List)
           .map((e) => ScheduleTaskDto.fromJson(e).toDomain())
           .toList();
 
