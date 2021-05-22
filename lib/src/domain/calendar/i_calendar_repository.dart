@@ -1,19 +1,22 @@
 import 'package:dartz/dartz.dart';
-import 'package:live4tsdk/src/domain/calendar/calendar_event.dart';
+import 'package:live4tsdk/src/domain/calendar/calendar_class.dart';
 import 'package:live4tsdk/src/domain/calendar/calendar_failure.dart';
 
 abstract class ICalendarRepository {
   ///
   /// list calendar events
   ///
-  Future<Either<CalendarFailure, List<CalendarEvent>>> fetchEvents();
+  Future<Either<CalendarFailure, List<CalendarClass>>> fetchClass();
 
-  // ///
-  // /// create calendar event
-  // ///
-  // Future<Either<CalendarFailure, Unit>> createEvent({
-  //   required String title
-  // });
+  ///
+  /// create calendar event
+  ///
+  Future<Either<CalendarFailure, Unit>> createEvent({
+    required String name,
+    required DateTime start,
+    required DateTime end,
+    String? link
+  });
 
   // ///
   // /// update calendar event

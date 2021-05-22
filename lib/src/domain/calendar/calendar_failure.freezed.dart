@@ -22,8 +22,8 @@ class _$CalendarFailureTearOff {
     );
   }
 
-  _ServerError serverError() {
-    return const _ServerError();
+  _Unknown unknown() {
+    return const _Unknown();
   }
 }
 
@@ -35,26 +35,26 @@ mixin _$CalendarFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
-    required TResult Function() serverError,
+    required TResult Function() unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
-    TResult Function()? serverError,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
-    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
-    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,7 +150,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
-    required TResult Function() serverError,
+    required TResult Function() unknown,
   }) {
     return http(error);
   }
@@ -159,7 +159,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
-    TResult Function()? serverError,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -172,7 +172,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
-    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unknown value) unknown,
   }) {
     return http(this);
   }
@@ -181,7 +181,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
-    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -201,37 +201,34 @@ abstract class _HttpError implements CalendarFailure {
 }
 
 /// @nodoc
-abstract class _$ServerErrorCopyWith<$Res> {
-  factory _$ServerErrorCopyWith(
-          _ServerError value, $Res Function(_ServerError) then) =
-      __$ServerErrorCopyWithImpl<$Res>;
+abstract class _$UnknownCopyWith<$Res> {
+  factory _$UnknownCopyWith(_Unknown value, $Res Function(_Unknown) then) =
+      __$UnknownCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServerErrorCopyWithImpl<$Res>
-    extends _$CalendarFailureCopyWithImpl<$Res>
-    implements _$ServerErrorCopyWith<$Res> {
-  __$ServerErrorCopyWithImpl(
-      _ServerError _value, $Res Function(_ServerError) _then)
-      : super(_value, (v) => _then(v as _ServerError));
+class __$UnknownCopyWithImpl<$Res> extends _$CalendarFailureCopyWithImpl<$Res>
+    implements _$UnknownCopyWith<$Res> {
+  __$UnknownCopyWithImpl(_Unknown _value, $Res Function(_Unknown) _then)
+      : super(_value, (v) => _then(v as _Unknown));
 
   @override
-  _ServerError get _value => super._value as _ServerError;
+  _Unknown get _value => super._value as _Unknown;
 }
 
 /// @nodoc
 
-class _$_ServerError implements _ServerError {
-  const _$_ServerError();
+class _$_Unknown implements _Unknown {
+  const _$_Unknown();
 
   @override
   String toString() {
-    return 'CalendarFailure.serverError()';
+    return 'CalendarFailure.unknown()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ServerError);
+    return identical(this, other) || (other is _Unknown);
   }
 
   @override
@@ -241,20 +238,20 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
-    required TResult Function() serverError,
+    required TResult Function() unknown,
   }) {
-    return serverError();
+    return unknown();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
-    TResult Function()? serverError,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
-    if (serverError != null) {
-      return serverError();
+    if (unknown != null) {
+      return unknown();
     }
     return orElse();
   }
@@ -263,25 +260,25 @@ class _$_ServerError implements _ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
-    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unknown value) unknown,
   }) {
-    return serverError(this);
+    return unknown(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
-    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) {
-    if (serverError != null) {
-      return serverError(this);
+    if (unknown != null) {
+      return unknown(this);
     }
     return orElse();
   }
 }
 
-abstract class _ServerError implements CalendarFailure {
-  const factory _ServerError() = _$_ServerError;
+abstract class _Unknown implements CalendarFailure {
+  const factory _Unknown() = _$_Unknown;
 }
