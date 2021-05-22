@@ -21,6 +21,10 @@ class _$ScheduleFailureTearOff {
       error: error,
     );
   }
+
+  _Unknown unknown() {
+    return const _Unknown();
+  }
 }
 
 /// @nodoc
@@ -28,33 +32,31 @@ const $ScheduleFailure = _$ScheduleFailureTearOff();
 
 /// @nodoc
 mixin _$ScheduleFailure {
-  HttpFailure get error => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
+    required TResult Function() unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
+    required TResult Function(_Unknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
+    TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ScheduleFailureCopyWith<ScheduleFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -63,9 +65,6 @@ abstract class $ScheduleFailureCopyWith<$Res> {
   factory $ScheduleFailureCopyWith(
           ScheduleFailure value, $Res Function(ScheduleFailure) then) =
       _$ScheduleFailureCopyWithImpl<$Res>;
-  $Res call({HttpFailure error});
-
-  $HttpFailureCopyWith<$Res> get error;
 }
 
 /// @nodoc
@@ -76,37 +75,15 @@ class _$ScheduleFailureCopyWithImpl<$Res>
   final ScheduleFailure _value;
   // ignore: unused_field
   final $Res Function(ScheduleFailure) _then;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(_value.copyWith(
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as HttpFailure,
-    ));
-  }
-
-  @override
-  $HttpFailureCopyWith<$Res> get error {
-    return $HttpFailureCopyWith<$Res>(_value.error, (value) {
-      return _then(_value.copyWith(error: value));
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$HttpErrorCopyWith<$Res>
-    implements $ScheduleFailureCopyWith<$Res> {
+abstract class _$HttpErrorCopyWith<$Res> {
   factory _$HttpErrorCopyWith(
           _HttpError value, $Res Function(_HttpError) then) =
       __$HttpErrorCopyWithImpl<$Res>;
-  @override
   $Res call({HttpFailure error});
 
-  @override
   $HttpFailureCopyWith<$Res> get error;
 }
 
@@ -129,6 +106,13 @@ class __$HttpErrorCopyWithImpl<$Res> extends _$ScheduleFailureCopyWithImpl<$Res>
           : error // ignore: cast_nullable_to_non_nullable
               as HttpFailure,
     ));
+  }
+
+  @override
+  $HttpFailureCopyWith<$Res> get error {
+    return $HttpFailureCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
   }
 }
 
@@ -166,6 +150,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
+    required TResult Function() unknown,
   }) {
     return http(error);
   }
@@ -174,6 +159,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -186,6 +172,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
+    required TResult Function(_Unknown value) unknown,
   }) {
     return http(this);
   }
@@ -194,6 +181,7 @@ class _$_HttpError implements _HttpError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
+    TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -206,10 +194,91 @@ class _$_HttpError implements _HttpError {
 abstract class _HttpError implements ScheduleFailure {
   const factory _HttpError({required HttpFailure error}) = _$_HttpError;
 
-  @override
   HttpFailure get error => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$HttpErrorCopyWith<_HttpError> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UnknownCopyWith<$Res> {
+  factory _$UnknownCopyWith(_Unknown value, $Res Function(_Unknown) then) =
+      __$UnknownCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UnknownCopyWithImpl<$Res> extends _$ScheduleFailureCopyWithImpl<$Res>
+    implements _$UnknownCopyWith<$Res> {
+  __$UnknownCopyWithImpl(_Unknown _value, $Res Function(_Unknown) _then)
+      : super(_value, (v) => _then(v as _Unknown));
+
+  @override
+  _Unknown get _value => super._value as _Unknown;
+}
+
+/// @nodoc
+
+class _$_Unknown implements _Unknown {
+  const _$_Unknown();
+
+  @override
+  String toString() {
+    return 'ScheduleFailure.unknown()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Unknown);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
+    required TResult Function() unknown,
+  }) {
+    return unknown();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
+    required TResult Function(_Unknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
+    TResult Function(_Unknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unknown implements ScheduleFailure {
+  const factory _Unknown() = _$_Unknown;
 }

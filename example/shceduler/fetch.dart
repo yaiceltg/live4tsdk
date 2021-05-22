@@ -28,9 +28,8 @@ void main() async {
         serviceUnavailable: (value) => 'Service Unavailable',
         gatewayTimeout: (value) => 'Gateway Timeout',
       ),
-      serverError: (_) => 'Server error' // deprecated
+      unknown: (_) => 'Server error' // deprecated
     ), (r) {
-      print('count: ${r.count}');
       return 'success';
     }
   );

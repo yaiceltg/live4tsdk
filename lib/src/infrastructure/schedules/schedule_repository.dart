@@ -1,24 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';
-import 'package:live4tsdk/src/domain/core/paged_list.dart';
-import 'package:live4tsdk/src/domain/message/message.dart';
 import 'package:live4tsdk/src/domain/message/message_failure.dart';
+import 'package:live4tsdk/src/domain/schedules/i_schedule_repository.dart';
+import 'package:live4tsdk/src/domain/schedules/schedule.dart';
+import 'package:live4tsdk/src/domain/schedules/schedule_failure.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
-import 'package:live4tsdk/src/infrastructure/message/message_dto.dart';
+import 'package:live4tsdk/src/infrastructure/schedules/schedule_task_dto.dart';
 
-class ScheduleRepository {
+class ScheduleRepository implements IScheduleRepository{
   // http client
   final Dio _httpClient = HttpClient.instance.client;
 
-  final String _path = '/v1/scheduler';
+  final String _path = '/v1/schedule';
 
   static final ScheduleRepository instance = ScheduleRepository._internal();
 
   ScheduleRepository._internal() {}
 
+
   @override
-  Future<Either<MessageFailure, PagedList<Message>>> fetch({
+  Future<Either<ScheduleFailure, List<ScheduleTask>>> fetch({
     required DateTime start,
     required DateTime end,
   }) async {
@@ -43,17 +45,18 @@ class ScheduleRepository {
       int _count = _response.data['count'];
 
       final _items = (_response.data['items'] as List)
-          .map((e) => MessageDto.fromJson(e).toDomain())
+          .map((e) => ScheduleTaskDto.fromJson(e).toDomain())
           .toList();
 
-      return right(PagedList(count: _count, items: _items));
+      return right(_items);
     } catch (e) {
       if(e.toString().contains('401')) {
-        return left(MessageFailure.http(
+        return left(ScheduleFailure.http(
           error: HttpFailure.unauthorized()
         ));
       }
-      return left(MessageFailure.serverError());
+      return left(ScheduleFailure.unknown());
     }
   }
+
 }

@@ -6,4 +6,5 @@ part 'schedule_failure.freezed.dart';
 @freezed
 class ScheduleFailure with _$ScheduleFailure {
   const factory ScheduleFailure.http({ required HttpFailure error }) = _HttpError;
+  const factory ScheduleFailure.unknown() = _Unknown;
 }

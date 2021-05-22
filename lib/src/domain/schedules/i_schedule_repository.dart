@@ -6,5 +6,8 @@ abstract class IScheduleRepository {
   ///
   /// fetch
   ///
-  Future<Either<ScheduleFailure, List<ScheduleTask>>> fetch();
+  Future<Either<ScheduleFailure, List<ScheduleTask>>> fetch({
+    required DateTime start,
+    required DateTime end,
+  });
 }
