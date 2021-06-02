@@ -11,7 +11,10 @@ void main() async {
   // get start and end of week
   final day = DateTime.now();
 
-  final result = await sdk.calendar.fetchClass();
+  final result = await sdk.calendar.fetchEvents(
+    start: day,
+    end: day.subtract(Duration(days: 10)),
+  );
 
   final msg = result.fold(
     (error) => error.map(

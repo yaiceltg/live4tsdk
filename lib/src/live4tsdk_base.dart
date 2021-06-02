@@ -9,6 +9,7 @@ import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
 import 'package:live4tsdk/src/infrastructure/message/message_repository.dart';
 import 'package:live4tsdk/src/infrastructure/schedules/schedule_repository.dart';
+import 'package:live4tsdk/src/infrastructure/users/user_repository.dart';
 
 class Live4tsdk {
   ///
@@ -33,6 +34,7 @@ class Live4tsdk {
   late ForumRepository forum;
   late MessageRepository message;
   late ScheduleRepository schedule;
+  late UserRepository users;
 
   ///
   /// _cache is library-private, thanks to
@@ -57,6 +59,7 @@ class Live4tsdk {
     message = MessageRepository.instance;
     chat = ChatRepository.instance;
     schedule = ScheduleRepository.instance;
+    users = UserRepository.instance;
   }
 
   bool get ready => true;

@@ -6,7 +6,10 @@ abstract class ICalendarRepository {
   ///
   /// list calendar events
   ///
-  Future<Either<CalendarFailure, List<CalendarClass>>> fetchClass();
+  Future<Either<CalendarFailure, List<CalendarClass>>> fetchEvents({
+    required DateTime start,
+    required DateTime end,
+  });
 
   ///
   /// create calendar event
@@ -15,7 +18,9 @@ abstract class ICalendarRepository {
     required String name,
     required DateTime start,
     required DateTime end,
-    String? link
+    String? url,
+    required int area,
+    required int classroom,
   });
 
   // ///

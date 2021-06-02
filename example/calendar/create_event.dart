@@ -15,7 +15,9 @@ void main() async {
     start: day.subtract(Duration(days: day.weekday + 1)),
     end: day.add(Duration(days: 7 - day.weekday)),
     name: 'Nombre del evento',
-    link: 'http://sdfsdfsdf.com/sdfsdfsdf'
+    url: 'http://sdfsdfsdf.com/sdfsdfsdf',
+    area: 1,
+    classroom: 1,
   );
 
   final msg = result.fold(

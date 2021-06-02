@@ -22,16 +22,20 @@ class CalendarRepository implements ICalendarRepository {
     required String name,
     required DateTime start,
     required DateTime end,
-    String? link
+    String? url,
+    required int area,
+    required int classroom,
   }) async {
-    print('<< calendar: createEvent >> { name: $name, start: $start, end: $end, link: $link }');
+    print('<< calendar: createEvent >> {  }');
     try {
       // prepare form data
       final _data = jsonEncode({
         'name': name,
         'start': start.toString(),
         'end': end.toString(),
-        'link': link,
+        'url': url,
+        'area': area,
+        'classroom': classroom,
       });
 
       // call api service
@@ -49,8 +53,11 @@ class CalendarRepository implements ICalendarRepository {
 
 
   @override
-  Future<Either<CalendarFailure, List<CalendarClass>>> fetchClass() async {
-    print('<< calendar:fetchClass >>');
+  Future<Either<CalendarFailure, List<CalendarClass>>> fetchEvents({
+    required DateTime start,
+    required DateTime end,
+  }) async {
+    print('<< calendar:fetchEvents >>');
     try {
       // call api service
       final _response = await _httpClient.get('$_path/class');
