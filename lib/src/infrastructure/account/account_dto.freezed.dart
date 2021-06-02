@@ -36,7 +36,8 @@ class _$AccountDtoTearOff {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt}) {
+      DateTime? updatedAt,
+      List<String>? courses}) {
     return _AccountDto(
       id: id,
       name: name,
@@ -54,6 +55,7 @@ class _$AccountDtoTearOff {
       emailVerifiedAt: emailVerifiedAt,
       createdAt: createdAt,
       updatedAt: updatedAt,
+      courses: courses,
     );
   }
 
@@ -83,6 +85,7 @@ mixin _$AccountDto {
   DateTime? get emailVerifiedAt => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  List<String>? get courses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -111,7 +114,8 @@ abstract class $AccountDtoCopyWith<$Res> {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime? updatedAt,
+      List<String>? courses});
 }
 
 /// @nodoc
@@ -140,6 +144,7 @@ class _$AccountDtoCopyWithImpl<$Res> implements $AccountDtoCopyWith<$Res> {
     Object? emailVerifiedAt = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? courses = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -206,6 +211,10 @@ class _$AccountDtoCopyWithImpl<$Res> implements $AccountDtoCopyWith<$Res> {
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      courses: courses == freezed
+          ? _value.courses
+          : courses // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -232,7 +241,8 @@ abstract class _$AccountDtoCopyWith<$Res> implements $AccountDtoCopyWith<$Res> {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime? updatedAt,
+      List<String>? courses});
 }
 
 /// @nodoc
@@ -263,6 +273,7 @@ class __$AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
     Object? emailVerifiedAt = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? courses = freezed,
   }) {
     return _then(_AccountDto(
       id: id == freezed
@@ -329,6 +340,10 @@ class __$AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      courses: courses == freezed
+          ? _value.courses
+          : courses // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -352,7 +367,8 @@ class _$_AccountDto extends _AccountDto {
       this.experience,
       this.emailVerifiedAt,
       this.createdAt,
-      this.updatedAt})
+      this.updatedAt,
+      this.courses})
       : super._();
 
   factory _$_AccountDto.fromJson(Map<String, dynamic> json) =>
@@ -390,10 +406,12 @@ class _$_AccountDto extends _AccountDto {
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
+  @override
+  final List<String>? courses;
 
   @override
   String toString() {
-    return 'AccountDto(id: $id, name: $name, lastName: $lastName, typeUser: $typeUser, address: $address, picture: $picture, phone: $phone, idNumber: $idNumber, userName: $userName, email: $email, parent: $parent, parentPhone: $parentPhone, experience: $experience, emailVerifiedAt: $emailVerifiedAt, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'AccountDto(id: $id, name: $name, lastName: $lastName, typeUser: $typeUser, address: $address, picture: $picture, phone: $phone, idNumber: $idNumber, userName: $userName, email: $email, parent: $parent, parentPhone: $parentPhone, experience: $experience, emailVerifiedAt: $emailVerifiedAt, createdAt: $createdAt, updatedAt: $updatedAt, courses: $courses)';
   }
 
   @override
@@ -442,7 +460,9 @@ class _$_AccountDto extends _AccountDto {
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.updatedAt, updatedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)));
+                    .equals(other.updatedAt, updatedAt)) &&
+            (identical(other.courses, courses) ||
+                const DeepCollectionEquality().equals(other.courses, courses)));
   }
 
   @override
@@ -463,7 +483,8 @@ class _$_AccountDto extends _AccountDto {
       const DeepCollectionEquality().hash(experience) ^
       const DeepCollectionEquality().hash(emailVerifiedAt) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(updatedAt);
+      const DeepCollectionEquality().hash(updatedAt) ^
+      const DeepCollectionEquality().hash(courses);
 
   @JsonKey(ignore: true)
   @override
@@ -493,7 +514,8 @@ abstract class _AccountDto extends AccountDto {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt}) = _$_AccountDto;
+      DateTime? updatedAt,
+      List<String>? courses}) = _$_AccountDto;
   const _AccountDto._() : super._();
 
   factory _AccountDto.fromJson(Map<String, dynamic> json) =
@@ -531,6 +553,8 @@ abstract class _AccountDto extends AccountDto {
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @override
+  List<String>? get courses => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AccountDtoCopyWith<_AccountDto> get copyWith =>

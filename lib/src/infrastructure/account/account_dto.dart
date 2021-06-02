@@ -5,7 +5,7 @@ part 'account_dto.freezed.dart';
 part 'account_dto.g.dart';
 
 @freezed
-abstract class AccountDto implements _$AccountDto {
+class AccountDto with _$AccountDto {
   const AccountDto._();
 
   const factory AccountDto({
@@ -25,6 +25,7 @@ abstract class AccountDto implements _$AccountDto {
     DateTime? emailVerifiedAt,
     DateTime? createdAt,
     DateTime? updatedAt,
+    List<String>? courses
   }) = _AccountDto;
 
   factory AccountDto.fromDomain(Account account) {
@@ -45,6 +46,7 @@ abstract class AccountDto implements _$AccountDto {
       emailVerifiedAt: account.emailVerifiedAt,
       createdAt: account.createdAt,
       updatedAt: account.updatedAt,
+      courses: account.courses
     );
   }
 
@@ -66,6 +68,7 @@ abstract class AccountDto implements _$AccountDto {
       emailVerifiedAt: emailVerifiedAt,
       createdAt: createdAt,
       updatedAt: updatedAt,
+      courses: courses
     );
   }
 

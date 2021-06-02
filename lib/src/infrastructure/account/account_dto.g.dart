@@ -30,6 +30,8 @@ _$_AccountDto _$_$_AccountDtoFromJson(Map<String, dynamic> json) {
     updatedAt: json['updatedAt'] == null
         ? null
         : DateTime.parse(json['updatedAt'] as String),
+    courses:
+        (json['courses'] as List<dynamic>?)?.map((e) => e as String).toList(),
   );
 }
 
@@ -51,4 +53,5 @@ Map<String, dynamic> _$_$_AccountDtoToJson(_$_AccountDto instance) =>
       'emailVerifiedAt': instance.emailVerifiedAt?.toIso8601String(),
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
+      'courses': instance.courses,
     };

@@ -32,7 +32,8 @@ class _$AccountTearOff {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt}) {
+      DateTime? updatedAt,
+      List<String>? courses}) {
     return _Account(
       id: id,
       name: name,
@@ -50,6 +51,7 @@ class _$AccountTearOff {
       emailVerifiedAt: emailVerifiedAt,
       createdAt: createdAt,
       updatedAt: updatedAt,
+      courses: courses,
     );
   }
 }
@@ -75,6 +77,7 @@ mixin _$Account {
   DateTime? get emailVerifiedAt => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  List<String>? get courses => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AccountCopyWith<Account> get copyWith => throw _privateConstructorUsedError;
@@ -100,7 +103,8 @@ abstract class $AccountCopyWith<$Res> {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime? updatedAt,
+      List<String>? courses});
 }
 
 /// @nodoc
@@ -129,6 +133,7 @@ class _$AccountCopyWithImpl<$Res> implements $AccountCopyWith<$Res> {
     Object? emailVerifiedAt = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? courses = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -195,6 +200,10 @@ class _$AccountCopyWithImpl<$Res> implements $AccountCopyWith<$Res> {
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      courses: courses == freezed
+          ? _value.courses
+          : courses // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -220,7 +229,8 @@ abstract class _$AccountCopyWith<$Res> implements $AccountCopyWith<$Res> {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime? updatedAt,
+      List<String>? courses});
 }
 
 /// @nodoc
@@ -250,6 +260,7 @@ class __$AccountCopyWithImpl<$Res> extends _$AccountCopyWithImpl<$Res>
     Object? emailVerifiedAt = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? courses = freezed,
   }) {
     return _then(_Account(
       id: id == freezed
@@ -316,6 +327,10 @@ class __$AccountCopyWithImpl<$Res> extends _$AccountCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      courses: courses == freezed
+          ? _value.courses
+          : courses // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -339,7 +354,8 @@ class _$_Account implements _Account {
       this.experience,
       this.emailVerifiedAt,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt,
+      this.courses});
 
   @override
   final int? id;
@@ -373,10 +389,12 @@ class _$_Account implements _Account {
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
+  @override
+  final List<String>? courses;
 
   @override
   String toString() {
-    return 'Account(id: $id, name: $name, lastName: $lastName, typeUser: $typeUser, address: $address, picture: $picture, phone: $phone, idNumber: $idNumber, userName: $userName, email: $email, parent: $parent, parentPhone: $parentPhone, experience: $experience, emailVerifiedAt: $emailVerifiedAt, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Account(id: $id, name: $name, lastName: $lastName, typeUser: $typeUser, address: $address, picture: $picture, phone: $phone, idNumber: $idNumber, userName: $userName, email: $email, parent: $parent, parentPhone: $parentPhone, experience: $experience, emailVerifiedAt: $emailVerifiedAt, createdAt: $createdAt, updatedAt: $updatedAt, courses: $courses)';
   }
 
   @override
@@ -425,7 +443,9 @@ class _$_Account implements _Account {
                     .equals(other.createdAt, createdAt)) &&
             (identical(other.updatedAt, updatedAt) ||
                 const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)));
+                    .equals(other.updatedAt, updatedAt)) &&
+            (identical(other.courses, courses) ||
+                const DeepCollectionEquality().equals(other.courses, courses)));
   }
 
   @override
@@ -446,7 +466,8 @@ class _$_Account implements _Account {
       const DeepCollectionEquality().hash(experience) ^
       const DeepCollectionEquality().hash(emailVerifiedAt) ^
       const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(updatedAt);
+      const DeepCollectionEquality().hash(updatedAt) ^
+      const DeepCollectionEquality().hash(courses);
 
   @JsonKey(ignore: true)
   @override
@@ -471,7 +492,8 @@ abstract class _Account implements Account {
       String? experience,
       DateTime? emailVerifiedAt,
       DateTime? createdAt,
-      DateTime? updatedAt}) = _$_Account;
+      DateTime? updatedAt,
+      List<String>? courses}) = _$_Account;
 
   @override
   int? get id => throw _privateConstructorUsedError;
@@ -505,6 +527,8 @@ abstract class _Account implements Account {
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @override
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @override
+  List<String>? get courses => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AccountCopyWith<_Account> get copyWith =>

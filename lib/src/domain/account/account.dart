@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'account.freezed.dart';
 
 @freezed
-abstract class Account with _$Account {
+class Account with _$Account {
   const factory Account({
     int? id,
     String? name,
@@ -21,5 +21,6 @@ abstract class Account with _$Account {
     DateTime? emailVerifiedAt,
     DateTime? createdAt,
     DateTime? updatedAt,
+    List<String>? courses,
   }) = _Account;
 }
