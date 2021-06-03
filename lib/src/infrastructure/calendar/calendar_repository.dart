@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:dio/dio.dart';
-import 'package:live4tsdk/src/domain/calendar/calendar_class.dart';
-import 'package:live4tsdk/src/domain/calendar/calendar_failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
+import 'package:live4tsdk/src/domain/calendar/calendar_event.dart';
+import 'package:live4tsdk/src/domain/calendar/calendar_failure.dart';
 import 'package:live4tsdk/src/domain/calendar/i_calendar_repository.dart';
-import 'package:live4tsdk/src/infrastructure/calendar/calendar_class_dto.dart';
+import 'package:live4tsdk/src/infrastructure/calendar/calendar_event_dto.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
 class CalendarRepository implements ICalendarRepository {
@@ -50,17 +50,27 @@ class CalendarRepository implements ICalendarRepository {
     }
   }
 
+  @override
+  Future<Either<CalendarFailure, Unit>> deleteEvent({required CalendarEvent event}) {
+      // TODO: implement deleteEvent
+      throw UnimplementedError();
+    }
 
+    @override
+    Future<Either<CalendarFailure, Unit>> updateEvent({required CalendarEvent event}) {
+    // TODO: implement updateEvent
+    throw UnimplementedError();
+  }
 
   @override
-  Future<Either<CalendarFailure, List<CalendarClass>>> fetchEvents({
+  Future<Either<CalendarFailure, List<CalendarEvent>>> fetchEvents({
     required DateTime start,
     required DateTime end,
   }) async {
     print('<< calendar:fetchEvents >>');
     try {
       // call api service
-      final _response = await _httpClient.get('$_path/class');
+      final _response = await _httpClient.get('$_path?start=$start&end=$end');
 
       // check response
       if (_response.data is Map<String, dynamic>) {
@@ -73,7 +83,7 @@ class CalendarRepository implements ICalendarRepository {
       }
 
        final _items = (_response.data as List)
-          .map((e) => CalendarClassDto.fromJson(e).toDomain())
+          .map((e) => CalendarEventDto.fromJson(e).toDomain())
           .toList();
 
       return right(_items);

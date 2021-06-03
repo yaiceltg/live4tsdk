@@ -1,11 +1,14 @@
 import 'package:dartz/dartz.dart';
+import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
+import 'package:live4tsdk/src/domain/core/http_failure.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_repository.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
 import 'package:live4tsdk/src/infrastructure/calendar/calendar_repository.dart';
 import 'package:live4tsdk/src/infrastructure/chat/chat_repository.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
+import 'package:live4tsdk/src/infrastructure/core/jwt.dart';
 import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
 import 'package:live4tsdk/src/infrastructure/message/message_repository.dart';
 import 'package:live4tsdk/src/infrastructure/schedules/schedule_repository.dart';
@@ -16,7 +19,7 @@ class Live4tsdk {
   /// Shared data
   ///
   // final Account currentUser;
-  // final String authToken;
+  late String authToken;
 
   ///
   /// Dio http client config
@@ -65,6 +68,7 @@ class Live4tsdk {
   bool get ready => true;
 
   void addHeaderAuthorization(String token) {
+    authToken = token;
     HttpClient.instance.client.options.headers.addAll({
       'Authorization': 'Bearer $token'
     });
@@ -109,5 +113,17 @@ class Live4tsdk {
     });
 
     return left(AuthFailure.serverError());
+  }
+
+  bool get isTokenValid {
+    return !Jwt.isExpired(authToken);
+  }
+
+  Future<Either<AuthFailure, Account>> get authUser async {
+    final _a = await account.getAccount();
+    return  _a.fold(
+      (l) => left(AuthFailure.expireToken()),
+      (r) => right(r)
+    );
   }
 }

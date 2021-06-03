@@ -38,7 +38,7 @@ class Jwt {
   }
 
   static bool isExpired(String token) {
-    final DateTime? expirationDate = getExpiryDate(token);
+    final expirationDate = getExpiryDate(token);
     if (expirationDate != null) {
       return DateTime.now().isAfter(expirationDate);
     } else {

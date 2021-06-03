@@ -12,13 +12,9 @@ void main() async {
     // get start and end of week
     final day = DateTime.now();
 
-    final result = await sdk.calendar.createEvent(
-      start: day.subtract(Duration(days: day.weekday + 1)),
-      end: day.add(Duration(days: 7 - day.weekday)),
-      name: 'Nombre del evento',
-      url: 'http://sdfsdfsdf.com/sdfsdfsdf',
-      area: 1,
-      classroom: 1,
+    final result = await sdk.calendar.fetchEvents(
+      start: day,
+      end: day.subtract(Duration(days: 10)),
     );
 
     final msg = result.fold(
@@ -51,7 +47,5 @@ void main() async {
     //     )
 
     print(msg);
-  } else {
-    // manage close session
   }
 }

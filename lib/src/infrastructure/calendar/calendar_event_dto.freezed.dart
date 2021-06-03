@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'calendar_event.dart';
+part of 'calendar_event_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,21 +12,25 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-class _$CalendarEventTearOff {
-  const _$CalendarEventTearOff();
+CalendarEventDto _$CalendarEventDtoFromJson(Map<String, dynamic> json) {
+  return _CalendarClassDto.fromJson(json);
+}
 
-  _CalendarEvent call(
+/// @nodoc
+class _$CalendarEventDtoTearOff {
+  const _$CalendarEventDtoTearOff();
+
+  _CalendarClassDto call(
       {required int id,
-      required int classroom,
-      required int area,
+      @JsonKey(name: 'idClassroom') required int classroom,
+      @JsonKey(name: 'idArea') required int area,
       required String name,
-      required String start,
-      required String end,
+      @JsonKey(name: 'dateTo') required String start,
+      @JsonKey(name: 'dateFrom') required String end,
       required DateTime updatedAt,
       required DateTime createdAt,
       required String url}) {
-    return _CalendarEvent(
+    return _CalendarClassDto(
       id: id,
       classroom: classroom,
       area: area,
@@ -38,53 +42,62 @@ class _$CalendarEventTearOff {
       url: url,
     );
   }
+
+  CalendarEventDto fromJson(Map<String, Object> json) {
+    return CalendarEventDto.fromJson(json);
+  }
 }
 
 /// @nodoc
-const $CalendarEvent = _$CalendarEventTearOff();
+const $CalendarEventDto = _$CalendarEventDtoTearOff();
 
 /// @nodoc
-mixin _$CalendarEvent {
+mixin _$CalendarEventDto {
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'idClassroom')
   int get classroom => throw _privateConstructorUsedError;
+  @JsonKey(name: 'idArea')
   int get area => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dateTo')
   String get start => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dateFrom')
   String get end => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CalendarEventCopyWith<CalendarEvent> get copyWith =>
+  $CalendarEventDtoCopyWith<CalendarEventDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CalendarEventCopyWith<$Res> {
-  factory $CalendarEventCopyWith(
-          CalendarEvent value, $Res Function(CalendarEvent) then) =
-      _$CalendarEventCopyWithImpl<$Res>;
+abstract class $CalendarEventDtoCopyWith<$Res> {
+  factory $CalendarEventDtoCopyWith(
+          CalendarEventDto value, $Res Function(CalendarEventDto) then) =
+      _$CalendarEventDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      int classroom,
-      int area,
+      @JsonKey(name: 'idClassroom') int classroom,
+      @JsonKey(name: 'idArea') int area,
       String name,
-      String start,
-      String end,
+      @JsonKey(name: 'dateTo') String start,
+      @JsonKey(name: 'dateFrom') String end,
       DateTime updatedAt,
       DateTime createdAt,
       String url});
 }
 
 /// @nodoc
-class _$CalendarEventCopyWithImpl<$Res>
-    implements $CalendarEventCopyWith<$Res> {
-  _$CalendarEventCopyWithImpl(this._value, this._then);
+class _$CalendarEventDtoCopyWithImpl<$Res>
+    implements $CalendarEventDtoCopyWith<$Res> {
+  _$CalendarEventDtoCopyWithImpl(this._value, this._then);
 
-  final CalendarEvent _value;
+  final CalendarEventDto _value;
   // ignore: unused_field
-  final $Res Function(CalendarEvent) _then;
+  final $Res Function(CalendarEventDto) _then;
 
   @override
   $Res call({
@@ -140,34 +153,34 @@ class _$CalendarEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CalendarEventCopyWith<$Res>
-    implements $CalendarEventCopyWith<$Res> {
-  factory _$CalendarEventCopyWith(
-          _CalendarEvent value, $Res Function(_CalendarEvent) then) =
-      __$CalendarEventCopyWithImpl<$Res>;
+abstract class _$CalendarClassDtoCopyWith<$Res>
+    implements $CalendarEventDtoCopyWith<$Res> {
+  factory _$CalendarClassDtoCopyWith(
+          _CalendarClassDto value, $Res Function(_CalendarClassDto) then) =
+      __$CalendarClassDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
-      int classroom,
-      int area,
+      @JsonKey(name: 'idClassroom') int classroom,
+      @JsonKey(name: 'idArea') int area,
       String name,
-      String start,
-      String end,
+      @JsonKey(name: 'dateTo') String start,
+      @JsonKey(name: 'dateFrom') String end,
       DateTime updatedAt,
       DateTime createdAt,
       String url});
 }
 
 /// @nodoc
-class __$CalendarEventCopyWithImpl<$Res>
-    extends _$CalendarEventCopyWithImpl<$Res>
-    implements _$CalendarEventCopyWith<$Res> {
-  __$CalendarEventCopyWithImpl(
-      _CalendarEvent _value, $Res Function(_CalendarEvent) _then)
-      : super(_value, (v) => _then(v as _CalendarEvent));
+class __$CalendarClassDtoCopyWithImpl<$Res>
+    extends _$CalendarEventDtoCopyWithImpl<$Res>
+    implements _$CalendarClassDtoCopyWith<$Res> {
+  __$CalendarClassDtoCopyWithImpl(
+      _CalendarClassDto _value, $Res Function(_CalendarClassDto) _then)
+      : super(_value, (v) => _then(v as _CalendarClassDto));
 
   @override
-  _CalendarEvent get _value => super._value as _CalendarEvent;
+  _CalendarClassDto get _value => super._value as _CalendarClassDto;
 
   @override
   $Res call({
@@ -181,7 +194,7 @@ class __$CalendarEventCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? url = freezed,
   }) {
-    return _then(_CalendarEvent(
+    return _then(_CalendarClassDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -223,31 +236,38 @@ class __$CalendarEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-class _$_CalendarEvent extends _CalendarEvent {
-  const _$_CalendarEvent(
+@JsonSerializable()
+class _$_CalendarClassDto extends _CalendarClassDto {
+  const _$_CalendarClassDto(
       {required this.id,
-      required this.classroom,
-      required this.area,
+      @JsonKey(name: 'idClassroom') required this.classroom,
+      @JsonKey(name: 'idArea') required this.area,
       required this.name,
-      required this.start,
-      required this.end,
+      @JsonKey(name: 'dateTo') required this.start,
+      @JsonKey(name: 'dateFrom') required this.end,
       required this.updatedAt,
       required this.createdAt,
       required this.url})
       : super._();
 
+  factory _$_CalendarClassDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_CalendarClassDtoFromJson(json);
+
   @override
   final int id;
   @override
+  @JsonKey(name: 'idClassroom')
   final int classroom;
   @override
+  @JsonKey(name: 'idArea')
   final int area;
   @override
   final String name;
   @override
+  @JsonKey(name: 'dateTo')
   final String start;
   @override
+  @JsonKey(name: 'dateFrom')
   final String end;
   @override
   final DateTime updatedAt;
@@ -258,13 +278,13 @@ class _$_CalendarEvent extends _CalendarEvent {
 
   @override
   String toString() {
-    return 'CalendarEvent(id: $id, classroom: $classroom, area: $area, name: $name, start: $start, end: $end, updatedAt: $updatedAt, createdAt: $createdAt, url: $url)';
+    return 'CalendarEventDto(id: $id, classroom: $classroom, area: $area, name: $name, start: $start, end: $end, updatedAt: $updatedAt, createdAt: $createdAt, url: $url)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CalendarEvent &&
+        (other is _CalendarClassDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.classroom, classroom) ||
@@ -303,34 +323,46 @@ class _$_CalendarEvent extends _CalendarEvent {
 
   @JsonKey(ignore: true)
   @override
-  _$CalendarEventCopyWith<_CalendarEvent> get copyWith =>
-      __$CalendarEventCopyWithImpl<_CalendarEvent>(this, _$identity);
+  _$CalendarClassDtoCopyWith<_CalendarClassDto> get copyWith =>
+      __$CalendarClassDtoCopyWithImpl<_CalendarClassDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CalendarClassDtoToJson(this);
+  }
 }
 
-abstract class _CalendarEvent extends CalendarEvent {
-  const factory _CalendarEvent(
+abstract class _CalendarClassDto extends CalendarEventDto {
+  const factory _CalendarClassDto(
       {required int id,
-      required int classroom,
-      required int area,
+      @JsonKey(name: 'idClassroom') required int classroom,
+      @JsonKey(name: 'idArea') required int area,
       required String name,
-      required String start,
-      required String end,
+      @JsonKey(name: 'dateTo') required String start,
+      @JsonKey(name: 'dateFrom') required String end,
       required DateTime updatedAt,
       required DateTime createdAt,
-      required String url}) = _$_CalendarEvent;
-  const _CalendarEvent._() : super._();
+      required String url}) = _$_CalendarClassDto;
+  const _CalendarClassDto._() : super._();
+
+  factory _CalendarClassDto.fromJson(Map<String, dynamic> json) =
+      _$_CalendarClassDto.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'idClassroom')
   int get classroom => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'idArea')
   int get area => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'dateTo')
   String get start => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'dateFrom')
   String get end => throw _privateConstructorUsedError;
   @override
   DateTime get updatedAt => throw _privateConstructorUsedError;
@@ -340,6 +372,6 @@ abstract class _CalendarEvent extends CalendarEvent {
   String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CalendarEventCopyWith<_CalendarEvent> get copyWith =>
+  _$CalendarClassDtoCopyWith<_CalendarClassDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
