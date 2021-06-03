@@ -51,15 +51,30 @@ class CalendarRepository implements ICalendarRepository {
   }
 
   @override
-  Future<Either<CalendarFailure, Unit>> deleteEvent({required CalendarEvent event}) {
-      // TODO: implement deleteEvent
-      throw UnimplementedError();
-    }
+  Future<Either<CalendarFailure, Unit>> deleteEvent({required CalendarEvent event}) async {
+    try {
+      // call api service
+      final _response = await _httpClient.delete('$_path/${event.id}');
 
-    @override
-    Future<Either<CalendarFailure, Unit>> updateEvent({required CalendarEvent event}) {
-    // TODO: implement updateEvent
-    throw UnimplementedError();
+      // check response
+      return right(unit);
+    } catch (e) {
+      return left(CalendarFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<CalendarFailure, Unit>> updateEvent({required CalendarEvent event}) async{
+   try {
+      // call api service
+      final _data = jsonEncode(CalendarEventDto.fromDomain(event).toJson());
+      final _response = await _httpClient.put('$_path/${event.id}', data: _data);
+
+      // check response
+      return right(unit);
+    } catch (e) {
+      return left(CalendarFailure.unknown());
+    }
   }
 
   @override
