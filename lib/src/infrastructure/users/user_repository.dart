@@ -12,7 +12,6 @@ class UserRepository {
 
   UserRepository._internal() {}
 
-   @override
   Future<Either<Fail, List<Map>>> findAll() async {
     try {
       // call api service
