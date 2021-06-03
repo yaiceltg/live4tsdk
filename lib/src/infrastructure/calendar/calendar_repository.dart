@@ -40,7 +40,7 @@ class CalendarRepository implements ICalendarRepository {
 
       // call api service
       await _httpClient.post(
-        _path,
+        '$_path/events',
         data: _data
       );
 
@@ -54,7 +54,7 @@ class CalendarRepository implements ICalendarRepository {
   Future<Either<CalendarFailure, Unit>> deleteEvent({required CalendarEvent event}) async {
     try {
       // call api service
-      final _response = await _httpClient.delete('$_path/${event.id}');
+      final _response = await _httpClient.delete('$_path/events/${event.id}');
 
       // check response
       return right(unit);
@@ -68,7 +68,7 @@ class CalendarRepository implements ICalendarRepository {
    try {
       // call api service
       final _data = jsonEncode(CalendarEventDto.fromDomain(event).toJson());
-      final _response = await _httpClient.put('$_path/${event.id}', data: _data);
+      final _response = await _httpClient.put('$_path/events/${event.id}', data: _data);
 
       // check response
       return right(unit);
@@ -85,7 +85,7 @@ class CalendarRepository implements ICalendarRepository {
     print('<< calendar:fetchEvents >>');
     try {
       // call api service
-      final _response = await _httpClient.get('$_path?start=$start&end=$end');
+      final _response = await _httpClient.get('$_path/events?start=$start&end=$end');
 
       // check response
       if (_response.data is Map<String, dynamic>) {
