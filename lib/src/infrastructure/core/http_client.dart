@@ -14,7 +14,9 @@ class HttpClient {
       baseUrl: baseUrl,
       connectTimeout: 5000,
       receiveTimeout: 3000,
-    );
+      headers: {
+        "Accept": "application/json",
+      });
 
     httpClient = Dio(_options);
   }

@@ -7,4 +7,5 @@ part 'calendar_failure.freezed.dart';
 class CalendarFailure with _$CalendarFailure {
   const factory CalendarFailure.http({ required HttpFailure error }) = _HttpError;
   const factory CalendarFailure.unknown() = _Unknown;
+  const factory CalendarFailure.eventNotFound() = _EventNotFound;
 }

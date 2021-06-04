@@ -9,11 +9,8 @@ void main() async {
   await login();
 
   if (sdk.isTokenValid) {
-    // get start and end of week
-    final day = DateTime.now();
-
     final result = await sdk.calendar.deleteEvent(
-      eventId: '2198'
+      eventId: '2181'
     );
 
     final msg = result.fold(
@@ -28,23 +25,12 @@ void main() async {
           serviceUnavailable: (value) => 'Service Unavailable',
           gatewayTimeout: (value) => 'Gateway Timeout',
         ),
+        eventNotFound: (_) => 'Event not found',
         unknown: (_) => 'Server error' // deprecated
       ), (r) {
         return 'success';
       }
     );
-
-    // httpError.error.map(
-    //       badRequest: () => 'Bad Request',
-    //       unauthorized: () => 'Unauthorized',
-    //       forbidden: () => 'Forbidden',
-    //       notFound: () => 'Not Found',
-    //       internal: () => 'Internal',
-    //       badGateway: () => 'BadGateway',
-    //       serviceUnavailable: () => 'Service Unavailable',
-    //       gatewayTimeout: () => 'Gateway Timeout',
-    //     )
-
     print(msg);
   }
 }

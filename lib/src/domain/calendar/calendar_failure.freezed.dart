@@ -25,6 +25,10 @@ class _$CalendarFailureTearOff {
   _Unknown unknown() {
     return const _Unknown();
   }
+
+  _EventNotFound eventNotFound() {
+    return const _EventNotFound();
+  }
 }
 
 /// @nodoc
@@ -36,12 +40,14 @@ mixin _$CalendarFailure {
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
     required TResult Function() unknown,
+    required TResult Function() eventNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
     TResult Function()? unknown,
+    TResult Function()? eventNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,12 +55,14 @@ mixin _$CalendarFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
     required TResult Function(_Unknown value) unknown,
+    required TResult Function(_EventNotFound value) eventNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
     TResult Function(_Unknown value)? unknown,
+    TResult Function(_EventNotFound value)? eventNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -151,6 +159,7 @@ class _$_HttpError implements _HttpError {
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
     required TResult Function() unknown,
+    required TResult Function() eventNotFound,
   }) {
     return http(error);
   }
@@ -160,6 +169,7 @@ class _$_HttpError implements _HttpError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
     TResult Function()? unknown,
+    TResult Function()? eventNotFound,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -173,6 +183,7 @@ class _$_HttpError implements _HttpError {
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
     required TResult Function(_Unknown value) unknown,
+    required TResult Function(_EventNotFound value) eventNotFound,
   }) {
     return http(this);
   }
@@ -182,6 +193,7 @@ class _$_HttpError implements _HttpError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
     TResult Function(_Unknown value)? unknown,
+    TResult Function(_EventNotFound value)? eventNotFound,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -239,6 +251,7 @@ class _$_Unknown implements _Unknown {
   TResult when<TResult extends Object?>({
     required TResult Function(HttpFailure error) http,
     required TResult Function() unknown,
+    required TResult Function() eventNotFound,
   }) {
     return unknown();
   }
@@ -248,6 +261,7 @@ class _$_Unknown implements _Unknown {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HttpFailure error)? http,
     TResult Function()? unknown,
+    TResult Function()? eventNotFound,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -261,6 +275,7 @@ class _$_Unknown implements _Unknown {
   TResult map<TResult extends Object?>({
     required TResult Function(_HttpError value) http,
     required TResult Function(_Unknown value) unknown,
+    required TResult Function(_EventNotFound value) eventNotFound,
   }) {
     return unknown(this);
   }
@@ -270,6 +285,7 @@ class _$_Unknown implements _Unknown {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HttpError value)? http,
     TResult Function(_Unknown value)? unknown,
+    TResult Function(_EventNotFound value)? eventNotFound,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -281,4 +297,94 @@ class _$_Unknown implements _Unknown {
 
 abstract class _Unknown implements CalendarFailure {
   const factory _Unknown() = _$_Unknown;
+}
+
+/// @nodoc
+abstract class _$EventNotFoundCopyWith<$Res> {
+  factory _$EventNotFoundCopyWith(
+          _EventNotFound value, $Res Function(_EventNotFound) then) =
+      __$EventNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$EventNotFoundCopyWithImpl<$Res>
+    extends _$CalendarFailureCopyWithImpl<$Res>
+    implements _$EventNotFoundCopyWith<$Res> {
+  __$EventNotFoundCopyWithImpl(
+      _EventNotFound _value, $Res Function(_EventNotFound) _then)
+      : super(_value, (v) => _then(v as _EventNotFound));
+
+  @override
+  _EventNotFound get _value => super._value as _EventNotFound;
+}
+
+/// @nodoc
+
+class _$_EventNotFound implements _EventNotFound {
+  const _$_EventNotFound();
+
+  @override
+  String toString() {
+    return 'CalendarFailure.eventNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EventNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HttpFailure error) http,
+    required TResult Function() unknown,
+    required TResult Function() eventNotFound,
+  }) {
+    return eventNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HttpFailure error)? http,
+    TResult Function()? unknown,
+    TResult Function()? eventNotFound,
+    required TResult orElse(),
+  }) {
+    if (eventNotFound != null) {
+      return eventNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HttpError value) http,
+    required TResult Function(_Unknown value) unknown,
+    required TResult Function(_EventNotFound value) eventNotFound,
+  }) {
+    return eventNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HttpError value)? http,
+    TResult Function(_Unknown value)? unknown,
+    TResult Function(_EventNotFound value)? eventNotFound,
+    required TResult orElse(),
+  }) {
+    if (eventNotFound != null) {
+      return eventNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EventNotFound implements CalendarFailure {
+  const factory _EventNotFound() = _$_EventNotFound;
 }

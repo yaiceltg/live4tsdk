@@ -29,9 +29,10 @@ void main() async {
           serviceUnavailable: (value) => 'Service Unavailable',
           gatewayTimeout: (value) => 'Gateway Timeout',
         ),
+        eventNotFound: (_) => 'Event not found',
         unknown: (_) => 'Server error' // deprecated
       ), (r) {
-        print(r[0].id);
+        print(r);
         return 'success';
       }
     );

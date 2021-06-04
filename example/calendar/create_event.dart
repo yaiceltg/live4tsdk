@@ -33,6 +33,7 @@ void main() async {
           serviceUnavailable: (value) => 'Service Unavailable',
           gatewayTimeout: (value) => 'Gateway Timeout',
         ),
+        eventNotFound: (_) => 'Event not found',
         unknown: (_) => 'Server error' // deprecated
       ), (r) {
         return 'success';

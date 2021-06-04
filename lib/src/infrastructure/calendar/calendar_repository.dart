@@ -56,8 +56,17 @@ class CalendarRepository implements ICalendarRepository {
       // call api service
       final _response = await _httpClient.delete('$_path/events/${eventId}');
 
+      if (_response.statusCode == 404) {
+        print(_response.statusCode);
+      }
       // check response
       return right(unit);
+    } on DioError catch (e) {
+      if (e.response?.statusCode == 404) {
+        return left(CalendarFailure.eventNotFound());
+      }
+
+      return left(CalendarFailure.unknown());
     } catch (e) {
       return left(CalendarFailure.unknown());
     }
