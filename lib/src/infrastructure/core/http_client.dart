@@ -12,8 +12,8 @@ class HttpClient {
 
     final _options = BaseOptions(
       baseUrl: baseUrl,
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
+      connectTimeout: 45000,
+      receiveTimeout: 30000,
       headers: {
         "Accept": "application/json",
       });

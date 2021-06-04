@@ -1,6 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:live4tsdk/src/domain/user/user_info.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
+import 'package:live4tsdk/src/infrastructure/users/user_info_dto.dart';
 
 class UserRepository {
   // http client
@@ -12,16 +14,20 @@ class UserRepository {
 
   UserRepository._internal() {}
 
-  Future<Either<Fail, List<Map>>> findAll() async {
+  Future<Either<String, List<UserInfo>>> findAll() async {
     try {
       // call api service
       final _response = await _httpClient.get(
         '$_path',
       );
 
-      return right(_response.data);
+      final l = (_response.data as List)
+        .map((r) => UserInfoDto.fromJson(r).toDomain())
+        .toList();
+
+      return right(l);
     } catch (e) {
-      return left(Fail(e));
+      return left(e.toString());
     }
   }
 }
