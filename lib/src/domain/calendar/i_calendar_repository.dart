@@ -34,6 +34,6 @@ abstract class ICalendarRepository {
   /// delete calendar event
   ///
   Future<Either<CalendarFailure, Unit>> deleteEvent({
-    required CalendarEvent event
+    required String eventId
   });
 }

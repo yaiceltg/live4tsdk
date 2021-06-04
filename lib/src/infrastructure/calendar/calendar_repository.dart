@@ -51,10 +51,10 @@ class CalendarRepository implements ICalendarRepository {
   }
 
   @override
-  Future<Either<CalendarFailure, Unit>> deleteEvent({required CalendarEvent event}) async {
+  Future<Either<CalendarFailure, Unit>> deleteEvent({required String eventId}) async {
     try {
       // call api service
-      final _response = await _httpClient.delete('$_path/events/${event.id}');
+      final _response = await _httpClient.delete('$_path/events/${eventI  d}');
 
       // check response
       return right(unit);
