@@ -12,9 +12,8 @@ void main() async {
     // get start and end of week
     final day = DateTime.now();
 
-    final result = await sdk.calendar.fetchEvents(
-      start: day,
-      end: day.subtract(Duration(days: 10)),
+    final result = await sdk.calendar.deleteEvent(
+      eventId: '2198'
     );
 
     final msg = result.fold(
@@ -31,7 +30,6 @@ void main() async {
         ),
         unknown: (_) => 'Server error' // deprecated
       ), (r) {
-        print(r[0].id);
         return 'success';
       }
     );
