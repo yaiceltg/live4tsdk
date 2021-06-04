@@ -54,7 +54,7 @@ class CalendarRepository implements ICalendarRepository {
   Future<Either<CalendarFailure, Unit>> deleteEvent({required String eventId}) async {
     try {
       // call api service
-      final _response = await _httpClient.delete('$_path/events/${eventI  d}');
+      final _response = await _httpClient.delete('$_path/events/${eventId}');
 
       // check response
       return right(unit);
