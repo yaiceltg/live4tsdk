@@ -78,18 +78,6 @@ class MessageRepository implements IMessageRepository {
         data: _data,
       );
 
-      // check response
-      if (_response.data is Map<String, dynamic>) {
-        Map<String, dynamic> _d = _response.data;
-        if (_d.containsKey('response')) {
-          final Map<String, dynamic> _r = _d['response'];
-
-          if (_r.containsKey('code')) {
-            String _c = _r['code'];
-          }
-        }
-      }
-
       return right(unit);
     } catch (e) {
       if(e.toString().contains('401')) {
