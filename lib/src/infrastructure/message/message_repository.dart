@@ -59,7 +59,7 @@ class MessageRepository implements IMessageRepository {
 
   @override
   Future<Either<MessageFailure, Unit>> sendMessage({
-    required String to,
+    required List<String> to,
     required String subject,
     required String body
   }) async {

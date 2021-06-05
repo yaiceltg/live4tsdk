@@ -7,7 +7,7 @@ abstract class IMessageRepository {
   ///
   /// function to send messaje
   Future<Either<MessageFailure,Unit>> sendMessage({
-    required String to,
+    required List<String> to,
     required String subject,
     required String body
   });
