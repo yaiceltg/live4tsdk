@@ -17,6 +17,7 @@ abstract class MessageDto implements _$MessageDto {
   const factory MessageDto({
     required int id,
     required AccountDto from, // @JsonKey(fromJson: _from)
+    required AccountDto to, // @JsonKey(fromJson: _from)
     required String subject,
     required String body,
     DateTime? delivered,
@@ -29,6 +30,7 @@ abstract class MessageDto implements _$MessageDto {
     return MessageDto(
       id: message.id,
       from: AccountDto.fromDomain(message.from),
+      to: AccountDto.fromDomain(message.to),
       subject: message.subject,
       body: message.body,
       delivered: message.delivered,
@@ -42,6 +44,7 @@ abstract class MessageDto implements _$MessageDto {
     return Message(
       id: id,
       from: from.toDomain(),
+      to: to.toDomain(),
       subject: subject,
       body: body,
       delivered: delivered,

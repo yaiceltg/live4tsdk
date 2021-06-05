@@ -23,6 +23,7 @@ class _$MessageDtoTearOff {
   _MessageDto call(
       {required int id,
       required AccountDto from,
+      required AccountDto to,
       required String subject,
       required String body,
       DateTime? delivered,
@@ -32,6 +33,7 @@ class _$MessageDtoTearOff {
     return _MessageDto(
       id: id,
       from: from,
+      to: to,
       subject: subject,
       body: body,
       delivered: delivered,
@@ -54,6 +56,8 @@ mixin _$MessageDto {
   int get id => throw _privateConstructorUsedError;
   AccountDto get from =>
       throw _privateConstructorUsedError; // @JsonKey(fromJson: _from)
+  AccountDto get to =>
+      throw _privateConstructorUsedError; // @JsonKey(fromJson: _from)
   String get subject => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
   DateTime? get delivered => throw _privateConstructorUsedError;
@@ -75,6 +79,7 @@ abstract class $MessageDtoCopyWith<$Res> {
   $Res call(
       {int id,
       AccountDto from,
+      AccountDto to,
       String subject,
       String body,
       DateTime? delivered,
@@ -83,6 +88,7 @@ abstract class $MessageDtoCopyWith<$Res> {
       DateTime? updatedAt});
 
   $AccountDtoCopyWith<$Res> get from;
+  $AccountDtoCopyWith<$Res> get to;
 }
 
 /// @nodoc
@@ -97,6 +103,7 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? from = freezed,
+    Object? to = freezed,
     Object? subject = freezed,
     Object? body = freezed,
     Object? delivered = freezed,
@@ -112,6 +119,10 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
       from: from == freezed
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
+              as AccountDto,
+      to: to == freezed
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
               as AccountDto,
       subject: subject == freezed
           ? _value.subject
@@ -146,6 +157,13 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
       return _then(_value.copyWith(from: value));
     });
   }
+
+  @override
+  $AccountDtoCopyWith<$Res> get to {
+    return $AccountDtoCopyWith<$Res>(_value.to, (value) {
+      return _then(_value.copyWith(to: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -157,6 +175,7 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
   $Res call(
       {int id,
       AccountDto from,
+      AccountDto to,
       String subject,
       String body,
       DateTime? delivered,
@@ -166,6 +185,8 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
 
   @override
   $AccountDtoCopyWith<$Res> get from;
+  @override
+  $AccountDtoCopyWith<$Res> get to;
 }
 
 /// @nodoc
@@ -182,6 +203,7 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? from = freezed,
+    Object? to = freezed,
     Object? subject = freezed,
     Object? body = freezed,
     Object? delivered = freezed,
@@ -197,6 +219,10 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
       from: from == freezed
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
+              as AccountDto,
+      to: to == freezed
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
               as AccountDto,
       subject: subject == freezed
           ? _value.subject
@@ -232,6 +258,7 @@ class _$_MessageDto extends _MessageDto {
   const _$_MessageDto(
       {required this.id,
       required this.from,
+      required this.to,
       required this.subject,
       required this.body,
       this.delivered,
@@ -248,6 +275,8 @@ class _$_MessageDto extends _MessageDto {
   @override
   final AccountDto from;
   @override // @JsonKey(fromJson: _from)
+  final AccountDto to;
+  @override // @JsonKey(fromJson: _from)
   final String subject;
   @override
   final String body;
@@ -262,7 +291,7 @@ class _$_MessageDto extends _MessageDto {
 
   @override
   String toString() {
-    return 'MessageDto(id: $id, from: $from, subject: $subject, body: $body, delivered: $delivered, read: $read, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'MessageDto(id: $id, from: $from, to: $to, subject: $subject, body: $body, delivered: $delivered, read: $read, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -273,6 +302,8 @@ class _$_MessageDto extends _MessageDto {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.from, from) ||
                 const DeepCollectionEquality().equals(other.from, from)) &&
+            (identical(other.to, to) ||
+                const DeepCollectionEquality().equals(other.to, to)) &&
             (identical(other.subject, subject) ||
                 const DeepCollectionEquality()
                     .equals(other.subject, subject)) &&
@@ -296,6 +327,7 @@ class _$_MessageDto extends _MessageDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(from) ^
+      const DeepCollectionEquality().hash(to) ^
       const DeepCollectionEquality().hash(subject) ^
       const DeepCollectionEquality().hash(body) ^
       const DeepCollectionEquality().hash(delivered) ^
@@ -318,6 +350,7 @@ abstract class _MessageDto extends MessageDto {
   const factory _MessageDto(
       {required int id,
       required AccountDto from,
+      required AccountDto to,
       required String subject,
       required String body,
       DateTime? delivered,
@@ -333,6 +366,8 @@ abstract class _MessageDto extends MessageDto {
   int get id => throw _privateConstructorUsedError;
   @override
   AccountDto get from => throw _privateConstructorUsedError;
+  @override // @JsonKey(fromJson: _from)
+  AccountDto get to => throw _privateConstructorUsedError;
   @override // @JsonKey(fromJson: _from)
   String get subject => throw _privateConstructorUsedError;
   @override

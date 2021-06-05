@@ -10,6 +10,7 @@ _$_MessageDto _$_$_MessageDtoFromJson(Map<String, dynamic> json) {
   return _$_MessageDto(
     id: json['id'] as int,
     from: AccountDto.fromJson(json['from'] as Map<String, dynamic>),
+    to: AccountDto.fromJson(json['to'] as Map<String, dynamic>),
     subject: json['subject'] as String,
     body: json['body'] as String,
     delivered: json['delivered'] == null
@@ -29,6 +30,7 @@ Map<String, dynamic> _$_$_MessageDtoToJson(_$_MessageDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'from': instance.from,
+      'to': instance.to,
       'subject': instance.subject,
       'body': instance.body,
       'delivered': instance.delivered?.toIso8601String(),

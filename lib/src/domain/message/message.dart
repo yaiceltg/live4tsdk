@@ -10,6 +10,7 @@ class Message with _$Message {
   const factory Message({
     required int id,
     required Account from,
+    required Account to,
     required String subject,
     required String body,
     DateTime? delivered,
