@@ -16,7 +16,7 @@ abstract class IMessageRepository {
   ///
   /// fetch user messages
   ///
-  Future<Either<MessageFailure, PagedList<Message>>> fetchMessages({
+  Future<Either<MessageFailure, List<Message>>> fetchMessages({
     required DateTime start,
     required DateTime end,
     required String folder,

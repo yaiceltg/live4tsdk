@@ -30,7 +30,7 @@ void main() async {
       ),
       serverError: (_) => 'Server error' // deprecated
     ), (r) {
-      print('count: ${r.count}');
+      print(r);
       return 'success';
     }
   );

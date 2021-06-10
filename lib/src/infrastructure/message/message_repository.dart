@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';
-import 'package:live4tsdk/src/domain/core/paged_list.dart';
 import 'package:live4tsdk/src/domain/message/i_message_repository.dart';
 import 'package:live4tsdk/src/domain/message/message.dart';
 import 'package:live4tsdk/src/domain/message/message_failure.dart';
@@ -21,7 +20,7 @@ class MessageRepository implements IMessageRepository {
   MessageRepository._internal() {}
 
   @override
-  Future<Either<MessageFailure, PagedList<Message>>> fetchMessages({
+  Future<Either<MessageFailure, List<Message>>> fetchMessages({
     required String folder,
     required DateTime start,
     required DateTime end,
@@ -44,13 +43,12 @@ class MessageRepository implements IMessageRepository {
           }
         }
       }
-      int _count = _response.data['count'];
 
-      final _items = (_response.data['items'] as List)
+      final _items = (_response.data as List)
           .map((e) => MessageDto.fromJson(e).toDomain())
           .toList();
 
-      return right(PagedList(count: _count, items: _items));
+      return right(_items);
     } catch (e) {
       if(e.toString().contains('401')) {
         return left(MessageFailure.http(
