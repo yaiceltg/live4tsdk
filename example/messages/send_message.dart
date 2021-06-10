@@ -10,7 +10,7 @@ void main() async {
 
   //
   final result = await sdk.message.sendMessage(
-    to: 'yaiceltg@gmail.com',
+    to: ['yaiceltg@gmail.com'],
     subject: 'Sdk test',
     body: "Mensaje enviado desde el sdk"
   );

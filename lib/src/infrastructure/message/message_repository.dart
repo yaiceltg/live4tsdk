@@ -21,12 +21,16 @@ class MessageRepository implements IMessageRepository {
   MessageRepository._internal() {}
 
   @override
-  Future<Either<MessageFailure, PagedList<Message>>> fetchMessages() async {
+  Future<Either<MessageFailure, PagedList<Message>>> fetchMessages({
+    required String folder,
+    required DateTime start,
+    required DateTime end,
+  }) async {
     print('<< message:fetchMessages >>');
     try {
       // call api service
       final _response = await _httpClient.get(
-        '$_messagePath/list',
+        '$_messagePath/list?folder=$folder&start=$start&end=$end',
       );
 
       // check response

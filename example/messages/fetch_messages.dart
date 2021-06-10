@@ -9,7 +9,12 @@ void main() async {
   await login();
 
   //
-  final result = await sdk.message.fetchMessages();
+  final day = DateTime.now();
+  final result = await sdk.message.fetchMessages(
+    folder: 'inbox', // inbox, sended
+    start: day,
+    end: day.subtract(Duration(days: 10)),
+  );
 
   final msg = result.fold(
     (error) => error.map(
