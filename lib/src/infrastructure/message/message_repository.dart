@@ -14,7 +14,7 @@ class MessageRepository implements IMessageRepository {
   // http client
   final Dio _httpClient = HttpClient.instance.client;
 
-  final String _messagePath = '/v1/messenger';
+  final String _messagePath = '/v1/messages';
 
   static final MessageRepository instance = MessageRepository._internal();
 
@@ -30,7 +30,7 @@ class MessageRepository implements IMessageRepository {
     try {
       // call api service
       final _response = await _httpClient.get(
-        '$_messagePath/list?folder=$folder&start=$start&end=$end',
+        '$_messagePath/$folder?start=$start&end=$end',
       );
 
       // check response
@@ -78,7 +78,7 @@ class MessageRepository implements IMessageRepository {
 
       // call api service
       final _response = await _httpClient.post(
-        '$_messagePath/send',
+        '$_messagePath',
         data: _data,
       );
 
