@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
@@ -66,6 +67,9 @@ class Live4tsdk {
   }
 
   bool get ready => true;
+
+  HttpClient get httpClient => HttpClient.instance;
+
 
   void addHeaderAuthorization(String token) {
     authToken = token;
