@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:live4tsdk/src/domain/chat/chat_message.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_dto.dart';
-import 'package:live4tsdk/src/infrastructure/chat/chat_group_dto.dart';
 
 part 'chat_message_dto.freezed.dart';
 part 'chat_message_dto.g.dart';

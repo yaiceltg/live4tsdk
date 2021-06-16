@@ -21,19 +21,25 @@ class _$UserInfoDtoTearOff {
   const _$UserInfoDtoTearOff();
 
   _UserInfoDto call(
-      {String? name,
-      String? lastName,
+      {required int id,
+      required String name,
+      required String lastName,
       int? typeUser,
       String? address,
-      String? picture,
-      String? email}) {
+      required String picture,
+      required String email,
+      required String userName,
+      String? phone}) {
     return _UserInfoDto(
+      id: id,
       name: name,
       lastName: lastName,
       typeUser: typeUser,
       address: address,
       picture: picture,
       email: email,
+      userName: userName,
+      phone: phone,
     );
   }
 
@@ -47,12 +53,15 @@ const $UserInfoDto = _$UserInfoDtoTearOff();
 
 /// @nodoc
 mixin _$UserInfoDto {
-  String? get name => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
   int? get typeUser => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
-  String? get picture => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
+  String get picture => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get userName => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,12 +75,15 @@ abstract class $UserInfoDtoCopyWith<$Res> {
           UserInfoDto value, $Res Function(UserInfoDto) then) =
       _$UserInfoDtoCopyWithImpl<$Res>;
   $Res call(
-      {String? name,
-      String? lastName,
+      {int id,
+      String name,
+      String lastName,
       int? typeUser,
       String? address,
-      String? picture,
-      String? email});
+      String picture,
+      String email,
+      String userName,
+      String? phone});
 }
 
 /// @nodoc
@@ -84,22 +96,29 @@ class _$UserInfoDtoCopyWithImpl<$Res> implements $UserInfoDtoCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? lastName = freezed,
     Object? typeUser = freezed,
     Object? address = freezed,
     Object? picture = freezed,
     Object? email = freezed,
+    Object? userName = freezed,
+    Object? phone = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       lastName: lastName == freezed
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       typeUser: typeUser == freezed
           ? _value.typeUser
           : typeUser // ignore: cast_nullable_to_non_nullable
@@ -111,10 +130,18 @@ class _$UserInfoDtoCopyWithImpl<$Res> implements $UserInfoDtoCopyWith<$Res> {
       picture: picture == freezed
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -128,12 +155,15 @@ abstract class _$UserInfoDtoCopyWith<$Res>
       __$UserInfoDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? name,
-      String? lastName,
+      {int id,
+      String name,
+      String lastName,
       int? typeUser,
       String? address,
-      String? picture,
-      String? email});
+      String picture,
+      String email,
+      String userName,
+      String? phone});
 }
 
 /// @nodoc
@@ -148,22 +178,29 @@ class __$UserInfoDtoCopyWithImpl<$Res> extends _$UserInfoDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? lastName = freezed,
     Object? typeUser = freezed,
     Object? address = freezed,
     Object? picture = freezed,
     Object? email = freezed,
+    Object? userName = freezed,
+    Object? phone = freezed,
   }) {
     return _then(_UserInfoDto(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       lastName: lastName == freezed
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       typeUser: typeUser == freezed
           ? _value.typeUser
           : typeUser // ignore: cast_nullable_to_non_nullable
@@ -175,10 +212,18 @@ class __$UserInfoDtoCopyWithImpl<$Res> extends _$UserInfoDtoCopyWithImpl<$Res>
       picture: picture == freezed
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -188,39 +233,50 @@ class __$UserInfoDtoCopyWithImpl<$Res> extends _$UserInfoDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserInfoDto extends _UserInfoDto {
   const _$_UserInfoDto(
-      {this.name,
-      this.lastName,
+      {required this.id,
+      required this.name,
+      required this.lastName,
       this.typeUser,
       this.address,
-      this.picture,
-      this.email})
+      required this.picture,
+      required this.email,
+      required this.userName,
+      this.phone})
       : super._();
 
   factory _$_UserInfoDto.fromJson(Map<String, dynamic> json) =>
       _$_$_UserInfoDtoFromJson(json);
 
   @override
-  final String? name;
+  final int id;
   @override
-  final String? lastName;
+  final String name;
+  @override
+  final String lastName;
   @override
   final int? typeUser;
   @override
   final String? address;
   @override
-  final String? picture;
+  final String picture;
   @override
-  final String? email;
+  final String email;
+  @override
+  final String userName;
+  @override
+  final String? phone;
 
   @override
   String toString() {
-    return 'UserInfoDto(name: $name, lastName: $lastName, typeUser: $typeUser, address: $address, picture: $picture, email: $email)';
+    return 'UserInfoDto(id: $id, name: $name, lastName: $lastName, typeUser: $typeUser, address: $address, picture: $picture, email: $email, userName: $userName, phone: $phone)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserInfoDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.lastName, lastName) ||
@@ -236,18 +292,26 @@ class _$_UserInfoDto extends _UserInfoDto {
                 const DeepCollectionEquality()
                     .equals(other.picture, picture)) &&
             (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.userName, userName) ||
+                const DeepCollectionEquality()
+                    .equals(other.userName, userName)) &&
+            (identical(other.phone, phone) ||
+                const DeepCollectionEquality().equals(other.phone, phone)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(lastName) ^
       const DeepCollectionEquality().hash(typeUser) ^
       const DeepCollectionEquality().hash(address) ^
       const DeepCollectionEquality().hash(picture) ^
-      const DeepCollectionEquality().hash(email);
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(userName) ^
+      const DeepCollectionEquality().hash(phone);
 
   @JsonKey(ignore: true)
   @override
@@ -262,29 +326,38 @@ class _$_UserInfoDto extends _UserInfoDto {
 
 abstract class _UserInfoDto extends UserInfoDto {
   const factory _UserInfoDto(
-      {String? name,
-      String? lastName,
+      {required int id,
+      required String name,
+      required String lastName,
       int? typeUser,
       String? address,
-      String? picture,
-      String? email}) = _$_UserInfoDto;
+      required String picture,
+      required String email,
+      required String userName,
+      String? phone}) = _$_UserInfoDto;
   const _UserInfoDto._() : super._();
 
   factory _UserInfoDto.fromJson(Map<String, dynamic> json) =
       _$_UserInfoDto.fromJson;
 
   @override
-  String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
-  String? get lastName => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  @override
+  String get lastName => throw _privateConstructorUsedError;
   @override
   int? get typeUser => throw _privateConstructorUsedError;
   @override
   String? get address => throw _privateConstructorUsedError;
   @override
-  String? get picture => throw _privateConstructorUsedError;
+  String get picture => throw _privateConstructorUsedError;
   @override
-  String? get email => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  @override
+  String get userName => throw _privateConstructorUsedError;
+  @override
+  String? get phone => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserInfoDtoCopyWith<_UserInfoDto> get copyWith =>

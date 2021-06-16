@@ -197,3 +197,180 @@ abstract class _ChatGroup extends ChatGroup {
   _$ChatGroupCopyWith<_ChatGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$ChatGroupDetailTearOff {
+  const _$ChatGroupDetailTearOff();
+
+  _ChatGroupDetail call(
+      {required int id,
+      required String name,
+      required List<UserInfo> members}) {
+    return _ChatGroupDetail(
+      id: id,
+      name: name,
+      members: members,
+    );
+  }
+}
+
+/// @nodoc
+const $ChatGroupDetail = _$ChatGroupDetailTearOff();
+
+/// @nodoc
+mixin _$ChatGroupDetail {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<UserInfo> get members => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ChatGroupDetailCopyWith<ChatGroupDetail> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChatGroupDetailCopyWith<$Res> {
+  factory $ChatGroupDetailCopyWith(
+          ChatGroupDetail value, $Res Function(ChatGroupDetail) then) =
+      _$ChatGroupDetailCopyWithImpl<$Res>;
+  $Res call({int id, String name, List<UserInfo> members});
+}
+
+/// @nodoc
+class _$ChatGroupDetailCopyWithImpl<$Res>
+    implements $ChatGroupDetailCopyWith<$Res> {
+  _$ChatGroupDetailCopyWithImpl(this._value, this._then);
+
+  final ChatGroupDetail _value;
+  // ignore: unused_field
+  final $Res Function(ChatGroupDetail) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? members = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      members: members == freezed
+          ? _value.members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<UserInfo>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ChatGroupDetailCopyWith<$Res>
+    implements $ChatGroupDetailCopyWith<$Res> {
+  factory _$ChatGroupDetailCopyWith(
+          _ChatGroupDetail value, $Res Function(_ChatGroupDetail) then) =
+      __$ChatGroupDetailCopyWithImpl<$Res>;
+  @override
+  $Res call({int id, String name, List<UserInfo> members});
+}
+
+/// @nodoc
+class __$ChatGroupDetailCopyWithImpl<$Res>
+    extends _$ChatGroupDetailCopyWithImpl<$Res>
+    implements _$ChatGroupDetailCopyWith<$Res> {
+  __$ChatGroupDetailCopyWithImpl(
+      _ChatGroupDetail _value, $Res Function(_ChatGroupDetail) _then)
+      : super(_value, (v) => _then(v as _ChatGroupDetail));
+
+  @override
+  _ChatGroupDetail get _value => super._value as _ChatGroupDetail;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? members = freezed,
+  }) {
+    return _then(_ChatGroupDetail(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      members: members == freezed
+          ? _value.members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<UserInfo>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ChatGroupDetail extends _ChatGroupDetail {
+  const _$_ChatGroupDetail(
+      {required this.id, required this.name, required this.members})
+      : super._();
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final List<UserInfo> members;
+
+  @override
+  String toString() {
+    return 'ChatGroupDetail(id: $id, name: $name, members: $members)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChatGroupDetail &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.members, members) ||
+                const DeepCollectionEquality().equals(other.members, members)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(members);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChatGroupDetailCopyWith<_ChatGroupDetail> get copyWith =>
+      __$ChatGroupDetailCopyWithImpl<_ChatGroupDetail>(this, _$identity);
+}
+
+abstract class _ChatGroupDetail extends ChatGroupDetail {
+  const factory _ChatGroupDetail(
+      {required int id,
+      required String name,
+      required List<UserInfo> members}) = _$_ChatGroupDetail;
+  const _ChatGroupDetail._() : super._();
+
+  @override
+  int get id => throw _privateConstructorUsedError;
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  List<UserInfo> get members => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ChatGroupDetailCopyWith<_ChatGroupDetail> get copyWith =>
+      throw _privateConstructorUsedError;
+}

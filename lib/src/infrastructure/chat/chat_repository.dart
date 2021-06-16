@@ -21,30 +21,62 @@ class ChatRepository implements IChatRepository {
   }
 
   @override
+  Future<Either<ChatFailure, int>> createGroup({
+    required String name,
+    required List<int> members
+  }) async {
+    try {
+      // prepare form data
+      final _data = jsonEncode({
+        'name': name,
+        'members': members
+      });
+
+      // call api service
+      final _response = await _httpClient.post(
+        '$_chatPath',
+        data: _data,
+      );
+
+      // return group id
+      return right(_response.data as int);
+    } catch (e) {
+      return left(ChatFailure.serverError());
+    }
+  }
+
+
+  @override
+  Future<Either<ChatFailure, ChatGroupDetail>> getGroup({required String groupId}) async {
+   try {
+
+      // call api service
+      final _response = await _httpClient.get(
+        '$_chatPath/$groupId',
+      );
+
+      // check response
+      return right(ChatGroupDetailDto.fromJson(_response.data).toDomain());
+    } catch (e) {
+      return left(ChatFailure.serverError());
+    }
+  }
+
+  @override
   Future<Either<ChatFailure, List<ChatGroup>>> fetchGroups() async {
     print('<< chat:fetchGroupd >>');
     try {
 
       // call api service
       final _response = await _httpClient.get(
-        '$_chatPath/rooms',
+        '$_chatPath',
       );
 
       // check response
-      if (_response.data is Map<String, dynamic>) {
-        Map<String, dynamic> _d = _response.data;
-        if (_d.containsKey('response')) {
-          final Map<String, dynamic> _r = _d['response'];
 
-          if (_r.containsKey('code')) {
-            String _c = _r['code'];
-          }
-        }
-      }
-
-       final _items = (_response.data['groups'] as List)
-          .map((e) => ChatGroupDto.fromJson(e).toDomain())
-          .toList();
+      final _items = (_response.data['groups'] as List)
+        .map((e) => ChatGroupDto.fromJson(e).toDomain())
+        .toList();
 
       return right(_items);
     } catch (e) {
@@ -121,5 +153,4 @@ class ChatRepository implements IChatRepository {
       return left(ChatFailure.serverError());
     }
   }
-
 }

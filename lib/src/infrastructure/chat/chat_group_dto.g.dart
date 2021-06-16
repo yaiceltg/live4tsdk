@@ -23,3 +23,22 @@ Map<String, dynamic> _$_$_ChatGroupDtoToJson(_$_ChatGroupDto instance) =>
       'name': instance.name,
       'latestMessage': instance.latestMessage,
     };
+
+_$_ChatGroupDetailDto _$_$_ChatGroupDetailDtoFromJson(
+    Map<String, dynamic> json) {
+  return _$_ChatGroupDetailDto(
+    id: json['id'] as int,
+    name: json['name'] as String,
+    members: (json['members'] as List<dynamic>)
+        .map((e) => UserInfoDto.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_ChatGroupDetailDtoToJson(
+        _$_ChatGroupDetailDto instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'members': instance.members,
+    };

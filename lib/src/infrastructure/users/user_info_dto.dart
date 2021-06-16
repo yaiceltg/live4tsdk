@@ -9,33 +9,42 @@ class UserInfoDto with _$UserInfoDto {
   const UserInfoDto._();
 
   const factory UserInfoDto({
-    String? name,
-    String? lastName,
+    required int id,
+    required String name,
+    required String lastName,
     int? typeUser,
     String? address,
-    String? picture,
-    String? email,
+    required String picture,
+    required String email,
+    required String userName,
+    String? phone,
   }) = _UserInfoDto;
 
   factory UserInfoDto.fromDomain(UserInfo user) {
     return UserInfoDto(
+      id: user.id,
       name: user.name,
       lastName: user.lastName,
       typeUser: user.typeUser,
       address: user.address,
       picture: user.picture,
       email: user.email,
+      userName: user.userName,
+      phone: user.phone,
     );
   }
 
   UserInfo toDomain() {
     return UserInfo(
+      id: id,
       name: name,
       lastName: lastName,
       typeUser: typeUser,
       address: address,
       picture: picture,
       email: email,
+      userName: userName,
+      phone: phone,
     );
   }
 

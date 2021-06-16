@@ -24,4 +24,19 @@ abstract class IChatRepository {
     required String message,
     required int type,
   });
+
+  ///
+  /// create room
+  ///
+  Future<Either<ChatFailure, int>> createGroup({
+    required String name,
+    required List<int> members
+  });
+
+  ///
+  /// get room info
+  ///
+  Future<Either<ChatFailure, ChatGroupDetail>> getGroup({
+    required String groupId
+  });
 }
