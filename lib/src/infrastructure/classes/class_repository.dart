@@ -3,9 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/classes/area.dart';
 import 'package:live4tsdk/src/domain/classes/class_failure.dart';
 import 'package:live4tsdk/src/domain/classes/i_classes_repository.dart';
-import 'package:live4tsdk/src/domain/classes/room.dart';
+import 'package:live4tsdk/src/domain/classes/class_room.dart';
 import 'package:live4tsdk/src/infrastructure/classes/area_dto.dart';
-import 'package:live4tsdk/src/infrastructure/classes/room_dto.dart';
+import 'package:live4tsdk/src/infrastructure/classes/class_room_dto.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
 class ClassRepository implements IClassRepository {
@@ -52,7 +52,7 @@ class ClassRepository implements IClassRepository {
   }
 
   @override
-  Future<Either<ClassFailure, List<Room>>> fetchUserRoom() async {
+  Future<Either<ClassFailure, List<ClassRoom>>> fetchUserRoom() async {
 
     try {
 

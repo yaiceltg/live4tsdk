@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:live4tsdk/src/domain/calendar/calendar_event.dart';
+import 'package:live4tsdk/src/infrastructure/classes/area_dto.dart';
+import 'package:live4tsdk/src/infrastructure/classes/class_room_dto.dart';
 
 part 'calendar_event_dto.freezed.dart';
 part 'calendar_event_dto.g.dart';
@@ -10,8 +12,8 @@ class CalendarEventDto with _$CalendarEventDto {
 
   const factory CalendarEventDto({
     required int id,
-    @JsonKey(name: 'idClassroom') required int classroom,
-    @JsonKey(name: 'idArea') required int area,
+    required RoomDto classroom,
+    required AreaDto area,
     required String name,
     @JsonKey(name: 'dateTo') required String start,
     @JsonKey(name: 'dateFrom') required String end,
@@ -23,8 +25,8 @@ class CalendarEventDto with _$CalendarEventDto {
   factory CalendarEventDto.fromDomain(CalendarEvent evt) {
     return CalendarEventDto(
       id: evt.id,
-      classroom: evt.classroom,
-      area: evt.area,
+      classroom: RoomDto.fromDomain(evt.classroom),
+      area: AreaDto.fromDomain(evt.area),
       name: evt.name,
       start: evt.start,
       end: evt.end,
@@ -37,8 +39,8 @@ class CalendarEventDto with _$CalendarEventDto {
   CalendarEvent toDomain() {
     return CalendarEvent(
       id: id,
-      classroom: classroom,
-      area: area,
+      classroom: classroom.toDomain(),
+      area: area.toDomain(),
       name: name,
       start: start,
       end: end,

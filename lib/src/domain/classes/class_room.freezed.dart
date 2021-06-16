@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'room.dart';
+part of 'class_room.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$RoomTearOff {
-  const _$RoomTearOff();
+class _$ClassRoomTearOff {
+  const _$ClassRoomTearOff();
 
   _Room call({required int id, required String name}) {
     return _Room(
@@ -25,31 +25,32 @@ class _$RoomTearOff {
 }
 
 /// @nodoc
-const $Room = _$RoomTearOff();
+const $ClassRoom = _$ClassRoomTearOff();
 
 /// @nodoc
-mixin _$Room {
+mixin _$ClassRoom {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RoomCopyWith<Room> get copyWith => throw _privateConstructorUsedError;
+  $ClassRoomCopyWith<ClassRoom> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RoomCopyWith<$Res> {
-  factory $RoomCopyWith(Room value, $Res Function(Room) then) =
-      _$RoomCopyWithImpl<$Res>;
+abstract class $ClassRoomCopyWith<$Res> {
+  factory $ClassRoomCopyWith(ClassRoom value, $Res Function(ClassRoom) then) =
+      _$ClassRoomCopyWithImpl<$Res>;
   $Res call({int id, String name});
 }
 
 /// @nodoc
-class _$RoomCopyWithImpl<$Res> implements $RoomCopyWith<$Res> {
-  _$RoomCopyWithImpl(this._value, this._then);
+class _$ClassRoomCopyWithImpl<$Res> implements $ClassRoomCopyWith<$Res> {
+  _$ClassRoomCopyWithImpl(this._value, this._then);
 
-  final Room _value;
+  final ClassRoom _value;
   // ignore: unused_field
-  final $Res Function(Room) _then;
+  final $Res Function(ClassRoom) _then;
 
   @override
   $Res call({
@@ -70,7 +71,7 @@ class _$RoomCopyWithImpl<$Res> implements $RoomCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RoomCopyWith<$Res> implements $RoomCopyWith<$Res> {
+abstract class _$RoomCopyWith<$Res> implements $ClassRoomCopyWith<$Res> {
   factory _$RoomCopyWith(_Room value, $Res Function(_Room) then) =
       __$RoomCopyWithImpl<$Res>;
   @override
@@ -78,7 +79,7 @@ abstract class _$RoomCopyWith<$Res> implements $RoomCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res>
+class __$RoomCopyWithImpl<$Res> extends _$ClassRoomCopyWithImpl<$Res>
     implements _$RoomCopyWith<$Res> {
   __$RoomCopyWithImpl(_Room _value, $Res Function(_Room) _then)
       : super(_value, (v) => _then(v as _Room));
@@ -116,7 +117,7 @@ class _$_Room extends _Room {
 
   @override
   String toString() {
-    return 'Room(id: $id, name: $name)';
+    return 'ClassRoom(id: $id, name: $name)';
   }
 
   @override
@@ -141,7 +142,7 @@ class _$_Room extends _Room {
       __$RoomCopyWithImpl<_Room>(this, _$identity);
 }
 
-abstract class _Room extends Room {
+abstract class _Room extends ClassRoom {
   const factory _Room({required int id, required String name}) = _$_Room;
   const _Room._() : super._();
 

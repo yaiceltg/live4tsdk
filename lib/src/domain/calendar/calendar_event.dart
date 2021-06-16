@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:live4tsdk/src/domain/classes/area.dart';
+import 'package:live4tsdk/src/domain/classes/class_room.dart';
 
 part 'calendar_event.freezed.dart';
 
@@ -8,8 +10,8 @@ class CalendarEvent with _$CalendarEvent {
 
   const factory CalendarEvent({
     required int id,
-    required int classroom,
-    required int area,
+    required ClassRoom classroom,
+    required Area area,
     required String name,
     required String start,
     required String end,

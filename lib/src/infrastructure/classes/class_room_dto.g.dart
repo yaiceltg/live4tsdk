@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'room_dto.dart';
+part of 'class_room_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

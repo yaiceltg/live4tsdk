@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:live4tsdk/src/domain/classes/room.dart';
+import 'package:live4tsdk/src/domain/classes/class_room.dart';
 
-part 'room_dto.freezed.dart';
-part 'room_dto.g.dart';
+part 'class_room_dto.freezed.dart';
+part 'class_room_dto.g.dart';
 
 @freezed
 abstract class RoomDto implements _$RoomDto {
@@ -13,15 +13,15 @@ abstract class RoomDto implements _$RoomDto {
     required String name
   }) = _RoomDto;
 
-  factory RoomDto.fromDomain(Room room) {
+  factory RoomDto.fromDomain(ClassRoom room) {
     return RoomDto(
       id: room.id,
       name: room.name
     );
   }
 
-  Room toDomain() {
-    return Room(
+  ClassRoom toDomain() {
+    return ClassRoom(
       id: id,
       name: name
     );

@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'room.freezed.dart';
+part 'class_room.freezed.dart';
 
 @freezed
-class Room with _$Room {
-  const Room._();
+class ClassRoom with _$ClassRoom {
+  const ClassRoom._();
 
-  const factory Room({
+  const factory ClassRoom({
     required int id,
     required String name
   }) = _Room;

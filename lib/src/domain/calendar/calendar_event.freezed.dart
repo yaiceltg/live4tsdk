@@ -18,8 +18,8 @@ class _$CalendarEventTearOff {
 
   _CalendarEvent call(
       {required int id,
-      required int classroom,
-      required int area,
+      required ClassRoom classroom,
+      required Area area,
       required String name,
       required String start,
       required String end,
@@ -46,8 +46,8 @@ const $CalendarEvent = _$CalendarEventTearOff();
 /// @nodoc
 mixin _$CalendarEvent {
   int get id => throw _privateConstructorUsedError;
-  int get classroom => throw _privateConstructorUsedError;
-  int get area => throw _privateConstructorUsedError;
+  ClassRoom get classroom => throw _privateConstructorUsedError;
+  Area get area => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get start => throw _privateConstructorUsedError;
   String get end => throw _privateConstructorUsedError;
@@ -67,14 +67,17 @@ abstract class $CalendarEventCopyWith<$Res> {
       _$CalendarEventCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      int classroom,
-      int area,
+      ClassRoom classroom,
+      Area area,
       String name,
       String start,
       String end,
       DateTime updatedAt,
       DateTime createdAt,
       String url});
+
+  $ClassRoomCopyWith<$Res> get classroom;
+  $AreaCopyWith<$Res> get area;
 }
 
 /// @nodoc
@@ -106,11 +109,11 @@ class _$CalendarEventCopyWithImpl<$Res>
       classroom: classroom == freezed
           ? _value.classroom
           : classroom // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ClassRoom,
       area: area == freezed
           ? _value.area
           : area // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Area,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -137,6 +140,20 @@ class _$CalendarEventCopyWithImpl<$Res>
               as String,
     ));
   }
+
+  @override
+  $ClassRoomCopyWith<$Res> get classroom {
+    return $ClassRoomCopyWith<$Res>(_value.classroom, (value) {
+      return _then(_value.copyWith(classroom: value));
+    });
+  }
+
+  @override
+  $AreaCopyWith<$Res> get area {
+    return $AreaCopyWith<$Res>(_value.area, (value) {
+      return _then(_value.copyWith(area: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -148,14 +165,19 @@ abstract class _$CalendarEventCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      int classroom,
-      int area,
+      ClassRoom classroom,
+      Area area,
       String name,
       String start,
       String end,
       DateTime updatedAt,
       DateTime createdAt,
       String url});
+
+  @override
+  $ClassRoomCopyWith<$Res> get classroom;
+  @override
+  $AreaCopyWith<$Res> get area;
 }
 
 /// @nodoc
@@ -189,11 +211,11 @@ class __$CalendarEventCopyWithImpl<$Res>
       classroom: classroom == freezed
           ? _value.classroom
           : classroom // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ClassRoom,
       area: area == freezed
           ? _value.area
           : area // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Area,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -240,9 +262,9 @@ class _$_CalendarEvent extends _CalendarEvent {
   @override
   final int id;
   @override
-  final int classroom;
+  final ClassRoom classroom;
   @override
-  final int area;
+  final Area area;
   @override
   final String name;
   @override
@@ -310,8 +332,8 @@ class _$_CalendarEvent extends _CalendarEvent {
 abstract class _CalendarEvent extends CalendarEvent {
   const factory _CalendarEvent(
       {required int id,
-      required int classroom,
-      required int area,
+      required ClassRoom classroom,
+      required Area area,
       required String name,
       required String start,
       required String end,
@@ -323,9 +345,9 @@ abstract class _CalendarEvent extends CalendarEvent {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  int get classroom => throw _privateConstructorUsedError;
+  ClassRoom get classroom => throw _privateConstructorUsedError;
   @override
-  int get area => throw _privateConstructorUsedError;
+  Area get area => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
