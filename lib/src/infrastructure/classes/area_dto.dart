@@ -9,17 +9,20 @@ class AreaDto with _$AreaDto {
   const AreaDto._();
 
   const factory AreaDto({
+    required String id,
     required String name,
   }) = _AreaDto;
 
   factory AreaDto.fromDomain(Area area) {
     return AreaDto(
+      id: area.id,
       name: area.name
     );
   }
 
   Area toDomain() {
     return Area(
+      id: id,
       name: name
     );
   }

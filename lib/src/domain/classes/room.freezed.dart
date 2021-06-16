@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'area_dto.dart';
+part of 'room.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,53 +12,44 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-AreaDto _$AreaDtoFromJson(Map<String, dynamic> json) {
-  return _AreaDto.fromJson(json);
-}
-
 /// @nodoc
-class _$AreaDtoTearOff {
-  const _$AreaDtoTearOff();
+class _$RoomTearOff {
+  const _$RoomTearOff();
 
-  _AreaDto call({required String id, required String name}) {
-    return _AreaDto(
+  _Room call({required String id, required String name}) {
+    return _Room(
       id: id,
       name: name,
     );
   }
-
-  AreaDto fromJson(Map<String, Object> json) {
-    return AreaDto.fromJson(json);
-  }
 }
 
 /// @nodoc
-const $AreaDto = _$AreaDtoTearOff();
+const $Room = _$RoomTearOff();
 
 /// @nodoc
-mixin _$AreaDto {
+mixin _$Room {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AreaDtoCopyWith<AreaDto> get copyWith => throw _privateConstructorUsedError;
+  $RoomCopyWith<Room> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AreaDtoCopyWith<$Res> {
-  factory $AreaDtoCopyWith(AreaDto value, $Res Function(AreaDto) then) =
-      _$AreaDtoCopyWithImpl<$Res>;
+abstract class $RoomCopyWith<$Res> {
+  factory $RoomCopyWith(Room value, $Res Function(Room) then) =
+      _$RoomCopyWithImpl<$Res>;
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class _$AreaDtoCopyWithImpl<$Res> implements $AreaDtoCopyWith<$Res> {
-  _$AreaDtoCopyWithImpl(this._value, this._then);
+class _$RoomCopyWithImpl<$Res> implements $RoomCopyWith<$Res> {
+  _$RoomCopyWithImpl(this._value, this._then);
 
-  final AreaDto _value;
+  final Room _value;
   // ignore: unused_field
-  final $Res Function(AreaDto) _then;
+  final $Res Function(Room) _then;
 
   @override
   $Res call({
@@ -79,28 +70,28 @@ class _$AreaDtoCopyWithImpl<$Res> implements $AreaDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AreaDtoCopyWith<$Res> implements $AreaDtoCopyWith<$Res> {
-  factory _$AreaDtoCopyWith(_AreaDto value, $Res Function(_AreaDto) then) =
-      __$AreaDtoCopyWithImpl<$Res>;
+abstract class _$RoomCopyWith<$Res> implements $RoomCopyWith<$Res> {
+  factory _$RoomCopyWith(_Room value, $Res Function(_Room) then) =
+      __$RoomCopyWithImpl<$Res>;
   @override
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class __$AreaDtoCopyWithImpl<$Res> extends _$AreaDtoCopyWithImpl<$Res>
-    implements _$AreaDtoCopyWith<$Res> {
-  __$AreaDtoCopyWithImpl(_AreaDto _value, $Res Function(_AreaDto) _then)
-      : super(_value, (v) => _then(v as _AreaDto));
+class __$RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res>
+    implements _$RoomCopyWith<$Res> {
+  __$RoomCopyWithImpl(_Room _value, $Res Function(_Room) _then)
+      : super(_value, (v) => _then(v as _Room));
 
   @override
-  _AreaDto get _value => super._value as _AreaDto;
+  _Room get _value => super._value as _Room;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
   }) {
-    return _then(_AreaDto(
+    return _then(_Room(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -114,12 +105,9 @@ class __$AreaDtoCopyWithImpl<$Res> extends _$AreaDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_AreaDto extends _AreaDto {
-  const _$_AreaDto({required this.id, required this.name}) : super._();
 
-  factory _$_AreaDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_AreaDtoFromJson(json);
+class _$_Room extends _Room {
+  const _$_Room({required this.id, required this.name}) : super._();
 
   @override
   final String id;
@@ -128,13 +116,13 @@ class _$_AreaDto extends _AreaDto {
 
   @override
   String toString() {
-    return 'AreaDto(id: $id, name: $name)';
+    return 'Room(id: $id, name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AreaDto &&
+        (other is _Room &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
@@ -149,21 +137,13 @@ class _$_AreaDto extends _AreaDto {
 
   @JsonKey(ignore: true)
   @override
-  _$AreaDtoCopyWith<_AreaDto> get copyWith =>
-      __$AreaDtoCopyWithImpl<_AreaDto>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_AreaDtoToJson(this);
-  }
+  _$RoomCopyWith<_Room> get copyWith =>
+      __$RoomCopyWithImpl<_Room>(this, _$identity);
 }
 
-abstract class _AreaDto extends AreaDto {
-  const factory _AreaDto({required String id, required String name}) =
-      _$_AreaDto;
-  const _AreaDto._() : super._();
-
-  factory _AreaDto.fromJson(Map<String, dynamic> json) = _$_AreaDto.fromJson;
+abstract class _Room extends Room {
+  const factory _Room({required String id, required String name}) = _$_Room;
+  const _Room._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -171,6 +151,5 @@ abstract class _AreaDto extends AreaDto {
   String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AreaDtoCopyWith<_AreaDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$RoomCopyWith<_Room> get copyWith => throw _privateConstructorUsedError;
 }

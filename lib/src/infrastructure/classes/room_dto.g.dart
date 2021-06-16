@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'area_dto.dart';
+part of 'room_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AreaDto _$_$_AreaDtoFromJson(Map<String, dynamic> json) {
-  return _$_AreaDto(
+_$_RoomDto _$_$_RoomDtoFromJson(Map<String, dynamic> json) {
+  return _$_RoomDto(
     id: json['id'] as String,
     name: json['name'] as String,
   );
 }
 
-Map<String, dynamic> _$_$_AreaDtoToJson(_$_AreaDto instance) =>
+Map<String, dynamic> _$_$_RoomDtoToJson(_$_RoomDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
