@@ -5,7 +5,7 @@ part 'user_info_dto.freezed.dart';
 part 'user_info_dto.g.dart';
 
 @freezed
-abstract class UserInfoDto implements _$UserInfoDto {
+class UserInfoDto with _$UserInfoDto {
   const UserInfoDto._();
 
   const factory UserInfoDto({

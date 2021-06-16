@@ -5,7 +5,7 @@ part 'calendar_event_dto.freezed.dart';
 part 'calendar_event_dto.g.dart';
 
 @freezed
-abstract class CalendarEventDto implements _$CalendarEventDto {
+class CalendarEventDto with _$CalendarEventDto {
   const CalendarEventDto._();
 
   const factory CalendarEventDto({

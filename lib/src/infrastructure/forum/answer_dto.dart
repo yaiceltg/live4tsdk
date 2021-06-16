@@ -6,7 +6,7 @@ part 'answer_dto.freezed.dart';
 part 'answer_dto.g.dart';
 
 @freezed
-abstract class AnswerDto implements _$AnswerDto {
+class AnswerDto with _$AnswerDto {
   const AnswerDto._();
 
   const factory AnswerDto({

@@ -11,7 +11,7 @@ AccountDto _from(args) {
 }
 
 @freezed
-abstract class MessageDto implements _$MessageDto {
+class MessageDto with _$MessageDto {
   const MessageDto._();
 
   const factory MessageDto({

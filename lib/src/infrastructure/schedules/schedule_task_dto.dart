@@ -5,7 +5,7 @@ part 'schedule_task_dto.freezed.dart';
 part 'schedule_task_dto.g.dart';
 
 @freezed
-abstract class ScheduleTaskDto implements _$ScheduleTaskDto {
+class ScheduleTaskDto with _$ScheduleTaskDto {
   const ScheduleTaskDto._();
 
   const factory ScheduleTaskDto({

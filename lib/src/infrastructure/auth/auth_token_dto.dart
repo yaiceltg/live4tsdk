@@ -6,7 +6,7 @@ part 'auth_token_dto.freezed.dart';
 part 'auth_token_dto.g.dart';
 
 @freezed
-abstract class AuthTokenDto implements _$AuthTokenDto {
+class AuthTokenDto with _$AuthTokenDto {
   const AuthTokenDto._();
 
   const factory AuthTokenDto({
