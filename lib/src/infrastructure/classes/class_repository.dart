@@ -41,7 +41,7 @@ class ClassRepository implements IClassRepository {
         }
       }
 
-       final _items = (_response as List)
+       final _items = (_response.data as List)
           .map((e) => AreaDto.fromJson(e).toDomain())
           .toList();
 
@@ -73,7 +73,7 @@ class ClassRepository implements IClassRepository {
         }
       }
 
-       final _items = (_response as List)
+       final _items = (_response.data as List)
           .map((e) => RoomDto.fromJson(e).toDomain())
           .toList();
 

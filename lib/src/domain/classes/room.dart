@@ -7,7 +7,7 @@ class Room with _$Room {
   const Room._();
 
   const factory Room({
-    required String id,
+    required int id,
     required String name
   }) = _Room;
 }

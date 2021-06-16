@@ -9,7 +9,7 @@ abstract class RoomDto implements _$RoomDto {
   const RoomDto._();
 
   const factory RoomDto({
-    required String id,
+    required int id,
     required String name
   }) = _RoomDto;
 

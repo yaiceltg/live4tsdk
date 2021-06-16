@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$RoomTearOff {
   const _$RoomTearOff();
 
-  _Room call({required String id, required String name}) {
+  _Room call({required int id, required String name}) {
     return _Room(
       id: id,
       name: name,
@@ -29,7 +29,7 @@ const $Room = _$RoomTearOff();
 
 /// @nodoc
 mixin _$Room {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -40,7 +40,7 @@ mixin _$Room {
 abstract class $RoomCopyWith<$Res> {
   factory $RoomCopyWith(Room value, $Res Function(Room) then) =
       _$RoomCopyWithImpl<$Res>;
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$RoomCopyWithImpl<$Res> implements $RoomCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,7 @@ abstract class _$RoomCopyWith<$Res> implements $RoomCopyWith<$Res> {
   factory _$RoomCopyWith(_Room value, $Res Function(_Room) then) =
       __$RoomCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$RoomCopyWithImpl<$Res> extends _$RoomCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ class _$_Room extends _Room {
   const _$_Room({required this.id, required this.name}) : super._();
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -142,11 +142,11 @@ class _$_Room extends _Room {
 }
 
 abstract class _Room extends Room {
-  const factory _Room({required String id, required String name}) = _$_Room;
+  const factory _Room({required int id, required String name}) = _$_Room;
   const _Room._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

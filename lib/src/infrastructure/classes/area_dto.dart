@@ -9,7 +9,7 @@ class AreaDto with _$AreaDto {
   const AreaDto._();
 
   const factory AreaDto({
-    required String id,
+    required int id,
     required String name,
   }) = _AreaDto;
 

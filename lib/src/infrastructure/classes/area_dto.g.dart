@@ -8,7 +8,7 @@ part of 'area_dto.dart';
 
 _$_AreaDto _$_$_AreaDtoFromJson(Map<String, dynamic> json) {
   return _$_AreaDto(
-    id: json['id'] as String,
+    id: json['id'] as int,
     name: json['name'] as String,
   );
 }

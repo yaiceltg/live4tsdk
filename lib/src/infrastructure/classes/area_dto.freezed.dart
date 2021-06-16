@@ -20,7 +20,7 @@ AreaDto _$AreaDtoFromJson(Map<String, dynamic> json) {
 class _$AreaDtoTearOff {
   const _$AreaDtoTearOff();
 
-  _AreaDto call({required String id, required String name}) {
+  _AreaDto call({required int id, required String name}) {
     return _AreaDto(
       id: id,
       name: name,
@@ -37,7 +37,7 @@ const $AreaDto = _$AreaDtoTearOff();
 
 /// @nodoc
 mixin _$AreaDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ mixin _$AreaDto {
 abstract class $AreaDtoCopyWith<$Res> {
   factory $AreaDtoCopyWith(AreaDto value, $Res Function(AreaDto) then) =
       _$AreaDtoCopyWithImpl<$Res>;
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$AreaDtoCopyWithImpl<$Res> implements $AreaDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -83,7 +83,7 @@ abstract class _$AreaDtoCopyWith<$Res> implements $AreaDtoCopyWith<$Res> {
   factory _$AreaDtoCopyWith(_AreaDto value, $Res Function(_AreaDto) then) =
       __$AreaDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class __$AreaDtoCopyWithImpl<$Res> extends _$AreaDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -122,7 +122,7 @@ class _$_AreaDto extends _AreaDto {
       _$_$_AreaDtoFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -159,14 +159,13 @@ class _$_AreaDto extends _AreaDto {
 }
 
 abstract class _AreaDto extends AreaDto {
-  const factory _AreaDto({required String id, required String name}) =
-      _$_AreaDto;
+  const factory _AreaDto({required int id, required String name}) = _$_AreaDto;
   const _AreaDto._() : super._();
 
   factory _AreaDto.fromJson(Map<String, dynamic> json) = _$_AreaDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

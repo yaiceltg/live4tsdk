@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AreaTearOff {
   const _$AreaTearOff();
 
-  _Area call({required String id, required String name}) {
+  _Area call({required int id, required String name}) {
     return _Area(
       id: id,
       name: name,
@@ -29,7 +29,7 @@ const $Area = _$AreaTearOff();
 
 /// @nodoc
 mixin _$Area {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -40,7 +40,7 @@ mixin _$Area {
 abstract class $AreaCopyWith<$Res> {
   factory $AreaCopyWith(Area value, $Res Function(Area) then) =
       _$AreaCopyWithImpl<$Res>;
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$AreaCopyWithImpl<$Res> implements $AreaCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,7 @@ abstract class _$AreaCopyWith<$Res> implements $AreaCopyWith<$Res> {
   factory _$AreaCopyWith(_Area value, $Res Function(_Area) then) =
       __$AreaCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$AreaCopyWithImpl<$Res> extends _$AreaCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ class _$_Area extends _Area {
   const _$_Area({required this.id, required this.name}) : super._();
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -142,11 +142,11 @@ class _$_Area extends _Area {
 }
 
 abstract class _Area extends Area {
-  const factory _Area({required String id, required String name}) = _$_Area;
+  const factory _Area({required int id, required String name}) = _$_Area;
   const _Area._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

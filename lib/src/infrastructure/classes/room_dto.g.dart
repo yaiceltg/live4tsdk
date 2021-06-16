@@ -8,7 +8,7 @@ part of 'room_dto.dart';
 
 _$_RoomDto _$_$_RoomDtoFromJson(Map<String, dynamic> json) {
   return _$_RoomDto(
-    id: json['id'] as String,
+    id: json['id'] as int,
     name: json['name'] as String,
   );
 }

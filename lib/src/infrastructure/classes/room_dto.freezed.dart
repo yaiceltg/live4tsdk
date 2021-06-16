@@ -20,7 +20,7 @@ RoomDto _$RoomDtoFromJson(Map<String, dynamic> json) {
 class _$RoomDtoTearOff {
   const _$RoomDtoTearOff();
 
-  _RoomDto call({required String id, required String name}) {
+  _RoomDto call({required int id, required String name}) {
     return _RoomDto(
       id: id,
       name: name,
@@ -37,7 +37,7 @@ const $RoomDto = _$RoomDtoTearOff();
 
 /// @nodoc
 mixin _$RoomDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ mixin _$RoomDto {
 abstract class $RoomDtoCopyWith<$Res> {
   factory $RoomDtoCopyWith(RoomDto value, $Res Function(RoomDto) then) =
       _$RoomDtoCopyWithImpl<$Res>;
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$RoomDtoCopyWithImpl<$Res> implements $RoomDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -83,7 +83,7 @@ abstract class _$RoomDtoCopyWith<$Res> implements $RoomDtoCopyWith<$Res> {
   factory _$RoomDtoCopyWith(_RoomDto value, $Res Function(_RoomDto) then) =
       __$RoomDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class __$RoomDtoCopyWithImpl<$Res> extends _$RoomDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -122,7 +122,7 @@ class _$_RoomDto extends _RoomDto {
       _$_$_RoomDtoFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -159,14 +159,13 @@ class _$_RoomDto extends _RoomDto {
 }
 
 abstract class _RoomDto extends RoomDto {
-  const factory _RoomDto({required String id, required String name}) =
-      _$_RoomDto;
+  const factory _RoomDto({required int id, required String name}) = _$_RoomDto;
   const _RoomDto._() : super._();
 
   factory _RoomDto.fromJson(Map<String, dynamic> json) = _$_RoomDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
