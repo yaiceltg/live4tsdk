@@ -12,7 +12,7 @@ class CalendarEventDto with _$CalendarEventDto {
 
   const factory CalendarEventDto({
     required int id,
-    required RoomDto classroom,
+    required RoomDto classRoom,
     required AreaDto area,
     required String name,
     @JsonKey(name: 'dateTo') required String start,
@@ -25,7 +25,7 @@ class CalendarEventDto with _$CalendarEventDto {
   factory CalendarEventDto.fromDomain(CalendarEvent evt) {
     return CalendarEventDto(
       id: evt.id,
-      classroom: RoomDto.fromDomain(evt.classroom),
+      classRoom: RoomDto.fromDomain(evt.classRoom),
       area: AreaDto.fromDomain(evt.area),
       name: evt.name,
       start: evt.start,
@@ -39,7 +39,7 @@ class CalendarEventDto with _$CalendarEventDto {
   CalendarEvent toDomain() {
     return CalendarEvent(
       id: id,
-      classroom: classroom.toDomain(),
+      classRoom: classRoom.toDomain(),
       area: area.toDomain(),
       name: name,
       start: start,

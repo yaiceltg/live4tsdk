@@ -22,7 +22,7 @@ class _$CalendarEventDtoTearOff {
 
   _CalendarClassDto call(
       {required int id,
-      required RoomDto classroom,
+      required RoomDto classRoom,
       required AreaDto area,
       required String name,
       @JsonKey(name: 'dateTo') required String start,
@@ -32,7 +32,7 @@ class _$CalendarEventDtoTearOff {
       required String url}) {
     return _CalendarClassDto(
       id: id,
-      classroom: classroom,
+      classRoom: classRoom,
       area: area,
       name: name,
       start: start,
@@ -54,7 +54,7 @@ const $CalendarEventDto = _$CalendarEventDtoTearOff();
 /// @nodoc
 mixin _$CalendarEventDto {
   int get id => throw _privateConstructorUsedError;
-  RoomDto get classroom => throw _privateConstructorUsedError;
+  RoomDto get classRoom => throw _privateConstructorUsedError;
   AreaDto get area => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'dateTo')
@@ -78,7 +78,7 @@ abstract class $CalendarEventDtoCopyWith<$Res> {
       _$CalendarEventDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      RoomDto classroom,
+      RoomDto classRoom,
       AreaDto area,
       String name,
       @JsonKey(name: 'dateTo') String start,
@@ -87,7 +87,7 @@ abstract class $CalendarEventDtoCopyWith<$Res> {
       DateTime createdAt,
       String url});
 
-  $RoomDtoCopyWith<$Res> get classroom;
+  $RoomDtoCopyWith<$Res> get classRoom;
   $AreaDtoCopyWith<$Res> get area;
 }
 
@@ -103,7 +103,7 @@ class _$CalendarEventDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? classroom = freezed,
+    Object? classRoom = freezed,
     Object? area = freezed,
     Object? name = freezed,
     Object? start = freezed,
@@ -117,9 +117,9 @@ class _$CalendarEventDtoCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      classroom: classroom == freezed
-          ? _value.classroom
-          : classroom // ignore: cast_nullable_to_non_nullable
+      classRoom: classRoom == freezed
+          ? _value.classRoom
+          : classRoom // ignore: cast_nullable_to_non_nullable
               as RoomDto,
       area: area == freezed
           ? _value.area
@@ -153,9 +153,9 @@ class _$CalendarEventDtoCopyWithImpl<$Res>
   }
 
   @override
-  $RoomDtoCopyWith<$Res> get classroom {
-    return $RoomDtoCopyWith<$Res>(_value.classroom, (value) {
-      return _then(_value.copyWith(classroom: value));
+  $RoomDtoCopyWith<$Res> get classRoom {
+    return $RoomDtoCopyWith<$Res>(_value.classRoom, (value) {
+      return _then(_value.copyWith(classRoom: value));
     });
   }
 
@@ -176,7 +176,7 @@ abstract class _$CalendarClassDtoCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      RoomDto classroom,
+      RoomDto classRoom,
       AreaDto area,
       String name,
       @JsonKey(name: 'dateTo') String start,
@@ -186,7 +186,7 @@ abstract class _$CalendarClassDtoCopyWith<$Res>
       String url});
 
   @override
-  $RoomDtoCopyWith<$Res> get classroom;
+  $RoomDtoCopyWith<$Res> get classRoom;
   @override
   $AreaDtoCopyWith<$Res> get area;
 }
@@ -205,7 +205,7 @@ class __$CalendarClassDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? classroom = freezed,
+    Object? classRoom = freezed,
     Object? area = freezed,
     Object? name = freezed,
     Object? start = freezed,
@@ -219,9 +219,9 @@ class __$CalendarClassDtoCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      classroom: classroom == freezed
-          ? _value.classroom
-          : classroom // ignore: cast_nullable_to_non_nullable
+      classRoom: classRoom == freezed
+          ? _value.classRoom
+          : classRoom // ignore: cast_nullable_to_non_nullable
               as RoomDto,
       area: area == freezed
           ? _value.area
@@ -260,7 +260,7 @@ class __$CalendarClassDtoCopyWithImpl<$Res>
 class _$_CalendarClassDto extends _CalendarClassDto {
   const _$_CalendarClassDto(
       {required this.id,
-      required this.classroom,
+      required this.classRoom,
       required this.area,
       required this.name,
       @JsonKey(name: 'dateTo') required this.start,
@@ -276,7 +276,7 @@ class _$_CalendarClassDto extends _CalendarClassDto {
   @override
   final int id;
   @override
-  final RoomDto classroom;
+  final RoomDto classRoom;
   @override
   final AreaDto area;
   @override
@@ -296,7 +296,7 @@ class _$_CalendarClassDto extends _CalendarClassDto {
 
   @override
   String toString() {
-    return 'CalendarEventDto(id: $id, classroom: $classroom, area: $area, name: $name, start: $start, end: $end, updatedAt: $updatedAt, createdAt: $createdAt, url: $url)';
+    return 'CalendarEventDto(id: $id, classRoom: $classRoom, area: $area, name: $name, start: $start, end: $end, updatedAt: $updatedAt, createdAt: $createdAt, url: $url)';
   }
 
   @override
@@ -305,9 +305,9 @@ class _$_CalendarClassDto extends _CalendarClassDto {
         (other is _CalendarClassDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.classroom, classroom) ||
+            (identical(other.classRoom, classRoom) ||
                 const DeepCollectionEquality()
-                    .equals(other.classroom, classroom)) &&
+                    .equals(other.classRoom, classRoom)) &&
             (identical(other.area, area) ||
                 const DeepCollectionEquality().equals(other.area, area)) &&
             (identical(other.name, name) ||
@@ -330,7 +330,7 @@ class _$_CalendarClassDto extends _CalendarClassDto {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(classroom) ^
+      const DeepCollectionEquality().hash(classRoom) ^
       const DeepCollectionEquality().hash(area) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(start) ^
@@ -353,7 +353,7 @@ class _$_CalendarClassDto extends _CalendarClassDto {
 abstract class _CalendarClassDto extends CalendarEventDto {
   const factory _CalendarClassDto(
       {required int id,
-      required RoomDto classroom,
+      required RoomDto classRoom,
       required AreaDto area,
       required String name,
       @JsonKey(name: 'dateTo') required String start,
@@ -369,7 +369,7 @@ abstract class _CalendarClassDto extends CalendarEventDto {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  RoomDto get classroom => throw _privateConstructorUsedError;
+  RoomDto get classRoom => throw _privateConstructorUsedError;
   @override
   AreaDto get area => throw _privateConstructorUsedError;
   @override

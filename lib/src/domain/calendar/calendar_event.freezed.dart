@@ -18,7 +18,7 @@ class _$CalendarEventTearOff {
 
   _CalendarEvent call(
       {required int id,
-      required ClassRoom classroom,
+      required ClassRoom classRoom,
       required Area area,
       required String name,
       required String start,
@@ -28,7 +28,7 @@ class _$CalendarEventTearOff {
       required String url}) {
     return _CalendarEvent(
       id: id,
-      classroom: classroom,
+      classRoom: classRoom,
       area: area,
       name: name,
       start: start,
@@ -46,7 +46,7 @@ const $CalendarEvent = _$CalendarEventTearOff();
 /// @nodoc
 mixin _$CalendarEvent {
   int get id => throw _privateConstructorUsedError;
-  ClassRoom get classroom => throw _privateConstructorUsedError;
+  ClassRoom get classRoom => throw _privateConstructorUsedError;
   Area get area => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get start => throw _privateConstructorUsedError;
@@ -67,7 +67,7 @@ abstract class $CalendarEventCopyWith<$Res> {
       _$CalendarEventCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      ClassRoom classroom,
+      ClassRoom classRoom,
       Area area,
       String name,
       String start,
@@ -76,7 +76,7 @@ abstract class $CalendarEventCopyWith<$Res> {
       DateTime createdAt,
       String url});
 
-  $ClassRoomCopyWith<$Res> get classroom;
+  $ClassRoomCopyWith<$Res> get classRoom;
   $AreaCopyWith<$Res> get area;
 }
 
@@ -92,7 +92,7 @@ class _$CalendarEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? classroom = freezed,
+    Object? classRoom = freezed,
     Object? area = freezed,
     Object? name = freezed,
     Object? start = freezed,
@@ -106,9 +106,9 @@ class _$CalendarEventCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      classroom: classroom == freezed
-          ? _value.classroom
-          : classroom // ignore: cast_nullable_to_non_nullable
+      classRoom: classRoom == freezed
+          ? _value.classRoom
+          : classRoom // ignore: cast_nullable_to_non_nullable
               as ClassRoom,
       area: area == freezed
           ? _value.area
@@ -142,9 +142,9 @@ class _$CalendarEventCopyWithImpl<$Res>
   }
 
   @override
-  $ClassRoomCopyWith<$Res> get classroom {
-    return $ClassRoomCopyWith<$Res>(_value.classroom, (value) {
-      return _then(_value.copyWith(classroom: value));
+  $ClassRoomCopyWith<$Res> get classRoom {
+    return $ClassRoomCopyWith<$Res>(_value.classRoom, (value) {
+      return _then(_value.copyWith(classRoom: value));
     });
   }
 
@@ -165,7 +165,7 @@ abstract class _$CalendarEventCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      ClassRoom classroom,
+      ClassRoom classRoom,
       Area area,
       String name,
       String start,
@@ -175,7 +175,7 @@ abstract class _$CalendarEventCopyWith<$Res>
       String url});
 
   @override
-  $ClassRoomCopyWith<$Res> get classroom;
+  $ClassRoomCopyWith<$Res> get classRoom;
   @override
   $AreaCopyWith<$Res> get area;
 }
@@ -194,7 +194,7 @@ class __$CalendarEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? classroom = freezed,
+    Object? classRoom = freezed,
     Object? area = freezed,
     Object? name = freezed,
     Object? start = freezed,
@@ -208,9 +208,9 @@ class __$CalendarEventCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      classroom: classroom == freezed
-          ? _value.classroom
-          : classroom // ignore: cast_nullable_to_non_nullable
+      classRoom: classRoom == freezed
+          ? _value.classRoom
+          : classRoom // ignore: cast_nullable_to_non_nullable
               as ClassRoom,
       area: area == freezed
           ? _value.area
@@ -249,7 +249,7 @@ class __$CalendarEventCopyWithImpl<$Res>
 class _$_CalendarEvent extends _CalendarEvent {
   const _$_CalendarEvent(
       {required this.id,
-      required this.classroom,
+      required this.classRoom,
       required this.area,
       required this.name,
       required this.start,
@@ -262,7 +262,7 @@ class _$_CalendarEvent extends _CalendarEvent {
   @override
   final int id;
   @override
-  final ClassRoom classroom;
+  final ClassRoom classRoom;
   @override
   final Area area;
   @override
@@ -280,7 +280,7 @@ class _$_CalendarEvent extends _CalendarEvent {
 
   @override
   String toString() {
-    return 'CalendarEvent(id: $id, classroom: $classroom, area: $area, name: $name, start: $start, end: $end, updatedAt: $updatedAt, createdAt: $createdAt, url: $url)';
+    return 'CalendarEvent(id: $id, classRoom: $classRoom, area: $area, name: $name, start: $start, end: $end, updatedAt: $updatedAt, createdAt: $createdAt, url: $url)';
   }
 
   @override
@@ -289,9 +289,9 @@ class _$_CalendarEvent extends _CalendarEvent {
         (other is _CalendarEvent &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.classroom, classroom) ||
+            (identical(other.classRoom, classRoom) ||
                 const DeepCollectionEquality()
-                    .equals(other.classroom, classroom)) &&
+                    .equals(other.classRoom, classRoom)) &&
             (identical(other.area, area) ||
                 const DeepCollectionEquality().equals(other.area, area)) &&
             (identical(other.name, name) ||
@@ -314,7 +314,7 @@ class _$_CalendarEvent extends _CalendarEvent {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(classroom) ^
+      const DeepCollectionEquality().hash(classRoom) ^
       const DeepCollectionEquality().hash(area) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(start) ^
@@ -332,7 +332,7 @@ class _$_CalendarEvent extends _CalendarEvent {
 abstract class _CalendarEvent extends CalendarEvent {
   const factory _CalendarEvent(
       {required int id,
-      required ClassRoom classroom,
+      required ClassRoom classRoom,
       required Area area,
       required String name,
       required String start,
@@ -345,7 +345,7 @@ abstract class _CalendarEvent extends CalendarEvent {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  ClassRoom get classroom => throw _privateConstructorUsedError;
+  ClassRoom get classRoom => throw _privateConstructorUsedError;
   @override
   Area get area => throw _privateConstructorUsedError;
   @override

@@ -10,7 +10,7 @@ class CalendarEvent with _$CalendarEvent {
 
   const factory CalendarEvent({
     required int id,
-    required ClassRoom classroom,
+    required ClassRoom classRoom,
     required Area area,
     required String name,
     required String start,
