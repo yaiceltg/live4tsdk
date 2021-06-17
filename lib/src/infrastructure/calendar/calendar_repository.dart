@@ -79,7 +79,14 @@ class CalendarRepository implements ICalendarRepository {
   Future<Either<CalendarFailure, Unit>> updateEvent({required CalendarEvent event}) async{
    try {
       // call api service
-      final _data = jsonEncode(CalendarEventDto.fromDomain(event).toJson());
+      final _data = jsonEncode({
+        'name': event.name,
+        'start': event.start.toString(),
+        'end': event.end.toString(),
+        'url': event.url,
+        'area': event.area.id,
+        'clasRoom': event.classRoom.id,
+      });
       final _response = await _httpClient.put('$_path/events/${event.id}', data: _data);
 
       // check response
