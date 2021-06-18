@@ -20,7 +20,7 @@ abstract class ICalendarRepository {
     required DateTime end,
     String? url,
     required int area,
-    required int classroom,
+    required int classRoom,
   });
 
   ///

@@ -18,7 +18,7 @@ void main() async {
       name: 'Nombre del evento',
       url: 'http://sdfsdfsdf.com/sdfsdfsdf',
       area: 1,
-      classroom: 1,
+      classRoom: 1,
     );
 
     final msg = result.fold(

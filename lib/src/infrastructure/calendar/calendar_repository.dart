@@ -24,7 +24,7 @@ class CalendarRepository implements ICalendarRepository {
     required DateTime end,
     String? url,
     required int area,
-    required int classroom,
+    required int classRoom,
   }) async {
     print('<< calendar: createEvent >> {  }');
     try {
@@ -35,7 +35,7 @@ class CalendarRepository implements ICalendarRepository {
         'end': end.toString(),
         'url': url,
         'area': area,
-        'classroom': classroom,
+        'classRoom': classRoom,
       });
 
       // call api service

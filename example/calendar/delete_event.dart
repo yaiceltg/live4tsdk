@@ -10,7 +10,7 @@ void main() async {
 
   if (sdk.isTokenValid) {
     final result = await sdk.calendar.deleteEvent(
-      eventId: '2181'
+      eventId: '2192'
     );
 
     final msg = result.fold(
