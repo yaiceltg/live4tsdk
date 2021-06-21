@@ -85,8 +85,10 @@ class CalendarRepository implements ICalendarRepository {
         'end': event.end.toString(),
         'url': event.url,
         'area': event.area.id,
-        'clasRoom': event.classRoom.id,
+        'classRoom': event.classRoom.id,
       });
+
+      print(_data);
       final _response = await _httpClient.put('$_path/events/${event.id}', data: _data);
 
       // check response

@@ -32,7 +32,15 @@ void main() async {
         eventNotFound: (_) => 'Event not found',
         unknown: (_) => 'Server error' // deprecated
       ), (r) {
-        print(r.first);
+        print(r.first.classRoom.id);
+
+        sdk.calendar.updateEvent(
+          event: r.first.copyWith(
+            classRoom: r.first.classRoom.copyWith(
+              id: 2
+            )
+          )
+        );
         return 'success';
       }
     );
