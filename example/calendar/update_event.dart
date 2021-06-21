@@ -37,7 +37,7 @@ void main() async {
         sdk.calendar.updateEvent(
           event: r.first.copyWith(
             classRoom: r.first.classRoom.copyWith(
-              id: 2
+              id: 1
             )
           )
         );
