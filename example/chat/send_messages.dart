@@ -10,7 +10,7 @@ void main() async {
 
   //
   final result = await sdk.chat.sendMessage(
-    message: "hoy may 18 estoy enviando desde el sdk",
+    message: "hoy mar 22 estoy enviando desde el sdk",
     roomId: '4',
     type: 1,
   );
