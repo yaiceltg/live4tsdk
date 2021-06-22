@@ -91,7 +91,7 @@ class ChatRepository implements IChatRepository {
     try {
       // call api service
       final _response = await _httpClient.get(
-        '$_chatPath/rooms/$roomId/messages'
+        '$_chatPath/$roomId/messages'
       );
 
       // check response
@@ -132,7 +132,7 @@ class ChatRepository implements IChatRepository {
 
       // call api service
       final _response = await _httpClient.post(
-        '$_chatPath/rooms/$roomId/send',
+        '$_chatPath/$roomId/messages',
         data: _data,
       );
 

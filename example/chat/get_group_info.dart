@@ -9,7 +9,7 @@ void main() async {
   await login();
 
   //
-  final result = await sdk.chat.getGroup(groupId: '80');
+  final result = await sdk.chat.getGroup(groupId: '4');
 
   final msg = result.fold(
     (error) => error.map(
