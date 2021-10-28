@@ -4,6 +4,7 @@ import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';
+import 'package:live4tsdk/src/infrastructure/academic/academic_repository.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_repository.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
 import 'package:live4tsdk/src/infrastructure/calendar/calendar_repository.dart';
@@ -44,6 +45,9 @@ class Live4tsdk {
   late ClassRepository classes;
   late FileRepository files;
 
+  // redesign repositories
+  late AcademicRepository academic;
+
   ///
   /// _cache is library-private, thanks to
   /// the _ in front of its name.
@@ -70,6 +74,7 @@ class Live4tsdk {
     users = UserRepository.instance;
     classes = ClassRepository.instance;
     files = FileRepository.instance;
+    academic = AcademicRepository.instance;
   }
 
   bool get ready => true;
