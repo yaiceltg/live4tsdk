@@ -2,13 +2,23 @@ part of 'academic_repository.dart';
 
 extension SchedulerRepository on AcademicRepository {
 
+  ///
+  /// Service to create general scheduler
   Future<Either<dynamic, HttpFailure>> saveGeneral({
+    required String areaId,
+    required String classRoomId,
     required List<Achievement> achievements,
-    required List<dynamic> indicators,
+    required List<Indicator> indicators,
   }) async {
     try {
+      // prepare data
+      final _data = FormData.fromMap({
+        'achievements': achievements.map((e) => e.toMap()),
+        'indicators': indicators.map((i) => i.toMap()),
+      });
       // call api service
-      final _response = await _httpClient.post(''); // TODO:
+      final _url = '$areaId/$classRoomId/general';
+      final _response = await _httpClient.post(_url, data: _data);
 
       return right(_response.data);
     } catch (e) {
@@ -149,10 +159,52 @@ extension SchedulerRepository on AcademicRepository {
   }
 }
 
+// -----------------------------------------------------------------------------
+// -- Usefull classes
+// -----------------------------------------------------------------------------
 class Achievement {
   int percent;
   String question;
   Achievement({required this.percent, required this.question});
+
+  Map toMap() {
+    return {
+      'percent': percent,
+      'question': question
+    };
+  }
+}
+
+class Indicator {
+  List<IndicatorItem> items;
+  String content;
+  String achievement;
+
+  Indicator({
+    required this.items,
+    required this.content,
+    required this.achievement,
+  });
+
+  Map toMap() {
+    return {
+      'items': items.map((e) => e.toMap()),
+      'content': content,
+      'achievement': achievement,
+    };
+  }
+}
+
+class IndicatorItem {
+  String indicator;
+
+  IndicatorItem(this.indicator);
+
+  Map toMap() {
+    return {
+      'indicator': indicator
+    };
+  }
 }
 
 class Cycle {
