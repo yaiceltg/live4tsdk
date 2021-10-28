@@ -1,16 +1,6 @@
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import 'package:live4tsdk/src/domain/core/http_failure.dart';
-import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
+part of 'academic_repository.dart';
 
-class PlanificacionRepository {
-  final Dio _httpClient = HttpClient.instance.client;
-
-  static final PlanificacionRepository instance =
-      PlanificacionRepository._internal();
-
-  PlanificacionRepository._internal() {}
-
+extension SchedulerRepository on AcademicRepository {
   Future<Either<dynamic, HttpFailure>> fetchUserClassAndMateria() async {
     try {
       // call api service

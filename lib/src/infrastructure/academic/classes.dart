@@ -1,32 +1,11 @@
-import 'dart:html';
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import 'package:live4tsdk/src/domain/core/http_failure.dart';
-import 'package:live4tsdk/src/infrastructure/academic/planificacion_repository.dart';
-import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
+part of 'academic_repository.dart';
 
-class MyClassesRepository {
-  final Dio _httpClient = HttpClient.instance.client;
-
-  static final MyClassesRepository instance = MyClassesRepository._internal();
-
-  MyClassesRepository._internal() {}
-
-  Future<Either<dynamic, HttpFailure>> fetchUserClassAndMateria() async {
-    try {
-      // call api service
-      final _response = await _httpClient.get(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
+extension MyClassesRepository on AcademicRepository{
 
   Future<Either<dynamic, HttpFailure>> cyclesBySubjectAndClassroom() async {
     try {
       // call api service
-      final _response = await _httpClient.get(''); // TODO:
+      final _response = await _httpClient.get('v1/class');
 
       return right(_response.data);
     } catch (e) {
@@ -37,7 +16,7 @@ class MyClassesRepository {
   Future<Either<dynamic, HttpFailure>> classesByCycles() async {
     try {
       // call api service
-      final _response = await _httpClient.get(''); // TODO:
+      final _response = await _httpClient.get('v1/class'); // TODO:
 
       return right(_response.data);
     } catch (e) {
@@ -48,7 +27,7 @@ class MyClassesRepository {
   Future<Either<dynamic, HttpFailure>> classes() async {
     try {
       // call api service
-      final _response = await _httpClient.get(''); // TODO:
+      final _response = await _httpClient.get('v1/class'); // TODO:
 
       return right(_response.data);
     } catch (e) {
@@ -62,7 +41,7 @@ class MyClassesRepository {
   }) async {
     try {
       // call api service
-      final _response = await _httpClient.patch(''); // TODO:
+      final _response = await _httpClient.patch('v1/class'); // TODO:
 
       return right(_response.data);
     } catch (e) {
@@ -75,7 +54,7 @@ class MyClassesRepository {
   }) async {
     try {
       // call api service
-      final _response = await _httpClient.post(''); // TODO:
+      final _response = await _httpClient.post('v1/class'); // TODO:
 
       return right(_response.data);
     } catch (e) {
@@ -88,7 +67,7 @@ class MyClassesRepository {
   }) async {
     try {
       // call api service
-      final _response = await _httpClient.post(''); // TODO:
+      final _response = await _httpClient.post('v1/class'); // TODO:
 
       return right(_response.data);
     } catch (e) {

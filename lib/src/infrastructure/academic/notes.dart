@@ -1,7 +1,4 @@
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import 'package:live4tsdk/src/domain/core/http_failure.dart';
-import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
+part of 'academic_repository.dart';
 
 class NoteRepository {
   final Dio _httpClient = HttpClient.instance.client;
@@ -32,4 +29,3 @@ class NoteRepository {
     }
   }
 }
-

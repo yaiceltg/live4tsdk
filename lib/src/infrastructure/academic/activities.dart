@@ -1,14 +1,7 @@
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import 'package:live4tsdk/src/domain/core/http_failure.dart';
-import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
+part of 'academic_repository.dart';
 
-class MyActicityRepository {
-  final Dio _httpClient = HttpClient.instance.client;
+extension MyActicityRepository on AcademicRepository{
 
-  static final MyActicityRepository instance = MyActicityRepository._internal();
-
-  MyActicityRepository._internal() {}
 
   Future<Either<dynamic, HttpFailure>> fetchUserClassAndMateria() async {
     try {
@@ -32,4 +25,3 @@ class MyActicityRepository {
     }
   }
 }
-
