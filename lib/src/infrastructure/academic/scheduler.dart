@@ -3,7 +3,7 @@ part of 'academic_repository.dart';
 extension SchedulerRepository on AcademicRepository {
 
   ///
-  /// Service to create general scheduler
+  /// Funtion to create general scheduler
   ///
   Future<Either<dynamic, HttpFailure>> saveGeneral({
     required String areaId,
@@ -66,6 +66,24 @@ extension SchedulerRepository on AcademicRepository {
       return left(HttpFailure.internal());
     }
   }
+
+  ///
+  /// Function to fetch all achievements by arean and class-room
+  ///
+  Future<Either<dynamic, HttpFailure>> fetchAchievements({
+    required String areaId,
+    required String classRoomId,
+  }) async {
+    try {
+      // call api service
+      final _response = await _httpClient.get('$areaId/$classRoomId/achievements');
+
+      return right(_response.data);
+    } catch (e) {
+      return left(HttpFailure.internal());
+    }
+  }
+
 
   Future<Either<dynamic, HttpFailure>> getPercentagel() async {
     try {
