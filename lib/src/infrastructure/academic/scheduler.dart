@@ -4,6 +4,7 @@ extension SchedulerRepository on AcademicRepository {
 
   ///
   /// Service to create general scheduler
+  ///
   Future<Either<dynamic, HttpFailure>> saveGeneral({
     required String areaId,
     required String classRoomId,
