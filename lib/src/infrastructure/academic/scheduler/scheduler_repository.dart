@@ -52,12 +52,11 @@ class AcademicSchedulerRepository {
   }) async {
     try {
       // call api service
-      final _response = await _httpClient
-          .get('v1/schedule/$areaId/$classRoomId/achievements');
+      final _response = await _httpClient.get('/v1/schedule/$areaId/$classRoomId/achievements');
 
       final List _data = _response.data;
       final _achievements = _data.map(
-        (e) => AchievementDto.fromDomain(e).toDomain()
+        (e) => AchievementDto.fromJson(e).toDomain()
       ).toList() ;
 
       return right(_achievements);
@@ -139,8 +138,14 @@ class AcademicSchedulerRepository {
 @freezed
 class Achievement with _$Achievement {
  const Achievement._();
-  const factory Achievement(
-  ) = _Achievement;
+  const factory Achievement({
+    required int id,
+    required String achievement,
+    required int idPlanification,
+    required double percentage,
+    String? status,
+    String? observation,
+  }) = _Achievement;
 }
 
 // -----------------------------------------------------------------------------
@@ -150,15 +155,34 @@ class Achievement with _$Achievement {
 abstract class AchievementDto implements _$AchievementDto {
   const AchievementDto._();
 
-  const factory AchievementDto() = _AchievementDto;
+  const factory AchievementDto({
+    @JsonKey(name: 'id') required int achievementId,
+    required String achievement,
+    required int idPlanification,
+    required double percentage,
+    String? status,
+    String? observation,
+  }) = _AchievementDto;
 
   factory AchievementDto.fromDomain(Achievement achievement) {
     return AchievementDto(
+      achievementId: achievement.id,
+      achievement: achievement.achievement,
+      idPlanification: achievement.idPlanification,
+      percentage: achievement.percentage,
+      status: achievement.status,
+      observation: achievement.observation,
     );
   }
 
   Achievement toDomain() {
     return Achievement(
+      id: achievementId,
+      achievement: achievement,
+      idPlanification: idPlanification,
+      percentage: percentage,
+      status: status,
+      observation: observation,
     );
   }
 

@@ -68,6 +68,21 @@ main(List<String> args) async {
   //   print('Create General Success');
   // });
 
+  // ---------------------------------------------------------------------------
+  // -- Porciento de notas
+  // ---------------------------------------------------------------------------
+  // Step 1: Cargar los fetchAchievements
+  final t3 = await sdk.academic.scheduler.fetchAchievements(
+    areaId: '1',
+    classRoomId: '1',
+  );
+
+  t3.fold((l) {
+    print(l);
+  }, (r) {
+    print('Fetch Achievements Success');
+    print(r);
+  });
   // // call createGeneral with data
   // final result = await sdk.academic.scheduler.createCycle(
   //   areaId: '1',

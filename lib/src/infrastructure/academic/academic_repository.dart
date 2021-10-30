@@ -38,8 +38,7 @@ class AcademicRepository {
   ///
   /// Servicio para cargar las clases y materia del usuario que esta autenticado
   ///
-  Future<Either<HttpFailure, List<ClassAndMateria>>>
-      fetchUserClassAndMateria() async {
+  Future<Either<HttpFailure, List<ClassAndMateria>>> fetchUserClassAndMateria() async {
     try {
       // call api service
       final _response = await _httpClient.get('/v1/class-room/with-area');

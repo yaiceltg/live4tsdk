@@ -16,8 +16,21 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AchievementTearOff {
   const _$AchievementTearOff();
 
-  _Achievement call() {
-    return const _Achievement();
+  _Achievement call(
+      {required int id,
+      required String achievement,
+      required int idPlanification,
+      required double percentage,
+      String? status,
+      String? observation}) {
+    return _Achievement(
+      id: id,
+      achievement: achievement,
+      idPlanification: idPlanification,
+      percentage: percentage,
+      status: status,
+      observation: observation,
+    );
   }
 }
 
@@ -25,13 +38,31 @@ class _$AchievementTearOff {
 const $Achievement = _$AchievementTearOff();
 
 /// @nodoc
-mixin _$Achievement {}
+mixin _$Achievement {
+  int get id => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
+  int get idPlanification => throw _privateConstructorUsedError;
+  double get percentage => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  String? get observation => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AchievementCopyWith<Achievement> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $AchievementCopyWith<$Res> {
   factory $AchievementCopyWith(
           Achievement value, $Res Function(Achievement) then) =
       _$AchievementCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      String achievement,
+      int idPlanification,
+      double percentage,
+      String? status,
+      String? observation});
 }
 
 /// @nodoc
@@ -41,13 +72,59 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
   final Achievement _value;
   // ignore: unused_field
   final $Res Function(Achievement) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? achievement = freezed,
+    Object? idPlanification = freezed,
+    Object? percentage = freezed,
+    Object? status = freezed,
+    Object? observation = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String,
+      idPlanification: idPlanification == freezed
+          ? _value.idPlanification
+          : idPlanification // ignore: cast_nullable_to_non_nullable
+              as int,
+      percentage: percentage == freezed
+          ? _value.percentage
+          : percentage // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      observation: observation == freezed
+          ? _value.observation
+          : observation // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$AchievementCopyWith<$Res> {
+abstract class _$AchievementCopyWith<$Res>
+    implements $AchievementCopyWith<$Res> {
   factory _$AchievementCopyWith(
           _Achievement value, $Res Function(_Achievement) then) =
       __$AchievementCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int id,
+      String achievement,
+      int idPlanification,
+      double percentage,
+      String? status,
+      String? observation});
 }
 
 /// @nodoc
@@ -59,30 +136,139 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
 
   @override
   _Achievement get _value => super._value as _Achievement;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? achievement = freezed,
+    Object? idPlanification = freezed,
+    Object? percentage = freezed,
+    Object? status = freezed,
+    Object? observation = freezed,
+  }) {
+    return _then(_Achievement(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String,
+      idPlanification: idPlanification == freezed
+          ? _value.idPlanification
+          : idPlanification // ignore: cast_nullable_to_non_nullable
+              as int,
+      percentage: percentage == freezed
+          ? _value.percentage
+          : percentage // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      observation: observation == freezed
+          ? _value.observation
+          : observation // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Achievement extends _Achievement {
-  const _$_Achievement() : super._();
+  const _$_Achievement(
+      {required this.id,
+      required this.achievement,
+      required this.idPlanification,
+      required this.percentage,
+      this.status,
+      this.observation})
+      : super._();
+
+  @override
+  final int id;
+  @override
+  final String achievement;
+  @override
+  final int idPlanification;
+  @override
+  final double percentage;
+  @override
+  final String? status;
+  @override
+  final String? observation;
 
   @override
   String toString() {
-    return 'Achievement()';
+    return 'Achievement(id: $id, achievement: $achievement, idPlanification: $idPlanification, percentage: $percentage, status: $status, observation: $observation)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Achievement);
+    return identical(this, other) ||
+        (other is _Achievement &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.achievement, achievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievement, achievement)) &&
+            (identical(other.idPlanification, idPlanification) ||
+                const DeepCollectionEquality()
+                    .equals(other.idPlanification, idPlanification)) &&
+            (identical(other.percentage, percentage) ||
+                const DeepCollectionEquality()
+                    .equals(other.percentage, percentage)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.observation, observation) ||
+                const DeepCollectionEquality()
+                    .equals(other.observation, observation)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(achievement) ^
+      const DeepCollectionEquality().hash(idPlanification) ^
+      const DeepCollectionEquality().hash(percentage) ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(observation);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AchievementCopyWith<_Achievement> get copyWith =>
+      __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
 }
 
 abstract class _Achievement extends Achievement {
-  const factory _Achievement() = _$_Achievement;
+  const factory _Achievement(
+      {required int id,
+      required String achievement,
+      required int idPlanification,
+      required double percentage,
+      String? status,
+      String? observation}) = _$_Achievement;
   const _Achievement._() : super._();
+
+  @override
+  int get id => throw _privateConstructorUsedError;
+  @override
+  String get achievement => throw _privateConstructorUsedError;
+  @override
+  int get idPlanification => throw _privateConstructorUsedError;
+  @override
+  double get percentage => throw _privateConstructorUsedError;
+  @override
+  String? get status => throw _privateConstructorUsedError;
+  @override
+  String? get observation => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AchievementCopyWith<_Achievement> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
@@ -93,8 +279,21 @@ AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
 class _$AchievementDtoTearOff {
   const _$AchievementDtoTearOff();
 
-  _AchievementDto call() {
-    return const _AchievementDto();
+  _AchievementDto call(
+      {@JsonKey(name: 'id') required int achievementId,
+      required String achievement,
+      required int idPlanification,
+      required double percentage,
+      String? status,
+      String? observation}) {
+    return _AchievementDto(
+      achievementId: achievementId,
+      achievement: achievement,
+      idPlanification: idPlanification,
+      percentage: percentage,
+      status: status,
+      observation: observation,
+    );
   }
 
   AchievementDto fromJson(Map<String, Object> json) {
@@ -107,7 +306,18 @@ const $AchievementDto = _$AchievementDtoTearOff();
 
 /// @nodoc
 mixin _$AchievementDto {
+  @JsonKey(name: 'id')
+  int get achievementId => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
+  int get idPlanification => throw _privateConstructorUsedError;
+  double get percentage => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  String? get observation => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AchievementDtoCopyWith<AchievementDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -115,6 +325,13 @@ abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(
           AchievementDto value, $Res Function(AchievementDto) then) =
       _$AchievementDtoCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'id') int achievementId,
+      String achievement,
+      int idPlanification,
+      double percentage,
+      String? status,
+      String? observation});
 }
 
 /// @nodoc
@@ -125,13 +342,59 @@ class _$AchievementDtoCopyWithImpl<$Res>
   final AchievementDto _value;
   // ignore: unused_field
   final $Res Function(AchievementDto) _then;
+
+  @override
+  $Res call({
+    Object? achievementId = freezed,
+    Object? achievement = freezed,
+    Object? idPlanification = freezed,
+    Object? percentage = freezed,
+    Object? status = freezed,
+    Object? observation = freezed,
+  }) {
+    return _then(_value.copyWith(
+      achievementId: achievementId == freezed
+          ? _value.achievementId
+          : achievementId // ignore: cast_nullable_to_non_nullable
+              as int,
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String,
+      idPlanification: idPlanification == freezed
+          ? _value.idPlanification
+          : idPlanification // ignore: cast_nullable_to_non_nullable
+              as int,
+      percentage: percentage == freezed
+          ? _value.percentage
+          : percentage // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      observation: observation == freezed
+          ? _value.observation
+          : observation // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$AchievementDtoCopyWith<$Res> {
+abstract class _$AchievementDtoCopyWith<$Res>
+    implements $AchievementDtoCopyWith<$Res> {
   factory _$AchievementDtoCopyWith(
           _AchievementDto value, $Res Function(_AchievementDto) then) =
       __$AchievementDtoCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'id') int achievementId,
+      String achievement,
+      int idPlanification,
+      double percentage,
+      String? status,
+      String? observation});
 }
 
 /// @nodoc
@@ -144,28 +407,116 @@ class __$AchievementDtoCopyWithImpl<$Res>
 
   @override
   _AchievementDto get _value => super._value as _AchievementDto;
+
+  @override
+  $Res call({
+    Object? achievementId = freezed,
+    Object? achievement = freezed,
+    Object? idPlanification = freezed,
+    Object? percentage = freezed,
+    Object? status = freezed,
+    Object? observation = freezed,
+  }) {
+    return _then(_AchievementDto(
+      achievementId: achievementId == freezed
+          ? _value.achievementId
+          : achievementId // ignore: cast_nullable_to_non_nullable
+              as int,
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
+              as String,
+      idPlanification: idPlanification == freezed
+          ? _value.idPlanification
+          : idPlanification // ignore: cast_nullable_to_non_nullable
+              as int,
+      percentage: percentage == freezed
+          ? _value.percentage
+          : percentage // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      observation: observation == freezed
+          ? _value.observation
+          : observation // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_AchievementDto extends _AchievementDto {
-  const _$_AchievementDto() : super._();
+  const _$_AchievementDto(
+      {@JsonKey(name: 'id') required this.achievementId,
+      required this.achievement,
+      required this.idPlanification,
+      required this.percentage,
+      this.status,
+      this.observation})
+      : super._();
 
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
       _$_$_AchievementDtoFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
+  final int achievementId;
+  @override
+  final String achievement;
+  @override
+  final int idPlanification;
+  @override
+  final double percentage;
+  @override
+  final String? status;
+  @override
+  final String? observation;
+
+  @override
   String toString() {
-    return 'AchievementDto()';
+    return 'AchievementDto(achievementId: $achievementId, achievement: $achievement, idPlanification: $idPlanification, percentage: $percentage, status: $status, observation: $observation)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AchievementDto);
+    return identical(this, other) ||
+        (other is _AchievementDto &&
+            (identical(other.achievementId, achievementId) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievementId, achievementId)) &&
+            (identical(other.achievement, achievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievement, achievement)) &&
+            (identical(other.idPlanification, idPlanification) ||
+                const DeepCollectionEquality()
+                    .equals(other.idPlanification, idPlanification)) &&
+            (identical(other.percentage, percentage) ||
+                const DeepCollectionEquality()
+                    .equals(other.percentage, percentage)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.observation, observation) ||
+                const DeepCollectionEquality()
+                    .equals(other.observation, observation)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(achievementId) ^
+      const DeepCollectionEquality().hash(achievement) ^
+      const DeepCollectionEquality().hash(idPlanification) ^
+      const DeepCollectionEquality().hash(percentage) ^
+      const DeepCollectionEquality().hash(status) ^
+      const DeepCollectionEquality().hash(observation);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
+      __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -174,11 +525,35 @@ class _$_AchievementDto extends _AchievementDto {
 }
 
 abstract class _AchievementDto extends AchievementDto {
-  const factory _AchievementDto() = _$_AchievementDto;
+  const factory _AchievementDto(
+      {@JsonKey(name: 'id') required int achievementId,
+      required String achievement,
+      required int idPlanification,
+      required double percentage,
+      String? status,
+      String? observation}) = _$_AchievementDto;
   const _AchievementDto._() : super._();
 
   factory _AchievementDto.fromJson(Map<String, dynamic> json) =
       _$_AchievementDto.fromJson;
+
+  @override
+  @JsonKey(name: 'id')
+  int get achievementId => throw _privateConstructorUsedError;
+  @override
+  String get achievement => throw _privateConstructorUsedError;
+  @override
+  int get idPlanification => throw _privateConstructorUsedError;
+  @override
+  double get percentage => throw _privateConstructorUsedError;
+  @override
+  String? get status => throw _privateConstructorUsedError;
+  @override
+  String? get observation => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CreateActivityToAchievementDto _$CreateActivityToAchievementDtoFromJson(

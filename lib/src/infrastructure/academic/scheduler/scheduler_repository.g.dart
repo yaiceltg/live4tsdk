@@ -7,11 +7,25 @@ part of 'scheduler_repository.dart';
 // **************************************************************************
 
 _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
-  return _$_AchievementDto();
+  return _$_AchievementDto(
+    achievementId: json['id'] as int,
+    achievement: json['achievement'] as String,
+    idPlanification: json['idPlanification'] as int,
+    percentage: (json['percentage'] as num).toDouble(),
+    status: json['status'] as String?,
+    observation: json['observation'] as String?,
+  );
 }
 
 Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
-    <String, dynamic>{};
+    <String, dynamic>{
+      'id': instance.achievementId,
+      'achievement': instance.achievement,
+      'idPlanification': instance.idPlanification,
+      'percentage': instance.percentage,
+      'status': instance.status,
+      'observation': instance.observation,
+    };
 
 _$_CreateActivityToAchievementDto _$_$_CreateActivityToAchievementDtoFromJson(
     Map<String, dynamic> json) {
