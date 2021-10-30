@@ -6,6 +6,13 @@ part of 'scheduler_repository.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
+  return _$_AchievementDto();
+}
+
+Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
+    <String, dynamic>{};
+
 _$_CreateActivityToAchievementDto _$_$_CreateActivityToAchievementDtoFromJson(
     Map<String, dynamic> json) {
   return _$_CreateActivityToAchievementDto(

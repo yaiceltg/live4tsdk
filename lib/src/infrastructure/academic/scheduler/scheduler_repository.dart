@@ -46,7 +46,7 @@ class AcademicSchedulerRepository {
   ///
   /// Function to fetch all achievements by arean and class-room
   ///
-  Future<Either<HttpFailure, dynamic>> fetchAchievements({
+  Future<Either<HttpFailure, List<Achievement>>> fetchAchievements({
     required String areaId,
     required String classRoomId,
   }) async {
@@ -55,7 +55,12 @@ class AcademicSchedulerRepository {
       final _response = await _httpClient
           .get('v1/schedule/$areaId/$classRoomId/achievements');
 
-      return right(_response.data);
+      final List _data = _response.data;
+      final _achievements = _data.map(
+        (e) => AchievementDto.fromDomain(e).toDomain()
+      ).toList() ;
+
+      return right(_achievements);
     } catch (e) {
       return left(HttpFailure.internal());
     }
@@ -129,8 +134,37 @@ class AcademicSchedulerRepository {
 }
 
 // -----------------------------------------------------------------------------
+// Bussines class
+// -----------------------------------------------------------------------------
+@freezed
+class Achievement with _$Achievement {
+ const Achievement._();
+  const factory Achievement(
+  ) = _Achievement;
+}
+
+// -----------------------------------------------------------------------------
 // -- Dto Class
 // -----------------------------------------------------------------------------
+@freezed
+abstract class AchievementDto implements _$AchievementDto {
+  const AchievementDto._();
+
+  const factory AchievementDto() = _AchievementDto;
+
+  factory AchievementDto.fromDomain(Achievement achievement) {
+    return AchievementDto(
+    );
+  }
+
+  Achievement toDomain() {
+    return Achievement(
+    );
+  }
+
+  factory AchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$AchievementDtoFromJson(json);
+}
 
 @freezed
 class CreateActivityToAchievementDto with _$CreateActivityToAchievementDto {

@@ -12,6 +12,175 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+/// @nodoc
+class _$AchievementTearOff {
+  const _$AchievementTearOff();
+
+  _Achievement call() {
+    return const _Achievement();
+  }
+}
+
+/// @nodoc
+const $Achievement = _$AchievementTearOff();
+
+/// @nodoc
+mixin _$Achievement {}
+
+/// @nodoc
+abstract class $AchievementCopyWith<$Res> {
+  factory $AchievementCopyWith(
+          Achievement value, $Res Function(Achievement) then) =
+      _$AchievementCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
+  _$AchievementCopyWithImpl(this._value, this._then);
+
+  final Achievement _value;
+  // ignore: unused_field
+  final $Res Function(Achievement) _then;
+}
+
+/// @nodoc
+abstract class _$AchievementCopyWith<$Res> {
+  factory _$AchievementCopyWith(
+          _Achievement value, $Res Function(_Achievement) then) =
+      __$AchievementCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
+    implements _$AchievementCopyWith<$Res> {
+  __$AchievementCopyWithImpl(
+      _Achievement _value, $Res Function(_Achievement) _then)
+      : super(_value, (v) => _then(v as _Achievement));
+
+  @override
+  _Achievement get _value => super._value as _Achievement;
+}
+
+/// @nodoc
+
+class _$_Achievement extends _Achievement {
+  const _$_Achievement() : super._();
+
+  @override
+  String toString() {
+    return 'Achievement()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Achievement);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class _Achievement extends Achievement {
+  const factory _Achievement() = _$_Achievement;
+  const _Achievement._() : super._();
+}
+
+AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
+  return _AchievementDto.fromJson(json);
+}
+
+/// @nodoc
+class _$AchievementDtoTearOff {
+  const _$AchievementDtoTearOff();
+
+  _AchievementDto call() {
+    return const _AchievementDto();
+  }
+
+  AchievementDto fromJson(Map<String, Object> json) {
+    return AchievementDto.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $AchievementDto = _$AchievementDtoTearOff();
+
+/// @nodoc
+mixin _$AchievementDto {
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AchievementDtoCopyWith<$Res> {
+  factory $AchievementDtoCopyWith(
+          AchievementDto value, $Res Function(AchievementDto) then) =
+      _$AchievementDtoCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AchievementDtoCopyWithImpl<$Res>
+    implements $AchievementDtoCopyWith<$Res> {
+  _$AchievementDtoCopyWithImpl(this._value, this._then);
+
+  final AchievementDto _value;
+  // ignore: unused_field
+  final $Res Function(AchievementDto) _then;
+}
+
+/// @nodoc
+abstract class _$AchievementDtoCopyWith<$Res> {
+  factory _$AchievementDtoCopyWith(
+          _AchievementDto value, $Res Function(_AchievementDto) then) =
+      __$AchievementDtoCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$AchievementDtoCopyWithImpl<$Res>
+    extends _$AchievementDtoCopyWithImpl<$Res>
+    implements _$AchievementDtoCopyWith<$Res> {
+  __$AchievementDtoCopyWithImpl(
+      _AchievementDto _value, $Res Function(_AchievementDto) _then)
+      : super(_value, (v) => _then(v as _AchievementDto));
+
+  @override
+  _AchievementDto get _value => super._value as _AchievementDto;
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AchievementDto extends _AchievementDto {
+  const _$_AchievementDto() : super._();
+
+  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_AchievementDtoFromJson(json);
+
+  @override
+  String toString() {
+    return 'AchievementDto()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _AchievementDto);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AchievementDtoToJson(this);
+  }
+}
+
+abstract class _AchievementDto extends AchievementDto {
+  const factory _AchievementDto() = _$_AchievementDto;
+  const _AchievementDto._() : super._();
+
+  factory _AchievementDto.fromJson(Map<String, dynamic> json) =
+      _$_AchievementDto.fromJson;
+}
+
 CreateActivityToAchievementDto _$CreateActivityToAchievementDtoFromJson(
     Map<String, dynamic> json) {
   return _CreateActivityToAchievementDto.fromJson(json);

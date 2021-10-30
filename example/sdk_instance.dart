@@ -21,24 +21,36 @@ main(List<String> args) async {
   await sdk.signInWithEmailAndPassword(
       emailAddress: "mildredfigueroaq+1@gmail.com", password: "admin@123");
 
-  // call createGeneral with data
-  final result = await sdk.academic.scheduler.createCycle(
-    areaId: '1',
-    classRoomId: '1',
-    cycles: [CreateCycleDto(name: 'name', development: ['development'], observation: 'observation')]
-  );
 
-  final msg = result.fold(
-      (error) => error.map(
-            badRequest: (value) => 'Bad Request',
-            unauthorized: (value) => 'Unauthorized',
-            forbidden: (value) => 'Forbidden',
-            notFound: (value) => 'Not Found',
-            internal: (value) => 'Internal',
-            badGateway: (value) => 'BadGateway',
-            serviceUnavailable: (value) => 'Service Unavailable',
-            gatewayTimeout: (value) => 'Gateway Timeout',
-          ), (r) {
-            print('success');
+  // get user class and materia
+  final materias = await sdk.academic.fetchUserClassAndMateria();
+
+  materias.fold((e) {
+    print(e);
+  }, (v) {
+    v.forEach((element) {
+      print(element.displayName);
+    });
   });
+
+  // // call createGeneral with data
+  // final result = await sdk.academic.scheduler.createCycle(
+  //   areaId: '1',
+  //   classRoomId: '1',
+  //   cycles: [CreateCycleDto(name: 'name', development: ['development'], observation: 'observation')]
+  // );
+
+  // final msg = result.fold(
+  //     (error) => error.map(
+  //           badRequest: (value) => 'Bad Request',
+  //           unauthorized: (value) => 'Unauthorized',
+  //           forbidden: (value) => 'Forbidden',
+  //           notFound: (value) => 'Not Found',
+  //           internal: (value) => 'Internal',
+  //           badGateway: (value) => 'BadGateway',
+  //           serviceUnavailable: (value) => 'Service Unavailable',
+  //           gatewayTimeout: (value) => 'Gateway Timeout',
+  //         ), (r) {
+  //           print('success');
+  // });
 }
