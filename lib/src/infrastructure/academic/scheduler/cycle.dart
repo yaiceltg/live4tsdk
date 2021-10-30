@@ -11,7 +11,7 @@ extension SchedulerCycleExtension on AcademicSchedulerRepository {
   }) async {
     try {
       // prepare data
-      final _data = FormData.fromMap({
+      final _data = jsonEncode({
         'cycles': cycles.map((e) => e.toMap()),
       });
       // call api service

@@ -28,7 +28,7 @@ extension SchedulerPercentExtension on AcademicSchedulerRepository {
   }) async {
     try {
       // prepare data
-      final _data = FormData.fromMap({
+      final _data = jsonEncode({
         'activities': achievements.map((e) => e.toMap())
       });
       // call api service

@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';

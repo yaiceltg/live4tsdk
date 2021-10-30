@@ -8,15 +8,15 @@ void main() async {
   // login
   await login();
 
-  // get to account service
-  final _account = await sdk.account.getAccount();
+  // // get to account service
+  // final _account = await sdk.account.getAccount();
 
-  _account.fold((error) {
-    final _eName = error.maybeMap(
-        serverError: (_) => "Server error ", orElse: () => "Ninguno");
+  // _account.fold((error) {
+  //   final _eName = error.maybeMap(
+  //       serverError: (_) => "Server error ", orElse: () => "Ninguno");
 
-    print(_eName);
-  }, (account) {
-    print("Account:::: $account");
-  });
+  //   print(_eName);
+  // }, (account) {
+  //   print("Account:::: $account");
+  // });
 }

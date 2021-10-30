@@ -13,12 +13,12 @@ extension SchedulerGeneralExtension on AcademicSchedulerRepository {
   }) async {
     try {
       // prepare data
-      final _data = FormData.fromMap({
-        'achievements': achievements.map((e) => e.toMap()),
-        'indicators': indicators.map((i) => i.toMap()),
+      final _data = jsonEncode({
+        'achievements': achievements.map((e) => e.toMap()).toList(),
+        'indicators': indicators.map((i) => i.toMap()).toList(),
       });
       // call api service
-      final _url = 'v1/schedule/$areaId/$classRoomId/general';
+      final _url = '/v1/schedule/$areaId/$classRoomId/general';
       final _response = await _httpClient.post(_url, data: _data);
 
       return right(_response.data);
