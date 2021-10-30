@@ -2,9 +2,9 @@ part of 'scheduler_repository.dart';
 
 extension SchedulerCycleExtension on AcademicSchedulerRepository {
   ///
-  /// Function to create cycle
+  /// Function to create scheduler cycles
   ///
-  Future<Either<HttpFailure, dynamic>> createCycle({
+  Future<Either<HttpFailure, Unit>> createCycle({
     required String areaId,
     required String classRoomId,
     required List<CreateCycleDto> cycles,
@@ -12,7 +12,7 @@ extension SchedulerCycleExtension on AcademicSchedulerRepository {
     try {
       // prepare data
       final _data = jsonEncode({
-        'cycles': cycles.map((e) => e.toMap()).toList(),
+        'cycles': cycles.map((e) => e.toJson()).toList(),
       });
       // call api service
       final _response = await _httpClient.post(
@@ -20,9 +20,23 @@ extension SchedulerCycleExtension on AcademicSchedulerRepository {
         data: _data,
       );
 
-      return right(_response.data);
+      return right(unit);
     } catch (e) {
       return left(HttpFailure.internal());
     }
   }
+}
+
+@freezed
+class CreateCycleDto with _$CreateCycleDto {
+  const CreateCycleDto._();
+
+  const factory CreateCycleDto({
+    required String name,
+    required List<String> development,
+    required String observation
+  }) = _Cycle;
+
+  factory CreateCycleDto.fromJson(Map<String, dynamic> json) =>
+      _$CreateCycleDtoFromJson(json);
 }

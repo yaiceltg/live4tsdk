@@ -35,20 +35,6 @@ extension MyClassesRepository on AcademicRepository {
     }
   }
 
-  Future<Either<HttpFailure, dynamic>> editClasses({
-    required List<Achievement> achievements,
-    required List<dynamic> indicators,
-  }) async {
-    try {
-      // call api service
-      final _response = await _httpClient.patch('v1/class'); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
   Future<Either<HttpFailure, dynamic>> saveClass({
     required List<Class> classes,
   }) async {

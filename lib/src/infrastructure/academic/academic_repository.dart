@@ -3,18 +3,20 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';
+import 'package:live4tsdk/src/infrastructure/academic/activities/activities_repository.dart';
+import 'package:live4tsdk/src/infrastructure/academic/notes/notes_repository.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
 // local libs
 import 'scheduler/scheduler_repository.dart';
 
 // export libs
+export 'activities/activities_repository.dart';
+export 'notes/notes_repository.dart';
 export 'scheduler/scheduler_repository.dart';
 
 // methos iplementations
-part 'activities.dart';
 part 'classes.dart';
-part 'notes.dart';
 
 class AcademicRepository {
   // http client to request api methods
@@ -24,6 +26,8 @@ class AcademicRepository {
   static final AcademicRepository instance = AcademicRepository._internal();
 
   AcademicSchedulerRepository scheduler = AcademicSchedulerRepository.instance;
+  AcademicActicitiesRepository activities = AcademicActicitiesRepository.instance;
+  AcademicNoteRepository notes = AcademicNoteRepository.instance;
 
   AcademicRepository._internal() {}
 
@@ -45,45 +49,6 @@ class AcademicRepository {
 // -----------------------------------------------------------------------------
 // -- Usefull classes
 // -----------------------------------------------------------------------------
-class Achievement {
-  int percent;
-  String question;
-  Achievement({required this.percent, required this.question});
-
-  Map toMap() {
-    return {'percent': percent, 'question': question};
-  }
-}
-
-class Indicator {
-  List<IndicatorItem> items;
-  String content;
-  String achievement;
-
-  Indicator({
-    required this.items,
-    required this.content,
-    required this.achievement,
-  });
-
-  Map toMap() {
-    return {
-      'items': items.map((e) => e.toMap()),
-      'content': content,
-      'achievement': achievement,
-    };
-  }
-}
-
-class IndicatorItem {
-  String indicator;
-
-  IndicatorItem(this.indicator);
-
-  Map toMap() {
-    return {'indicator': indicator};
-  }
-}
 
 class Cycle {
   String leadingQuestion;

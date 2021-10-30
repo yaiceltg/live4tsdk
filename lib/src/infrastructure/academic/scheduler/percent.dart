@@ -29,7 +29,7 @@ extension SchedulerPercentExtension on AcademicSchedulerRepository {
     try {
       // prepare data
       final _data = jsonEncode({
-        'activities': achievements.map((e) => e.toMap())
+        'activities': achievements.map((e) => e.toJson())
       });
       // call api service
       final _response = await _httpClient.post(
@@ -64,45 +64,17 @@ extension SchedulerPercentExtension on AcademicSchedulerRepository {
   }
 }
 
-class CreateActivityToAchievementDto {
-  int achievementId;
-  String content;
-  double quantity;
-  double percent;
-  CreateActivityToAchievementDto({
-    required this.achievementId,
-    required this.content,
-    required this.quantity,
-    required this.percent,
-  });
+@freezed
+class CreateActivityToAchievementDto with _$CreateActivityToAchievementDto{
+  const CreateActivityToAchievementDto._();
 
-  Map toMap() {
-    return {
-      'achievementId': achievementId,
-      'content': content,
-      'quantity': quantity,
-      'percent': percent,
-    };
-  }
-}
+  const factory CreateActivityToAchievementDto({
+    required int achievementId,
+    required String content,
+    required double quantity,
+    required double percent,
+  }) = _CreateActivityToAchievementDto;
 
-
-class CreateCycleDto {
-  String name;
-  List<String> development;
-  String observation;
-
-  CreateCycleDto({
-    required this.name,
-    required this.development,
-    required this.observation
-  });
-
-  Map toMap() {
-    return {
-      'name': name,
-      'development': development,
-      'observation': observation,
-    };
-  }
+  factory CreateActivityToAchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$CreateActivityToAchievementDtoFromJson(json);
 }
