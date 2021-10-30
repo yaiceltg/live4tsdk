@@ -10,5 +10,13 @@ login() async{
   );
 
   //
+  // live4tsdk.academic.fetchUserClassAndMateria();
+
+  // live4tsdk.academic.createGeneral(
+  //   areaId: areaId,
+  //   classRoomId: classRoomId,
+  //   achievements: achievements,
+  //   indicators: indicators
+  // );
 }
 //

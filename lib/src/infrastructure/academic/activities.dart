@@ -3,7 +3,7 @@ part of 'academic_repository.dart';
 extension MyActicityRepository on AcademicRepository {
 
 
-  // Future<Either<dynamic, HttpFailure>> fetchUserClassAndMateria() async {
+  // Future<Either<HttpFailure, dynamic>> fetchUserClassAndMateria() async {
   //   try {
   //     // call api service
   //     final _response = await _httpClient.get(''); // TODO:
@@ -14,7 +14,7 @@ extension MyActicityRepository on AcademicRepository {
   //   }
   // }
 
-  Future<Either<dynamic, HttpFailure>> activityClass() async {
+  Future<Either<HttpFailure, dynamic>> activityClass() async {
     try {
       // call api service
       final _response = await _httpClient.get(''); // TODO:

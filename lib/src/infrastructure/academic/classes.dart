@@ -2,7 +2,7 @@ part of 'academic_repository.dart';
 
 extension MyClassesRepository on AcademicRepository {
 
-  Future<Either<dynamic, HttpFailure>> cyclesBySubjectAndClassroom() async {
+  Future<Either<HttpFailure, dynamic>> cyclesBySubjectAndClassroom() async {
     try {
       // call api service
       final _response = await _httpClient.get('v1/class');
@@ -13,7 +13,7 @@ extension MyClassesRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> classesByCycles() async {
+  Future<Either<HttpFailure, dynamic>> classesByCycles() async {
     try {
       // call api service
       final _response = await _httpClient.get('v1/class'); // TODO:
@@ -24,7 +24,7 @@ extension MyClassesRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> classes() async {
+  Future<Either<HttpFailure, dynamic>> classes() async {
     try {
       // call api service
       final _response = await _httpClient.get('v1/class'); // TODO:
@@ -35,7 +35,7 @@ extension MyClassesRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> editClasses({
+  Future<Either<HttpFailure, dynamic>> editClasses({
     required List<Achievement> achievements,
     required List<dynamic> indicators,
   }) async {
@@ -49,7 +49,7 @@ extension MyClassesRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> saveClass({
+  Future<Either<HttpFailure, dynamic>> saveClass({
     required List<Class> classes,
   }) async {
     try {
@@ -62,7 +62,7 @@ extension MyClassesRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> saveActivity({
+  Future<Either<HttpFailure, dynamic>> saveActivity({
     required List<Class> classes,
   }) async {
     try {

@@ -2,7 +2,7 @@ part of 'academic_repository.dart';
 
 extension NoteRepository on AcademicRepository {
 
-  Future<Either<dynamic, HttpFailure>> fetchUserClass() async {
+  Future<Either<HttpFailure, dynamic>> fetchUserClass() async {
     try {
       // call api service
       final _response = await _httpClient.get(''); // TODO:
@@ -13,7 +13,7 @@ extension NoteRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> fetchUserNoteByClass() async {
+  Future<Either<HttpFailure, dynamic>> fetchUserNoteByClass() async {
     try {
       // call api service
       final _response = await _httpClient.get(''); // TODO:

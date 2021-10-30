@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -6,11 +5,13 @@ import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
+// local libs
+import 'scheduler/scheduler_repository.dart';
+
 // methos iplementations
 part 'activities.dart';
 part 'classes.dart';
 part 'notes.dart';
-part 'scheduler.dart';
 
 class AcademicRepository {
   // http client to request api methods
@@ -19,12 +20,16 @@ class AcademicRepository {
   // singlenton implementation
   static final AcademicRepository instance = AcademicRepository._internal();
 
-  AcademicRepository._internal() {}
+  late SchedulerRepository scheduler;
+
+  AcademicRepository._internal() {
+    scheduler = SchedulerRepository.instance;
+  }
 
   ///
   /// Servicio para cargar las clases y materia del usuario que esta autenticado
   ///
-  Future<Either<dynamic, HttpFailure>> fetchUserClassAndMateria() async {
+  Future<Either<HttpFailure, dynamic>> fetchUserClassAndMateria() async {
     try {
       // call api service
       final _response = await _httpClient.get('v1/class-room/with-area');
@@ -84,11 +89,10 @@ class Cycle {
   String classDevelopment;
   String observations;
 
-  Cycle({
-    required this.classDevelopment,
-    required this.leadingQuestion,
-    required this.observations
-  });
+  Cycle(
+      {required this.classDevelopment,
+      required this.leadingQuestion,
+      required this.observations});
 }
 
 class Activity {
