@@ -22,6 +22,9 @@ main(List<String> args) async {
       emailAddress: "mildredfigueroaq+1@gmail.com", password: "admin@123");
 
 
+  // data to test
+  const areaId = '1';
+  const classRoomId = '2';
 
   // ---------------------------------------------------------------------------
   // -- get user class and materia (done)
@@ -83,10 +86,24 @@ main(List<String> args) async {
     print('Fetch Achievements Success');
     print(r);
   });
+
+  // Step 2: Cargar las actividades
+  final t4 = await sdk.academic.scheduler.fetchActivitiesOfAchievement(
+    areaId: areaId,
+    classRoomId: classRoomId,
+    achievementId: '4768'
+  );
+
+  t4.fold((l) {
+    print(l);
+  }, (r) {
+    print('Fetch Achievements Activities Success');
+    print(r);
+  });
   // // call createGeneral with data
   // final result = await sdk.academic.scheduler.createCycle(
-  //   areaId: '1',
-  //   classRoomId: '1',
+  //   areaId: areaId,
+  //   classRoomId: classRoomId,
   //   cycles: [CreateCycleDto(name: 'name', development: ['development'], observation: 'observation')]
   // );
 
