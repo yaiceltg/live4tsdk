@@ -9,12 +9,12 @@ part 'cycle.dart';
 part 'general.dart';
 part 'percent.dart';
 
-class SchedulerRepository {
+class AcademicSchedulerRepository {
   // http client to request api methods
   final Dio _httpClient = HttpClient.instance.client;
 
   // singlenton implementation
-  static final SchedulerRepository instance = SchedulerRepository._internal();
+  static final AcademicSchedulerRepository instance = AcademicSchedulerRepository._internal();
 
-  SchedulerRepository._internal() {}
+  AcademicSchedulerRepository._internal() {}
 }

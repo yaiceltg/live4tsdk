@@ -1,6 +1,6 @@
 part of 'scheduler_repository.dart';
 
-extension SchedulerPercentExtension on SchedulerRepository {
+extension SchedulerPercentExtension on AcademicSchedulerRepository {
   ///
   /// Function to fetch all achievements by arean and class-room
   ///

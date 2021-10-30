@@ -20,10 +20,10 @@ class AcademicRepository {
   // singlenton implementation
   static final AcademicRepository instance = AcademicRepository._internal();
 
-  late SchedulerRepository scheduler;
+  late AcademicSchedulerRepository scheduler;
 
   AcademicRepository._internal() {
-    scheduler = SchedulerRepository.instance;
+    scheduler = AcademicSchedulerRepository.instance;
   }
 
   ///

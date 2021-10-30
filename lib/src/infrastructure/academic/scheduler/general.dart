@@ -1,6 +1,6 @@
 part of 'scheduler_repository.dart';
 
-extension SchedulerGeneralExtension on SchedulerRepository {
+extension SchedulerGeneralExtension on AcademicSchedulerRepository {
 
   ///
   /// Funtion to create general scheduler

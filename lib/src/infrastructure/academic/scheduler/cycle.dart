@@ -1,6 +1,6 @@
 part of 'scheduler_repository.dart';
 
-extension SchedulerCycleExtension on SchedulerRepository {
+extension SchedulerCycleExtension on AcademicSchedulerRepository {
   ///
   /// Function to create cycle
   ///
