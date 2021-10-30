@@ -1,9 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:live4tsdk/src/domain/account/account.dart';
 import 'package:live4tsdk/src/domain/auth/auth_failure.dart';
 import 'package:live4tsdk/src/domain/auth/value_objects.dart';
-import 'package:live4tsdk/src/domain/core/http_failure.dart';
 import 'package:live4tsdk/src/infrastructure/academic/academic_repository.dart';
 import 'package:live4tsdk/src/infrastructure/account/account_repository.dart';
 import 'package:live4tsdk/src/infrastructure/auth/auth_repository.dart';
@@ -17,6 +15,9 @@ import 'package:live4tsdk/src/infrastructure/forum/forum_repository.dart';
 import 'package:live4tsdk/src/infrastructure/message/message_repository.dart';
 import 'package:live4tsdk/src/infrastructure/schedules/schedule_repository.dart';
 import 'package:live4tsdk/src/infrastructure/users/user_repository.dart';
+
+// exports
+export 'package:live4tsdk/src/infrastructure/academic/academic_repository.dart';
 
 class Live4tsdk {
   ///

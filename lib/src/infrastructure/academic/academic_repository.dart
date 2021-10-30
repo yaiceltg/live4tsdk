@@ -8,6 +8,9 @@ import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 // local libs
 import 'scheduler/scheduler_repository.dart';
 
+// export libs
+export 'scheduler/scheduler_repository.dart';
+
 // methos iplementations
 part 'activities.dart';
 part 'classes.dart';
@@ -20,11 +23,9 @@ class AcademicRepository {
   // singlenton implementation
   static final AcademicRepository instance = AcademicRepository._internal();
 
-  late AcademicSchedulerRepository scheduler;
+  AcademicSchedulerRepository scheduler = AcademicSchedulerRepository.instance;
 
-  AcademicRepository._internal() {
-    scheduler = AcademicSchedulerRepository.instance;
-  }
+  AcademicRepository._internal() {}
 
   ///
   /// Servicio para cargar las clases y materia del usuario que esta autenticado

@@ -12,11 +12,12 @@ extension SchedulerCycleExtension on AcademicSchedulerRepository {
     try {
       // prepare data
       final _data = jsonEncode({
-        'cycles': cycles.map((e) => e.toMap()),
+        'cycles': cycles.map((e) => e.toMap()).toList(),
       });
       // call api service
       final _response = await _httpClient.post(
-        '/v1/schedule/$areaId/$classRoomId/cycle'
+        '/v1/schedule/$areaId/$classRoomId/cycle',
+        data: _data,
       );
 
       return right(_response.data);
