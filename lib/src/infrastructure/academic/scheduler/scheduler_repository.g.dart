@@ -27,6 +27,27 @@ Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
       'observation': instance.observation,
     };
 
+_$_ActivityDto _$_$_ActivityDtoFromJson(Map<String, dynamic> json) {
+  return _$_ActivityDto(
+    activityId: json['id'] as int,
+    idAnnual: json['idAnnual'] as int,
+    typeActivity: json['typeActivity'] as String,
+    activityRate: json['activityRate'] as int,
+    idAchievement: json['idAchievement'] as int,
+    idQuarterlyPlan: json['idQuarterlyPlan'] as int?,
+  );
+}
+
+Map<String, dynamic> _$_$_ActivityDtoToJson(_$_ActivityDto instance) =>
+    <String, dynamic>{
+      'id': instance.activityId,
+      'idAnnual': instance.idAnnual,
+      'typeActivity': instance.typeActivity,
+      'activityRate': instance.activityRate,
+      'idAchievement': instance.idAchievement,
+      'idQuarterlyPlan': instance.idQuarterlyPlan,
+    };
+
 _$_CreateActivityToAchievementDto _$_$_CreateActivityToAchievementDtoFromJson(
     Map<String, dynamic> json) {
   return _$_CreateActivityToAchievementDto(

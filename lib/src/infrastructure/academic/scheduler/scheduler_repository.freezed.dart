@@ -271,6 +271,262 @@ abstract class _Achievement extends Achievement {
       throw _privateConstructorUsedError;
 }
 
+/// @nodoc
+class _$ActivityTearOff {
+  const _$ActivityTearOff();
+
+  _Activity call(
+      {required int id,
+      required int idAnnual,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
+      int? idQuarterlyPlan}) {
+    return _Activity(
+      id: id,
+      idAnnual: idAnnual,
+      typeActivity: typeActivity,
+      activityRate: activityRate,
+      idAchievement: idAchievement,
+      idQuarterlyPlan: idQuarterlyPlan,
+    );
+  }
+}
+
+/// @nodoc
+const $Activity = _$ActivityTearOff();
+
+/// @nodoc
+mixin _$Activity {
+  int get id => throw _privateConstructorUsedError;
+  int get idAnnual => throw _privateConstructorUsedError;
+  String get typeActivity => throw _privateConstructorUsedError;
+  int get activityRate => throw _privateConstructorUsedError;
+  int get idAchievement => throw _privateConstructorUsedError;
+  int? get idQuarterlyPlan => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ActivityCopyWith<Activity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ActivityCopyWith<$Res> {
+  factory $ActivityCopyWith(Activity value, $Res Function(Activity) then) =
+      _$ActivityCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      int idAnnual,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
+      int? idQuarterlyPlan});
+}
+
+/// @nodoc
+class _$ActivityCopyWithImpl<$Res> implements $ActivityCopyWith<$Res> {
+  _$ActivityCopyWithImpl(this._value, this._then);
+
+  final Activity _value;
+  // ignore: unused_field
+  final $Res Function(Activity) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? idAnnual = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
+    Object? idQuarterlyPlan = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAnnual: idAnnual == freezed
+          ? _value.idAnnual
+          : idAnnual // ignore: cast_nullable_to_non_nullable
+              as int,
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
+              as int,
+      idQuarterlyPlan: idQuarterlyPlan == freezed
+          ? _value.idQuarterlyPlan
+          : idQuarterlyPlan // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ActivityCopyWith<$Res> implements $ActivityCopyWith<$Res> {
+  factory _$ActivityCopyWith(_Activity value, $Res Function(_Activity) then) =
+      __$ActivityCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int id,
+      int idAnnual,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
+      int? idQuarterlyPlan});
+}
+
+/// @nodoc
+class __$ActivityCopyWithImpl<$Res> extends _$ActivityCopyWithImpl<$Res>
+    implements _$ActivityCopyWith<$Res> {
+  __$ActivityCopyWithImpl(_Activity _value, $Res Function(_Activity) _then)
+      : super(_value, (v) => _then(v as _Activity));
+
+  @override
+  _Activity get _value => super._value as _Activity;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? idAnnual = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
+    Object? idQuarterlyPlan = freezed,
+  }) {
+    return _then(_Activity(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAnnual: idAnnual == freezed
+          ? _value.idAnnual
+          : idAnnual // ignore: cast_nullable_to_non_nullable
+              as int,
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
+              as int,
+      idQuarterlyPlan: idQuarterlyPlan == freezed
+          ? _value.idQuarterlyPlan
+          : idQuarterlyPlan // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Activity extends _Activity {
+  const _$_Activity(
+      {required this.id,
+      required this.idAnnual,
+      required this.typeActivity,
+      required this.activityRate,
+      required this.idAchievement,
+      this.idQuarterlyPlan})
+      : super._();
+
+  @override
+  final int id;
+  @override
+  final int idAnnual;
+  @override
+  final String typeActivity;
+  @override
+  final int activityRate;
+  @override
+  final int idAchievement;
+  @override
+  final int? idQuarterlyPlan;
+
+  @override
+  String toString() {
+    return 'Activity(id: $id, idAnnual: $idAnnual, typeActivity: $typeActivity, activityRate: $activityRate, idAchievement: $idAchievement, idQuarterlyPlan: $idQuarterlyPlan)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Activity &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.idAnnual, idAnnual) ||
+                const DeepCollectionEquality()
+                    .equals(other.idAnnual, idAnnual)) &&
+            (identical(other.typeActivity, typeActivity) ||
+                const DeepCollectionEquality()
+                    .equals(other.typeActivity, typeActivity)) &&
+            (identical(other.activityRate, activityRate) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityRate, activityRate)) &&
+            (identical(other.idAchievement, idAchievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.idAchievement, idAchievement)) &&
+            (identical(other.idQuarterlyPlan, idQuarterlyPlan) ||
+                const DeepCollectionEquality()
+                    .equals(other.idQuarterlyPlan, idQuarterlyPlan)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(idAnnual) ^
+      const DeepCollectionEquality().hash(typeActivity) ^
+      const DeepCollectionEquality().hash(activityRate) ^
+      const DeepCollectionEquality().hash(idAchievement) ^
+      const DeepCollectionEquality().hash(idQuarterlyPlan);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ActivityCopyWith<_Activity> get copyWith =>
+      __$ActivityCopyWithImpl<_Activity>(this, _$identity);
+}
+
+abstract class _Activity extends Activity {
+  const factory _Activity(
+      {required int id,
+      required int idAnnual,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
+      int? idQuarterlyPlan}) = _$_Activity;
+  const _Activity._() : super._();
+
+  @override
+  int get id => throw _privateConstructorUsedError;
+  @override
+  int get idAnnual => throw _privateConstructorUsedError;
+  @override
+  String get typeActivity => throw _privateConstructorUsedError;
+  @override
+  int get activityRate => throw _privateConstructorUsedError;
+  @override
+  int get idAchievement => throw _privateConstructorUsedError;
+  @override
+  int? get idQuarterlyPlan => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ActivityCopyWith<_Activity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
   return _AchievementDto.fromJson(json);
 }
@@ -553,6 +809,290 @@ abstract class _AchievementDto extends AchievementDto {
   @override
   @JsonKey(ignore: true)
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ActivityDto _$ActivityDtoFromJson(Map<String, dynamic> json) {
+  return _ActivityDto.fromJson(json);
+}
+
+/// @nodoc
+class _$ActivityDtoTearOff {
+  const _$ActivityDtoTearOff();
+
+  _ActivityDto call(
+      {@JsonKey(name: 'id') required int activityId,
+      required int idAnnual,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
+      int? idQuarterlyPlan}) {
+    return _ActivityDto(
+      activityId: activityId,
+      idAnnual: idAnnual,
+      typeActivity: typeActivity,
+      activityRate: activityRate,
+      idAchievement: idAchievement,
+      idQuarterlyPlan: idQuarterlyPlan,
+    );
+  }
+
+  ActivityDto fromJson(Map<String, Object> json) {
+    return ActivityDto.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ActivityDto = _$ActivityDtoTearOff();
+
+/// @nodoc
+mixin _$ActivityDto {
+  @JsonKey(name: 'id')
+  int get activityId => throw _privateConstructorUsedError;
+  int get idAnnual => throw _privateConstructorUsedError;
+  String get typeActivity => throw _privateConstructorUsedError;
+  int get activityRate => throw _privateConstructorUsedError;
+  int get idAchievement => throw _privateConstructorUsedError;
+  int? get idQuarterlyPlan => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActivityDtoCopyWith<ActivityDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ActivityDtoCopyWith<$Res> {
+  factory $ActivityDtoCopyWith(
+          ActivityDto value, $Res Function(ActivityDto) then) =
+      _$ActivityDtoCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'id') int activityId,
+      int idAnnual,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
+      int? idQuarterlyPlan});
+}
+
+/// @nodoc
+class _$ActivityDtoCopyWithImpl<$Res> implements $ActivityDtoCopyWith<$Res> {
+  _$ActivityDtoCopyWithImpl(this._value, this._then);
+
+  final ActivityDto _value;
+  // ignore: unused_field
+  final $Res Function(ActivityDto) _then;
+
+  @override
+  $Res call({
+    Object? activityId = freezed,
+    Object? idAnnual = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
+    Object? idQuarterlyPlan = freezed,
+  }) {
+    return _then(_value.copyWith(
+      activityId: activityId == freezed
+          ? _value.activityId
+          : activityId // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAnnual: idAnnual == freezed
+          ? _value.idAnnual
+          : idAnnual // ignore: cast_nullable_to_non_nullable
+              as int,
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
+              as int,
+      idQuarterlyPlan: idQuarterlyPlan == freezed
+          ? _value.idQuarterlyPlan
+          : idQuarterlyPlan // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ActivityDtoCopyWith<$Res>
+    implements $ActivityDtoCopyWith<$Res> {
+  factory _$ActivityDtoCopyWith(
+          _ActivityDto value, $Res Function(_ActivityDto) then) =
+      __$ActivityDtoCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'id') int activityId,
+      int idAnnual,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
+      int? idQuarterlyPlan});
+}
+
+/// @nodoc
+class __$ActivityDtoCopyWithImpl<$Res> extends _$ActivityDtoCopyWithImpl<$Res>
+    implements _$ActivityDtoCopyWith<$Res> {
+  __$ActivityDtoCopyWithImpl(
+      _ActivityDto _value, $Res Function(_ActivityDto) _then)
+      : super(_value, (v) => _then(v as _ActivityDto));
+
+  @override
+  _ActivityDto get _value => super._value as _ActivityDto;
+
+  @override
+  $Res call({
+    Object? activityId = freezed,
+    Object? idAnnual = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
+    Object? idQuarterlyPlan = freezed,
+  }) {
+    return _then(_ActivityDto(
+      activityId: activityId == freezed
+          ? _value.activityId
+          : activityId // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAnnual: idAnnual == freezed
+          ? _value.idAnnual
+          : idAnnual // ignore: cast_nullable_to_non_nullable
+              as int,
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
+              as int,
+      idQuarterlyPlan: idQuarterlyPlan == freezed
+          ? _value.idQuarterlyPlan
+          : idQuarterlyPlan // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ActivityDto extends _ActivityDto {
+  const _$_ActivityDto(
+      {@JsonKey(name: 'id') required this.activityId,
+      required this.idAnnual,
+      required this.typeActivity,
+      required this.activityRate,
+      required this.idAchievement,
+      this.idQuarterlyPlan})
+      : super._();
+
+  factory _$_ActivityDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_ActivityDtoFromJson(json);
+
+  @override
+  @JsonKey(name: 'id')
+  final int activityId;
+  @override
+  final int idAnnual;
+  @override
+  final String typeActivity;
+  @override
+  final int activityRate;
+  @override
+  final int idAchievement;
+  @override
+  final int? idQuarterlyPlan;
+
+  @override
+  String toString() {
+    return 'ActivityDto(activityId: $activityId, idAnnual: $idAnnual, typeActivity: $typeActivity, activityRate: $activityRate, idAchievement: $idAchievement, idQuarterlyPlan: $idQuarterlyPlan)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ActivityDto &&
+            (identical(other.activityId, activityId) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityId, activityId)) &&
+            (identical(other.idAnnual, idAnnual) ||
+                const DeepCollectionEquality()
+                    .equals(other.idAnnual, idAnnual)) &&
+            (identical(other.typeActivity, typeActivity) ||
+                const DeepCollectionEquality()
+                    .equals(other.typeActivity, typeActivity)) &&
+            (identical(other.activityRate, activityRate) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityRate, activityRate)) &&
+            (identical(other.idAchievement, idAchievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.idAchievement, idAchievement)) &&
+            (identical(other.idQuarterlyPlan, idQuarterlyPlan) ||
+                const DeepCollectionEquality()
+                    .equals(other.idQuarterlyPlan, idQuarterlyPlan)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(activityId) ^
+      const DeepCollectionEquality().hash(idAnnual) ^
+      const DeepCollectionEquality().hash(typeActivity) ^
+      const DeepCollectionEquality().hash(activityRate) ^
+      const DeepCollectionEquality().hash(idAchievement) ^
+      const DeepCollectionEquality().hash(idQuarterlyPlan);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ActivityDtoCopyWith<_ActivityDto> get copyWith =>
+      __$ActivityDtoCopyWithImpl<_ActivityDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ActivityDtoToJson(this);
+  }
+}
+
+abstract class _ActivityDto extends ActivityDto {
+  const factory _ActivityDto(
+      {@JsonKey(name: 'id') required int activityId,
+      required int idAnnual,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
+      int? idQuarterlyPlan}) = _$_ActivityDto;
+  const _ActivityDto._() : super._();
+
+  factory _ActivityDto.fromJson(Map<String, dynamic> json) =
+      _$_ActivityDto.fromJson;
+
+  @override
+  @JsonKey(name: 'id')
+  int get activityId => throw _privateConstructorUsedError;
+  @override
+  int get idAnnual => throw _privateConstructorUsedError;
+  @override
+  String get typeActivity => throw _privateConstructorUsedError;
+  @override
+  int get activityRate => throw _privateConstructorUsedError;
+  @override
+  int get idAchievement => throw _privateConstructorUsedError;
+  @override
+  int? get idQuarterlyPlan => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ActivityDtoCopyWith<_ActivityDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -75,17 +75,17 @@ main(List<String> args) async {
   // -- Porciento de notas
   // ---------------------------------------------------------------------------
   // Step 1: Cargar los fetchAchievements
-  final t3 = await sdk.academic.scheduler.fetchAchievements(
-    areaId: '1',
-    classRoomId: '1',
-  );
+  // final t3 = await sdk.academic.scheduler.fetchAchievements(
+  //   areaId: '1',
+  //   classRoomId: '1',
+  // );
 
-  t3.fold((l) {
-    print(l);
-  }, (r) {
-    print('Fetch Achievements Success');
-    print(r);
-  });
+  // t3.fold((l) {
+  //   print(l);
+  // }, (r) {
+  //   print('Fetch Achievements Success');
+  //   print(r);
+  // });
 
   // Step 2: Cargar las actividades
   final t4 = await sdk.academic.scheduler.fetchActivitiesOfAchievement(
@@ -100,6 +100,8 @@ main(List<String> args) async {
     print('Fetch Achievements Activities Success');
     print(r);
   });
+
+  // Step 3: Cargar las actividades
   // // call createGeneral with data
   // final result = await sdk.academic.scheduler.createCycle(
   //   areaId: areaId,

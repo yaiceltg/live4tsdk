@@ -68,7 +68,7 @@ class AcademicSchedulerRepository {
   ///
   /// Funtion to get all activities of achievement
   ///
-  Future<Either<HttpFailure, dynamic>> fetchActivitiesOfAchievement({
+  Future<Either<HttpFailure, List<Activity>>> fetchActivitiesOfAchievement({
     required String areaId,
     required String classRoomId,
     required String achievementId,
@@ -78,7 +78,12 @@ class AcademicSchedulerRepository {
       final _response = await _httpClient.get(
           '/v1/schedule/$areaId/$classRoomId/achievements/$achievementId/activities');
 
-      return right(_response.data);
+      final List _data = _response.data;
+      final _activities = _data.map(
+        (e) => ActivityDto.fromJson(e).toDomain()
+      ).toList() ;
+
+      return right(_activities);
     } catch (e) {
       return left(HttpFailure.internal());
     }
@@ -148,6 +153,20 @@ class Achievement with _$Achievement {
   }) = _Achievement;
 }
 
+@freezed
+class Activity with _$Activity {
+ const Activity._();
+  const factory Activity({
+    required int id,
+    required int idAnnual,
+    required String typeActivity,
+    required int activityRate,
+    required int idAchievement,
+    int? idQuarterlyPlan,
+  }) = _Activity;
+}
+
+
 // -----------------------------------------------------------------------------
 // -- Dto Class
 // -----------------------------------------------------------------------------
@@ -190,6 +209,44 @@ abstract class AchievementDto implements _$AchievementDto {
       _$AchievementDtoFromJson(json);
 }
 
+@freezed
+abstract class ActivityDto implements _$ActivityDto {
+  const ActivityDto._();
+
+  const factory ActivityDto({
+    @JsonKey(name: 'id') required int activityId,
+    required int idAnnual,
+    required String typeActivity,
+    required int activityRate,
+    required int idAchievement,
+    int? idQuarterlyPlan,
+  }) = _ActivityDto;
+
+  factory ActivityDto.fromDomain(Activity activity) {
+    return ActivityDto(
+      activityId: activity.id,
+      idAnnual: activity.idAnnual,
+      typeActivity: activity.typeActivity,
+      activityRate: activity.activityRate,
+      idAchievement: activity.idAchievement,
+      idQuarterlyPlan: activity.idQuarterlyPlan,
+    );
+  }
+
+  Activity toDomain() {
+    return Activity(
+      id: activityId,
+      idAnnual: idAnnual,
+      typeActivity: typeActivity,
+      activityRate: activityRate,
+      idAchievement: idAchievement,
+      idQuarterlyPlan: idQuarterlyPlan,
+    );
+  }
+
+  factory ActivityDto.fromJson(Map<String, dynamic> json) =>
+      _$ActivityDtoFromJson(json);
+}
 @freezed
 class CreateActivityToAchievementDto with _$CreateActivityToAchievementDto {
   const CreateActivityToAchievementDto._();
