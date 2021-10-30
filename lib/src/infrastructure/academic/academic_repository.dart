@@ -32,7 +32,7 @@ class AcademicRepository {
   Future<Either<HttpFailure, dynamic>> fetchUserClassAndMateria() async {
     try {
       // call api service
-      final _response = await _httpClient.get('v1/class-room/with-area');
+      final _response = await _httpClient.get('/v1/class-room/with-area');
 
       return right(_response.data);
     } catch (e) {

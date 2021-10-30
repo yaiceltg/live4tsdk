@@ -10,6 +10,7 @@ login() async{
     password: "admin@123"
   );
 
+
   //
   // live4tsdk.academic.createGeneral(
   //   areaId: areaId,
@@ -19,3 +20,12 @@ login() async{
   // );
 }
 //
+
+main(List<String> args) async {
+  await login();
+
+  // get user materia
+  final data = await live4tsdk.academic.fetchUserClassAndMateria();
+
+  print(data);
+}
