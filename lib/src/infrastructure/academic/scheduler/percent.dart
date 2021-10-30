@@ -54,7 +54,7 @@ extension SchedulerPercentExtension on AcademicSchedulerRepository {
     try {
       // call api service
       final _response = await _httpClient.get(
-        'v1/schedule/$areaId/$classRoomId/achievements/$achievementId/activities'
+        '/v1/schedule/$areaId/$classRoomId/achievements/$achievementId/activities'
       );
 
       return right(_response.data);

@@ -25,15 +25,10 @@ main(List<String> args) async {
       emailAddress: "mildredfigueroaq+1@gmail.com", password: "admin@123");
 
   // call createGeneral with data
-  final result = await sdk.academic.scheduler.createGeneral(
-      areaId: "1",
-      classRoomId: "1",
-      achievements: [
-        Achievement(percent: 12, question: "Hello")
-      ],
-      indicators: [
-        Indicator(achievement: "asd", content: 'asd', items: [IndicatorItem('A')])
-      ]
+  final result = await sdk.academic.scheduler.createCycle(
+    areaId: '1',
+    classRoomId: '1',
+    cycles: [CreateCycleDto(name: 'name', development: ['development'], observation: 'observation')]
   );
 
   final msg = result.fold(

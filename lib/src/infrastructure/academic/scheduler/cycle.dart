@@ -16,7 +16,7 @@ extension SchedulerCycleExtension on AcademicSchedulerRepository {
       });
       // call api service
       final _response = await _httpClient.post(
-        'v1/schedule/$areaId/$classRoomId/cycle'
+        '/v1/schedule/$areaId/$classRoomId/cycle'
       );
 
       return right(_response.data);
