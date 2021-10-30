@@ -1,11 +1,6 @@
 part of 'academic_repository.dart';
 
-class NoteRepository {
-  final Dio _httpClient = HttpClient.instance.client;
-
-  static final NoteRepository instance = NoteRepository._internal();
-
-  NoteRepository._internal() {}
+extension NoteRepository on AcademicRepository {
 
   Future<Either<dynamic, HttpFailure>> fetchUserClass() async {
     try {

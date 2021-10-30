@@ -1,6 +1,6 @@
 part of 'academic_repository.dart';
 
-extension MyClassesRepository on AcademicRepository{
+extension MyClassesRepository on AcademicRepository {
 
   Future<Either<dynamic, HttpFailure>> cyclesBySubjectAndClassroom() async {
     try {
@@ -105,8 +105,4 @@ class ActivityClass {
     required this.descriptionActivity,
     required this.activity,
   });
-}
-
-class Activity {
-  Activity();
 }

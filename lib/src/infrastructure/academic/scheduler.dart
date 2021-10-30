@@ -5,7 +5,7 @@ extension SchedulerRepository on AcademicRepository {
   ///
   /// Funtion to create general scheduler
   ///
-  Future<Either<dynamic, HttpFailure>> saveGeneral({
+  Future<Either<dynamic, HttpFailure>> createGeneral({
     required String areaId,
     required String classRoomId,
     required List<Achievement> achievements,
@@ -18,48 +18,8 @@ extension SchedulerRepository on AcademicRepository {
         'indicators': indicators.map((i) => i.toMap()),
       });
       // call api service
-      final _url = '$areaId/$classRoomId/general';
+      final _url = 'v1/schedule/$areaId/$classRoomId/general';
       final _response = await _httpClient.post(_url, data: _data);
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> getGeneral() async {
-    try {
-      // call api service
-      final _response = await _httpClient.get(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> editGeneral({
-    required List<Achievement> achievements,
-    required List<dynamic> indicators,
-  }) async {
-    try {
-      // call api service
-      final _response = await _httpClient.patch(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> doubleGeneral({
-    required String id,
-    required String idSalon,
-    required List<dynamic> indicators,
-  }) async {
-    try {
-      // call api service
-      final _response = await _httpClient.post(''); // TODO:
 
       return right(_response.data);
     } catch (e) {
@@ -76,7 +36,7 @@ extension SchedulerRepository on AcademicRepository {
   }) async {
     try {
       // call api service
-      final _response = await _httpClient.get('$areaId/$classRoomId/achievements');
+      final _response = await _httpClient.get('v1/schedule/$areaId/$classRoomId/achievements');
 
       return right(_response.data);
     } catch (e) {
@@ -84,11 +44,24 @@ extension SchedulerRepository on AcademicRepository {
     }
   }
 
-
-  Future<Either<dynamic, HttpFailure>> getPercentagel() async {
+  ///
+  /// Function to add activity to achievement
+  ///
+  Future<Either<dynamic, HttpFailure>> addActivityToAchievement({
+    required String areaId,
+    required String classRoomId,
+    required List<CreateActivityToAchievementDto> achievements
+  }) async {
     try {
+      // prepare data
+      final _data = FormData.fromMap({
+        'activities': achievements.map((e) => e.toMap())
+      });
       // call api service
-      final _response = await _httpClient.get(''); // TODO:
+      final _response = await _httpClient.post(
+        'v1/schedule/$areaId/$classRoomId/achievements',
+        data: _data
+      );
 
       return right(_response.data);
     } catch (e) {
@@ -96,13 +69,19 @@ extension SchedulerRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> savePercentage({
-    required String idAchievements,
-    required List<dynamic> percentage,
+  ///
+  /// Funtion to get all activities of achievement
+  ///
+  Future<Either<dynamic, HttpFailure>> fetchActivitiesOfAchievement({
+    required String areaId,
+    required String classRoomId,
+    required String achievementId,
   }) async {
     try {
       // call api service
-      final _response = await _httpClient.post(''); // TODO:
+      final _response = await _httpClient.get(
+        'v1/schedule/$areaId/$classRoomId/achievements/$achievementId/activities'
+      );
 
       return right(_response.data);
     } catch (e) {
@@ -110,66 +89,23 @@ extension SchedulerRepository on AcademicRepository {
     }
   }
 
-  Future<Either<dynamic, HttpFailure>> editPercentage({
-    required String idPercentage,
-    required List<dynamic> percentage,
+  ///
+  /// Function to create cycle
+  ///
+  Future<Either<dynamic, HttpFailure>> createCycle({
+    required String areaId,
+    required String classRoomId,
+    required List<CreateCycleDto> cycles,
   }) async {
     try {
+      // prepare data
+      final _data = FormData.fromMap({
+        'cycles': cycles.map((e) => e.toMap()),
+      });
       // call api service
-      final _response = await _httpClient.patch(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> getCycle() async {
-    try {
-      // call api service
-      final _response = await _httpClient.get(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> saveCycle({
-    required String idAchievements,
-    required List<Cycle> cycles,
-  }) async {
-    try {
-      // call api service
-      final _response = await _httpClient.post(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> doubleCycle({
-    required String idCycle,
-    required String idSalon,
-  }) async {
-    try {
-      // call api service
-      final _response = await _httpClient.post(''); // TODO:
-
-      return right(_response.data);
-    } catch (e) {
-      return left(HttpFailure.internal());
-    }
-  }
-
-  Future<Either<dynamic, HttpFailure>> updateCycle({
-    required String idcycle,
-    required List<Cycle> cycles,
-  }) async {
-    try {
-      // call api service
-      final _response = await _httpClient.patch(''); // TODO:
+      final _response = await _httpClient.post(
+        'v1/schedule/$areaId/$classRoomId/cycle'
+      );
 
       return right(_response.data);
     } catch (e) {
@@ -178,61 +114,45 @@ extension SchedulerRepository on AcademicRepository {
   }
 }
 
-// -----------------------------------------------------------------------------
-// -- Usefull classes
-// -----------------------------------------------------------------------------
-class Achievement {
-  int percent;
-  String question;
-  Achievement({required this.percent, required this.question});
-
-  Map toMap() {
-    return {
-      'percent': percent,
-      'question': question
-    };
-  }
-}
-
-class Indicator {
-  List<IndicatorItem> items;
+class CreateActivityToAchievementDto {
+  int achievementId;
   String content;
-  String achievement;
-
-  Indicator({
-    required this.items,
+  double quantity;
+  double percent;
+  CreateActivityToAchievementDto({
+    required this.achievementId,
     required this.content,
-    required this.achievement,
+    required this.quantity,
+    required this.percent,
   });
 
   Map toMap() {
     return {
-      'items': items.map((e) => e.toMap()),
+      'achievementId': achievementId,
       'content': content,
-      'achievement': achievement,
+      'quantity': quantity,
+      'percent': percent,
     };
   }
 }
 
-class IndicatorItem {
-  String indicator;
 
-  IndicatorItem(this.indicator);
+class CreateCycleDto {
+  String name;
+  List<String> development;
+  String observation;
+
+  CreateCycleDto({
+    required this.name,
+    required this.development,
+    required this.observation
+  });
 
   Map toMap() {
     return {
-      'indicator': indicator
+      'name': name,
+      'development': development,
+      'observation': observation,
     };
   }
-}
-
-class Cycle {
-  String leadingQuestion;
-  String classDevelopment;
-  String observations;
-
-  Cycle(
-      {required this.classDevelopment,
-      required this.leadingQuestion,
-      required this.observations});
 }

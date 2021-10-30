@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -33,4 +34,63 @@ class AcademicRepository {
       return left(HttpFailure.internal());
     }
   }
+}
+
+// -----------------------------------------------------------------------------
+// -- Usefull classes
+// -----------------------------------------------------------------------------
+class Achievement {
+  int percent;
+  String question;
+  Achievement({required this.percent, required this.question});
+
+  Map toMap() {
+    return {'percent': percent, 'question': question};
+  }
+}
+
+class Indicator {
+  List<IndicatorItem> items;
+  String content;
+  String achievement;
+
+  Indicator({
+    required this.items,
+    required this.content,
+    required this.achievement,
+  });
+
+  Map toMap() {
+    return {
+      'items': items.map((e) => e.toMap()),
+      'content': content,
+      'achievement': achievement,
+    };
+  }
+}
+
+class IndicatorItem {
+  String indicator;
+
+  IndicatorItem(this.indicator);
+
+  Map toMap() {
+    return {'indicator': indicator};
+  }
+}
+
+class Cycle {
+  String leadingQuestion;
+  String classDevelopment;
+  String observations;
+
+  Cycle({
+    required this.classDevelopment,
+    required this.leadingQuestion,
+    required this.observations
+  });
+}
+
+class Activity {
+  Activity();
 }
