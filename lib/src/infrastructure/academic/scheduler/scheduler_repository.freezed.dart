@@ -603,7 +603,7 @@ class _$CreateIndicatorDtoTearOff {
   const _$CreateIndicatorDtoTearOff();
 
   _CreateIndicatorDto call(
-      {@JsonKey(toJson: indicatorItemsToJson) required List<String> items,
+      {@JsonKey(toJson: indicatorItemsToJson) required List<dynamic> items,
       required String content,
       required String achievement}) {
     return _CreateIndicatorDto(
@@ -624,7 +624,7 @@ const $CreateIndicatorDto = _$CreateIndicatorDtoTearOff();
 /// @nodoc
 mixin _$CreateIndicatorDto {
   @JsonKey(toJson: indicatorItemsToJson)
-  List<String> get items => throw _privateConstructorUsedError;
+  List<dynamic> get items => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   String get achievement => throw _privateConstructorUsedError;
 
@@ -640,7 +640,7 @@ abstract class $CreateIndicatorDtoCopyWith<$Res> {
           CreateIndicatorDto value, $Res Function(CreateIndicatorDto) then) =
       _$CreateIndicatorDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(toJson: indicatorItemsToJson) List<String> items,
+      {@JsonKey(toJson: indicatorItemsToJson) List<dynamic> items,
       String content,
       String achievement});
 }
@@ -664,7 +664,7 @@ class _$CreateIndicatorDtoCopyWithImpl<$Res>
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<dynamic>,
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -685,7 +685,7 @@ abstract class _$CreateIndicatorDtoCopyWith<$Res>
       __$CreateIndicatorDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(toJson: indicatorItemsToJson) List<String> items,
+      {@JsonKey(toJson: indicatorItemsToJson) List<dynamic> items,
       String content,
       String achievement});
 }
@@ -711,7 +711,7 @@ class __$CreateIndicatorDtoCopyWithImpl<$Res>
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<dynamic>,
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -738,7 +738,7 @@ class _$_CreateIndicatorDto extends _CreateIndicatorDto {
 
   @override
   @JsonKey(toJson: indicatorItemsToJson)
-  final List<String> items;
+  final List<dynamic> items;
   @override
   final String content;
   @override
@@ -783,7 +783,7 @@ class _$_CreateIndicatorDto extends _CreateIndicatorDto {
 
 abstract class _CreateIndicatorDto extends CreateIndicatorDto {
   const factory _CreateIndicatorDto(
-      {@JsonKey(toJson: indicatorItemsToJson) required List<String> items,
+      {@JsonKey(toJson: indicatorItemsToJson) required List<dynamic> items,
       required String content,
       required String achievement}) = _$_CreateIndicatorDto;
   const _CreateIndicatorDto._() : super._();
@@ -793,7 +793,7 @@ abstract class _CreateIndicatorDto extends CreateIndicatorDto {
 
   @override
   @JsonKey(toJson: indicatorItemsToJson)
-  List<String> get items => throw _privateConstructorUsedError;
+  List<dynamic> get items => throw _privateConstructorUsedError;
   @override
   String get content => throw _privateConstructorUsedError;
   @override

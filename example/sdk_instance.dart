@@ -22,16 +22,51 @@ main(List<String> args) async {
       emailAddress: "mildredfigueroaq+1@gmail.com", password: "admin@123");
 
 
-  // get user class and materia
-  final materias = await sdk.academic.fetchUserClassAndMateria();
 
-  materias.fold((e) {
-    print(e);
-  }, (v) {
-    v.forEach((element) {
-      print(element.displayName);
-    });
-  });
+  // ---------------------------------------------------------------------------
+  // -- get user class and materia (done)
+  // ---------------------------------------------------------------------------
+  // final materias = await sdk.academic.fetchUserClassAndMateria();
+
+  // materias.fold((e) {
+  //   print(e);
+  // }, (v) {
+  //   v.forEach((element) {
+  //     print(element.displayName);
+  //   });
+  // });
+
+  // ---------------------------------------------------------------------------
+  // -- create general (done)
+  // ---------------------------------------------------------------------------
+  // final t2 = await sdk.academic.scheduler.createGeneral(
+  //   areaId: '1',
+  //   classRoomId: '1',
+  //   achievements: [
+  //     CreateAchievementDto(
+  //       percent: 0.5,
+  //       question: '¿Qué es una red?',
+  //     )
+  //   ],
+  //   indicators: [
+  //     CreateIndicatorDto(
+  //       items: ['Item 1', 'Item 2'],
+  //       achievement: 'Achievement 1',
+  //       content: 'Indicador 1',
+  //     ),
+  //     CreateIndicatorDto(
+  //       items: ['Item 1', 'Item 2'],
+  //       achievement: 'Achievement 1',
+  //       content: 'Indicador 1',
+  //     ),
+  //   ]
+  // );
+
+  // t2.fold((l) {
+  //   print(l);
+  // }, (v) {
+  //   print('Create General Success');
+  // });
 
   // // call createGeneral with data
   // final result = await sdk.academic.scheduler.createCycle(

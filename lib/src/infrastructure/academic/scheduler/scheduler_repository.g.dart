@@ -50,7 +50,7 @@ Map<String, dynamic> _$_$_CreateAchievementDtoToJson(
 _$_CreateIndicatorDto _$_$_CreateIndicatorDtoFromJson(
     Map<String, dynamic> json) {
   return _$_CreateIndicatorDto(
-    items: (json['items'] as List<dynamic>).map((e) => e as String).toList(),
+    items: json['items'] as List<dynamic>,
     content: json['content'] as String,
     achievement: json['achievement'] as String,
   );

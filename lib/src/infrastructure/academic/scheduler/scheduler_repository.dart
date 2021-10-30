@@ -21,7 +21,7 @@ class AcademicSchedulerRepository {
   ///
   /// Funtion to create general scheduler
   ///
-  Future<Either<HttpFailure, dynamic>> createGeneral({
+  Future<Either<HttpFailure, Unit>> createGeneral({
     required String areaId,
     required String classRoomId,
     required List<CreateAchievementDto> achievements,
@@ -37,7 +37,7 @@ class AcademicSchedulerRepository {
       final _url = '/v1/schedule/$areaId/$classRoomId/general';
       final _response = await _httpClient.post(_url, data: _data);
 
-      return right(_response.data);
+      return right(unit);
     } catch (e) {
       return left(HttpFailure.internal());
     }
@@ -199,7 +199,7 @@ abstract class CreateIndicatorDto implements _$CreateIndicatorDto {
   const CreateIndicatorDto._();
 
   const factory CreateIndicatorDto({
-    @JsonKey(toJson: indicatorItemsToJson) required List<String> items,
+    @JsonKey(toJson: indicatorItemsToJson) required List items,
     required String content,
     required String achievement,
   }) = _CreateIndicatorDto;
@@ -208,8 +208,8 @@ abstract class CreateIndicatorDto implements _$CreateIndicatorDto {
       _$CreateIndicatorDtoFromJson(json);
 }
 
-Map<String, String> indicatorItemsToJson(items) {
-  return items.map((e) => {'indicator': e});
+List indicatorItemsToJson(items) {
+  return items.map((e) => {'indicator': e}).toList();
 }
 
 @freezed
