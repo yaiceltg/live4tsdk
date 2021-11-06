@@ -18,6 +18,8 @@ import 'package:live4tsdk/src/infrastructure/users/user_repository.dart';
 
 // exports
 export 'package:live4tsdk/src/infrastructure/academic/academic_repository.dart';
+export 'package:kt_dart/kt.dart';
+export 'package:dio/dio.dart';
 
 class Live4tsdk {
   ///
