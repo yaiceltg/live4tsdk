@@ -25,13 +25,13 @@ class AcademicSchedulerRepository {
   Future<Either<HttpFailure, Unit>> createGeneral({
     required String areaId,
     required String classRoomId,
-    required List<CreateSchedulerAchievementDto> Schedulerachievements,
+    required List<CreateSchedulerAchievementDto> achievements,
     required List<CreateIndicatorDto> indicators,
   }) async {
     try {
       // prepare data
       final _data = jsonEncode({
-        'Schedulerachievements': Schedulerachievements.map((e) => e.toJson()).toList(),
+        'achievements': achievements.map((e) => e.toJson()).toList(),
         'indicators': indicators.map((i) => i.toJson()).toList(),
       });
       // call api service
@@ -56,11 +56,11 @@ class AcademicSchedulerRepository {
       final _response = await _httpClient.get('/v1/schedule/$areaId/$classRoomId/achievements');
 
       final List _data = _response.data;
-      final _Schedulerachievements = _data.map(
+      final _achievements = _data.map(
         (e) => SchedulerAchievementDto.fromJson(e).toDomain()
       ).toList() ;
 
-      return right(KtList.from(_Schedulerachievements));
+      return right(KtList.from(_achievements));
     } catch (e) {
       return left(HttpFailure.internal());
     }
@@ -248,12 +248,13 @@ abstract class SchedulerActivityDto implements _$SchedulerActivityDto {
   factory SchedulerActivityDto.fromJson(Map<String, dynamic> json) =>
       _$SchedulerActivityDtoFromJson(json);
 }
+
 @freezed
 class CreateSchedulerActivityToSchedulerAchievementDto with _$CreateSchedulerActivityToSchedulerAchievementDto {
   const CreateSchedulerActivityToSchedulerAchievementDto._();
 
   const factory CreateSchedulerActivityToSchedulerAchievementDto({
-    required int SchedulerachievementId,
+    required int achievementId,
     required String content,
     required double quantity,
     required double percent,
@@ -283,7 +284,7 @@ abstract class CreateIndicatorDto implements _$CreateIndicatorDto {
   const factory CreateIndicatorDto({
     @JsonKey(toJson: indicatorItemsToJson) required List items,
     required String content,
-    required String Schedulerachievement,
+    required String achievement,
   }) = _CreateIndicatorDto;
 
   factory CreateIndicatorDto.fromJson(Map<String, dynamic> json) =>

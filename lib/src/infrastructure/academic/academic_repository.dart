@@ -120,7 +120,3 @@ class Cycle {
       required this.leadingQuestion,
       required this.observations});
 }
-
-class Activity {
-  Activity();
-}

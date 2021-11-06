@@ -1122,12 +1122,12 @@ class _$CreateSchedulerActivityToSchedulerAchievementDtoTearOff {
   const _$CreateSchedulerActivityToSchedulerAchievementDtoTearOff();
 
   _CreateSchedulerActivityToSchedulerAchievementDto call(
-      {required int SchedulerachievementId,
+      {required int achievementId,
       required String content,
       required double quantity,
       required double percent}) {
     return _CreateSchedulerActivityToSchedulerAchievementDto(
-      SchedulerachievementId: SchedulerachievementId,
+      achievementId: achievementId,
       content: content,
       quantity: quantity,
       percent: percent,
@@ -1146,7 +1146,7 @@ const $CreateSchedulerActivityToSchedulerAchievementDto =
 
 /// @nodoc
 mixin _$CreateSchedulerActivityToSchedulerAchievementDto {
-  int get SchedulerachievementId => throw _privateConstructorUsedError;
+  int get achievementId => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   double get quantity => throw _privateConstructorUsedError;
   double get percent => throw _privateConstructorUsedError;
@@ -1166,10 +1166,7 @@ abstract class $CreateSchedulerActivityToSchedulerAchievementDtoCopyWith<$Res> {
               then) =
       _$CreateSchedulerActivityToSchedulerAchievementDtoCopyWithImpl<$Res>;
   $Res call(
-      {int SchedulerachievementId,
-      String content,
-      double quantity,
-      double percent});
+      {int achievementId, String content, double quantity, double percent});
 }
 
 /// @nodoc
@@ -1184,15 +1181,15 @@ class _$CreateSchedulerActivityToSchedulerAchievementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? SchedulerachievementId = freezed,
+    Object? achievementId = freezed,
     Object? content = freezed,
     Object? quantity = freezed,
     Object? percent = freezed,
   }) {
     return _then(_value.copyWith(
-      SchedulerachievementId: SchedulerachievementId == freezed
-          ? _value.SchedulerachievementId
-          : SchedulerachievementId // ignore: cast_nullable_to_non_nullable
+      achievementId: achievementId == freezed
+          ? _value.achievementId
+          : achievementId // ignore: cast_nullable_to_non_nullable
               as int,
       content: content == freezed
           ? _value.content
@@ -1220,10 +1217,7 @@ abstract class _$CreateSchedulerActivityToSchedulerAchievementDtoCopyWith<$Res>
       __$CreateSchedulerActivityToSchedulerAchievementDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int SchedulerachievementId,
-      String content,
-      double quantity,
-      double percent});
+      {int achievementId, String content, double quantity, double percent});
 }
 
 /// @nodoc
@@ -1245,15 +1239,15 @@ class __$CreateSchedulerActivityToSchedulerAchievementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? SchedulerachievementId = freezed,
+    Object? achievementId = freezed,
     Object? content = freezed,
     Object? quantity = freezed,
     Object? percent = freezed,
   }) {
     return _then(_CreateSchedulerActivityToSchedulerAchievementDto(
-      SchedulerachievementId: SchedulerachievementId == freezed
-          ? _value.SchedulerachievementId
-          : SchedulerachievementId // ignore: cast_nullable_to_non_nullable
+      achievementId: achievementId == freezed
+          ? _value.achievementId
+          : achievementId // ignore: cast_nullable_to_non_nullable
               as int,
       content: content == freezed
           ? _value.content
@@ -1276,7 +1270,7 @@ class __$CreateSchedulerActivityToSchedulerAchievementDtoCopyWithImpl<$Res>
 class _$_CreateSchedulerActivityToSchedulerAchievementDto
     extends _CreateSchedulerActivityToSchedulerAchievementDto {
   const _$_CreateSchedulerActivityToSchedulerAchievementDto(
-      {required this.SchedulerachievementId,
+      {required this.achievementId,
       required this.content,
       required this.quantity,
       required this.percent})
@@ -1287,7 +1281,7 @@ class _$_CreateSchedulerActivityToSchedulerAchievementDto
       _$_$_CreateSchedulerActivityToSchedulerAchievementDtoFromJson(json);
 
   @override
-  final int SchedulerachievementId;
+  final int achievementId;
   @override
   final String content;
   @override
@@ -1297,16 +1291,16 @@ class _$_CreateSchedulerActivityToSchedulerAchievementDto
 
   @override
   String toString() {
-    return 'CreateSchedulerActivityToSchedulerAchievementDto(SchedulerachievementId: $SchedulerachievementId, content: $content, quantity: $quantity, percent: $percent)';
+    return 'CreateSchedulerActivityToSchedulerAchievementDto(achievementId: $achievementId, content: $content, quantity: $quantity, percent: $percent)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CreateSchedulerActivityToSchedulerAchievementDto &&
-            (identical(other.SchedulerachievementId, SchedulerachievementId) ||
-                const DeepCollectionEquality().equals(
-                    other.SchedulerachievementId, SchedulerachievementId)) &&
+            (identical(other.achievementId, achievementId) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievementId, achievementId)) &&
             (identical(other.content, content) ||
                 const DeepCollectionEquality()
                     .equals(other.content, content)) &&
@@ -1320,7 +1314,7 @@ class _$_CreateSchedulerActivityToSchedulerAchievementDto
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(SchedulerachievementId) ^
+      const DeepCollectionEquality().hash(achievementId) ^
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(percent);
@@ -1343,7 +1337,7 @@ class _$_CreateSchedulerActivityToSchedulerAchievementDto
 abstract class _CreateSchedulerActivityToSchedulerAchievementDto
     extends CreateSchedulerActivityToSchedulerAchievementDto {
   const factory _CreateSchedulerActivityToSchedulerAchievementDto(
-          {required int SchedulerachievementId,
+          {required int achievementId,
           required String content,
           required double quantity,
           required double percent}) =
@@ -1355,7 +1349,7 @@ abstract class _CreateSchedulerActivityToSchedulerAchievementDto
       _$_CreateSchedulerActivityToSchedulerAchievementDto.fromJson;
 
   @override
-  int get SchedulerachievementId => throw _privateConstructorUsedError;
+  int get achievementId => throw _privateConstructorUsedError;
   @override
   String get content => throw _privateConstructorUsedError;
   @override
@@ -1565,11 +1559,11 @@ class _$CreateIndicatorDtoTearOff {
   _CreateIndicatorDto call(
       {@JsonKey(toJson: indicatorItemsToJson) required List<dynamic> items,
       required String content,
-      required String Schedulerachievement}) {
+      required String achievement}) {
     return _CreateIndicatorDto(
       items: items,
       content: content,
-      Schedulerachievement: Schedulerachievement,
+      achievement: achievement,
     );
   }
 
@@ -1586,7 +1580,7 @@ mixin _$CreateIndicatorDto {
   @JsonKey(toJson: indicatorItemsToJson)
   List<dynamic> get items => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  String get Schedulerachievement => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1602,7 +1596,7 @@ abstract class $CreateIndicatorDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(toJson: indicatorItemsToJson) List<dynamic> items,
       String content,
-      String Schedulerachievement});
+      String achievement});
 }
 
 /// @nodoc
@@ -1618,7 +1612,7 @@ class _$CreateIndicatorDtoCopyWithImpl<$Res>
   $Res call({
     Object? items = freezed,
     Object? content = freezed,
-    Object? Schedulerachievement = freezed,
+    Object? achievement = freezed,
   }) {
     return _then(_value.copyWith(
       items: items == freezed
@@ -1629,9 +1623,9 @@ class _$CreateIndicatorDtoCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      Schedulerachievement: Schedulerachievement == freezed
-          ? _value.Schedulerachievement
-          : Schedulerachievement // ignore: cast_nullable_to_non_nullable
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1647,7 +1641,7 @@ abstract class _$CreateIndicatorDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(toJson: indicatorItemsToJson) List<dynamic> items,
       String content,
-      String Schedulerachievement});
+      String achievement});
 }
 
 /// @nodoc
@@ -1665,7 +1659,7 @@ class __$CreateIndicatorDtoCopyWithImpl<$Res>
   $Res call({
     Object? items = freezed,
     Object? content = freezed,
-    Object? Schedulerachievement = freezed,
+    Object? achievement = freezed,
   }) {
     return _then(_CreateIndicatorDto(
       items: items == freezed
@@ -1676,9 +1670,9 @@ class __$CreateIndicatorDtoCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      Schedulerachievement: Schedulerachievement == freezed
-          ? _value.Schedulerachievement
-          : Schedulerachievement // ignore: cast_nullable_to_non_nullable
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1690,7 +1684,7 @@ class _$_CreateIndicatorDto extends _CreateIndicatorDto {
   const _$_CreateIndicatorDto(
       {@JsonKey(toJson: indicatorItemsToJson) required this.items,
       required this.content,
-      required this.Schedulerachievement})
+      required this.achievement})
       : super._();
 
   factory _$_CreateIndicatorDto.fromJson(Map<String, dynamic> json) =>
@@ -1702,11 +1696,11 @@ class _$_CreateIndicatorDto extends _CreateIndicatorDto {
   @override
   final String content;
   @override
-  final String Schedulerachievement;
+  final String achievement;
 
   @override
   String toString() {
-    return 'CreateIndicatorDto(items: $items, content: $content, Schedulerachievement: $Schedulerachievement)';
+    return 'CreateIndicatorDto(items: $items, content: $content, achievement: $achievement)';
   }
 
   @override
@@ -1718,9 +1712,9 @@ class _$_CreateIndicatorDto extends _CreateIndicatorDto {
             (identical(other.content, content) ||
                 const DeepCollectionEquality()
                     .equals(other.content, content)) &&
-            (identical(other.Schedulerachievement, Schedulerachievement) ||
+            (identical(other.achievement, achievement) ||
                 const DeepCollectionEquality()
-                    .equals(other.Schedulerachievement, Schedulerachievement)));
+                    .equals(other.achievement, achievement)));
   }
 
   @override
@@ -1728,7 +1722,7 @@ class _$_CreateIndicatorDto extends _CreateIndicatorDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(Schedulerachievement);
+      const DeepCollectionEquality().hash(achievement);
 
   @JsonKey(ignore: true)
   @override
@@ -1745,7 +1739,7 @@ abstract class _CreateIndicatorDto extends CreateIndicatorDto {
   const factory _CreateIndicatorDto(
       {@JsonKey(toJson: indicatorItemsToJson) required List<dynamic> items,
       required String content,
-      required String Schedulerachievement}) = _$_CreateIndicatorDto;
+      required String achievement}) = _$_CreateIndicatorDto;
   const _CreateIndicatorDto._() : super._();
 
   factory _CreateIndicatorDto.fromJson(Map<String, dynamic> json) =
@@ -1757,7 +1751,7 @@ abstract class _CreateIndicatorDto extends CreateIndicatorDto {
   @override
   String get content => throw _privateConstructorUsedError;
   @override
-  String get Schedulerachievement => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CreateIndicatorDtoCopyWith<_CreateIndicatorDto> get copyWith =>

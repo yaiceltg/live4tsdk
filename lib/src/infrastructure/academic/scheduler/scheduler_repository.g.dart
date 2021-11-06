@@ -56,7 +56,7 @@ _$_CreateSchedulerActivityToSchedulerAchievementDto
     _$_$_CreateSchedulerActivityToSchedulerAchievementDtoFromJson(
         Map<String, dynamic> json) {
   return _$_CreateSchedulerActivityToSchedulerAchievementDto(
-    SchedulerachievementId: json['SchedulerachievementId'] as int,
+    achievementId: json['achievementId'] as int,
     content: json['content'] as String,
     quantity: (json['quantity'] as num).toDouble(),
     percent: (json['percent'] as num).toDouble(),
@@ -67,7 +67,7 @@ Map<String, dynamic>
     _$_$_CreateSchedulerActivityToSchedulerAchievementDtoToJson(
             _$_CreateSchedulerActivityToSchedulerAchievementDto instance) =>
         <String, dynamic>{
-          'SchedulerachievementId': instance.SchedulerachievementId,
+          'achievementId': instance.achievementId,
           'content': instance.content,
           'quantity': instance.quantity,
           'percent': instance.percent,
@@ -93,7 +93,7 @@ _$_CreateIndicatorDto _$_$_CreateIndicatorDtoFromJson(
   return _$_CreateIndicatorDto(
     items: json['items'] as List<dynamic>,
     content: json['content'] as String,
-    Schedulerachievement: json['Schedulerachievement'] as String,
+    achievement: json['achievement'] as String,
   );
 }
 
@@ -102,7 +102,7 @@ Map<String, dynamic> _$_$_CreateIndicatorDtoToJson(
     <String, dynamic>{
       'items': indicatorItemsToJson(instance.items),
       'content': instance.content,
-      'Schedulerachievement': instance.Schedulerachievement,
+      'achievement': instance.achievement,
     };
 
 _$_Cycle _$_$_CycleFromJson(Map<String, dynamic> json) {

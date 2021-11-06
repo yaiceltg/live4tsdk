@@ -84,11 +84,11 @@ class Class {
 class ActivityClass {
   String nameActivity;
   String descriptionActivity;
-  Activity activity;
+  // Activity activity;
 
   ActivityClass({
     required this.nameActivity,
     required this.descriptionActivity,
-    required this.activity,
+    // required this.activity,
   });
 }
