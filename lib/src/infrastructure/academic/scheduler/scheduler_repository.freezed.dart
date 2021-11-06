@@ -18,14 +18,14 @@ class _$SchedulerAchievementTearOff {
 
   _SchedulerAchievement call(
       {required int id,
-      required String Schedulerachievement,
+      required String achievement,
       required int idPlanification,
       required double percentage,
       String? status,
       String? observation}) {
     return _SchedulerAchievement(
       id: id,
-      Schedulerachievement: Schedulerachievement,
+      achievement: achievement,
       idPlanification: idPlanification,
       percentage: percentage,
       status: status,
@@ -40,7 +40,7 @@ const $SchedulerAchievement = _$SchedulerAchievementTearOff();
 /// @nodoc
 mixin _$SchedulerAchievement {
   int get id => throw _privateConstructorUsedError;
-  String get Schedulerachievement => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
   int get idPlanification => throw _privateConstructorUsedError;
   double get percentage => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $SchedulerAchievementCopyWith<$Res> {
       _$SchedulerAchievementCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      String Schedulerachievement,
+      String achievement,
       int idPlanification,
       double percentage,
       String? status,
@@ -77,7 +77,7 @@ class _$SchedulerAchievementCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? Schedulerachievement = freezed,
+    Object? achievement = freezed,
     Object? idPlanification = freezed,
     Object? percentage = freezed,
     Object? status = freezed,
@@ -88,9 +88,9 @@ class _$SchedulerAchievementCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      Schedulerachievement: Schedulerachievement == freezed
-          ? _value.Schedulerachievement
-          : Schedulerachievement // ignore: cast_nullable_to_non_nullable
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
               as String,
       idPlanification: idPlanification == freezed
           ? _value.idPlanification
@@ -121,7 +121,7 @@ abstract class _$SchedulerAchievementCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      String Schedulerachievement,
+      String achievement,
       int idPlanification,
       double percentage,
       String? status,
@@ -142,7 +142,7 @@ class __$SchedulerAchievementCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? Schedulerachievement = freezed,
+    Object? achievement = freezed,
     Object? idPlanification = freezed,
     Object? percentage = freezed,
     Object? status = freezed,
@@ -153,9 +153,9 @@ class __$SchedulerAchievementCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      Schedulerachievement: Schedulerachievement == freezed
-          ? _value.Schedulerachievement
-          : Schedulerachievement // ignore: cast_nullable_to_non_nullable
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
               as String,
       idPlanification: idPlanification == freezed
           ? _value.idPlanification
@@ -182,7 +182,7 @@ class __$SchedulerAchievementCopyWithImpl<$Res>
 class _$_SchedulerAchievement extends _SchedulerAchievement {
   const _$_SchedulerAchievement(
       {required this.id,
-      required this.Schedulerachievement,
+      required this.achievement,
       required this.idPlanification,
       required this.percentage,
       this.status,
@@ -192,7 +192,7 @@ class _$_SchedulerAchievement extends _SchedulerAchievement {
   @override
   final int id;
   @override
-  final String Schedulerachievement;
+  final String achievement;
   @override
   final int idPlanification;
   @override
@@ -204,7 +204,7 @@ class _$_SchedulerAchievement extends _SchedulerAchievement {
 
   @override
   String toString() {
-    return 'SchedulerAchievement(id: $id, Schedulerachievement: $Schedulerachievement, idPlanification: $idPlanification, percentage: $percentage, status: $status, observation: $observation)';
+    return 'SchedulerAchievement(id: $id, achievement: $achievement, idPlanification: $idPlanification, percentage: $percentage, status: $status, observation: $observation)';
   }
 
   @override
@@ -213,9 +213,9 @@ class _$_SchedulerAchievement extends _SchedulerAchievement {
         (other is _SchedulerAchievement &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.Schedulerachievement, Schedulerachievement) ||
-                const DeepCollectionEquality().equals(
-                    other.Schedulerachievement, Schedulerachievement)) &&
+            (identical(other.achievement, achievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievement, achievement)) &&
             (identical(other.idPlanification, idPlanification) ||
                 const DeepCollectionEquality()
                     .equals(other.idPlanification, idPlanification)) &&
@@ -233,7 +233,7 @@ class _$_SchedulerAchievement extends _SchedulerAchievement {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(Schedulerachievement) ^
+      const DeepCollectionEquality().hash(achievement) ^
       const DeepCollectionEquality().hash(idPlanification) ^
       const DeepCollectionEquality().hash(percentage) ^
       const DeepCollectionEquality().hash(status) ^
@@ -249,7 +249,7 @@ class _$_SchedulerAchievement extends _SchedulerAchievement {
 abstract class _SchedulerAchievement extends SchedulerAchievement {
   const factory _SchedulerAchievement(
       {required int id,
-      required String Schedulerachievement,
+      required String achievement,
       required int idPlanification,
       required double percentage,
       String? status,
@@ -259,7 +259,7 @@ abstract class _SchedulerAchievement extends SchedulerAchievement {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  String get Schedulerachievement => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
   @override
   int get idPlanification => throw _privateConstructorUsedError;
   @override
@@ -281,16 +281,16 @@ class _$SchedulerActivityTearOff {
   _SchedulerActivity call(
       {required int id,
       required int idAnnual,
-      required String typeSchedulerActivity,
-      required int ScheduleractivityRate,
-      required int idSchedulerAchievement,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
       int? idQuarterlyPlan}) {
     return _SchedulerActivity(
       id: id,
       idAnnual: idAnnual,
-      typeSchedulerActivity: typeSchedulerActivity,
-      ScheduleractivityRate: ScheduleractivityRate,
-      idSchedulerAchievement: idSchedulerAchievement,
+      typeActivity: typeActivity,
+      activityRate: activityRate,
+      idAchievement: idAchievement,
       idQuarterlyPlan: idQuarterlyPlan,
     );
   }
@@ -303,9 +303,9 @@ const $SchedulerActivity = _$SchedulerActivityTearOff();
 mixin _$SchedulerActivity {
   int get id => throw _privateConstructorUsedError;
   int get idAnnual => throw _privateConstructorUsedError;
-  String get typeSchedulerActivity => throw _privateConstructorUsedError;
-  int get ScheduleractivityRate => throw _privateConstructorUsedError;
-  int get idSchedulerAchievement => throw _privateConstructorUsedError;
+  String get typeActivity => throw _privateConstructorUsedError;
+  int get activityRate => throw _privateConstructorUsedError;
+  int get idAchievement => throw _privateConstructorUsedError;
   int? get idQuarterlyPlan => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -321,9 +321,9 @@ abstract class $SchedulerActivityCopyWith<$Res> {
   $Res call(
       {int id,
       int idAnnual,
-      String typeSchedulerActivity,
-      int ScheduleractivityRate,
-      int idSchedulerAchievement,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
       int? idQuarterlyPlan});
 }
 
@@ -340,9 +340,9 @@ class _$SchedulerActivityCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? idAnnual = freezed,
-    Object? typeSchedulerActivity = freezed,
-    Object? ScheduleractivityRate = freezed,
-    Object? idSchedulerAchievement = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
     Object? idQuarterlyPlan = freezed,
   }) {
     return _then(_value.copyWith(
@@ -354,17 +354,17 @@ class _$SchedulerActivityCopyWithImpl<$Res>
           ? _value.idAnnual
           : idAnnual // ignore: cast_nullable_to_non_nullable
               as int,
-      typeSchedulerActivity: typeSchedulerActivity == freezed
-          ? _value.typeSchedulerActivity
-          : typeSchedulerActivity // ignore: cast_nullable_to_non_nullable
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
               as String,
-      ScheduleractivityRate: ScheduleractivityRate == freezed
-          ? _value.ScheduleractivityRate
-          : ScheduleractivityRate // ignore: cast_nullable_to_non_nullable
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
               as int,
-      idSchedulerAchievement: idSchedulerAchievement == freezed
-          ? _value.idSchedulerAchievement
-          : idSchedulerAchievement // ignore: cast_nullable_to_non_nullable
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
               as int,
       idQuarterlyPlan: idQuarterlyPlan == freezed
           ? _value.idQuarterlyPlan
@@ -384,9 +384,9 @@ abstract class _$SchedulerActivityCopyWith<$Res>
   $Res call(
       {int id,
       int idAnnual,
-      String typeSchedulerActivity,
-      int ScheduleractivityRate,
-      int idSchedulerAchievement,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
       int? idQuarterlyPlan});
 }
 
@@ -405,9 +405,9 @@ class __$SchedulerActivityCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? idAnnual = freezed,
-    Object? typeSchedulerActivity = freezed,
-    Object? ScheduleractivityRate = freezed,
-    Object? idSchedulerAchievement = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
     Object? idQuarterlyPlan = freezed,
   }) {
     return _then(_SchedulerActivity(
@@ -419,17 +419,17 @@ class __$SchedulerActivityCopyWithImpl<$Res>
           ? _value.idAnnual
           : idAnnual // ignore: cast_nullable_to_non_nullable
               as int,
-      typeSchedulerActivity: typeSchedulerActivity == freezed
-          ? _value.typeSchedulerActivity
-          : typeSchedulerActivity // ignore: cast_nullable_to_non_nullable
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
               as String,
-      ScheduleractivityRate: ScheduleractivityRate == freezed
-          ? _value.ScheduleractivityRate
-          : ScheduleractivityRate // ignore: cast_nullable_to_non_nullable
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
               as int,
-      idSchedulerAchievement: idSchedulerAchievement == freezed
-          ? _value.idSchedulerAchievement
-          : idSchedulerAchievement // ignore: cast_nullable_to_non_nullable
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
               as int,
       idQuarterlyPlan: idQuarterlyPlan == freezed
           ? _value.idQuarterlyPlan
@@ -445,9 +445,9 @@ class _$_SchedulerActivity extends _SchedulerActivity {
   const _$_SchedulerActivity(
       {required this.id,
       required this.idAnnual,
-      required this.typeSchedulerActivity,
-      required this.ScheduleractivityRate,
-      required this.idSchedulerAchievement,
+      required this.typeActivity,
+      required this.activityRate,
+      required this.idAchievement,
       this.idQuarterlyPlan})
       : super._();
 
@@ -456,17 +456,17 @@ class _$_SchedulerActivity extends _SchedulerActivity {
   @override
   final int idAnnual;
   @override
-  final String typeSchedulerActivity;
+  final String typeActivity;
   @override
-  final int ScheduleractivityRate;
+  final int activityRate;
   @override
-  final int idSchedulerAchievement;
+  final int idAchievement;
   @override
   final int? idQuarterlyPlan;
 
   @override
   String toString() {
-    return 'SchedulerActivity(id: $id, idAnnual: $idAnnual, typeSchedulerActivity: $typeSchedulerActivity, ScheduleractivityRate: $ScheduleractivityRate, idSchedulerAchievement: $idSchedulerAchievement, idQuarterlyPlan: $idQuarterlyPlan)';
+    return 'SchedulerActivity(id: $id, idAnnual: $idAnnual, typeActivity: $typeActivity, activityRate: $activityRate, idAchievement: $idAchievement, idQuarterlyPlan: $idQuarterlyPlan)';
   }
 
   @override
@@ -478,15 +478,15 @@ class _$_SchedulerActivity extends _SchedulerActivity {
             (identical(other.idAnnual, idAnnual) ||
                 const DeepCollectionEquality()
                     .equals(other.idAnnual, idAnnual)) &&
-            (identical(other.typeSchedulerActivity, typeSchedulerActivity) ||
-                const DeepCollectionEquality().equals(
-                    other.typeSchedulerActivity, typeSchedulerActivity)) &&
-            (identical(other.ScheduleractivityRate, ScheduleractivityRate) ||
-                const DeepCollectionEquality().equals(
-                    other.ScheduleractivityRate, ScheduleractivityRate)) &&
-            (identical(other.idSchedulerAchievement, idSchedulerAchievement) ||
-                const DeepCollectionEquality().equals(
-                    other.idSchedulerAchievement, idSchedulerAchievement)) &&
+            (identical(other.typeActivity, typeActivity) ||
+                const DeepCollectionEquality()
+                    .equals(other.typeActivity, typeActivity)) &&
+            (identical(other.activityRate, activityRate) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityRate, activityRate)) &&
+            (identical(other.idAchievement, idAchievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.idAchievement, idAchievement)) &&
             (identical(other.idQuarterlyPlan, idQuarterlyPlan) ||
                 const DeepCollectionEquality()
                     .equals(other.idQuarterlyPlan, idQuarterlyPlan)));
@@ -497,9 +497,9 @@ class _$_SchedulerActivity extends _SchedulerActivity {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(idAnnual) ^
-      const DeepCollectionEquality().hash(typeSchedulerActivity) ^
-      const DeepCollectionEquality().hash(ScheduleractivityRate) ^
-      const DeepCollectionEquality().hash(idSchedulerAchievement) ^
+      const DeepCollectionEquality().hash(typeActivity) ^
+      const DeepCollectionEquality().hash(activityRate) ^
+      const DeepCollectionEquality().hash(idAchievement) ^
       const DeepCollectionEquality().hash(idQuarterlyPlan);
 
   @JsonKey(ignore: true)
@@ -512,9 +512,9 @@ abstract class _SchedulerActivity extends SchedulerActivity {
   const factory _SchedulerActivity(
       {required int id,
       required int idAnnual,
-      required String typeSchedulerActivity,
-      required int ScheduleractivityRate,
-      required int idSchedulerAchievement,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
       int? idQuarterlyPlan}) = _$_SchedulerActivity;
   const _SchedulerActivity._() : super._();
 
@@ -523,11 +523,11 @@ abstract class _SchedulerActivity extends SchedulerActivity {
   @override
   int get idAnnual => throw _privateConstructorUsedError;
   @override
-  String get typeSchedulerActivity => throw _privateConstructorUsedError;
+  String get typeActivity => throw _privateConstructorUsedError;
   @override
-  int get ScheduleractivityRate => throw _privateConstructorUsedError;
+  int get activityRate => throw _privateConstructorUsedError;
   @override
-  int get idSchedulerAchievement => throw _privateConstructorUsedError;
+  int get idAchievement => throw _privateConstructorUsedError;
   @override
   int? get idQuarterlyPlan => throw _privateConstructorUsedError;
   @override
@@ -546,15 +546,15 @@ class _$SchedulerAchievementDtoTearOff {
   const _$SchedulerAchievementDtoTearOff();
 
   _SchedulerAchievementDto call(
-      {@JsonKey(name: 'id') required int SchedulerachievementId,
-      required String Schedulerachievement,
+      {@JsonKey(name: 'id') required int achievementId,
+      required String achievement,
       required int idPlanification,
       required double percentage,
       String? status,
       String? observation}) {
     return _SchedulerAchievementDto(
-      SchedulerachievementId: SchedulerachievementId,
-      Schedulerachievement: Schedulerachievement,
+      achievementId: achievementId,
+      achievement: achievement,
       idPlanification: idPlanification,
       percentage: percentage,
       status: status,
@@ -573,8 +573,8 @@ const $SchedulerAchievementDto = _$SchedulerAchievementDtoTearOff();
 /// @nodoc
 mixin _$SchedulerAchievementDto {
   @JsonKey(name: 'id')
-  int get SchedulerachievementId => throw _privateConstructorUsedError;
-  String get Schedulerachievement => throw _privateConstructorUsedError;
+  int get achievementId => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
   int get idPlanification => throw _privateConstructorUsedError;
   double get percentage => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
@@ -592,8 +592,8 @@ abstract class $SchedulerAchievementDtoCopyWith<$Res> {
           $Res Function(SchedulerAchievementDto) then) =
       _$SchedulerAchievementDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'id') int SchedulerachievementId,
-      String Schedulerachievement,
+      {@JsonKey(name: 'id') int achievementId,
+      String achievement,
       int idPlanification,
       double percentage,
       String? status,
@@ -611,21 +611,21 @@ class _$SchedulerAchievementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? SchedulerachievementId = freezed,
-    Object? Schedulerachievement = freezed,
+    Object? achievementId = freezed,
+    Object? achievement = freezed,
     Object? idPlanification = freezed,
     Object? percentage = freezed,
     Object? status = freezed,
     Object? observation = freezed,
   }) {
     return _then(_value.copyWith(
-      SchedulerachievementId: SchedulerachievementId == freezed
-          ? _value.SchedulerachievementId
-          : SchedulerachievementId // ignore: cast_nullable_to_non_nullable
+      achievementId: achievementId == freezed
+          ? _value.achievementId
+          : achievementId // ignore: cast_nullable_to_non_nullable
               as int,
-      Schedulerachievement: Schedulerachievement == freezed
-          ? _value.Schedulerachievement
-          : Schedulerachievement // ignore: cast_nullable_to_non_nullable
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
               as String,
       idPlanification: idPlanification == freezed
           ? _value.idPlanification
@@ -655,8 +655,8 @@ abstract class _$SchedulerAchievementDtoCopyWith<$Res>
       __$SchedulerAchievementDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'id') int SchedulerachievementId,
-      String Schedulerachievement,
+      {@JsonKey(name: 'id') int achievementId,
+      String achievement,
       int idPlanification,
       double percentage,
       String? status,
@@ -677,21 +677,21 @@ class __$SchedulerAchievementDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? SchedulerachievementId = freezed,
-    Object? Schedulerachievement = freezed,
+    Object? achievementId = freezed,
+    Object? achievement = freezed,
     Object? idPlanification = freezed,
     Object? percentage = freezed,
     Object? status = freezed,
     Object? observation = freezed,
   }) {
     return _then(_SchedulerAchievementDto(
-      SchedulerachievementId: SchedulerachievementId == freezed
-          ? _value.SchedulerachievementId
-          : SchedulerachievementId // ignore: cast_nullable_to_non_nullable
+      achievementId: achievementId == freezed
+          ? _value.achievementId
+          : achievementId // ignore: cast_nullable_to_non_nullable
               as int,
-      Schedulerachievement: Schedulerachievement == freezed
-          ? _value.Schedulerachievement
-          : Schedulerachievement // ignore: cast_nullable_to_non_nullable
+      achievement: achievement == freezed
+          ? _value.achievement
+          : achievement // ignore: cast_nullable_to_non_nullable
               as String,
       idPlanification: idPlanification == freezed
           ? _value.idPlanification
@@ -717,8 +717,8 @@ class __$SchedulerAchievementDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SchedulerAchievementDto extends _SchedulerAchievementDto {
   const _$_SchedulerAchievementDto(
-      {@JsonKey(name: 'id') required this.SchedulerachievementId,
-      required this.Schedulerachievement,
+      {@JsonKey(name: 'id') required this.achievementId,
+      required this.achievement,
       required this.idPlanification,
       required this.percentage,
       this.status,
@@ -730,9 +730,9 @@ class _$_SchedulerAchievementDto extends _SchedulerAchievementDto {
 
   @override
   @JsonKey(name: 'id')
-  final int SchedulerachievementId;
+  final int achievementId;
   @override
-  final String Schedulerachievement;
+  final String achievement;
   @override
   final int idPlanification;
   @override
@@ -744,19 +744,19 @@ class _$_SchedulerAchievementDto extends _SchedulerAchievementDto {
 
   @override
   String toString() {
-    return 'SchedulerAchievementDto(SchedulerachievementId: $SchedulerachievementId, Schedulerachievement: $Schedulerachievement, idPlanification: $idPlanification, percentage: $percentage, status: $status, observation: $observation)';
+    return 'SchedulerAchievementDto(achievementId: $achievementId, achievement: $achievement, idPlanification: $idPlanification, percentage: $percentage, status: $status, observation: $observation)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SchedulerAchievementDto &&
-            (identical(other.SchedulerachievementId, SchedulerachievementId) ||
-                const DeepCollectionEquality().equals(
-                    other.SchedulerachievementId, SchedulerachievementId)) &&
-            (identical(other.Schedulerachievement, Schedulerachievement) ||
-                const DeepCollectionEquality().equals(
-                    other.Schedulerachievement, Schedulerachievement)) &&
+            (identical(other.achievementId, achievementId) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievementId, achievementId)) &&
+            (identical(other.achievement, achievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievement, achievement)) &&
             (identical(other.idPlanification, idPlanification) ||
                 const DeepCollectionEquality()
                     .equals(other.idPlanification, idPlanification)) &&
@@ -773,8 +773,8 @@ class _$_SchedulerAchievementDto extends _SchedulerAchievementDto {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(SchedulerachievementId) ^
-      const DeepCollectionEquality().hash(Schedulerachievement) ^
+      const DeepCollectionEquality().hash(achievementId) ^
+      const DeepCollectionEquality().hash(achievement) ^
       const DeepCollectionEquality().hash(idPlanification) ^
       const DeepCollectionEquality().hash(percentage) ^
       const DeepCollectionEquality().hash(status) ^
@@ -794,8 +794,8 @@ class _$_SchedulerAchievementDto extends _SchedulerAchievementDto {
 
 abstract class _SchedulerAchievementDto extends SchedulerAchievementDto {
   const factory _SchedulerAchievementDto(
-      {@JsonKey(name: 'id') required int SchedulerachievementId,
-      required String Schedulerachievement,
+      {@JsonKey(name: 'id') required int achievementId,
+      required String achievement,
       required int idPlanification,
       required double percentage,
       String? status,
@@ -807,9 +807,9 @@ abstract class _SchedulerAchievementDto extends SchedulerAchievementDto {
 
   @override
   @JsonKey(name: 'id')
-  int get SchedulerachievementId => throw _privateConstructorUsedError;
+  int get achievementId => throw _privateConstructorUsedError;
   @override
-  String get Schedulerachievement => throw _privateConstructorUsedError;
+  String get achievement => throw _privateConstructorUsedError;
   @override
   int get idPlanification => throw _privateConstructorUsedError;
   @override
@@ -833,18 +833,18 @@ class _$SchedulerActivityDtoTearOff {
   const _$SchedulerActivityDtoTearOff();
 
   _SchedulerActivityDto call(
-      {@JsonKey(name: 'id') required int ScheduleractivityId,
+      {@JsonKey(name: 'id') required int activityId,
       required int idAnnual,
-      required String typeSchedulerActivity,
-      required int ScheduleractivityRate,
-      required int idSchedulerAchievement,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
       int? idQuarterlyPlan}) {
     return _SchedulerActivityDto(
-      ScheduleractivityId: ScheduleractivityId,
+      activityId: activityId,
       idAnnual: idAnnual,
-      typeSchedulerActivity: typeSchedulerActivity,
-      ScheduleractivityRate: ScheduleractivityRate,
-      idSchedulerAchievement: idSchedulerAchievement,
+      typeActivity: typeActivity,
+      activityRate: activityRate,
+      idAchievement: idAchievement,
       idQuarterlyPlan: idQuarterlyPlan,
     );
   }
@@ -860,11 +860,11 @@ const $SchedulerActivityDto = _$SchedulerActivityDtoTearOff();
 /// @nodoc
 mixin _$SchedulerActivityDto {
   @JsonKey(name: 'id')
-  int get ScheduleractivityId => throw _privateConstructorUsedError;
+  int get activityId => throw _privateConstructorUsedError;
   int get idAnnual => throw _privateConstructorUsedError;
-  String get typeSchedulerActivity => throw _privateConstructorUsedError;
-  int get ScheduleractivityRate => throw _privateConstructorUsedError;
-  int get idSchedulerAchievement => throw _privateConstructorUsedError;
+  String get typeActivity => throw _privateConstructorUsedError;
+  int get activityRate => throw _privateConstructorUsedError;
+  int get idAchievement => throw _privateConstructorUsedError;
   int? get idQuarterlyPlan => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -879,11 +879,11 @@ abstract class $SchedulerActivityDtoCopyWith<$Res> {
           $Res Function(SchedulerActivityDto) then) =
       _$SchedulerActivityDtoCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'id') int ScheduleractivityId,
+      {@JsonKey(name: 'id') int activityId,
       int idAnnual,
-      String typeSchedulerActivity,
-      int ScheduleractivityRate,
-      int idSchedulerAchievement,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
       int? idQuarterlyPlan});
 }
 
@@ -898,33 +898,33 @@ class _$SchedulerActivityDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? ScheduleractivityId = freezed,
+    Object? activityId = freezed,
     Object? idAnnual = freezed,
-    Object? typeSchedulerActivity = freezed,
-    Object? ScheduleractivityRate = freezed,
-    Object? idSchedulerAchievement = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
     Object? idQuarterlyPlan = freezed,
   }) {
     return _then(_value.copyWith(
-      ScheduleractivityId: ScheduleractivityId == freezed
-          ? _value.ScheduleractivityId
-          : ScheduleractivityId // ignore: cast_nullable_to_non_nullable
+      activityId: activityId == freezed
+          ? _value.activityId
+          : activityId // ignore: cast_nullable_to_non_nullable
               as int,
       idAnnual: idAnnual == freezed
           ? _value.idAnnual
           : idAnnual // ignore: cast_nullable_to_non_nullable
               as int,
-      typeSchedulerActivity: typeSchedulerActivity == freezed
-          ? _value.typeSchedulerActivity
-          : typeSchedulerActivity // ignore: cast_nullable_to_non_nullable
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
               as String,
-      ScheduleractivityRate: ScheduleractivityRate == freezed
-          ? _value.ScheduleractivityRate
-          : ScheduleractivityRate // ignore: cast_nullable_to_non_nullable
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
               as int,
-      idSchedulerAchievement: idSchedulerAchievement == freezed
-          ? _value.idSchedulerAchievement
-          : idSchedulerAchievement // ignore: cast_nullable_to_non_nullable
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
               as int,
       idQuarterlyPlan: idQuarterlyPlan == freezed
           ? _value.idQuarterlyPlan
@@ -942,11 +942,11 @@ abstract class _$SchedulerActivityDtoCopyWith<$Res>
       __$SchedulerActivityDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'id') int ScheduleractivityId,
+      {@JsonKey(name: 'id') int activityId,
       int idAnnual,
-      String typeSchedulerActivity,
-      int ScheduleractivityRate,
-      int idSchedulerAchievement,
+      String typeActivity,
+      int activityRate,
+      int idAchievement,
       int? idQuarterlyPlan});
 }
 
@@ -963,33 +963,33 @@ class __$SchedulerActivityDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? ScheduleractivityId = freezed,
+    Object? activityId = freezed,
     Object? idAnnual = freezed,
-    Object? typeSchedulerActivity = freezed,
-    Object? ScheduleractivityRate = freezed,
-    Object? idSchedulerAchievement = freezed,
+    Object? typeActivity = freezed,
+    Object? activityRate = freezed,
+    Object? idAchievement = freezed,
     Object? idQuarterlyPlan = freezed,
   }) {
     return _then(_SchedulerActivityDto(
-      ScheduleractivityId: ScheduleractivityId == freezed
-          ? _value.ScheduleractivityId
-          : ScheduleractivityId // ignore: cast_nullable_to_non_nullable
+      activityId: activityId == freezed
+          ? _value.activityId
+          : activityId // ignore: cast_nullable_to_non_nullable
               as int,
       idAnnual: idAnnual == freezed
           ? _value.idAnnual
           : idAnnual // ignore: cast_nullable_to_non_nullable
               as int,
-      typeSchedulerActivity: typeSchedulerActivity == freezed
-          ? _value.typeSchedulerActivity
-          : typeSchedulerActivity // ignore: cast_nullable_to_non_nullable
+      typeActivity: typeActivity == freezed
+          ? _value.typeActivity
+          : typeActivity // ignore: cast_nullable_to_non_nullable
               as String,
-      ScheduleractivityRate: ScheduleractivityRate == freezed
-          ? _value.ScheduleractivityRate
-          : ScheduleractivityRate // ignore: cast_nullable_to_non_nullable
+      activityRate: activityRate == freezed
+          ? _value.activityRate
+          : activityRate // ignore: cast_nullable_to_non_nullable
               as int,
-      idSchedulerAchievement: idSchedulerAchievement == freezed
-          ? _value.idSchedulerAchievement
-          : idSchedulerAchievement // ignore: cast_nullable_to_non_nullable
+      idAchievement: idAchievement == freezed
+          ? _value.idAchievement
+          : idAchievement // ignore: cast_nullable_to_non_nullable
               as int,
       idQuarterlyPlan: idQuarterlyPlan == freezed
           ? _value.idQuarterlyPlan
@@ -1003,11 +1003,11 @@ class __$SchedulerActivityDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SchedulerActivityDto extends _SchedulerActivityDto {
   const _$_SchedulerActivityDto(
-      {@JsonKey(name: 'id') required this.ScheduleractivityId,
+      {@JsonKey(name: 'id') required this.activityId,
       required this.idAnnual,
-      required this.typeSchedulerActivity,
-      required this.ScheduleractivityRate,
-      required this.idSchedulerAchievement,
+      required this.typeActivity,
+      required this.activityRate,
+      required this.idAchievement,
       this.idQuarterlyPlan})
       : super._();
 
@@ -1016,42 +1016,42 @@ class _$_SchedulerActivityDto extends _SchedulerActivityDto {
 
   @override
   @JsonKey(name: 'id')
-  final int ScheduleractivityId;
+  final int activityId;
   @override
   final int idAnnual;
   @override
-  final String typeSchedulerActivity;
+  final String typeActivity;
   @override
-  final int ScheduleractivityRate;
+  final int activityRate;
   @override
-  final int idSchedulerAchievement;
+  final int idAchievement;
   @override
   final int? idQuarterlyPlan;
 
   @override
   String toString() {
-    return 'SchedulerActivityDto(ScheduleractivityId: $ScheduleractivityId, idAnnual: $idAnnual, typeSchedulerActivity: $typeSchedulerActivity, ScheduleractivityRate: $ScheduleractivityRate, idSchedulerAchievement: $idSchedulerAchievement, idQuarterlyPlan: $idQuarterlyPlan)';
+    return 'SchedulerActivityDto(activityId: $activityId, idAnnual: $idAnnual, typeActivity: $typeActivity, activityRate: $activityRate, idAchievement: $idAchievement, idQuarterlyPlan: $idQuarterlyPlan)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SchedulerActivityDto &&
-            (identical(other.ScheduleractivityId, ScheduleractivityId) ||
+            (identical(other.activityId, activityId) ||
                 const DeepCollectionEquality()
-                    .equals(other.ScheduleractivityId, ScheduleractivityId)) &&
+                    .equals(other.activityId, activityId)) &&
             (identical(other.idAnnual, idAnnual) ||
                 const DeepCollectionEquality()
                     .equals(other.idAnnual, idAnnual)) &&
-            (identical(other.typeSchedulerActivity, typeSchedulerActivity) ||
-                const DeepCollectionEquality().equals(
-                    other.typeSchedulerActivity, typeSchedulerActivity)) &&
-            (identical(other.ScheduleractivityRate, ScheduleractivityRate) ||
-                const DeepCollectionEquality().equals(
-                    other.ScheduleractivityRate, ScheduleractivityRate)) &&
-            (identical(other.idSchedulerAchievement, idSchedulerAchievement) ||
-                const DeepCollectionEquality().equals(
-                    other.idSchedulerAchievement, idSchedulerAchievement)) &&
+            (identical(other.typeActivity, typeActivity) ||
+                const DeepCollectionEquality()
+                    .equals(other.typeActivity, typeActivity)) &&
+            (identical(other.activityRate, activityRate) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityRate, activityRate)) &&
+            (identical(other.idAchievement, idAchievement) ||
+                const DeepCollectionEquality()
+                    .equals(other.idAchievement, idAchievement)) &&
             (identical(other.idQuarterlyPlan, idQuarterlyPlan) ||
                 const DeepCollectionEquality()
                     .equals(other.idQuarterlyPlan, idQuarterlyPlan)));
@@ -1060,11 +1060,11 @@ class _$_SchedulerActivityDto extends _SchedulerActivityDto {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(ScheduleractivityId) ^
+      const DeepCollectionEquality().hash(activityId) ^
       const DeepCollectionEquality().hash(idAnnual) ^
-      const DeepCollectionEquality().hash(typeSchedulerActivity) ^
-      const DeepCollectionEquality().hash(ScheduleractivityRate) ^
-      const DeepCollectionEquality().hash(idSchedulerAchievement) ^
+      const DeepCollectionEquality().hash(typeActivity) ^
+      const DeepCollectionEquality().hash(activityRate) ^
+      const DeepCollectionEquality().hash(idAchievement) ^
       const DeepCollectionEquality().hash(idQuarterlyPlan);
 
   @JsonKey(ignore: true)
@@ -1081,11 +1081,11 @@ class _$_SchedulerActivityDto extends _SchedulerActivityDto {
 
 abstract class _SchedulerActivityDto extends SchedulerActivityDto {
   const factory _SchedulerActivityDto(
-      {@JsonKey(name: 'id') required int ScheduleractivityId,
+      {@JsonKey(name: 'id') required int activityId,
       required int idAnnual,
-      required String typeSchedulerActivity,
-      required int ScheduleractivityRate,
-      required int idSchedulerAchievement,
+      required String typeActivity,
+      required int activityRate,
+      required int idAchievement,
       int? idQuarterlyPlan}) = _$_SchedulerActivityDto;
   const _SchedulerActivityDto._() : super._();
 
@@ -1094,15 +1094,15 @@ abstract class _SchedulerActivityDto extends SchedulerActivityDto {
 
   @override
   @JsonKey(name: 'id')
-  int get ScheduleractivityId => throw _privateConstructorUsedError;
+  int get activityId => throw _privateConstructorUsedError;
   @override
   int get idAnnual => throw _privateConstructorUsedError;
   @override
-  String get typeSchedulerActivity => throw _privateConstructorUsedError;
+  String get typeActivity => throw _privateConstructorUsedError;
   @override
-  int get ScheduleractivityRate => throw _privateConstructorUsedError;
+  int get activityRate => throw _privateConstructorUsedError;
   @override
-  int get idSchedulerAchievement => throw _privateConstructorUsedError;
+  int get idAchievement => throw _privateConstructorUsedError;
   @override
   int? get idQuarterlyPlan => throw _privateConstructorUsedError;
   @override

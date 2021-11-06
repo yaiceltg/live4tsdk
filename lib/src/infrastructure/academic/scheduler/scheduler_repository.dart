@@ -146,7 +146,7 @@ class SchedulerAchievement with _$SchedulerAchievement {
  const SchedulerAchievement._();
   const factory SchedulerAchievement({
     required int id,
-    required String Schedulerachievement,
+    required String achievement,
     required int idPlanification,
     required double percentage,
     String? status,
@@ -160,9 +160,9 @@ class SchedulerActivity with _$SchedulerActivity {
   const factory SchedulerActivity({
     required int id,
     required int idAnnual,
-    required String typeSchedulerActivity,
-    required int ScheduleractivityRate,
-    required int idSchedulerAchievement,
+    required String typeActivity,
+    required int activityRate,
+    required int idAchievement,
     int? idQuarterlyPlan,
   }) = _SchedulerActivity;
 }
@@ -176,29 +176,29 @@ abstract class SchedulerAchievementDto implements _$SchedulerAchievementDto {
   const SchedulerAchievementDto._();
 
   const factory SchedulerAchievementDto({
-    @JsonKey(name: 'id') required int SchedulerachievementId,
-    required String Schedulerachievement,
+    @JsonKey(name: 'id') required int achievementId,
+    required String achievement,
     required int idPlanification,
     required double percentage,
     String? status,
     String? observation,
   }) = _SchedulerAchievementDto;
 
-  factory SchedulerAchievementDto.fromDomain(SchedulerAchievement Schedulerachievement) {
+  factory SchedulerAchievementDto.fromDomain(SchedulerAchievement achievement) {
     return SchedulerAchievementDto(
-      SchedulerachievementId: Schedulerachievement.id,
-      Schedulerachievement: Schedulerachievement.Schedulerachievement,
-      idPlanification: Schedulerachievement.idPlanification,
-      percentage: Schedulerachievement.percentage,
-      status: Schedulerachievement.status,
-      observation: Schedulerachievement.observation,
+      achievementId: achievement.id,
+      achievement: achievement.achievement,
+      idPlanification: achievement.idPlanification,
+      percentage: achievement.percentage,
+      status: achievement.status,
+      observation: achievement.observation,
     );
   }
 
   SchedulerAchievement toDomain() {
     return SchedulerAchievement(
-      id: SchedulerachievementId,
-      Schedulerachievement: Schedulerachievement,
+      id: achievementId,
+      achievement: achievement,
       idPlanification: idPlanification,
       percentage: percentage,
       status: status,
@@ -215,32 +215,32 @@ abstract class SchedulerActivityDto implements _$SchedulerActivityDto {
   const SchedulerActivityDto._();
 
   const factory SchedulerActivityDto({
-    @JsonKey(name: 'id') required int ScheduleractivityId,
+    @JsonKey(name: 'id') required int activityId,
     required int idAnnual,
-    required String typeSchedulerActivity,
-    required int ScheduleractivityRate,
-    required int idSchedulerAchievement,
+    required String typeActivity,
+    required int activityRate,
+    required int idAchievement,
     int? idQuarterlyPlan,
   }) = _SchedulerActivityDto;
 
-  factory SchedulerActivityDto.fromDomain(SchedulerActivity Scheduleractivity) {
+  factory SchedulerActivityDto.fromDomain(SchedulerActivity activity) {
     return SchedulerActivityDto(
-      ScheduleractivityId: Scheduleractivity.id,
-      idAnnual: Scheduleractivity.idAnnual,
-      typeSchedulerActivity: Scheduleractivity.typeSchedulerActivity,
-      ScheduleractivityRate: Scheduleractivity.ScheduleractivityRate,
-      idSchedulerAchievement: Scheduleractivity.idSchedulerAchievement,
-      idQuarterlyPlan: Scheduleractivity.idQuarterlyPlan,
+      activityId: activity.id,
+      idAnnual: activity.idAnnual,
+      typeActivity: activity.typeActivity,
+      activityRate: activity.activityRate,
+      idAchievement: activity.idAchievement,
+      idQuarterlyPlan: activity.idQuarterlyPlan,
     );
   }
 
   SchedulerActivity toDomain() {
     return SchedulerActivity(
-      id: ScheduleractivityId,
+      id: activityId,
       idAnnual: idAnnual,
-      typeSchedulerActivity: typeSchedulerActivity,
-      ScheduleractivityRate: ScheduleractivityRate,
-      idSchedulerAchievement: idSchedulerAchievement,
+      typeActivity: typeActivity,
+      activityRate: activityRate,
+      idAchievement: idAchievement,
       idQuarterlyPlan: idQuarterlyPlan,
     );
   }

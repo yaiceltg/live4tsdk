@@ -9,8 +9,8 @@ part of 'scheduler_repository.dart';
 _$_SchedulerAchievementDto _$_$_SchedulerAchievementDtoFromJson(
     Map<String, dynamic> json) {
   return _$_SchedulerAchievementDto(
-    SchedulerachievementId: json['id'] as int,
-    Schedulerachievement: json['Schedulerachievement'] as String,
+    achievementId: json['id'] as int,
+    achievement: json['achievement'] as String,
     idPlanification: json['idPlanification'] as int,
     percentage: (json['percentage'] as num).toDouble(),
     status: json['status'] as String?,
@@ -21,8 +21,8 @@ _$_SchedulerAchievementDto _$_$_SchedulerAchievementDtoFromJson(
 Map<String, dynamic> _$_$_SchedulerAchievementDtoToJson(
         _$_SchedulerAchievementDto instance) =>
     <String, dynamic>{
-      'id': instance.SchedulerachievementId,
-      'Schedulerachievement': instance.Schedulerachievement,
+      'id': instance.achievementId,
+      'achievement': instance.achievement,
       'idPlanification': instance.idPlanification,
       'percentage': instance.percentage,
       'status': instance.status,
@@ -32,11 +32,11 @@ Map<String, dynamic> _$_$_SchedulerAchievementDtoToJson(
 _$_SchedulerActivityDto _$_$_SchedulerActivityDtoFromJson(
     Map<String, dynamic> json) {
   return _$_SchedulerActivityDto(
-    ScheduleractivityId: json['id'] as int,
+    activityId: json['id'] as int,
     idAnnual: json['idAnnual'] as int,
-    typeSchedulerActivity: json['typeSchedulerActivity'] as String,
-    ScheduleractivityRate: json['ScheduleractivityRate'] as int,
-    idSchedulerAchievement: json['idSchedulerAchievement'] as int,
+    typeActivity: json['typeActivity'] as String,
+    activityRate: json['activityRate'] as int,
+    idAchievement: json['idAchievement'] as int,
     idQuarterlyPlan: json['idQuarterlyPlan'] as int?,
   );
 }
@@ -44,11 +44,11 @@ _$_SchedulerActivityDto _$_$_SchedulerActivityDtoFromJson(
 Map<String, dynamic> _$_$_SchedulerActivityDtoToJson(
         _$_SchedulerActivityDto instance) =>
     <String, dynamic>{
-      'id': instance.ScheduleractivityId,
+      'id': instance.activityId,
       'idAnnual': instance.idAnnual,
-      'typeSchedulerActivity': instance.typeSchedulerActivity,
-      'ScheduleractivityRate': instance.ScheduleractivityRate,
-      'idSchedulerAchievement': instance.idSchedulerAchievement,
+      'typeActivity': instance.typeActivity,
+      'activityRate': instance.activityRate,
+      'idAchievement': instance.idAchievement,
       'idQuarterlyPlan': instance.idQuarterlyPlan,
     };
 
