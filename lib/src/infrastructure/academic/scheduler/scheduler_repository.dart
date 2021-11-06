@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:live4tsdk/src/domain/core/http_failure.dart';
 import 'package:live4tsdk/src/infrastructure/core/http_client.dart';
 
@@ -24,13 +25,13 @@ class AcademicSchedulerRepository {
   Future<Either<HttpFailure, Unit>> createGeneral({
     required String areaId,
     required String classRoomId,
-    required List<CreateAchievementDto> achievements,
+    required List<CreateSchedulerAchievementDto> Schedulerachievements,
     required List<CreateIndicatorDto> indicators,
   }) async {
     try {
       // prepare data
       final _data = jsonEncode({
-        'achievements': achievements.map((e) => e.toJson()).toList(),
+        'Schedulerachievements': Schedulerachievements.map((e) => e.toJson()).toList(),
         'indicators': indicators.map((i) => i.toJson()).toList(),
       });
       // call api service
@@ -44,9 +45,9 @@ class AcademicSchedulerRepository {
   }
 
   ///
-  /// Function to fetch all achievements by arean and class-room
+  /// Function to fetch all Schedulerachievements by arean and class-room
   ///
-  Future<Either<HttpFailure, List<Achievement>>> fetchAchievements({
+  Future<Either<HttpFailure, KtList<SchedulerAchievement>>> fetchAchievements({
     required String areaId,
     required String classRoomId,
   }) async {
@@ -55,20 +56,20 @@ class AcademicSchedulerRepository {
       final _response = await _httpClient.get('/v1/schedule/$areaId/$classRoomId/achievements');
 
       final List _data = _response.data;
-      final _achievements = _data.map(
-        (e) => AchievementDto.fromJson(e).toDomain()
+      final _Schedulerachievements = _data.map(
+        (e) => SchedulerAchievementDto.fromJson(e).toDomain()
       ).toList() ;
 
-      return right(_achievements);
+      return right(KtList.from(_Schedulerachievements));
     } catch (e) {
       return left(HttpFailure.internal());
     }
   }
 
   ///
-  /// Funtion to get all activities of achievement
+  /// Funtion to get all activities of Schedulerachievement
   ///
-  Future<Either<HttpFailure, List<Activity>>> fetchActivitiesOfAchievement({
+  Future<Either<HttpFailure, KtList<SchedulerActivity>>> fetchActivitiesOfAchievement({
     required String areaId,
     required String classRoomId,
     required String achievementId,
@@ -80,22 +81,22 @@ class AcademicSchedulerRepository {
 
       final List _data = _response.data;
       final _activities = _data.map(
-        (e) => ActivityDto.fromJson(e).toDomain()
+        (e) => SchedulerActivityDto.fromJson(e).toDomain()
       ).toList() ;
 
-      return right(_activities);
+      return right(KtList.from(_activities));
     } catch (e) {
       return left(HttpFailure.internal());
     }
   }
 
   ///
-  /// Function to add activity to achievement
+  /// Function to add Scheduleractivity to Schedulerachievement
   ///
-  Future<Either<HttpFailure, dynamic>> addActivityToAchievement(
+  Future<Either<HttpFailure, Unit>> addActivityToAchievement(
       {required String areaId,
       required String classRoomId,
-      required List<CreateActivityToAchievementDto> achievements}) async {
+      required List<CreateSchedulerActivityToSchedulerAchievementDto> achievements}) async {
     try {
       // prepare data
       final _data =
@@ -104,7 +105,7 @@ class AcademicSchedulerRepository {
       final _response = await _httpClient
           .post('v1/schedule/$areaId/$classRoomId/achievements', data: _data);
 
-      return right(_response.data);
+      return right(unit);
     } catch (e) {
       return left(HttpFailure.internal());
     }
@@ -141,29 +142,29 @@ class AcademicSchedulerRepository {
 // Bussines class
 // -----------------------------------------------------------------------------
 @freezed
-class Achievement with _$Achievement {
- const Achievement._();
-  const factory Achievement({
+class SchedulerAchievement with _$SchedulerAchievement {
+ const SchedulerAchievement._();
+  const factory SchedulerAchievement({
     required int id,
-    required String achievement,
+    required String Schedulerachievement,
     required int idPlanification,
     required double percentage,
     String? status,
     String? observation,
-  }) = _Achievement;
+  }) = _SchedulerAchievement;
 }
 
 @freezed
-class Activity with _$Activity {
- const Activity._();
-  const factory Activity({
+class SchedulerActivity with _$SchedulerActivity {
+ const SchedulerActivity._();
+  const factory SchedulerActivity({
     required int id,
     required int idAnnual,
-    required String typeActivity,
-    required int activityRate,
-    required int idAchievement,
+    required String typeSchedulerActivity,
+    required int ScheduleractivityRate,
+    required int idSchedulerAchievement,
     int? idQuarterlyPlan,
-  }) = _Activity;
+  }) = _SchedulerActivity;
 }
 
 
@@ -171,33 +172,33 @@ class Activity with _$Activity {
 // -- Dto Class
 // -----------------------------------------------------------------------------
 @freezed
-abstract class AchievementDto implements _$AchievementDto {
-  const AchievementDto._();
+abstract class SchedulerAchievementDto implements _$SchedulerAchievementDto {
+  const SchedulerAchievementDto._();
 
-  const factory AchievementDto({
-    @JsonKey(name: 'id') required int achievementId,
-    required String achievement,
+  const factory SchedulerAchievementDto({
+    @JsonKey(name: 'id') required int SchedulerachievementId,
+    required String Schedulerachievement,
     required int idPlanification,
     required double percentage,
     String? status,
     String? observation,
-  }) = _AchievementDto;
+  }) = _SchedulerAchievementDto;
 
-  factory AchievementDto.fromDomain(Achievement achievement) {
-    return AchievementDto(
-      achievementId: achievement.id,
-      achievement: achievement.achievement,
-      idPlanification: achievement.idPlanification,
-      percentage: achievement.percentage,
-      status: achievement.status,
-      observation: achievement.observation,
+  factory SchedulerAchievementDto.fromDomain(SchedulerAchievement Schedulerachievement) {
+    return SchedulerAchievementDto(
+      SchedulerachievementId: Schedulerachievement.id,
+      Schedulerachievement: Schedulerachievement.Schedulerachievement,
+      idPlanification: Schedulerachievement.idPlanification,
+      percentage: Schedulerachievement.percentage,
+      status: Schedulerachievement.status,
+      observation: Schedulerachievement.observation,
     );
   }
 
-  Achievement toDomain() {
-    return Achievement(
-      id: achievementId,
-      achievement: achievement,
+  SchedulerAchievement toDomain() {
+    return SchedulerAchievement(
+      id: SchedulerachievementId,
+      Schedulerachievement: Schedulerachievement,
       idPlanification: idPlanification,
       percentage: percentage,
       status: status,
@@ -205,74 +206,74 @@ abstract class AchievementDto implements _$AchievementDto {
     );
   }
 
-  factory AchievementDto.fromJson(Map<String, dynamic> json) =>
-      _$AchievementDtoFromJson(json);
+  factory SchedulerAchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$SchedulerAchievementDtoFromJson(json);
 }
 
 @freezed
-abstract class ActivityDto implements _$ActivityDto {
-  const ActivityDto._();
+abstract class SchedulerActivityDto implements _$SchedulerActivityDto {
+  const SchedulerActivityDto._();
 
-  const factory ActivityDto({
-    @JsonKey(name: 'id') required int activityId,
+  const factory SchedulerActivityDto({
+    @JsonKey(name: 'id') required int ScheduleractivityId,
     required int idAnnual,
-    required String typeActivity,
-    required int activityRate,
-    required int idAchievement,
+    required String typeSchedulerActivity,
+    required int ScheduleractivityRate,
+    required int idSchedulerAchievement,
     int? idQuarterlyPlan,
-  }) = _ActivityDto;
+  }) = _SchedulerActivityDto;
 
-  factory ActivityDto.fromDomain(Activity activity) {
-    return ActivityDto(
-      activityId: activity.id,
-      idAnnual: activity.idAnnual,
-      typeActivity: activity.typeActivity,
-      activityRate: activity.activityRate,
-      idAchievement: activity.idAchievement,
-      idQuarterlyPlan: activity.idQuarterlyPlan,
+  factory SchedulerActivityDto.fromDomain(SchedulerActivity Scheduleractivity) {
+    return SchedulerActivityDto(
+      ScheduleractivityId: Scheduleractivity.id,
+      idAnnual: Scheduleractivity.idAnnual,
+      typeSchedulerActivity: Scheduleractivity.typeSchedulerActivity,
+      ScheduleractivityRate: Scheduleractivity.ScheduleractivityRate,
+      idSchedulerAchievement: Scheduleractivity.idSchedulerAchievement,
+      idQuarterlyPlan: Scheduleractivity.idQuarterlyPlan,
     );
   }
 
-  Activity toDomain() {
-    return Activity(
-      id: activityId,
+  SchedulerActivity toDomain() {
+    return SchedulerActivity(
+      id: ScheduleractivityId,
       idAnnual: idAnnual,
-      typeActivity: typeActivity,
-      activityRate: activityRate,
-      idAchievement: idAchievement,
+      typeSchedulerActivity: typeSchedulerActivity,
+      ScheduleractivityRate: ScheduleractivityRate,
+      idSchedulerAchievement: idSchedulerAchievement,
       idQuarterlyPlan: idQuarterlyPlan,
     );
   }
 
-  factory ActivityDto.fromJson(Map<String, dynamic> json) =>
-      _$ActivityDtoFromJson(json);
+  factory SchedulerActivityDto.fromJson(Map<String, dynamic> json) =>
+      _$SchedulerActivityDtoFromJson(json);
 }
 @freezed
-class CreateActivityToAchievementDto with _$CreateActivityToAchievementDto {
-  const CreateActivityToAchievementDto._();
+class CreateSchedulerActivityToSchedulerAchievementDto with _$CreateSchedulerActivityToSchedulerAchievementDto {
+  const CreateSchedulerActivityToSchedulerAchievementDto._();
 
-  const factory CreateActivityToAchievementDto({
-    required int achievementId,
+  const factory CreateSchedulerActivityToSchedulerAchievementDto({
+    required int SchedulerachievementId,
     required String content,
     required double quantity,
     required double percent,
-  }) = _CreateActivityToAchievementDto;
+  }) = _CreateSchedulerActivityToSchedulerAchievementDto;
 
-  factory CreateActivityToAchievementDto.fromJson(Map<String, dynamic> json) =>
-      _$CreateActivityToAchievementDtoFromJson(json);
+  factory CreateSchedulerActivityToSchedulerAchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$CreateSchedulerActivityToSchedulerAchievementDtoFromJson(json);
 }
 
 @freezed
-class CreateAchievementDto with _$CreateAchievementDto {
-  const CreateAchievementDto._();
+class CreateSchedulerAchievementDto with _$CreateSchedulerAchievementDto {
+  const CreateSchedulerAchievementDto._();
 
-  const factory CreateAchievementDto({
+  const factory CreateSchedulerAchievementDto({
     required double percent,
     required String question,
-  }) = _CreateAchievementDto;
+  }) = _CreateSchedulerAchievementDto;
 
-  factory CreateAchievementDto.fromJson(Map<String, dynamic> json) =>
-      _$CreateAchievementDtoFromJson(json);
+  factory CreateSchedulerAchievementDto.fromJson(Map<String, dynamic> json) =>
+      _$CreateSchedulerAchievementDtoFromJson(json);
 }
 
 @freezed
@@ -282,7 +283,7 @@ abstract class CreateIndicatorDto implements _$CreateIndicatorDto {
   const factory CreateIndicatorDto({
     @JsonKey(toJson: indicatorItemsToJson) required List items,
     required String content,
-    required String achievement,
+    required String Schedulerachievement,
   }) = _CreateIndicatorDto;
 
   factory CreateIndicatorDto.fromJson(Map<String, dynamic> json) =>

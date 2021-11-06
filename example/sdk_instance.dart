@@ -42,6 +42,14 @@ main(List<String> args) async {
   // ---------------------------------------------------------------------------
   // -- create general (done)
   // ---------------------------------------------------------------------------
+  // final logros = [{
+  //   'percent': 50,
+  //   'contenido': 'Percent c'
+  // }];
+  // final indicadores = [{
+  //   'indicador': 'A',
+  //   'contenido': 'c'
+  // }];
   // final t2 = await sdk.academic.scheduler.createGeneral(
   //   areaId: '1',
   //   classRoomId: '1',
@@ -51,18 +59,11 @@ main(List<String> args) async {
   //       question: '¿Qué es una red?',
   //     )
   //   ],
-  //   indicators: [
-  //     CreateIndicatorDto(
-  //       items: ['Item 1', 'Item 2'],
-  //       achievement: 'Achievement 1',
-  //       content: 'Indicador 1',
-  //     ),
-  //     CreateIndicatorDto(
-  //       items: ['Item 1', 'Item 2'],
-  //       achievement: 'Achievement 1',
-  //       content: 'Indicador 1',
-  //     ),
-  //   ]
+  //   indicators: indicadores.map((ind) => CreateIndicatorDto(
+  //       items: [ind['indicador']],
+  //       achievement: logros[0]['contenido'] as String, // siempre es el primero
+  //       content: ind['contenido'] as String,
+  //     )).toList(),
   // );
 
   // t2.fold((l) {
@@ -75,10 +76,10 @@ main(List<String> args) async {
   // -- Porciento de notas
   // ---------------------------------------------------------------------------
   // Step 1: Cargar los fetchAchievements
-  // final t3 = await sdk.academic.scheduler.fetchAchievements(
-  //   areaId: '1',
-  //   classRoomId: '1',
-  // );
+  final t3 = await sdk.academic.scheduler.fetchAchievements(
+    areaId: '1',
+    classRoomId: '1',
+  );
 
   // t3.fold((l) {
   //   print(l);
