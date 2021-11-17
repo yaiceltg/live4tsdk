@@ -100,7 +100,7 @@ class AcademicSchedulerRepository {
     try {
       // prepare data
       final _data =
-          jsonEncode({'activities': achievements.map((e) => e.toJson())});
+          jsonEncode({'activities': achievements.map((e) => e.toJson()).toList()});
       // call api service
       final _response = await _httpClient
           .post('v1/schedule/$areaId/$classRoomId/achievements', data: _data);
