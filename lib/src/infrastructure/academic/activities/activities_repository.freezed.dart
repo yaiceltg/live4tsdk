@@ -18,10 +18,12 @@ class _$SchedulerActivityClassTearOff {
 
   _SchedulerActivityClass call(
       {required String activityName,
+      required String activityType,
       required String areaName,
       required String date}) {
     return _SchedulerActivityClass(
       activityName: activityName,
+      activityType: activityType,
       areaName: areaName,
       date: date,
     );
@@ -34,6 +36,7 @@ const $SchedulerActivityClass = _$SchedulerActivityClassTearOff();
 /// @nodoc
 mixin _$SchedulerActivityClass {
   String get activityName => throw _privateConstructorUsedError;
+  String get activityType => throw _privateConstructorUsedError;
   String get areaName => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
 
@@ -47,7 +50,8 @@ abstract class $SchedulerActivityClassCopyWith<$Res> {
   factory $SchedulerActivityClassCopyWith(SchedulerActivityClass value,
           $Res Function(SchedulerActivityClass) then) =
       _$SchedulerActivityClassCopyWithImpl<$Res>;
-  $Res call({String activityName, String areaName, String date});
+  $Res call(
+      {String activityName, String activityType, String areaName, String date});
 }
 
 /// @nodoc
@@ -62,6 +66,7 @@ class _$SchedulerActivityClassCopyWithImpl<$Res>
   @override
   $Res call({
     Object? activityName = freezed,
+    Object? activityType = freezed,
     Object? areaName = freezed,
     Object? date = freezed,
   }) {
@@ -69,6 +74,10 @@ class _$SchedulerActivityClassCopyWithImpl<$Res>
       activityName: activityName == freezed
           ? _value.activityName
           : activityName // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityType: activityType == freezed
+          ? _value.activityType
+          : activityType // ignore: cast_nullable_to_non_nullable
               as String,
       areaName: areaName == freezed
           ? _value.areaName
@@ -89,7 +98,8 @@ abstract class _$SchedulerActivityClassCopyWith<$Res>
           $Res Function(_SchedulerActivityClass) then) =
       __$SchedulerActivityClassCopyWithImpl<$Res>;
   @override
-  $Res call({String activityName, String areaName, String date});
+  $Res call(
+      {String activityName, String activityType, String areaName, String date});
 }
 
 /// @nodoc
@@ -106,6 +116,7 @@ class __$SchedulerActivityClassCopyWithImpl<$Res>
   @override
   $Res call({
     Object? activityName = freezed,
+    Object? activityType = freezed,
     Object? areaName = freezed,
     Object? date = freezed,
   }) {
@@ -113,6 +124,10 @@ class __$SchedulerActivityClassCopyWithImpl<$Res>
       activityName: activityName == freezed
           ? _value.activityName
           : activityName // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityType: activityType == freezed
+          ? _value.activityType
+          : activityType // ignore: cast_nullable_to_non_nullable
               as String,
       areaName: areaName == freezed
           ? _value.areaName
@@ -130,11 +145,16 @@ class __$SchedulerActivityClassCopyWithImpl<$Res>
 
 class _$_SchedulerActivityClass extends _SchedulerActivityClass {
   const _$_SchedulerActivityClass(
-      {required this.activityName, required this.areaName, required this.date})
+      {required this.activityName,
+      required this.activityType,
+      required this.areaName,
+      required this.date})
       : super._();
 
   @override
   final String activityName;
+  @override
+  final String activityType;
   @override
   final String areaName;
   @override
@@ -142,7 +162,7 @@ class _$_SchedulerActivityClass extends _SchedulerActivityClass {
 
   @override
   String toString() {
-    return 'SchedulerActivityClass(activityName: $activityName, areaName: $areaName, date: $date)';
+    return 'SchedulerActivityClass(activityName: $activityName, activityType: $activityType, areaName: $areaName, date: $date)';
   }
 
   @override
@@ -152,6 +172,9 @@ class _$_SchedulerActivityClass extends _SchedulerActivityClass {
             (identical(other.activityName, activityName) ||
                 const DeepCollectionEquality()
                     .equals(other.activityName, activityName)) &&
+            (identical(other.activityType, activityType) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityType, activityType)) &&
             (identical(other.areaName, areaName) ||
                 const DeepCollectionEquality()
                     .equals(other.areaName, areaName)) &&
@@ -163,6 +186,7 @@ class _$_SchedulerActivityClass extends _SchedulerActivityClass {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(activityName) ^
+      const DeepCollectionEquality().hash(activityType) ^
       const DeepCollectionEquality().hash(areaName) ^
       const DeepCollectionEquality().hash(date);
 
@@ -176,12 +200,15 @@ class _$_SchedulerActivityClass extends _SchedulerActivityClass {
 abstract class _SchedulerActivityClass extends SchedulerActivityClass {
   const factory _SchedulerActivityClass(
       {required String activityName,
+      required String activityType,
       required String areaName,
       required String date}) = _$_SchedulerActivityClass;
   const _SchedulerActivityClass._() : super._();
 
   @override
   String get activityName => throw _privateConstructorUsedError;
+  @override
+  String get activityType => throw _privateConstructorUsedError;
   @override
   String get areaName => throw _privateConstructorUsedError;
   @override
@@ -203,10 +230,12 @@ class _$SchedulerActivityClassDtoTearOff {
 
   _SchedulerActivityClassDto call(
       {required String activityName,
+      required String activityType,
       required String areaName,
       required String date}) {
     return _SchedulerActivityClassDto(
       activityName: activityName,
+      activityType: activityType,
       areaName: areaName,
       date: date,
     );
@@ -223,6 +252,7 @@ const $SchedulerActivityClassDto = _$SchedulerActivityClassDtoTearOff();
 /// @nodoc
 mixin _$SchedulerActivityClassDto {
   String get activityName => throw _privateConstructorUsedError;
+  String get activityType => throw _privateConstructorUsedError;
   String get areaName => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
 
@@ -237,7 +267,8 @@ abstract class $SchedulerActivityClassDtoCopyWith<$Res> {
   factory $SchedulerActivityClassDtoCopyWith(SchedulerActivityClassDto value,
           $Res Function(SchedulerActivityClassDto) then) =
       _$SchedulerActivityClassDtoCopyWithImpl<$Res>;
-  $Res call({String activityName, String areaName, String date});
+  $Res call(
+      {String activityName, String activityType, String areaName, String date});
 }
 
 /// @nodoc
@@ -252,6 +283,7 @@ class _$SchedulerActivityClassDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? activityName = freezed,
+    Object? activityType = freezed,
     Object? areaName = freezed,
     Object? date = freezed,
   }) {
@@ -259,6 +291,10 @@ class _$SchedulerActivityClassDtoCopyWithImpl<$Res>
       activityName: activityName == freezed
           ? _value.activityName
           : activityName // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityType: activityType == freezed
+          ? _value.activityType
+          : activityType // ignore: cast_nullable_to_non_nullable
               as String,
       areaName: areaName == freezed
           ? _value.areaName
@@ -279,7 +315,8 @@ abstract class _$SchedulerActivityClassDtoCopyWith<$Res>
           $Res Function(_SchedulerActivityClassDto) then) =
       __$SchedulerActivityClassDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String activityName, String areaName, String date});
+  $Res call(
+      {String activityName, String activityType, String areaName, String date});
 }
 
 /// @nodoc
@@ -297,6 +334,7 @@ class __$SchedulerActivityClassDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? activityName = freezed,
+    Object? activityType = freezed,
     Object? areaName = freezed,
     Object? date = freezed,
   }) {
@@ -304,6 +342,10 @@ class __$SchedulerActivityClassDtoCopyWithImpl<$Res>
       activityName: activityName == freezed
           ? _value.activityName
           : activityName // ignore: cast_nullable_to_non_nullable
+              as String,
+      activityType: activityType == freezed
+          ? _value.activityType
+          : activityType // ignore: cast_nullable_to_non_nullable
               as String,
       areaName: areaName == freezed
           ? _value.areaName
@@ -321,7 +363,10 @@ class __$SchedulerActivityClassDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SchedulerActivityClassDto extends _SchedulerActivityClassDto {
   const _$_SchedulerActivityClassDto(
-      {required this.activityName, required this.areaName, required this.date})
+      {required this.activityName,
+      required this.activityType,
+      required this.areaName,
+      required this.date})
       : super._();
 
   factory _$_SchedulerActivityClassDto.fromJson(Map<String, dynamic> json) =>
@@ -330,13 +375,15 @@ class _$_SchedulerActivityClassDto extends _SchedulerActivityClassDto {
   @override
   final String activityName;
   @override
+  final String activityType;
+  @override
   final String areaName;
   @override
   final String date;
 
   @override
   String toString() {
-    return 'SchedulerActivityClassDto(activityName: $activityName, areaName: $areaName, date: $date)';
+    return 'SchedulerActivityClassDto(activityName: $activityName, activityType: $activityType, areaName: $areaName, date: $date)';
   }
 
   @override
@@ -346,6 +393,9 @@ class _$_SchedulerActivityClassDto extends _SchedulerActivityClassDto {
             (identical(other.activityName, activityName) ||
                 const DeepCollectionEquality()
                     .equals(other.activityName, activityName)) &&
+            (identical(other.activityType, activityType) ||
+                const DeepCollectionEquality()
+                    .equals(other.activityType, activityType)) &&
             (identical(other.areaName, areaName) ||
                 const DeepCollectionEquality()
                     .equals(other.areaName, areaName)) &&
@@ -357,6 +407,7 @@ class _$_SchedulerActivityClassDto extends _SchedulerActivityClassDto {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(activityName) ^
+      const DeepCollectionEquality().hash(activityType) ^
       const DeepCollectionEquality().hash(areaName) ^
       const DeepCollectionEquality().hash(date);
 
@@ -376,6 +427,7 @@ class _$_SchedulerActivityClassDto extends _SchedulerActivityClassDto {
 abstract class _SchedulerActivityClassDto extends SchedulerActivityClassDto {
   const factory _SchedulerActivityClassDto(
       {required String activityName,
+      required String activityType,
       required String areaName,
       required String date}) = _$_SchedulerActivityClassDto;
   const _SchedulerActivityClassDto._() : super._();
@@ -385,6 +437,8 @@ abstract class _SchedulerActivityClassDto extends SchedulerActivityClassDto {
 
   @override
   String get activityName => throw _privateConstructorUsedError;
+  @override
+  String get activityType => throw _privateConstructorUsedError;
   @override
   String get areaName => throw _privateConstructorUsedError;
   @override

@@ -89,18 +89,18 @@ main(List<String> args) async {
   // });
 
   // Step 2: Cargar las actividades
-  final t4 = await sdk.academic.scheduler.fetchActivitiesOfAchievement(
-    areaId: areaId,
-    classRoomId: classRoomId,
-    achievementId: '4768'
-  );
+  // final t4 = await sdk.academic.scheduler.fetchActivitiesOfAchievement(
+  //   areaId: areaId,
+  //   classRoomId: classRoomId,
+  //   achievementId: '4768'
+  // );
 
-  t4.fold((l) {
-    print(l);
-  }, (r) {
-    print('Fetch Achievements Activities Success');
-    print(r);
-  });
+  // t4.fold((l) {
+  //   print(l);
+  // }, (r) {
+  //   print('Fetch Achievements Activities Success');
+  //   print(r);
+  // });
 
   // Step 3: Cargar las actividades
   // // call createGeneral with data
@@ -123,4 +123,12 @@ main(List<String> args) async {
   //         ), (r) {
   //           print('success');
   // });
+
+  final result = await sdk.academic.fetchQuarterlyPlanIndicators(
+    areaId: areaId,
+    classRoomId: classRoomId,
+    quaterlyPlanId: '4364'
+  );
+
+  print(result);
 }

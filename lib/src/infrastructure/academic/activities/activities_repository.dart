@@ -38,21 +38,25 @@ Future<Either<HttpFailure, KtList<SchedulerActivityClass>>> fetchActivityClassMo
   return right(KtList.from([
     SchedulerActivityClass(
       activityName: "Memoria",
+      activityType: "Memoria",
       areaName: "Español",
       date: '02/02/2021'
     ),
     SchedulerActivityClass(
       activityName: "Memoria 2",
+      activityType: "Memoria 2",
       areaName: "Matemática",
       date: '10/02/2021'
     ),
     SchedulerActivityClass(
       activityName: "Memoria",
+      activityType: "Memoria",
       areaName: "Español",
       date: '02/02/2021'
     ),
     SchedulerActivityClass(
       activityName: "Memoria 2",
+      activityType: "Memoria 2",
       areaName: "Matemática",
       date: '10/02/2021'
     )
@@ -64,8 +68,9 @@ class SchedulerActivityClass with _$SchedulerActivityClass {
   const SchedulerActivityClass._();
   const factory SchedulerActivityClass({
     required String activityName,
+    required String activityType,
     required String areaName,
-    required String date
+    required String date,
   }) = _SchedulerActivityClass;
 }
 
@@ -75,6 +80,7 @@ class SchedulerActivityClassDto with _$SchedulerActivityClassDto {
   const SchedulerActivityClassDto._();
   const factory SchedulerActivityClassDto({
     required String activityName,
+    required String activityType,
     required String areaName,
     required String date
   }) = _SchedulerActivityClassDto;
@@ -82,6 +88,7 @@ class SchedulerActivityClassDto with _$SchedulerActivityClassDto {
   SchedulerActivityClass toDomain() {
     return SchedulerActivityClass(
       activityName: activityName,
+      activityType: activityType,
       areaName: areaName,
       date: date,
     );

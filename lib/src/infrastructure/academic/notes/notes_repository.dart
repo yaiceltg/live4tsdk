@@ -30,10 +30,12 @@ class AcademicNoteRepository {
     }
   }
 
-  Future<Either<HttpFailure, KtList<SchedulerNote>>> fetchUserNoteByClass() async {
+  Future<Either<HttpFailure, KtList<SchedulerNote>>> fetchUserNote({
+    String? areaId, // filter note by areaId
+  }) async {
     try {
       // call api service
-      final _response = await _httpClient.get('/v1/academic/notes');
+      final _response = await _httpClient.get('/v1/academic/notes${areaId != null ? '?areaId=$areaId' : ''}');
 
       final List _data = _response.data;
       final _items = _data.map(
@@ -46,48 +48,6 @@ class AcademicNoteRepository {
     }
   }
 }
-
-Future<Either<HttpFailure, KtList<SchedulerNote>>> fetchUserNoteByClass() async {
-  return right(KtList.from([
-    SchedulerNote(
-      areaName: '12',
-      entrega: '2',
-      quiz: '1',
-      talleres: '2',
-      participacion: '2',
-      parcial: '12',
-      trimestre1: '2',
-    ),
-    SchedulerNote(
-      areaName: '2.3',
-      entrega: '2.3',
-      quiz: '2.3',
-      talleres: '2.3',
-      participacion: '2.3',
-      parcial: '2.3',
-      trimestre1: '2.3',
-    ),
-    SchedulerNote(
-      areaName: '23',
-      entrega: '23',
-      quiz: '23',
-      talleres: '23',
-      participacion: '23',
-      parcial: '2.3',
-      trimestre1: '23',
-    ),
-    SchedulerNote(
-      areaName: '34',
-      entrega: '34',
-      quiz: '34',
-      talleres: '34',
-      participacion: '34',
-      parcial: '2.3',
-      trimestre1: '34',
-    )
-  ]));
-}
-
 
 @freezed
 class SchedulerNote with _$SchedulerNote {
