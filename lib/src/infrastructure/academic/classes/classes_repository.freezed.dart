@@ -2369,14 +2369,13 @@ class _$AcademicClassDtoTearOff {
       String? document1,
       String? document2,
       String? observation,
-      String? hourlyIntensity,
+      int? hourlyIntensity,
       int? activityQuantity,
       int? contentQuantity,
       int? state,
       int? activityForPiarStudents,
       int? activityForSelectStudents,
       int? activityForAllStudents,
-      String? selectedStudents,
       String? urlClass,
       String? dateInitClass,
       String? work,
@@ -2408,7 +2407,6 @@ class _$AcademicClassDtoTearOff {
       activityForPiarStudents: activityForPiarStudents,
       activityForSelectStudents: activityForSelectStudents,
       activityForAllStudents: activityForAllStudents,
-      selectedStudents: selectedStudents,
       urlClass: urlClass,
       dateInitClass: dateInitClass,
       work: work,
@@ -2446,14 +2444,13 @@ mixin _$AcademicClassDto {
   String? get document1 => throw _privateConstructorUsedError;
   String? get document2 => throw _privateConstructorUsedError;
   String? get observation => throw _privateConstructorUsedError;
-  String? get hourlyIntensity => throw _privateConstructorUsedError;
+  int? get hourlyIntensity => throw _privateConstructorUsedError;
   int? get activityQuantity => throw _privateConstructorUsedError;
   int? get contentQuantity => throw _privateConstructorUsedError;
   int? get state => throw _privateConstructorUsedError;
   int? get activityForPiarStudents => throw _privateConstructorUsedError;
   int? get activityForSelectStudents => throw _privateConstructorUsedError;
   int? get activityForAllStudents => throw _privateConstructorUsedError;
-  String? get selectedStudents => throw _privateConstructorUsedError;
   String? get urlClass => throw _privateConstructorUsedError;
   String? get dateInitClass => throw _privateConstructorUsedError;
   String? get work => throw _privateConstructorUsedError;
@@ -2490,14 +2487,13 @@ abstract class $AcademicClassDtoCopyWith<$Res> {
       String? document1,
       String? document2,
       String? observation,
-      String? hourlyIntensity,
+      int? hourlyIntensity,
       int? activityQuantity,
       int? contentQuantity,
       int? state,
       int? activityForPiarStudents,
       int? activityForSelectStudents,
       int? activityForAllStudents,
-      String? selectedStudents,
       String? urlClass,
       String? dateInitClass,
       String? work,
@@ -2541,7 +2537,6 @@ class _$AcademicClassDtoCopyWithImpl<$Res>
     Object? activityForPiarStudents = freezed,
     Object? activityForSelectStudents = freezed,
     Object? activityForAllStudents = freezed,
-    Object? selectedStudents = freezed,
     Object? urlClass = freezed,
     Object? dateInitClass = freezed,
     Object? work = freezed,
@@ -2618,7 +2613,7 @@ class _$AcademicClassDtoCopyWithImpl<$Res>
       hourlyIntensity: hourlyIntensity == freezed
           ? _value.hourlyIntensity
           : hourlyIntensity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       activityQuantity: activityQuantity == freezed
           ? _value.activityQuantity
           : activityQuantity // ignore: cast_nullable_to_non_nullable
@@ -2643,10 +2638,6 @@ class _$AcademicClassDtoCopyWithImpl<$Res>
           ? _value.activityForAllStudents
           : activityForAllStudents // ignore: cast_nullable_to_non_nullable
               as int?,
-      selectedStudents: selectedStudents == freezed
-          ? _value.selectedStudents
-          : selectedStudents // ignore: cast_nullable_to_non_nullable
-              as String?,
       urlClass: urlClass == freezed
           ? _value.urlClass
           : urlClass // ignore: cast_nullable_to_non_nullable
@@ -2703,14 +2694,13 @@ abstract class _$AcademicClassDtoCopyWith<$Res>
       String? document1,
       String? document2,
       String? observation,
-      String? hourlyIntensity,
+      int? hourlyIntensity,
       int? activityQuantity,
       int? contentQuantity,
       int? state,
       int? activityForPiarStudents,
       int? activityForSelectStudents,
       int? activityForAllStudents,
-      String? selectedStudents,
       String? urlClass,
       String? dateInitClass,
       String? work,
@@ -2756,7 +2746,6 @@ class __$AcademicClassDtoCopyWithImpl<$Res>
     Object? activityForPiarStudents = freezed,
     Object? activityForSelectStudents = freezed,
     Object? activityForAllStudents = freezed,
-    Object? selectedStudents = freezed,
     Object? urlClass = freezed,
     Object? dateInitClass = freezed,
     Object? work = freezed,
@@ -2833,7 +2822,7 @@ class __$AcademicClassDtoCopyWithImpl<$Res>
       hourlyIntensity: hourlyIntensity == freezed
           ? _value.hourlyIntensity
           : hourlyIntensity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       activityQuantity: activityQuantity == freezed
           ? _value.activityQuantity
           : activityQuantity // ignore: cast_nullable_to_non_nullable
@@ -2858,10 +2847,6 @@ class __$AcademicClassDtoCopyWithImpl<$Res>
           ? _value.activityForAllStudents
           : activityForAllStudents // ignore: cast_nullable_to_non_nullable
               as int?,
-      selectedStudents: selectedStudents == freezed
-          ? _value.selectedStudents
-          : selectedStudents // ignore: cast_nullable_to_non_nullable
-              as String?,
       urlClass: urlClass == freezed
           ? _value.urlClass
           : urlClass // ignore: cast_nullable_to_non_nullable
@@ -2921,7 +2906,6 @@ class _$_AcademicClassDto extends _AcademicClassDto {
       this.activityForPiarStudents,
       this.activityForSelectStudents,
       this.activityForAllStudents,
-      this.selectedStudents,
       this.urlClass,
       this.dateInitClass,
       this.work,
@@ -2968,7 +2952,7 @@ class _$_AcademicClassDto extends _AcademicClassDto {
   @override
   final String? observation;
   @override
-  final String? hourlyIntensity;
+  final int? hourlyIntensity;
   @override
   final int? activityQuantity;
   @override
@@ -2981,8 +2965,6 @@ class _$_AcademicClassDto extends _AcademicClassDto {
   final int? activityForSelectStudents;
   @override
   final int? activityForAllStudents;
-  @override
-  final String? selectedStudents;
   @override
   final String? urlClass;
   @override
@@ -3000,7 +2982,7 @@ class _$_AcademicClassDto extends _AcademicClassDto {
 
   @override
   String toString() {
-    return 'AcademicClassDto(classId: $classId, name: $name, description: $description, nameDocument: $nameDocument, document: $document, url: $url, video: $video, idWeeklyPlan: $idWeeklyPlan, status: $status, video1: $video1, video2: $video2, url1: $url1, url2: $url2, document1: $document1, document2: $document2, observation: $observation, hourlyIntensity: $hourlyIntensity, activityQuantity: $activityQuantity, contentQuantity: $contentQuantity, state: $state, activityForPiarStudents: $activityForPiarStudents, activityForSelectStudents: $activityForSelectStudents, activityForAllStudents: $activityForAllStudents, selectedStudents: $selectedStudents, urlClass: $urlClass, dateInitClass: $dateInitClass, work: $work, transversals: $transversals, objetivesClass: $objetivesClass, updatedAt: $updatedAt, createdAt: $createdAt)';
+    return 'AcademicClassDto(classId: $classId, name: $name, description: $description, nameDocument: $nameDocument, document: $document, url: $url, video: $video, idWeeklyPlan: $idWeeklyPlan, status: $status, video1: $video1, video2: $video2, url1: $url1, url2: $url2, document1: $document1, document2: $document2, observation: $observation, hourlyIntensity: $hourlyIntensity, activityQuantity: $activityQuantity, contentQuantity: $contentQuantity, state: $state, activityForPiarStudents: $activityForPiarStudents, activityForSelectStudents: $activityForSelectStudents, activityForAllStudents: $activityForAllStudents, urlClass: $urlClass, dateInitClass: $dateInitClass, work: $work, transversals: $transversals, objetivesClass: $objetivesClass, updatedAt: $updatedAt, createdAt: $createdAt)';
   }
 
   @override
@@ -3068,12 +3050,11 @@ class _$_AcademicClassDto extends _AcademicClassDto {
             (identical(other.activityForAllStudents, activityForAllStudents) ||
                 const DeepCollectionEquality().equals(
                     other.activityForAllStudents, activityForAllStudents)) &&
-            (identical(other.selectedStudents, selectedStudents) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedStudents, selectedStudents)) &&
             (identical(other.urlClass, urlClass) ||
-                const DeepCollectionEquality().equals(other.urlClass, urlClass)) &&
-            (identical(other.dateInitClass, dateInitClass) || const DeepCollectionEquality().equals(other.dateInitClass, dateInitClass)) &&
+                const DeepCollectionEquality()
+                    .equals(other.urlClass, urlClass)) &&
+            (identical(other.dateInitClass, dateInitClass) ||
+                const DeepCollectionEquality().equals(other.dateInitClass, dateInitClass)) &&
             (identical(other.work, work) || const DeepCollectionEquality().equals(other.work, work)) &&
             (identical(other.transversals, transversals) || const DeepCollectionEquality().equals(other.transversals, transversals)) &&
             (identical(other.objetivesClass, objetivesClass) || const DeepCollectionEquality().equals(other.objetivesClass, objetivesClass)) &&
@@ -3107,7 +3088,6 @@ class _$_AcademicClassDto extends _AcademicClassDto {
       const DeepCollectionEquality().hash(activityForPiarStudents) ^
       const DeepCollectionEquality().hash(activityForSelectStudents) ^
       const DeepCollectionEquality().hash(activityForAllStudents) ^
-      const DeepCollectionEquality().hash(selectedStudents) ^
       const DeepCollectionEquality().hash(urlClass) ^
       const DeepCollectionEquality().hash(dateInitClass) ^
       const DeepCollectionEquality().hash(work) ^
@@ -3145,14 +3125,13 @@ abstract class _AcademicClassDto extends AcademicClassDto {
       String? document1,
       String? document2,
       String? observation,
-      String? hourlyIntensity,
+      int? hourlyIntensity,
       int? activityQuantity,
       int? contentQuantity,
       int? state,
       int? activityForPiarStudents,
       int? activityForSelectStudents,
       int? activityForAllStudents,
-      String? selectedStudents,
       String? urlClass,
       String? dateInitClass,
       String? work,
@@ -3199,7 +3178,7 @@ abstract class _AcademicClassDto extends AcademicClassDto {
   @override
   String? get observation => throw _privateConstructorUsedError;
   @override
-  String? get hourlyIntensity => throw _privateConstructorUsedError;
+  int? get hourlyIntensity => throw _privateConstructorUsedError;
   @override
   int? get activityQuantity => throw _privateConstructorUsedError;
   @override
@@ -3212,8 +3191,6 @@ abstract class _AcademicClassDto extends AcademicClassDto {
   int? get activityForSelectStudents => throw _privateConstructorUsedError;
   @override
   int? get activityForAllStudents => throw _privateConstructorUsedError;
-  @override
-  String? get selectedStudents => throw _privateConstructorUsedError;
   @override
   String? get urlClass => throw _privateConstructorUsedError;
   @override
