@@ -335,7 +335,7 @@ class _$AcademicClassTearOff {
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -405,7 +405,7 @@ mixin _$AcademicClass {
   String? get url => throw _privateConstructorUsedError;
   String? get video => throw _privateConstructorUsedError;
   int? get idWeeklyPlan => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
   String? get video1 => throw _privateConstructorUsedError;
   String? get video2 => throw _privateConstructorUsedError;
   String? get url1 => throw _privateConstructorUsedError;
@@ -447,7 +447,7 @@ abstract class $AcademicClassCopyWith<$Res> {
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -549,7 +549,7 @@ class _$AcademicClassCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       video1: video1 == freezed
           ? _value.video1
           : video1 // ignore: cast_nullable_to_non_nullable
@@ -654,7 +654,7 @@ abstract class _$AcademicClassCopyWith<$Res>
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -758,7 +758,7 @@ class __$AcademicClassCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       video1: video1 == freezed
           ? _value.video1
           : video1 // ignore: cast_nullable_to_non_nullable
@@ -900,7 +900,7 @@ class _$_AcademicClass extends _AcademicClass {
   @override
   final int? idWeeklyPlan;
   @override
-  final String? status;
+  final int? status;
   @override
   final String? video1;
   @override
@@ -1075,7 +1075,7 @@ abstract class _AcademicClass extends AcademicClass {
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -1116,7 +1116,7 @@ abstract class _AcademicClass extends AcademicClass {
   @override
   int? get idWeeklyPlan => throw _privateConstructorUsedError;
   @override
-  String? get status => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
   @override
   String? get video1 => throw _privateConstructorUsedError;
   @override
@@ -2361,7 +2361,7 @@ class _$AcademicClassDtoTearOff {
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -2436,7 +2436,7 @@ mixin _$AcademicClassDto {
   String? get url => throw _privateConstructorUsedError;
   String? get video => throw _privateConstructorUsedError;
   int? get idWeeklyPlan => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
   String? get video1 => throw _privateConstructorUsedError;
   String? get video2 => throw _privateConstructorUsedError;
   String? get url1 => throw _privateConstructorUsedError;
@@ -2479,7 +2479,7 @@ abstract class $AcademicClassDtoCopyWith<$Res> {
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -2581,7 +2581,7 @@ class _$AcademicClassDtoCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       video1: video1 == freezed
           ? _value.video1
           : video1 // ignore: cast_nullable_to_non_nullable
@@ -2686,7 +2686,7 @@ abstract class _$AcademicClassDtoCopyWith<$Res>
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -2790,7 +2790,7 @@ class __$AcademicClassDtoCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       video1: video1 == freezed
           ? _value.video1
           : video1 // ignore: cast_nullable_to_non_nullable
@@ -2936,7 +2936,7 @@ class _$_AcademicClassDto extends _AcademicClassDto {
   @override
   final int? idWeeklyPlan;
   @override
-  final String? status;
+  final int? status;
   @override
   final String? video1;
   @override
@@ -3117,7 +3117,7 @@ abstract class _AcademicClassDto extends AcademicClassDto {
       String? url,
       String? video,
       int? idWeeklyPlan,
-      String? status,
+      int? status,
       String? video1,
       String? video2,
       String? url1,
@@ -3162,7 +3162,7 @@ abstract class _AcademicClassDto extends AcademicClassDto {
   @override
   int? get idWeeklyPlan => throw _privateConstructorUsedError;
   @override
-  String? get status => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
   @override
   String? get video1 => throw _privateConstructorUsedError;
   @override

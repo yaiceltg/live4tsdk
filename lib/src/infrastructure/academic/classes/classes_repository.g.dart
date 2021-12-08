@@ -42,7 +42,7 @@ _$_AcademicClassDto _$_$_AcademicClassDtoFromJson(Map<String, dynamic> json) {
     url: json['url'] as String?,
     video: json['video'] as String?,
     idWeeklyPlan: json['idWeeklyPlan'] as int?,
-    status: json['status'] as String?,
+    status: json['status'] as int?,
     video1: json['video1'] as String?,
     video2: json['video2'] as String?,
     url1: json['url1'] as String?,
